@@ -1,26 +1,15 @@
 package org.example.Entidades;
 
 import jakarta.persistence.*;
+import org.example.Interfaz.PuntosInteresPeligro;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "puntospeligro")
-public class Puntospeligro {
+public class PuntoPeligro implements PuntosInteresPeligro {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idPuntospeligro", nullable = false)
-    private Integer id;
-
-    @Column(name = "nombre", nullable = false, length = 40)
-    private String nombre;
-
-    @Column(name = "latitud", nullable = false)
-    private Double latitud;
-
-    @Column(name = "longitud", nullable = false)
-    private Double longitud;
-
+    private Long id;
     @Column(name = "elevacion", nullable = false)
     private Double elevacion;
 
@@ -39,10 +28,12 @@ public class Puntospeligro {
 
     @Column(name = "timestamp")
     private Integer timestamp;
+    @OneToOne
+    @JoinColumn(name = "punto_ruta_id")
+    private PuntoRuta puntoRuta;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "rutas_idRuta", nullable = false)
-    private Ruta rutasIdruta;
-
+    @Override
+    public PuntoRuta getPunto() {
+        return puntoRuta;
+    }
 }

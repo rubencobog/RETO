@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "imagenespeligro")
-public class Imagenespeligro {
+public class ImagenPeligro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idimagenespeligro", nullable = false)
@@ -20,6 +20,6 @@ public class Imagenespeligro {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "puntospeligro_idPuntospeligro", nullable = false)
-    private Puntospeligro puntospeligroIdpuntospeligro;
+    private PuntoPeligro puntospeligroIdpuntospeligro;
 
 }
