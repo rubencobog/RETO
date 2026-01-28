@@ -6,6 +6,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "rutas")
@@ -48,6 +50,9 @@ public class Ruta {
     @Column(name = "desnivelNegativo")
     private Integer desnivelNegativo;
 
+    @Column(name="desnivelAcumulado")
+    private Integer desnivelAcumulado;
+
     @Column(name = "altitudMax")
     private Double altitudMax;
 
@@ -55,9 +60,8 @@ public class Ruta {
     private Double altitudMin;
 
     @ColumnDefault("'LINEAL'")
-    @Lob
     @Column(name = "clasificacion")
-    private String clasificacion;
+    private CLASIFICACION clasificacion;
 
     @Column(name = "nivelEsfuerzo")
     private Byte nivelEsfuerzo;
@@ -67,7 +71,7 @@ public class Ruta {
 
     @ColumnDefault("0")
     @Column(name = "estadoRuta")
-    private Byte estadoRuta;
+    private boolean estadoRuta;
 
     @Column(name = "tipoTerreno")
     private Byte tipoTerreno;
@@ -80,10 +84,10 @@ public class Ruta {
     private String temporadas;
 
     @Column(name = "accesibilidad")
-    private Byte accesibilidad;
+    private boolean accesibilidad;
 
     @Column(name = "rutaFamiliar")
-    private Byte rutaFamiliar;
+    private boolean rutaFamiliar;
 
     @Lob
     @Column(name = "archivoGPX")
@@ -103,5 +107,7 @@ public class Ruta {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "usuario_idUsuario", nullable = false)
     private Usuario usuarioIdusuario;
+    @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PuntoRuta> puntos = new ArrayList<>();
 
 }
