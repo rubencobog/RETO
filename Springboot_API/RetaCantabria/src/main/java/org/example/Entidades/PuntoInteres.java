@@ -38,4 +38,64 @@ public class PuntoInteres implements PuntosInteresPeligro {
     public PuntoRuta getPunto() {
         return puntoRuta;
     }
+
+    public PuntoInteres() {
+    }
+
+    public PuntoInteres(Long id, String nombre, TIPOPI tipo, String caracteristicasEspeciales, List<ImagenInteres> imagenes, PuntoRuta puntoRuta) {
+        this.id = id;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.caracteristicasEspeciales = caracteristicasEspeciales;
+        this.imagenes = imagenes;
+        this.puntoRuta = puntoRuta;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public TIPOPI getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TIPOPI tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getCaracteristicasEspeciales() {
+        return caracteristicasEspeciales;
+    }
+
+    public void setCaracteristicasEspeciales(String caracteristicasEspeciales) {
+        this.caracteristicasEspeciales = caracteristicasEspeciales;
+    }
+
+    public List<ImagenInteres> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(List<ImagenInteres> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public PuntoRuta getPuntoRuta() {
+        return puntoRuta;
+    }
+
+    public void setPuntoRuta(PuntoRuta puntoRuta) {
+        this.puntoRuta = puntoRuta;
+    }
 }

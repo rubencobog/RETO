@@ -21,4 +21,54 @@ public class Resena {
     @JoinColumn(name = "idRuta", nullable = false)
     private Ruta ruta;
 
+    public Resena() {
+    }
+
+    public Resena(int idResena, String resena, LocalDate fecha, Usuario usuario, Ruta ruta) {
+        this.idResena = idResena;
+        this.resena = resena;
+        this.fecha = fecha;
+        this.usuario = usuario;
+        this.ruta = ruta;
+    }
+
+    public int getIdResena() {
+        return idResena;
+    }
+
+    public void setIdResena(int idResena) {
+        this.idResena = idResena;
+    }
+
+    public String getResena() {
+        return resena;
+    }
+
+    public void setResena(String resena) {
+        this.resena = resena;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Ruta getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
+    }
 }

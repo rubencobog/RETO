@@ -36,4 +36,65 @@ public class PuntoPeligro implements PuntosInteresPeligro {
     public PuntoRuta getPunto() {
         return puntoRuta;
     }
+
+    public PuntoPeligro(Long id, Double kilometro, Byte gravedad, String justificacion, List<ImagenPeligro> imagenes, PuntoRuta puntoRuta) {
+        this.id = id;
+        this.kilometro = kilometro;
+        this.gravedad = gravedad;
+        this.justificacion = justificacion;
+        this.imagenes = imagenes;
+        this.puntoRuta = puntoRuta;
+    }
+
+    public PuntoPeligro() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getKilometro() {
+        return kilometro;
+    }
+
+    public void setKilometro(Double kilometro) {
+        this.kilometro = kilometro;
+    }
+
+    public Byte getGravedad() {
+        return gravedad;
+    }
+
+    public void setGravedad(Byte gravedad) {
+        this.gravedad = gravedad;
+    }
+
+    public String getJustificacion() {
+        return justificacion;
+    }
+
+    public void setJustificacion(String justificacion) {
+        this.justificacion = justificacion;
+    }
+
+    public List<ImagenPeligro> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(List<ImagenPeligro> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public PuntoRuta getPuntoRuta() {
+        return puntoRuta;
+    }
+
+    public void setPuntoRuta(PuntoRuta puntoRuta) {
+        this.puntoRuta = puntoRuta;
+    }
 }
