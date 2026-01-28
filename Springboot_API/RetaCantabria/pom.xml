@@ -26,7 +26,12 @@
     </properties>
 
     <dependencies>
-
+       <!-- Dependencia provisional para leer archivos GPX-->
+        <dependency>
+            <groupId>io.jenetics</groupId>
+            <artifactId>jpx</artifactId>
+            <version>3.2.1</version>
+        </dependency>
         <!-- Web (REST Controllers) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
