@@ -21,11 +21,6 @@ public abstract class PuntoRuta {
     @JoinColumn(name = "idRuta")
     private Ruta ruta;
 
-    @OneToOne(mappedBy = "puntoRuta", cascade = CascadeType.ALL)
-    private PuntoPeligro puntoPeligro;
-    @OneToOne(mappedBy = "puntoRuta", cascade = CascadeType.ALL)
-    private PuntoInteres puntoInteres;
-
     public PuntoRuta() {
     }
 
@@ -48,22 +43,6 @@ public abstract class PuntoRuta {
 
     public double getLongitud() {
         return longitud;
-    }
-
-    public PuntoPeligro getPuntoPeligro() {
-        return puntoPeligro;
-    }
-
-    public void setPuntoPeligro(PuntoPeligro puntoPeligro) {
-        this.puntoPeligro = puntoPeligro;
-    }
-
-    public PuntoInteres getPuntoInteres() {
-        return puntoInteres;
-    }
-
-    public void setPuntoInteres(PuntoInteres puntoInteres) {
-        this.puntoInteres = puntoInteres;
     }
 
     public void setLongitud(double longitud) {

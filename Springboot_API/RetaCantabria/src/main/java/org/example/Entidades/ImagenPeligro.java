@@ -20,6 +20,6 @@ public class ImagenPeligro {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "puntospeligro_idPuntospeligro", nullable = false)
-    private PuntoPeligro puntospeligroIdpuntospeligro;
+    private PuntoPeligro puntoPeligro;
 
 }
