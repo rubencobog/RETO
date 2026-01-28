@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public abstract class PuntoRuta {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int idPuntoRuta;
+    private Integer idPuntoRuta;
 
     private double longitud;
     private double latitud;
@@ -33,7 +33,7 @@ public abstract class PuntoRuta {
         this.ruta = ruta;
     }
 
-    public int getIdPuntoRuta() {
+    public Integer getIdPuntoRuta() {
         return idPuntoRuta;
     }
 

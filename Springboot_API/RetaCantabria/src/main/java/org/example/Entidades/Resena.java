@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Resena {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idResena;
+    private Integer idResena;
     @Column(name = "resena",columnDefinition = "TEXT")
     private String resena;
     private LocalDate fecha;
@@ -32,7 +32,7 @@ public class Resena {
         this.ruta = ruta;
     }
 
-    public int getIdResena() {
+    public Integer getIdResena() {
         return idResena;
     }
 
