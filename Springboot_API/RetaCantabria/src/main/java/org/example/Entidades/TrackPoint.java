@@ -15,7 +15,6 @@ public class TrackPoint extends PuntoRuta{
     }
 
 
-
     @Override
     public String getTipo() {
         return "Trackpoint";

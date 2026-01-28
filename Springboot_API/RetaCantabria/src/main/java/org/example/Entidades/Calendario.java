@@ -31,4 +31,63 @@ public class Calendario {
     @JoinColumn(name = "idUsuario", nullable = false)
     private Usuario usuarioIdusuario;
 
+    public Calendario() {
+    }
+
+    public Calendario(Integer id, Instant fecha, String detalles, String recomendaciones, Ruta rutasIdruta, Usuario usuarioIdusuario) {
+        this.id = id;
+        this.fecha = fecha;
+        this.detalles = detalles;
+        this.recomendaciones = recomendaciones;
+        this.rutasIdruta = rutasIdruta;
+        this.usuarioIdusuario = usuarioIdusuario;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Instant getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Instant fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(String detalles) {
+        this.detalles = detalles;
+    }
+
+    public String getRecomendaciones() {
+        return recomendaciones;
+    }
+
+    public void setRecomendaciones(String recomendaciones) {
+        this.recomendaciones = recomendaciones;
+    }
+
+    public Ruta getRutasIdruta() {
+        return rutasIdruta;
+    }
+
+    public void setRutasIdruta(Ruta rutasIdruta) {
+        this.rutasIdruta = rutasIdruta;
+    }
+
+    public Usuario getUsuarioIdusuario() {
+        return usuarioIdusuario;
+    }
+
+    public void setUsuarioIdusuario(Usuario usuarioIdusuario) {
+        this.usuarioIdusuario = usuarioIdusuario;
+    }
 }

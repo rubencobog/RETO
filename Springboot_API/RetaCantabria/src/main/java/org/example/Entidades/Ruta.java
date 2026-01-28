@@ -120,6 +120,41 @@ public class Ruta {
     public Ruta() {
     }
 
+    public Ruta(Integer idRuta, String nombre, String nombreInicioruta, String nombreFinalruta, Double latitudInicial, Double latitudFinal, Double longitudInicial, Double longitudFinal, Double distancia, LocalTime duracion, Integer desnivelPositivo, Integer desnivelNegativo, Integer desnivelAcumulado, Double altitudMax, Double altitudMin, CLASIFICACION clasificacion, Byte nivelEsfuerzo, Byte nivelRiesgo, boolean estadoRuta, Byte tipoTerreno, Byte indicaciones, String temporadas, boolean accesibilidad, boolean rutaFamiliar, String archivoGPX, String recomendacionesEquipo, String zonaGeografica, Double mediaEstrellas, Usuario usuarioIdusuario, List<PuntoRuta> puntos, List<Valoracion> valoraciones, List<Resena> resenas) {
+        this.idRuta = idRuta;
+        this.nombre = nombre;
+        this.nombreInicioruta = nombreInicioruta;
+        this.nombreFinalruta = nombreFinalruta;
+        this.latitudInicial = latitudInicial;
+        this.latitudFinal = latitudFinal;
+        this.longitudInicial = longitudInicial;
+        this.longitudFinal = longitudFinal;
+        this.distancia = distancia;
+        this.duracion = duracion;
+        this.desnivelPositivo = desnivelPositivo;
+        this.desnivelNegativo = desnivelNegativo;
+        this.desnivelAcumulado = desnivelAcumulado;
+        this.altitudMax = altitudMax;
+        this.altitudMin = altitudMin;
+        this.clasificacion = clasificacion;
+        this.nivelEsfuerzo = nivelEsfuerzo;
+        this.nivelRiesgo = nivelRiesgo;
+        this.estadoRuta = estadoRuta;
+        this.tipoTerreno = tipoTerreno;
+        this.indicaciones = indicaciones;
+        this.temporadas = temporadas;
+        this.accesibilidad = accesibilidad;
+        this.rutaFamiliar = rutaFamiliar;
+        this.archivoGPX = archivoGPX;
+        this.recomendacionesEquipo = recomendacionesEquipo;
+        this.zonaGeografica = zonaGeografica;
+        this.mediaEstrellas = mediaEstrellas;
+        this.usuarioIdusuario = usuarioIdusuario;
+        this.puntos = puntos;
+        this.valoraciones = valoraciones;
+        this.resenas = resenas;
+    }
+
     public Integer getId() {
         return idRuta;
     }
@@ -358,5 +393,29 @@ public class Ruta {
 
     public void setPuntos(List<PuntoRuta> puntos) {
         this.puntos = puntos;
+    }
+
+    public Integer getIdRuta() {
+        return idRuta;
+    }
+
+    public void setIdRuta(Integer idRuta) {
+        this.idRuta = idRuta;
+    }
+
+    public List<Valoracion> getValoraciones() {
+        return valoraciones;
+    }
+
+    public void setValoraciones(List<Valoracion> valoraciones) {
+        this.valoraciones = valoraciones;
+    }
+
+    public List<Resena> getResenas() {
+        return resenas;
+    }
+
+    public void setResenas(List<Resena> resenas) {
+        this.resenas = resenas;
     }
 }

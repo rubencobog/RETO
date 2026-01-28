@@ -25,4 +25,72 @@ public class Valoracion {
     @JoinColumn(name = "idRuta", nullable = false)
     private Ruta ruta;
 
+    public Valoracion() {
+    }
+
+    public Valoracion(Integer id, int dificultad, int belleza, int interesCultural, LocalDateTime fecha, Usuario usuario, Ruta ruta) {
+        this.id = id;
+        this.dificultad = dificultad;
+        this.belleza = belleza;
+        this.interesCultural = interesCultural;
+        this.fecha = fecha;
+        this.usuario = usuario;
+        this.ruta = ruta;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public int getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
+    }
+
+    public int getBelleza() {
+        return belleza;
+    }
+
+    public void setBelleza(int belleza) {
+        this.belleza = belleza;
+    }
+
+    public int getInteresCultural() {
+        return interesCultural;
+    }
+
+    public void setInteresCultural(int interesCultural) {
+        this.interesCultural = interesCultural;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Ruta getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
+    }
 }

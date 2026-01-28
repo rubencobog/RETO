@@ -22,4 +22,45 @@ public class ImagenPeligro {
     @JoinColumn(name = "puntospeligro_idPuntospeligro", nullable = false)
     private PuntoPeligro puntoPeligro;
 
+    public ImagenPeligro() {
+    }
+
+    public ImagenPeligro(Integer id, String url, String descripcion, PuntoPeligro puntoPeligro) {
+        this.id = id;
+        this.url = url;
+        this.descripcion = descripcion;
+        this.puntoPeligro = puntoPeligro;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public PuntoPeligro getPuntoPeligro() {
+        return puntoPeligro;
+    }
+
+    public void setPuntoPeligro(PuntoPeligro puntoPeligro) {
+        this.puntoPeligro = puntoPeligro;
+    }
 }
