@@ -1,13 +1,15 @@
 package org.example.Entidades;
 
 import jakarta.persistence.*;
+import org.example.Interfaz.PuntosInteresPeligro;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "puntospeligro")
-public class PuntoPeligro extends PuntoRuta{
-
+public class PuntoPeligro implements PuntosInteresPeligro {
+    @Id
+    private Long id;
     @Column(name = "elevacion", nullable = false)
     private Double elevacion;
 
@@ -26,4 +28,12 @@ public class PuntoPeligro extends PuntoRuta{
 
     @Column(name = "timestamp")
     private Integer timestamp;
+    @OneToOne
+    @JoinColumn(name = "punto_ruta_id")
+    private PuntoRuta puntoRuta;
+
+    @Override
+    public PuntoRuta getPunto() {
+        return puntoRuta;
+    }
 }
