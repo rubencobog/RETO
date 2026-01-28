@@ -15,7 +15,7 @@ public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idRuta", nullable = false)
-    private Integer id;
+    private Integer idRuta;
 
     @Column(name = "nombre", nullable = false, length = 20)
     private String nombre;
@@ -60,6 +60,7 @@ public class Ruta {
     private Double altitudMin;
 
     @ColumnDefault("'LINEAL'")
+    @Enumerated(EnumType.STRING)
     @Column(name = "clasificacion")
     private CLASIFICACION clasificacion;
 
@@ -110,15 +111,21 @@ public class Ruta {
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PuntoRuta> puntos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Valoracion>valoraciones=new ArrayList<>();
+
+    @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Resena>resenas=new ArrayList<>();
+
     public Ruta() {
     }
 
     public Integer getId() {
-        return id;
+        return idRuta;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idRuta = id;
     }
 
     public String getNombre() {

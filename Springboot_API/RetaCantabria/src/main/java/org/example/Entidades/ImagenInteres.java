@@ -10,16 +10,15 @@ public class ImagenInteres {
     @Column(name = "idimagenesinteres", nullable = false)
     private Integer id;
 
-    @Lob
-    @Column(name = "url", nullable = false)
+    @Column(name = "url", nullable = false,columnDefinition = "TEXT")
     private String url;
 
-    @Lob
-    @Column(name = "descripcion")
+
+    @Column(name = "descripcion",columnDefinition = "TEXT")
     private String descripcion;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "puntosinteres_idPuntosinteres", nullable = false)
-    private PuntoInteres puntosinteresIdpuntosinteres;
+    private PuntoInteres puntoInteres;
 
 }

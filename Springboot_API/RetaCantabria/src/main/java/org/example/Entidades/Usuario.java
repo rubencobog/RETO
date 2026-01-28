@@ -3,13 +3,16 @@ package org.example.Entidades;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUsuario", nullable = false)
-    private Integer id;
+    private Integer idUsuario;
 
     @Column(name = "nombre", nullable = false, length = 20)
     private String nombre;
@@ -24,8 +27,16 @@ public class Usuario {
     private String password;
 
     @ColumnDefault("'alumno'")
-    @Lob
+    @Enumerated(EnumType.STRING)
     @Column(name = "rol")
-    private String rol;
+    private TIPOUSUARIO rol;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Valoracion> valoraciones=new ArrayList<>();
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Resena> resenas=new ArrayList<>();
+
+
 
 }

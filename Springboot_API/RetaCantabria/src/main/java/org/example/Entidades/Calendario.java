@@ -24,11 +24,11 @@ public class Calendario {
     private String recomendaciones;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "rutas_idRuta", nullable = false)
+    @JoinColumn(name = "idRuta", nullable = false)
     private Ruta rutasIdruta;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "usuario_idUsuario", nullable = false)
+    @JoinColumn(name = "idUsuario", nullable = false)
     private Usuario usuarioIdusuario;
 
 }
