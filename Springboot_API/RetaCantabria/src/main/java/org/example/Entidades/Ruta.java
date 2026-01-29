@@ -21,28 +21,28 @@ public class Ruta {
     @Column(name = "nombre", nullable = false, length = 20)
     private String nombre;
 
-    @Column(name = "nombre_inicioruta", nullable = false, length = 45)
+    @Column(name = "nombre_inicioruta",columnDefinition = "VARCHAR(45) DEFAULT 'Inicio'",  length = 45)
     private String nombreInicioruta;
 
-    @Column(name = "nombre_finalruta", nullable = false, length = 45)
+    @Column(name = "nombre_finalruta",columnDefinition = "VARCHAR(45) DEFAULT 'Fin'",  length = 45)
     private String nombreFinalruta;
 
     @Column(name = "latitudInicial", nullable = false)
     private Double latitudInicial;
 
-    @Column(name = "latitudFinal", nullable = false)
+    @Column(name = "latitudFinal")
     private Double latitudFinal;
 
-    @Column(name = "longitudInicial", nullable = false)
+    @Column(name = "longitudInicial")
     private Double longitudInicial;
 
-    @Column(name = "longitudFinal", nullable = false)
+    @Column(name = "longitudFinal")
     private Double longitudFinal;
 
-    @Column(name = "distancia", nullable = false)
+    @Column(name = "distancia")
     private Double distancia;
 
-    @Column(name = "duracion", nullable = false)
+    @Column(name = "duracion")
     private LocalTime duracion;
 
     @Column(name = "desnivelPositivo")
