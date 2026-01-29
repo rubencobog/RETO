@@ -8,13 +8,13 @@ namespace Modelo
 {
     public class Valoracion
     {
-        private int id;
-        private int dificultad;    
-        private int belleza;    
-        private int interesCultural;
-        private DateTime fecha;
-        private Usuario usuario;
-        private Ruta ruta;
+        public int id { get; set; }
+        public int dificultad { get; set; }
+        public int belleza { get; set; }
+        public int interesCultural { get; set; }
+        public DateTime fecha { get; set; }
+        public Usuario usuario { get; set; }
+        public Ruta ruta { get; set; }
 
     }
 }

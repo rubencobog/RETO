@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    internal class ImagenPeligro
+    public class ImagenPeligro
     {
         public int id { get; set; }
         public String url { get; set; }

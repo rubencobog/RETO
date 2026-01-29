@@ -1,5 +1,6 @@
 package org.example.Conexion;
 
+import org.example.DTO.RutaDTO;
 import org.example.Entidades.Ruta;
 import org.example.Servicio.RutaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,15 @@ public class RutaController {
     public List<Ruta> findAll() {
         return rutaService.listar();
     }
+    /*
+    ENTIDAD PARA NO MOSTRAR TODOS LOS DATOS
+    public List<RutaDTO> findAll() {
+        return rutaService.listar()
+                .stream()
+                .map(RutaDTO::new)
+                .toList();
+    }
+     */
 
     @GetMapping("/buscar")
     public List<Ruta> buscar(@RequestParam String campo, @RequestParam String valor) {

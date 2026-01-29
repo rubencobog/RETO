@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RetaCantabria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d07f93639cb6453fe6b97d884498f6921ba807e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3e909807cef62b72e93b4804b2bd51279726292")]
 [assembly: System.Reflection.AssemblyProductAttribute("RetaCantabria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RetaCantabria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

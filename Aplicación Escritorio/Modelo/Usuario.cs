@@ -9,13 +9,13 @@ namespace Modelo
     public class Usuario
     {
         public int idUsuario { get; set; }
-        public String nombre;
-        public String apellido;
-        public String email;
-        public String password;
-        public TIPOUSUARIO rol;
-        public List<Valoracion> valoraciones;
-        public List<Resena> resenas;
+        public String nombre { get; set; }
+        public String apellido { get; set; }
+        public String email { get; set; }
+        public String password { get; set; }
+        public TIPOUSUARIO rol { get; set; }
+        public List<Valoracion> valoraciones { get; set; }
+        public List<Resena> resenas { get; set; }
 
 
     }

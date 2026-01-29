@@ -1,5 +1,6 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,13 +21,23 @@ namespace RetaCantabria
         public CatalogoRutas()
         {
             InitializeComponent();
+            this.Load += CatalogoRutas_Load;
 
         }
 
-        public async void CargarGrid()
+        private async void CatalogoRutas_Load(object sender, EventArgs e)
         {
-            List<Ruta> rutas = await cliente.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
-            dgvRutas
+            await CargarGrid();
+        }
+
+        public async Task CargarGrid()
+        {
+            var rutas = await cliente.GetFromJsonAsync<List<Ruta>>("http://localhost:5050/api/ruta");
+            dgvRutas.AutoGenerateColumns = true;
+            dgvRutas.DataSource = rutas;
+            dgvRutas.Columns.RemoveAt(0);
+            dgvRutas.ReadOnly = true;
+            dgvRutas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }

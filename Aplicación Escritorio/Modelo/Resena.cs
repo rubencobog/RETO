@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    internal class Resena
+    public class Resena
     {
         public int idResena { get; set; }
         public String resena { get; set; }

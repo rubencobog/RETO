@@ -1,58 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\",
+  "WorkspaceRootPath": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\rub\u00E9ns\\onedrive - educantabria\\escritorio\\reto_dam2\\reto\\aplicaci\u00F3n escritorio\\modelo\\ruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\trackpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|c:\\users\\rub\u00E9ns\\onedrive - educantabria\\escritorio\\reto_dam2\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\tipopi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|c:\\users\\rub\u00E9ns\\onedrive - educantabria\\escritorio\\reto_dam2\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexion.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\ruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\rub\u00E9ns\\onedrive - educantabria\\escritorio\\reto_dam2\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\rub\u00E9ns\\onedrive - educantabria\\escritorio\\reto_dam2\\reto\\aplicaci\u00F3n escritorio\\modelo\\imagenpeligro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\puntoruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\puntopeligro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\puntointeres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\imagenpeligro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\imageninteres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\clasificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\calendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\valoracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\waypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\tipousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\rub\u00E9ns\\onedrive - educantabria\\escritorio\\reto_dam2\\reto\\aplicaci\u00F3n escritorio\\modelo\\puntopeligro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,227 +29,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Ruta.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Ruta.cs",
+              "DocumentMoniker": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Ruta.cs",
               "RelativeDocumentMoniker": "..\\Modelo\\Ruta.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Ruta.cs",
+              "ToolTip": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Ruta.cs",
               "RelativeToolTip": "..\\Modelo\\Ruta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:15.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Calendario.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Calendario.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Calendario.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Calendario.cs",
-              "RelativeToolTip": "..\\Modelo\\Calendario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:10:59.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CLASIFICACION.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\CLASIFICACION.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\CLASIFICACION.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\CLASIFICACION.cs",
-              "RelativeToolTip": "..\\Modelo\\CLASIFICACION.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:01.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ImagenInteres.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\ImagenInteres.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\ImagenInteres.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\ImagenInteres.cs",
-              "RelativeToolTip": "..\\Modelo\\ImagenInteres.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:02.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ImagenPeligro.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\ImagenPeligro.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\ImagenPeligro.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\ImagenPeligro.cs",
-              "RelativeToolTip": "..\\Modelo\\ImagenPeligro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:04.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PuntoInteres.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoInteres.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\PuntoInteres.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoInteres.cs",
-              "RelativeToolTip": "..\\Modelo\\PuntoInteres.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:05.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PuntoPeligro.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\PuntoPeligro.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
-              "RelativeToolTip": "..\\Modelo\\PuntoPeligro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:08.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PuntoRuta.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoRuta.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\PuntoRuta.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoRuta.cs",
-              "RelativeToolTip": "..\\Modelo\\PuntoRuta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:10.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Resena.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Resena.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Resena.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Resena.cs",
-              "RelativeToolTip": "..\\Modelo\\Resena.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:11.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TIPOPI.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\TIPOPI.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\TIPOPI.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\TIPOPI.cs",
-              "RelativeToolTip": "..\\Modelo\\TIPOPI.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:20.702Z",
+              "WhenOpened": "2026-01-29T20:22:12.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TrackPoint.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\TrackPoint.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\TrackPoint.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\TrackPoint.cs",
-              "RelativeToolTip": "..\\Modelo\\TrackPoint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "ConexionAPI.cs",
+              "DocumentMoniker": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
+              "RelativeDocumentMoniker": "..\\Conexion\\ConexionAPI.cs",
+              "ToolTip": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
+              "RelativeToolTip": "..\\Conexion\\ConexionAPI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:24.587Z",
+              "WhenOpened": "2026-01-29T20:19:33.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Usuario.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Usuario.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Usuario.cs",
-              "RelativeToolTip": "..\\Modelo\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:29.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Actividad.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Actividad.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Actividad.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Actividad.cs",
-              "RelativeToolTip": "..\\Modelo\\Actividad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:10:58.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Valoracion.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Valoracion.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Valoracion.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Valoracion.cs",
-              "RelativeToolTip": "..\\Modelo\\Valoracion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:31.767Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Waypoint.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Waypoint.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Waypoint.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Waypoint.cs",
-              "RelativeToolTip": "..\\Modelo\\Waypoint.cs",
+              "DocumentIndex": 2,
+              "Title": "Conexion",
+              "DocumentMoniker": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\Conexion.csproj",
+              "RelativeDocumentMoniker": "..\\Conexion\\Conexion.csproj",
+              "ToolTip": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\Conexion.csproj",
+              "RelativeToolTip": "..\\Conexion\\Conexion.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:33.266Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-29T20:19:29.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TIPOUSUARIO.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\TIPOUSUARIO.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\TIPOUSUARIO.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\TIPOUSUARIO.cs",
-              "RelativeToolTip": "..\\Modelo\\TIPOUSUARIO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:22.668Z",
+              "WhenOpened": "2026-01-29T20:19:09.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CatalogoRutas.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
-              "RelativeDocumentMoniker": "CatalogoRutas.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CatalogoRutas.cs [Dise\u00F1o]",
+              "DocumentIndex": 4,
+              "Title": "ImagenPeligro.cs",
+              "DocumentMoniker": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\ImagenPeligro.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\ImagenPeligro.cs",
+              "ToolTip": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\ImagenPeligro.cs",
+              "RelativeToolTip": "..\\Modelo\\ImagenPeligro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T14:16:36.98Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-01-29T20:15:12.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PuntoPeligro.cs",
+              "DocumentMoniker": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\PuntoPeligro.cs",
+              "ToolTip": "C:\\Users\\Rub\u00E9ns\\OneDrive - Educantabria\\Escritorio\\RETO_DAM2\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
+              "RelativeToolTip": "..\\Modelo\\PuntoPeligro.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T20:15:05.633Z",
+              "EditorCaption": ""
             }
           ]
         }
