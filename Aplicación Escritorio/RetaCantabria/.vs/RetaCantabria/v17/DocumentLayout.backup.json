@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "Title": "CatalogoRutas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
+              "RelativeDocumentMoniker": "CatalogoRutas.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CatalogoRutas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T14:13:28.835Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-29T14:16:36.98Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
