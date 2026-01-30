@@ -22,3 +22,15 @@ C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Model
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\refint\Modelo.dll
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.pdb
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\ref\Modelo.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.deps.json
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.pdb
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfoInputs.cache
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfo.cs
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.sourcelink.json
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\refint\Modelo.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.pdb
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\ref\Modelo.dll
