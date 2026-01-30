@@ -58,8 +58,10 @@ public class GPXService {
             List<Usuario> lista = opusuario.buscar("email", emailAutor);
             if (lista.isEmpty()) {
                 return;
+            }else{
+                usuario = lista.get(0);
             }
-            usuario = (Usuario)lista;
+
             // ===== RUTA =====
             Ruta ruta = new Ruta();
             ruta.setNombre(nombreRuta);

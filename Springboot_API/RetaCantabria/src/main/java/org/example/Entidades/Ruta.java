@@ -27,7 +27,7 @@ public class Ruta {
     @Column(name = "nombre_finalruta",columnDefinition = "VARCHAR(45) DEFAULT 'Fin'",  length = 45)
     private String nombreFinalruta;
 
-    @Column(name = "latitudInicial", nullable = false)
+    @Column(name = "latitudInicial")
     private Double latitudInicial;
 
     @Column(name = "latitudFinal")

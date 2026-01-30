@@ -60,5 +60,4 @@ public class UsuarioController {
     public Usuario login(@RequestParam String email, @RequestParam String password) {
         return usuarioService.buscarUsuario(email, password);
     }
-
 }
