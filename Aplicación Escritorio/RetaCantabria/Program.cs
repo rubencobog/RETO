@@ -1,3 +1,5 @@
+using Modelo;
+
 namespace RetaCantabria
 {
     internal static class Program
@@ -8,10 +10,8 @@ namespace RetaCantabria
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CatalogoRutas());
+            Application.Run(new Login());
         }
     }
 }

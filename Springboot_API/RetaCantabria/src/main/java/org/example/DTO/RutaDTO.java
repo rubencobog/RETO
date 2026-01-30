@@ -6,6 +6,7 @@ import java.time.LocalTime;
 
 public record RutaDTO(
         Integer idRuta,
+        Integer idUsuario,
         String nombre,
         String nombreInicioruta,
         String nombreFinalruta,
@@ -17,6 +18,7 @@ public record RutaDTO(
     public RutaDTO(Ruta r) {
         this(
                 r.getIdRuta(),
+                r.getUsuarioIdusuario().getIdUsuario(),
                 r.getNombre(),
                 r.getNombreInicioruta(),
                 r.getNombreFinalruta(),

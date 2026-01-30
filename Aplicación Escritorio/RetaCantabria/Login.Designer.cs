@@ -28,18 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnIniciar = new Button();
+            lblEmail = new Label();
+            lblPassword = new Label();
+            txtEmail = new TextBox();
+            txtPassword = new TextBox();
             SuspendLayout();
             // 
-            // Form1
+            // btnIniciar
+            // 
+            btnIniciar.Location = new Point(342, 341);
+            btnIniciar.Name = "btnIniciar";
+            btnIniciar.Size = new Size(100, 23);
+            btnIniciar.TabIndex = 0;
+            btnIniciar.Text = "Iniciar Sesión";
+            btnIniciar.UseVisualStyleBackColor = true;
+            btnIniciar.Click += btnIniciar_Click;
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(375, 58);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 1;
+            lblEmail.Text = "Email";
+            // 
+            // lblPassword
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(354, 183);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(67, 15);
+            lblPassword.TabIndex = 2;
+            lblPassword.Text = "Contraseña";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(342, 107);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(100, 23);
+            txtEmail.TabIndex = 3;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(342, 242);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(100, 23);
+            txtPassword.TabIndex = 4;
+            // 
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Form1";
+            Controls.Add(txtPassword);
+            Controls.Add(txtEmail);
+            Controls.Add(lblPassword);
+            Controls.Add(lblEmail);
+            Controls.Add(btnIniciar);
+            Name = "Login";
             Text = "Login";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button btnIniciar;
+        private Label lblEmail;
+        private Label lblPassword;
+        private TextBox txtEmail;
+        private TextBox txtPassword;
     }
 }

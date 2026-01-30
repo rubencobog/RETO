@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection.Metadata;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
@@ -37,6 +38,7 @@ namespace Modelo
 
         public Double altitudMin { get; set; }
 
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public CLASIFICACION clasificacion { get; set; }
 
         public Byte nivelEsfuerzo { get; set; }

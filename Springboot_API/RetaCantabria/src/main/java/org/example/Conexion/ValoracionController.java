@@ -1,5 +1,6 @@
 package org.example.Conexion;
 
+import org.example.DTO.ValoracionDTO;
 import org.example.Entidades.Valoracion;
 import org.example.Servicio.ValoracionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,16 @@ public class ValoracionController {
     }
 
     @GetMapping
+    /*
     public List<Valoracion> findAll() {
         return valoracionService.listar();
+    }
+     */
+    public List<ValoracionDTO>findAll(){
+        return valoracionService.listar()
+                .stream()
+                .map(ValoracionDTO::new)
+                .toList();
     }
 
     @GetMapping("/buscar")

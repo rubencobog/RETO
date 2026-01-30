@@ -10,3 +10,15 @@ C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación E
 C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\refint\Modelo.dll
 C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.pdb
 C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\ref\Modelo.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.deps.json
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.pdb
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfoInputs.cache
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfo.cs
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.sourcelink.json
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\refint\Modelo.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.pdb
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\ref\Modelo.dll
