@@ -30,6 +30,10 @@
         {
             dgvRutas = new DataGridView();
             lblRutas = new Label();
+            btnResena = new Button();
+            btnValorar = new Button();
+            btnDescarga = new Button();
+            btnCrear = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
             SuspendLayout();
             // 
@@ -50,11 +54,53 @@
             lblRutas.TabIndex = 1;
             lblRutas.Text = "Rutas";
             // 
+            // btnResena
+            // 
+            btnResena.Location = new Point(678, 401);
+            btnResena.Name = "btnResena";
+            btnResena.Size = new Size(75, 23);
+            btnResena.TabIndex = 2;
+            btnResena.Text = "Reseñar";
+            btnResena.UseVisualStyleBackColor = true;
+            btnResena.Click += btnResena_Click;
+            // 
+            // btnValorar
+            // 
+            btnValorar.Location = new Point(576, 401);
+            btnValorar.Name = "btnValorar";
+            btnValorar.Size = new Size(75, 23);
+            btnValorar.TabIndex = 3;
+            btnValorar.Text = "Valorar";
+            btnValorar.UseVisualStyleBackColor = true;
+            btnValorar.Click += btnValorar_Click;
+            // 
+            // btnDescarga
+            // 
+            btnDescarga.Location = new Point(438, 401);
+            btnDescarga.Name = "btnDescarga";
+            btnDescarga.Size = new Size(109, 23);
+            btnDescarga.TabIndex = 4;
+            btnDescarga.Text = "Descargar Ficha";
+            btnDescarga.UseVisualStyleBackColor = true;
+            // 
+            // btnCrear
+            // 
+            btnCrear.Location = new Point(34, 401);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new Size(89, 23);
+            btnCrear.TabIndex = 5;
+            btnCrear.Text = "Crear Ruta";
+            btnCrear.UseVisualStyleBackColor = true;
+            // 
             // CatalogoRutas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCrear);
+            Controls.Add(btnDescarga);
+            Controls.Add(btnValorar);
+            Controls.Add(btnResena);
             Controls.Add(lblRutas);
             Controls.Add(dgvRutas);
             Name = "CatalogoRutas";
@@ -68,5 +114,9 @@
 
         private DataGridView dgvRutas;
         private Label lblRutas;
+        private Button btnResena;
+        private Button btnValorar;
+        private Button btnDescarga;
+        private Button btnCrear;
     }
 }
