@@ -1,6 +1,7 @@
 package org.example.Conexion;
 
 
+import org.example.DTO.UsuarioDTO;
 import org.example.Entidades.Usuario;
 import org.example.Servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,15 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public List<Usuario> findAll() {
+    /*public List<Usuario> findAll() {
         return usuarioService.listar();
+    }
+     */
+    public List<UsuarioDTO> getUsuarios() {
+        return usuarioService.listar()
+                .stream()
+                .map(UsuarioDTO::new)
+                .toList();
     }
 
     @GetMapping("/buscar")
