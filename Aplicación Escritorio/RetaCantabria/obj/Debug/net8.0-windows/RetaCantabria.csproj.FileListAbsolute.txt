@@ -52,3 +52,4 @@ C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\ref\RetaCantabria.dll
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.FormResena.resources
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.FormValoracion.resources
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.GestionUsuarios.resources

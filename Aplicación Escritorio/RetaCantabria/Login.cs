@@ -10,7 +10,7 @@ namespace RetaCantabria
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            if(txtEmail.Text)
+           // if(txtEmail.Text)
         }
     }
 }
