@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.1" creator="ProyectoSpringBoot"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
+                         http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+    <!-- Información generica de la ruta y usuario -->
+    <metadata>
+		<tipoRegistro>InfoGeneral</tipoRegistro>
+		<nombreRuta>Ruta de Montaña Ejemplo</nombreRuta>
+		<enlaceWikiloc>www.rutas.es</enlaceWikiloc>
+        <author>saul@gmail.com</author>
+		<fechaCreacionGPX>2026-01-29 14:30:00</fechaCreacionGPX>
+    </metadata>
+    <!-- Creación de puntos Trackpoint y Waypoint generica
+    (Puedes crear los que quieras debajo de este)
+    (Pueden tener cualquier orden que queras)
+    -->
+    <!-- Waypoint generico(Introduce tus datos) -->
+	<wpt latitud="40.417000" longitud="-3.704200" elevacion="15">
+		<timeestamp>2026-01-29 14:30:00</timeestamp>
+		<nombre>1</nombre>
+		<descripcion>No</descripcion>
+	</wpt>
+    <!-- Trackpoint generico(Introduce tus datos) -->
+	<trk latitud="40.417000" longitud="-3.704200" elevacion="15">
+		<timeestamp>2026-01-29 14:30:00</timeestamp>
+	</trk>
+</gpx>
