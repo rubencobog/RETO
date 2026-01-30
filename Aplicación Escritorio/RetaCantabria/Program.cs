@@ -10,8 +10,9 @@ namespace RetaCantabria
         [STAThread]
         static void Main()
         {
+            HttpClient httpClient = new HttpClient();
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new GestionUsuarios(httpClient));
         }
     }
 }
