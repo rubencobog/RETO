@@ -26,16 +26,18 @@ public class UsuarioController {
     }
 
     @GetMapping
-    /*public List<Usuario> findAll() {
+    public List<Usuario> findAll() {
         return usuarioService.listar();
     }
-     */
+     /*
     public List<UsuarioDTO> getUsuarios() {
         return usuarioService.listar()
                 .stream()
                 .map(UsuarioDTO::new)
                 .toList();
+
     }
+    */
 
     @GetMapping("/buscar")
     public List<Usuario> buscar(@RequestParam String campo, @RequestParam String valor) {
