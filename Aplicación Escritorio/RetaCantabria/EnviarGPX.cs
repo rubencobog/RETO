@@ -76,6 +76,7 @@ namespace RetaCantabria
         }
         private async void button2_Click(object sender, EventArgs e)
         {
+            contenido = textBox1.Text;
             if (esValido())
             {
               try
@@ -154,48 +155,26 @@ namespace RetaCantabria
             }
             return tipoRegistro && nombreRuta && enlaceWikiloc && author && fechaCreacion; ;
         }
-        public bool ValidaGPX(string gpx)
-        {
-            if (string.IsNullOrEmpty(gpx))
-            {
-                return false;
-            }
-            gpx.Trim();
-
-            return true;
-        }
         public void crearArchivodesde0()
         {
             string rutaProyecto = Directory.GetCurrentDirectory();
-            string nombreCarpeta = "GPXFiles";
-            string rutaCarpeta = Path.Combine(rutaProyecto, nombreCarpeta);
-            if (!Directory.Exists(rutaCarpeta))
-            {
-                Directory.CreateDirectory(rutaCarpeta);
-            }
+            string rutaCarpeta = Path.Combine(rutaProyecto, "GPXFiles");
 
-            XDocument gpx = new XDocument(
-            new XDeclaration("1.0", "UTF-8", "yes"),
-            new XElement("gpx",
-                new XAttribute("version", "1.1"),
-                new XAttribute("creator", "MiAplicacion")
-            )
-        );
+            if (!Directory.Exists(rutaCarpeta))
+                Directory.CreateDirectory(rutaCarpeta);
+
             int cont = 0;
-             rutaArchivo = Path.Combine(rutaCarpeta, "generico.gpx");
-            while (true) {
-                if (File.Exists(rutaArchivo))
-                {
-                    rutaArchivo = Path.Combine(rutaCarpeta, "generico"+cont+".gpx");
-                }
-                else
-                {
-                    break;
-                }
+            string nombre = "generico.gpx";
+            rutaArchivo = Path.Combine(rutaCarpeta, nombre);
+
+            while (File.Exists(rutaArchivo))
+            {
                 cont++;
+                nombre = $"generico{cont}.gpx";
+                rutaArchivo = Path.Combine(rutaCarpeta, nombre);
             }
-            gpx.Save(rutaArchivo);
             File.WriteAllText(rutaArchivo, textBox1.Text);
+
             nombreArchivo = Path.GetFileName(rutaArchivo);
             archivoGPX = new MemoryStream(File.ReadAllBytes(rutaArchivo));
         }
@@ -250,7 +229,7 @@ namespace RetaCantabria
             contenido = null;
             nombreArchivo = null;
             archivoGPX = null;
-
+            textBox1.Text = textoporDefecto;
         }
         private void EnviarGPX_Load(object sender, EventArgs e)
         {
