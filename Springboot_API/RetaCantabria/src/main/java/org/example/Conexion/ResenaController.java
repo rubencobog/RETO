@@ -1,5 +1,6 @@
 package org.example.Conexion;
 
+import org.example.DTO.ResenaDTO;
 import org.example.Entidades.Resena;
 import org.example.Servicio.ResenaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,16 @@ public class ResenaController {
     }
 
     @GetMapping
+    /*
     public List<Resena> findAll() {
         return resenaService.listar();
+    }
+     */
+    public List<ResenaDTO>findAll(){
+        return resenaService.listar()
+                .stream()
+                .map(ResenaDTO::new)
+                .toList();
     }
 
     @GetMapping("/buscar")
