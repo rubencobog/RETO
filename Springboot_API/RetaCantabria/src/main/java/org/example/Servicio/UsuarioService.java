@@ -72,5 +72,10 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
             default -> List.of();
         };
     }
+    public Usuario buscarUsuario(String password , String email) {
+        return repository.findAll().stream().
+                filter(u->u.getEmail().equalsIgnoreCase(email)&&u.getPassword().equalsIgnoreCase(password))
+                .findFirst().orElse(null);
+    }
 }
 
