@@ -59,7 +59,7 @@ public class GPXService {
             if (lista.isEmpty()) {
                 return;
             }
-            usuario = lista.getFirst();
+            usuario = (Usuario)lista;
             // ===== RUTA =====
             Ruta ruta = new Ruta();
             ruta.setNombre(nombreRuta);
@@ -103,6 +103,7 @@ public class GPXService {
                 track.setRuta(ruta);
                 optrackpoint.crear(track);
             }
+            System.out.println("Se creo correctamente");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
