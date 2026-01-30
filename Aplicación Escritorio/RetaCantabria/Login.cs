@@ -4,7 +4,13 @@ namespace RetaCantabria
     {
         public Login()
         {
+
             InitializeComponent();
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            if(txtEmail.Text)
         }
     }
 }
