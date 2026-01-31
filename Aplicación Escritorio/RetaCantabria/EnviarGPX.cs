@@ -114,7 +114,12 @@ namespace RetaCantabria
                     }         
             }
             if(rutaArchivo!=null) {
-                await EnviarArchivo();
+                    File.WriteAllText(rutaArchivo, textBox1.Text); 
+
+                    archivoGPX = new MemoryStream(
+                        Encoding.UTF8.GetBytes(textBox1.Text)
+                    );
+                    await EnviarArchivo();
              }
             }
             else { 
