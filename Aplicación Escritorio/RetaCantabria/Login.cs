@@ -1,12 +1,16 @@
 using Conexion;
 using Modelo;
+using System;
+using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Policy;
 
 namespace RetaCantabria
 {
     public partial class Login : Form
     {
         HttpClient cliente= ConexionAPI.CLIENTE;
+        private Usuario USUARIO;
         public Login()
         {
 
@@ -18,21 +22,30 @@ namespace RetaCantabria
             if (!txtEmail.Text.Equals(String.Empty) || !txtPassword.Text.Equals(String.Empty))
             {
 
-                var usuario = getLoginAsync(txtEmail.Text, txtPassword.Text);
-
-                //MessageBox.Show(usuario.nombre)
+                loginAsync(txtEmail.Text, txtPassword.Text);
+               
             }
         }
-        private async Task getLoginAsync(string email, string password)
+        private async Task loginAsync(string email, string password)
         {
-            var queryParams = new Dictionary<string, string>
-            {
-                ["email"] = txtEmail.Text,
-                ["password"] = txtPassword.Text,
-            };
+            HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "usuario/login?email=" + email + "&password=" + password);
 
-            var rutas = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "usuario/login?email=" + email + "&password=" + password);
+            USUARIO = await respuesta.Content.ReadFromJsonAsync<Usuario>();
+
+            if (USUARIO == null)
+            {
+                MessageBox.Show("Usuario no valido");
+            }
+            else
+            {
+
+                MessageBox.Show("Bienvenido " + USUARIO.nombre);
+
+            }
+
+
         }
+
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
