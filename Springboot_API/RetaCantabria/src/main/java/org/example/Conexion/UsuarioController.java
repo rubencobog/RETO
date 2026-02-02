@@ -56,6 +56,7 @@ public class UsuarioController {
     public void delete(@PathVariable Long id) {
         usuarioService.eliminar(id);
     }
+
     @GetMapping("/login")
     public Usuario login(@RequestParam String email, @RequestParam String password) {
         return usuarioService.buscarUsuario(email, password);
