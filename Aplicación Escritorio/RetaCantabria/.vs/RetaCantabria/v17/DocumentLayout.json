@@ -7,19 +7,10 @@
       "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\modelo\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexion.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +20,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,54 +36,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Usuario.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Usuario.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Usuario.cs",
-              "RelativeToolTip": "..\\Modelo\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T18:41:53.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Login.cs",
-              "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Login.cs",
-              "RelativeToolTip": "Login.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T18:40:58.487Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T18:39:57.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GestionUsuarios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
-              "RelativeDocumentMoniker": "GestionUsuarios.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GestionUsuarios.cs [Dise\u00F1o]",
+              "Title": "ConexionAPI.cs",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
+              "RelativeDocumentMoniker": "..\\Conexion\\ConexionAPI.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
+              "RelativeToolTip": "..\\Conexion\\ConexionAPI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T18:36:29.244Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-02-02T14:10:54.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Conexion",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\Conexion.csproj",
+              "RelativeDocumentMoniker": "..\\Conexion\\Conexion.csproj",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\Conexion.csproj",
+              "RelativeToolTip": "..\\Conexion\\Conexion.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-02T14:10:51.189Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -102,7 +68,7 @@
               "RelativeDocumentMoniker": "GestionUsuarios.cs",
               "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
               "RelativeToolTip": "GestionUsuarios.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAwwDEAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-30T18:21:32.22Z",
               "EditorCaption": ""

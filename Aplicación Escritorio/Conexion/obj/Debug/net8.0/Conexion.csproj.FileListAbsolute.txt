@@ -22,3 +22,15 @@ C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Con
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\refint\Conexion.dll
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.pdb
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\ref\Conexion.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\bin\Debug\net8.0\Conexion.deps.json
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\bin\Debug\net8.0\Conexion.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\bin\Debug\net8.0\Conexion.pdb
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.AssemblyInfoInputs.cache
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.AssemblyInfo.cs
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.csproj.CoreCompileInputs.cache
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.sourcelink.json
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\refint\Conexion.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.pdb
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\ref\Conexion.dll

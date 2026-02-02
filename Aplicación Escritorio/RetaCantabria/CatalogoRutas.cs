@@ -18,7 +18,7 @@ namespace RetaCantabria
 {
     public partial class CatalogoRutas : Form
     {
-        private readonly HttpClient cliente = new HttpClient();
+        
         private Usuario usuario;
         public CatalogoRutas()
         {
@@ -35,7 +35,7 @@ namespace RetaCantabria
         public async Task CargarGrid()
         {
 
-            var rutas = await cliente.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
+            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
             dgvRutas.AutoGenerateColumns = true;
             dgvRutas.DataSource = rutas;
             dgvRutas.Columns.RemoveAt(0);
@@ -48,7 +48,7 @@ namespace RetaCantabria
             if (dgvRutas.SelectedRows.Count > 0)
             {
                 Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
-                FormResena formResena = new FormResena(usuario, ruta, cliente);
+                FormResena formResena = new FormResena(usuario, ruta, ConexionAPI.CLIENTE);
                 formResena.ShowDialog();
             }
             else
@@ -77,7 +77,7 @@ namespace RetaCantabria
                         };
                         var json = JsonSerializer.Serialize(valoracion);
                         var content = new StringContent(json, Encoding.UTF8, "application/json");
-                        var response = await cliente.PostAsync(ConexionAPI.Conexion + "valoracion", content);
+                        var response = await ConexionAPI.CLIENTE.PostAsync(ConexionAPI.Conexion + "valoracion", content);
                         if (response.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Valoración enviada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
