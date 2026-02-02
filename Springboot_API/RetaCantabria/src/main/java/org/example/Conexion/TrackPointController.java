@@ -47,4 +47,9 @@ public class TrackPointController {
     public void delete(@PathVariable Long id) {
         trackPointService.eliminar(id);
     }
+
+    @GetMapping("/buscarRuta")
+    public List<TrackPoint> findAllByRuta(@RequestParam Long idRuta) {
+        return trackPointService.findAllByRuta(idRuta);
+    }
 }
