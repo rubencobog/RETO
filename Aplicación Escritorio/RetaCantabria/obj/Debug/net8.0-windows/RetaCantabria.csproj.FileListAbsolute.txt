@@ -53,3 +53,6 @@ C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.FormResena.resources
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.FormValoracion.resources
 C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.GestionUsuarios.resources
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.EnviarGPX.resources
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.CrearUsuario.resources
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.CrearRuta.resources

@@ -32,6 +32,7 @@
             Eliminar = new Button();
             btnEditar = new Button();
             btnPermisos = new Button();
+            comboPermisos = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -42,10 +43,11 @@
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.Size = new Size(681, 319);
             dgvUsuarios.TabIndex = 0;
+            dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;
             // 
             // Eliminar
             // 
-            Eliminar.Location = new Point(664, 396);
+            Eliminar.Location = new Point(664, 386);
             Eliminar.Name = "Eliminar";
             Eliminar.Size = new Size(75, 23);
             Eliminar.TabIndex = 1;
@@ -55,7 +57,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(565, 396);
+            btnEditar.Location = new Point(565, 386);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 2;
@@ -64,18 +66,28 @@
             // 
             // btnPermisos
             // 
-            btnPermisos.Location = new Point(412, 396);
+            btnPermisos.Location = new Point(412, 386);
             btnPermisos.Name = "btnPermisos";
             btnPermisos.Size = new Size(125, 23);
             btnPermisos.TabIndex = 3;
             btnPermisos.Text = "Cambiar Permisos";
             btnPermisos.UseVisualStyleBackColor = true;
+            btnPermisos.Click += btnPermisos_Click;
+            // 
+            // comboPermisos
+            // 
+            comboPermisos.FormattingEnabled = true;
+            comboPermisos.Location = new Point(412, 405);
+            comboPermisos.Name = "comboPermisos";
+            comboPermisos.Size = new Size(125, 23);
+            comboPermisos.TabIndex = 4;
             // 
             // GestionUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboPermisos);
             Controls.Add(btnPermisos);
             Controls.Add(btnEditar);
             Controls.Add(Eliminar);
@@ -93,5 +105,6 @@
         private Button Eliminar;
         private Button btnEditar;
         private Button btnPermisos;
+        private ComboBox comboPermisos;
     }
 }

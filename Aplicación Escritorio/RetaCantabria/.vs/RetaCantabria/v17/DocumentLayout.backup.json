@@ -3,17 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\crearruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:crearruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexion.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\crearruta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:crearruta.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\crearruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:crearruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|c:\\users\\ruben\\desktop\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,55 +50,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConexionAPI.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
-              "RelativeDocumentMoniker": "..\\Conexion\\ConexionAPI.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs*",
-              "RelativeToolTip": "..\\Conexion\\ConexionAPI.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T14:10:54.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Conexion",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\Conexion.csproj",
-              "RelativeDocumentMoniker": "..\\Conexion\\Conexion.csproj",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\Conexion.csproj",
-              "RelativeToolTip": "..\\Conexion\\Conexion.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-02T14:10:51.189Z",
+              "Title": "CrearRuta.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.Designer.cs",
+              "RelativeDocumentMoniker": "CrearRuta.Designer.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.Designer.cs",
+              "RelativeToolTip": "CrearRuta.Designer.cs",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAiwAgBAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T15:58:33.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAANIYAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-02-02T14:07:55.789Z",
+              "DocumentIndex": 0,
+              "Title": "CrearRuta.cs",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.cs",
+              "RelativeDocumentMoniker": "CrearRuta.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.cs",
+              "RelativeToolTip": "CrearRuta.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvxMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T15:14:40.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GestionUsuarios.cs",
-              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
-              "RelativeDocumentMoniker": "GestionUsuarios.cs",
-              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
-              "RelativeToolTip": "GestionUsuarios.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDkAAAAlAAAAAAAAAA==",
+              "Title": "CrearRuta.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.cs",
+              "RelativeDocumentMoniker": "CrearRuta.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CrearRuta.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T18:21:32.22Z",
+              "WhenOpened": "2026-02-02T15:14:37.404Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormResena.cs",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs",
+              "RelativeDocumentMoniker": "FormResena.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs",
+              "RelativeToolTip": "FormResena.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T15:09:38.105Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CatalogoRutas.cs",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
+              "RelativeDocumentMoniker": "CatalogoRutas.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
+              "RelativeToolTip": "CatalogoRutas.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAuwGUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T15:08:31.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormResena.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs",
+              "RelativeDocumentMoniker": "FormResena.cs",
+              "ToolTip": "C:\\Users\\ruben\\Desktop\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormResena.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T15:06:09.889Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

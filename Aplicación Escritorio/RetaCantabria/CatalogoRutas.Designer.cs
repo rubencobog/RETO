@@ -91,6 +91,7 @@
             btnCrear.TabIndex = 5;
             btnCrear.Text = "Crear Ruta";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // CatalogoRutas
             // 

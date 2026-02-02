@@ -11,8 +11,9 @@ namespace RetaCantabria
         static void Main()
         {
             HttpClient httpClient = new HttpClient();
+            Usuario usuario=new Usuario();
             ApplicationConfiguration.Initialize();
-            Application.Run(new GestionUsuarios(httpClient));
+            Application.Run(new CatalogoRutas(usuario));
         }
     }
 }

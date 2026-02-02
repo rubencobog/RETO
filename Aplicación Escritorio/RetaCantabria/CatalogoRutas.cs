@@ -18,9 +18,9 @@ namespace RetaCantabria
 {
     public partial class CatalogoRutas : Form
     {
-        
+
         private Usuario usuario;
-        public CatalogoRutas()
+        public CatalogoRutas(Usuario usuario)
         {
             this.usuario = usuario;
             InitializeComponent();
@@ -94,6 +94,12 @@ namespace RetaCantabria
             {
                 MessageBox.Show("Debe seleccionar una ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            CrearRuta crearRuta = new CrearRuta(usuario);
+            crearRuta.Show();
         }
     }
 }
