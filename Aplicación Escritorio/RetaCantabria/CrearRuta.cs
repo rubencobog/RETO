@@ -17,7 +17,7 @@ namespace RetaCantabria
         public CrearRuta(Usuario usuario)
         {
             this.usuario = usuario;
-            dtpDuracion.Format = DateTimePickerFormat.Time;
+           
             InitializeComponent();
         }
 

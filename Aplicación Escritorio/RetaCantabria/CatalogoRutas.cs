@@ -25,6 +25,7 @@ namespace RetaCantabria
             this.usuario = usuario;
             InitializeComponent();
             this.Load += CatalogoRutas_Load;
+            gestorPermisos(usuario.rol);
         }
 
         private async void CatalogoRutas_Load(object sender, EventArgs e)
@@ -100,6 +101,32 @@ namespace RetaCantabria
         {
             CrearRuta crearRuta = new CrearRuta(usuario);
             crearRuta.Show();
+        }
+
+        //TODO Acabar de modificar los permisos asi como se agregen funciones
+        private void gestorPermisos(TIPOUSUARIO permiso)
+        {
+            switch (permiso)
+            {
+                case TIPOUSUARIO.administrador:
+                                                    
+                    break;
+                case TIPOUSUARIO.diseñador:
+
+
+                    break;
+                case TIPOUSUARIO.profesor:
+
+                    break;
+                case TIPOUSUARIO.alumno:
+                    btnDescarga.Hide();
+                    btnCrear.Hide();
+                    break;
+                default:
+                    //usuario normal
+                    break;
+                 
+            }
         }
     }
 }
