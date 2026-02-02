@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -19,6 +20,7 @@ public abstract class PuntoRuta {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "idRuta")
+    @JsonBackReference
     private Ruta ruta;
 
     public PuntoRuta() {

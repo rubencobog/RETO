@@ -1,6 +1,7 @@
 package org.example.Entidades;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
@@ -111,6 +112,7 @@ public class Ruta {
     @JoinColumn(name = "usuario_idUsuario", nullable = false)
     private Usuario usuarioIdusuario;
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<PuntoRuta> puntos = new ArrayList<>();
 
     @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
