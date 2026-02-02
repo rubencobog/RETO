@@ -9,7 +9,7 @@ namespace Modelo
     public class Waypoint:PuntoRuta
     {
         private Usuario usuario;
-        private String descripcion;
-
+        public String descripcion { get; set; }
+        public String nombre { get; set; }
     }
 }
