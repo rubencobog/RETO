@@ -18,9 +18,9 @@ namespace RetaCantabria
 {
     public partial class CatalogoRutas : Form
     {
-        
+
         private Usuario usuario;
-        public CatalogoRutas()
+        public CatalogoRutas(Usuario usuario)
         {
             this.usuario = usuario;
             InitializeComponent();
@@ -62,18 +62,18 @@ namespace RetaCantabria
             if (dgvRutas.SelectedRows.Count > 0)
             {
                 Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
-                using (FormValoracion formV= new FormValoracion())
+                using (FormValoracion formV = new FormValoracion())
                 {
-                    if(formV.ShowDialog()==DialogResult.OK)
+                    if (formV.ShowDialog() == DialogResult.OK)
                     {
                         Valoracion valoracion = new Valoracion
                         {
                             dificultad = formV.dificultad,
                             belleza = formV.belleza,
                             interesCultural = formV.interes,
-                            fecha= DateTime.Now,
-                            usuario= usuario,
-                            ruta= ruta
+                            fecha = DateTime.Now,
+                            usuario = usuario,
+                            ruta = ruta
                         };
                         var json = JsonSerializer.Serialize(valoracion);
                         var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -94,6 +94,12 @@ namespace RetaCantabria
             {
                 MessageBox.Show("Debe seleccionar una ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            CrearRuta crearRuta = new CrearRuta(usuario);
+            crearRuta.Show();
         }
     }
 }
