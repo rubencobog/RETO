@@ -76,4 +76,7 @@ public class TrackPointService implements ITrackPointService<TrackPoint, Long> {
             default -> List.of();
         };
     }
+    public List<TrackPoint> findAllByRuta(Long idRuta) {
+        return repository.findbyRuta(idRuta);
+    }
 }

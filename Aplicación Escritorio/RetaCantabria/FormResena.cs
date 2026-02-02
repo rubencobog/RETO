@@ -24,6 +24,7 @@ namespace RetaCantabria
             this.cliente = cliente;
             this.usuario = usuario;
             this.ruta = ruta;
+            lblResena.Text ="Reseña de "+ ruta.nombre;
             InitializeComponent();
         }
 
@@ -40,22 +41,27 @@ namespace RetaCantabria
 
             string json = JsonSerializer.Serialize(resena);
 
-            var content = new StringContent(
-                json,
-                Encoding.UTF8,
-                "application/json"
-            );
+            String review = txtResena.Text;
+            if (!String.IsNullOrWhiteSpace(review)) {
+                var content = new StringContent(
+                    json,
+                    Encoding.UTF8,
+                    "application/json"
+                );
 
-            HttpResponseMessage respuesta = await cliente.PostAsync(ConexionAPI.Conexion + "Resena", content);
+                HttpResponseMessage respuesta = await cliente.PostAsync(ConexionAPI.Conexion + "Resena", content);
 
-            if (respuesta.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Reseña enviada correctamente 👍");
-                Close();
-            }
-            else
-            {
-                MessageBox.Show($"Error: {respuesta.StatusCode}");
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Reseña enviada correctamente 👍");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {respuesta.StatusCode}");
+                }
+            } else {
+                MessageBox.Show("La reseña no puede estar vacía.");
             }
         }
 

@@ -10,6 +10,8 @@ namespace RetaCantabria
         [STAThread]
         static void Main()
         {
+            
+            Usuario usuario=new Usuario();
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
         }

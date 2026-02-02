@@ -3,6 +3,8 @@ package org.example.Conexion;
 import org.example.Entidades.Waypoint;
 import org.example.Servicio.WaypointService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,5 +48,10 @@ public class WaypointController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         waypointService.eliminar(id);
+    }
+
+    @GetMapping("/buscarRuta")
+    public List<Waypoint> findAllByRuta(@RequestParam long idRuta) {
+        return waypointService.findAllByRuta(idRuta);
     }
 }

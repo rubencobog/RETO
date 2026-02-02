@@ -33,6 +33,8 @@
             lblPassword = new Label();
             txtEmail = new TextBox();
             txtPassword = new TextBox();
+            btnRegistrarse = new Button();
+            lblRegistrate = new Label();
             SuspendLayout();
             // 
             // btnIniciar
@@ -79,11 +81,32 @@
             txtPassword.TabIndex = 4;
             txtPassword.UseSystemPasswordChar = true;
             // 
+            // btnRegistrarse
+            // 
+            btnRegistrarse.Location = new Point(702, 12);
+            btnRegistrarse.Name = "btnRegistrarse";
+            btnRegistrarse.Size = new Size(75, 23);
+            btnRegistrarse.TabIndex = 5;
+            btnRegistrarse.Text = "Registrarse";
+            btnRegistrarse.UseVisualStyleBackColor = true;
+            btnRegistrarse.Click += btnRegistrarse_Click;
+            // 
+            // lblRegistrate
+            // 
+            lblRegistrate.AutoSize = true;
+            lblRegistrate.Location = new Point(561, 16);
+            lblRegistrate.Name = "lblRegistrate";
+            lblRegistrate.Size = new Size(135, 15);
+            lblRegistrate.TabIndex = 6;
+            lblRegistrate.Text = "¿Eres nuevo? ¡Regístrate!";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblRegistrate);
+            Controls.Add(btnRegistrarse);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
             Controls.Add(lblPassword);
@@ -102,5 +125,7 @@
         private Label lblPassword;
         private TextBox txtEmail;
         private TextBox txtPassword;
+        private Button btnRegistrarse;
+        private Label lblRegistrate;
     }
 }

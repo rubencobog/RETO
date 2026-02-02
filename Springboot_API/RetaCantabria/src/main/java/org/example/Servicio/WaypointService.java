@@ -86,4 +86,7 @@ public class WaypointService implements IWaypointService<Waypoint, Long> {
             default -> List.of();
         };
     }
+    public List<Waypoint> findAllByRuta(Long idRuta) {
+        return repository.findByRuta(idRuta);
+    }
 }
