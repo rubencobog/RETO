@@ -39,7 +39,13 @@ namespace RetaCantabria
             else
             {
 
-                MessageBox.Show("Bienvenido " + USUARIO.nombre);
+                this.Hide();
+                CatalogoRutas catalogo = new CatalogoRutas(USUARIO);
+                catalogo.ShowDialog();
+
+
+                this.Close();
+                
 
             }
 
