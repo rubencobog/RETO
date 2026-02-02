@@ -1,6 +1,7 @@
 package com.example.retodam2rutas.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,7 +13,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
@@ -30,15 +34,17 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.example.retodam2rutas.data.daos.RutaDao
 import com.example.retodam2rutas.model.Ruta
+import com.example.retodam2rutas.views.RutaViewModel
 
 
 //================ Contenido de la ventana home =================
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun ContentHomeView(
     innerPadding: PaddingValues,
-    navController: NavController) {
+    navController: NavController,
+    rutaViewModel: RutaViewModel) {
     LazyColumn (
         modifier = Modifier
             .padding(innerPadding)
@@ -56,11 +62,46 @@ fun ContentHomeView(
                 color = Color.Black
             )
         }
+        items(rutaViewModel.rutas){
+            ruta ->
+            RutaCard(ruta, navController)
+        }
+    }
+}
+
+//================ Contenido de la ventana detail =================
+@Composable
+fun ContentDetailView(
+    innerPadding: PaddingValues,
+    navController: NavController,
+    id: Int,
+    rutaViewModel: RutaViewModel) {
+
+    rutaViewModel.cargarRuta(id)
+    var ruta = rutaViewModel.rutaSeleccionada
+
+    LazyColumn (
+        modifier = Modifier
+            .padding(innerPadding)
+            .fillMaxSize()
+            .background(Color(0x6F98CCEE)),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        item {
+            Text(
+                text = "Ruta",
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth(),
+                color = Color.Black
+            )
+        }
         item {
             Button(
-                onClick = { navController.navigate("catalogo") }
+                onClick = { navController.navigate("Mapa/${ruta?.id}") }
             ) {
-                Text("Ver Catalogo")
+                Text("Iniciar ruta")
             }
         }
     }
@@ -69,14 +110,15 @@ fun ContentHomeView(
 //================ Card de Rutas =================
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun RutaCard(ruta: Ruta, onClick: (Int) -> Unit) {
+fun RutaCard(ruta: Ruta, navController: NavController) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(8.dp)
+            .clickable { navController.navigate("Detail/${ruta.id}") },
         colors = CardColors(
             containerColor = Color.Black,
             contentColor = Color.White,
@@ -92,7 +134,7 @@ fun RutaCard(ruta: Ruta, onClick: (Int) -> Unit) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             GlideImage(
-                model = "Imagen ruta?",
+                model = Icons.Default.LocationOn,
                 contentDescription = "descripcion ruta",
                 modifier = Modifier
                     .size(80.dp)
@@ -106,19 +148,21 @@ fun RutaCard(ruta: Ruta, onClick: (Int) -> Unit) {
                 modifier = Modifier.weight(1f)
             ) {
                 Text(
-                    text = "nombre ruta",
+                    text = ruta.nombre,
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = "mas datos ¿?: ${ruta.argumento}",
+                    text = "Distancia: ${ruta.distancia}m",
                     style = MaterialTheme.typography.bodyMedium
                 )
-            }
-
-            Button(
-                onClick = { onClick(ruta.id) }
-            ) {
-                Text("Ver detalles")
+                Text(
+                    text = "Dificultad: ${ruta.nivelEsfuerzo}m",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Text(
+                    text = "Valoracion: ${ruta.mediaEstrellas}m",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
         }
     }

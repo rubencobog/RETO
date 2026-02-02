@@ -12,8 +12,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
@@ -26,13 +24,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import com.example.retodam2rutas.components.BottomNavItem
-import com.example.retodam2rutas.components.ContentHomeView
+import com.example.retodam2rutas.components.ContentDetailView
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
+fun DetailView(navController: NavController, id: Int, rutaViewModel: RutaViewModel){
     var selectedIndex by remember { mutableStateOf(0) }
     val items = listOf(
         BottomNavItem("Inicio", Icons.Default.Home),
@@ -48,23 +46,9 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
                     titleContentColor = Color(0xFFC0D1F1),
                 ),
                 title = {
-                    Text("Rutas // TSEAS")
+                    Text("Detalles // TSEAS")
                 }
             )
-        },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = {
-                    coroutineScope.launch {
-                        navController.navigate("Add")
-                    }
-                }
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "AddRuta"
-                )
-            }
         },
         bottomBar = {
             NavigationBar {
@@ -79,5 +63,5 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
             }
         }
 
-        ) { innerPadding -> ContentHomeView(innerPadding, navController, rutaViewModel) }
+    ) { innerPadding -> ContentDetailView(innerPadding, navController, id, rutaViewModel) }
 }
