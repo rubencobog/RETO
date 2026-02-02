@@ -35,10 +35,10 @@
             lblZona = new Label();
             lblRecomendaciones = new Label();
             comboTemporada = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtNombre = new TextBox();
+            txtDistancia = new TextBox();
+            txtZona = new TextBox();
+            txtRecomendaciones = new TextBox();
             gbAccesibilidad = new GroupBox();
             rbNoAccesibilidad = new RadioButton();
             rbSiAccesibilidad = new RadioButton();
@@ -52,7 +52,7 @@
             numericHoras = new NumericUpDown();
             numericMinutos = new NumericUpDown();
             numericSegundos = new NumericUpDown();
-            button1 = new Button();
+            btnGPX = new Button();
             lblDuracionHoras = new Label();
             lblDuracionMins = new Label();
             gbAccesibilidad.SuspendLayout();
@@ -125,34 +125,34 @@
             comboTemporada.Size = new Size(121, 23);
             comboTemporada.TabIndex = 9;
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(84, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 23);
-            textBox1.TabIndex = 10;
+            txtNombre.Location = new Point(84, 49);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(185, 23);
+            txtNombre.TabIndex = 10;
             // 
-            // textBox2
+            // txtDistancia
             // 
-            textBox2.Location = new Point(84, 132);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(106, 23);
-            textBox2.TabIndex = 11;
+            txtDistancia.Location = new Point(84, 132);
+            txtDistancia.Name = "txtDistancia";
+            txtDistancia.Size = new Size(106, 23);
+            txtDistancia.TabIndex = 11;
             // 
-            // textBox3
+            // txtZona
             // 
-            textBox3.Location = new Point(428, 198);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(145, 23);
-            textBox3.TabIndex = 12;
+            txtZona.Location = new Point(428, 198);
+            txtZona.Name = "txtZona";
+            txtZona.Size = new Size(145, 23);
+            txtZona.TabIndex = 12;
             // 
-            // textBox4
+            // txtRecomendaciones
             // 
-            textBox4.Location = new Point(428, 280);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(259, 114);
-            textBox4.TabIndex = 13;
+            txtRecomendaciones.Location = new Point(428, 280);
+            txtRecomendaciones.Multiline = true;
+            txtRecomendaciones.Name = "txtRecomendaciones";
+            txtRecomendaciones.Size = new Size(259, 114);
+            txtRecomendaciones.TabIndex = 13;
             // 
             // gbAccesibilidad
             // 
@@ -261,6 +261,7 @@
             btnCrear.TabIndex = 18;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // numericHoras
             // 
@@ -286,14 +287,14 @@
             numericSegundos.Size = new Size(41, 23);
             numericSegundos.TabIndex = 21;
             // 
-            // button1
+            // btnGPX
             // 
-            button1.Location = new Point(428, 411);
-            button1.Name = "button1";
-            button1.Size = new Size(114, 23);
-            button1.TabIndex = 22;
-            button1.Text = "Cargar desde GPX";
-            button1.UseVisualStyleBackColor = true;
+            btnGPX.Location = new Point(428, 411);
+            btnGPX.Name = "btnGPX";
+            btnGPX.Size = new Size(114, 23);
+            btnGPX.TabIndex = 22;
+            btnGPX.Text = "Cargar desde GPX";
+            btnGPX.UseVisualStyleBackColor = true;
             // 
             // lblDuracionHoras
             // 
@@ -320,7 +321,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(lblDuracionMins);
             Controls.Add(lblDuracionHoras);
-            Controls.Add(button1);
+            Controls.Add(btnGPX);
             Controls.Add(numericSegundos);
             Controls.Add(numericMinutos);
             Controls.Add(numericHoras);
@@ -328,10 +329,10 @@
             Controls.Add(gbClasificacion);
             Controls.Add(gbAccesibilidad);
             Controls.Add(gbFamiliar);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtRecomendaciones);
+            Controls.Add(txtZona);
+            Controls.Add(txtDistancia);
+            Controls.Add(txtNombre);
             Controls.Add(comboTemporada);
             Controls.Add(lblRecomendaciones);
             Controls.Add(lblZona);
@@ -366,10 +367,10 @@
         private Label lblZona;
         private Label lblRecomendaciones;
         private ComboBox comboTemporada;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtNombre;
+        private TextBox txtDistancia;
+        private TextBox txtZona;
+        private TextBox txtRecomendaciones;
         private GroupBox gbAccesibilidad;
         private GroupBox gbFamiliar;
         private RadioButton rbNoAccesibilidad;
@@ -383,7 +384,7 @@
         private NumericUpDown numericHoras;
         private NumericUpDown numericMinutos;
         private NumericUpDown numericSegundos;
-        private Button button1;
+        private Button btnGPX;
         private Label lblDuracionHoras;
         private Label lblDuracionMins;
     }
