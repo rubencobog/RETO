@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -112,13 +113,15 @@ public class Ruta {
     @JoinColumn(name = "usuario_idUsuario", nullable = false)
     private Usuario usuarioIdusuario;
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonManagedReference("ruta-puntos")
     private List<PuntoRuta> puntos = new ArrayList<>();
 
     @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
+    @JsonManagedReference("valoraciones-ruta")
     private List<Valoracion>valoraciones=new ArrayList<>();
 
     @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
+    @JsonManagedReference("resenas-ruta")
     private List<Resena>resenas=new ArrayList<>();
 
     public Ruta() {

@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -32,9 +33,11 @@ public class Usuario {
     private TIPOUSUARIO rol;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("valoraciones-usuario")
     private List<Valoracion> valoraciones=new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("resenas-usuario")
     private List<Resena> resenas=new ArrayList<>();
 
     public Usuario() {

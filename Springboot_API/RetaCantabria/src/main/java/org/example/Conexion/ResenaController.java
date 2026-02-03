@@ -56,6 +56,9 @@ public class ResenaController {
 
     @PostMapping
     public Resena create(@RequestBody ResenaDTO resenadto) {
+        if (resenadto.idUsuario() == null || resenadto.idRuta() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "idUsuario o idRuta es null");
+        }
         Usuario usuario = usuarioService.buscarPorID(resenadto.idUsuario())
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Usuario no encontrado"

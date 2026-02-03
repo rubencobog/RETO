@@ -20,7 +20,7 @@ public abstract class PuntoRuta {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "idRuta")
-    @JsonBackReference
+    @JsonBackReference("ruta-puntos")
     private Ruta ruta;
 
     public PuntoRuta() {
