@@ -21,6 +21,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import org.osmdroid.config.Configuration
 
 class MainActivity : ComponentActivity() {
 
@@ -33,6 +34,7 @@ class MainActivity : ComponentActivity() {
         val prefs = PreferencesManager(applicationContext)
         val database = DatabaseProvider.getDatabase(this)
         val rutaViewModel = RutaViewModel(database, prefs)
+        Configuration.getInstance().userAgentValue = packageName
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         mapViewModel = MapViewModel(fusedLocationClient)
 
