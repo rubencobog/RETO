@@ -73,7 +73,7 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
                         icon = { Icon(item.icon, contentDescription = item.label) },
                         label = { Text(item.label) },
                         selected = selectedIndex == index,
-                        onClick = { selectedIndex = index }
+                        onClick = { navController.navigate("Add") }
                     )
                 }
             }

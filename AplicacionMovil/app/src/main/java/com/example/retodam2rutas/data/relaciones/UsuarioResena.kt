@@ -13,5 +13,5 @@ data class UsuarioResena(
         parentColumn = "idUsuario",
         entityColumn = "usuarioId"
     )
-    val valoraciones: List<Resena>
+    val resena: List<Resena>
 )

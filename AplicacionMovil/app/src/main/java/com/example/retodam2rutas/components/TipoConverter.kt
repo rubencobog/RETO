@@ -5,6 +5,8 @@ import com.example.retodam2rutas.model.CLASIFICACION
 import com.example.retodam2rutas.model.TIPOUSUARIO
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class TipoConverter {
 
@@ -48,4 +50,18 @@ class TipoConverter {
     @TypeConverter
     fun toLocalDate(value: String?): LocalDate? =
         value?.let { LocalDate.parse(it) }
+
+    //================ Converter de LocalTime =================
+
+    private val formatter = DateTimeFormatter.ISO_LOCAL_TIME
+
+    @TypeConverter
+    fun fromLocalTime(time: LocalTime?): String? {
+        return time?.format(formatter)
+    }
+
+    @TypeConverter
+    fun toLocalTime(timeString: String?): LocalTime? {
+        return timeString?.let { LocalTime.parse(it, formatter) }
+    }
 }
