@@ -15,11 +15,10 @@ namespace RetaCantabria
 {
     public partial class GestionUsuarios : Form
     {
-        private readonly HttpClient cliente;
-        public GestionUsuarios(HttpClient cliente)
+        private readonly HttpClient cliente=ConexionAPI.CLIENTE;
+        public GestionUsuarios()
         {
             InitializeComponent();
-            this.cliente = cliente;
             this.Load += GestionUsuarios_Load;
         }
 

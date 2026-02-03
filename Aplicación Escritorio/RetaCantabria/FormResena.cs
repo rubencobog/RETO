@@ -43,16 +43,7 @@ namespace RetaCantabria
                 fecha = DateOnly.FromDateTime(DateTime.Now)
                 };
 
-            string json = JsonSerializer.Serialize(resena);
-
-                var content = new StringContent(
-                    json,
-                    Encoding.UTF8,
-                    "application/json"
-                );
-                MessageBox.Show(json);
-
-                HttpResponseMessage respuesta = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "resena", content);
+                HttpResponseMessage respuesta = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "resena", resena);
 
                 if (respuesta.IsSuccessStatusCode)
                 {
