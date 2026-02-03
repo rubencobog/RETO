@@ -1,11 +1,13 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
@@ -21,35 +23,27 @@ namespace RetaCantabria
         private Ruta ruta;
         public FormResena(Usuario usuario, Ruta ruta, HttpClient cliente)
         {
+            InitializeComponent();
             this.cliente = cliente;
             this.usuario = usuario;
             this.ruta = ruta;
-            lblResena.Text ="Reseña de "+ ruta.nombre;
-            InitializeComponent();
+            lblResena.Text = "Reseña de " + ruta.nombre;
         }
 
         private async void btnEnviar_Click(object sender, EventArgs e)
         {
             String resenatext = txtResena.Text;
-            Resena resena = new Resena
+            if (!String.IsNullOrWhiteSpace(resenatext))
             {
+                ResenaDTO resena = new ResenaDTO
+            {
+                    idRuta = ruta.idRuta,
+                idUsuario = usuario.idUsuario,
                 resena = resenatext,
-                fecha = DateOnly.FromDateTime(DateTime.Now),
-                usuario = this.usuario,
-                ruta = this.ruta
-            };
+                fecha = DateOnly.FromDateTime(DateTime.Now)
+                };
 
-            string json = JsonSerializer.Serialize(resena);
-
-            String review = txtResena.Text;
-            if (!String.IsNullOrWhiteSpace(review)) {
-                var content = new StringContent(
-                    json,
-                    Encoding.UTF8,
-                    "application/json"
-                );
-
-                HttpResponseMessage respuesta = await cliente.PostAsync(ConexionAPI.Conexion + "Resena", content);
+                HttpResponseMessage respuesta = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "resena", resena);
 
                 if (respuesta.IsSuccessStatusCode)
                 {

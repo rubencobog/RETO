@@ -6,6 +6,7 @@ import org.example.Logica.RutaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -20,6 +21,10 @@ public class RutaService implements IRutaService<Ruta, Long> {
     @Override
     public Ruta crear(Ruta ruta) {
         return repository.save(ruta);
+    }
+
+    public Optional<Ruta> buscarPorId(Long id){
+        return repository.findById(id);
     }
 
     @Override

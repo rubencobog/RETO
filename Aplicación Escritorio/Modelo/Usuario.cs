@@ -4,7 +4,7 @@ namespace Modelo
 {
     public class Usuario
     {
-        public int idUsuario { get; set; }
+        public long idUsuario { get; set; }
         public String nombre { get; set; }
         public String apellido { get; set; }
         public String email { get; set; }

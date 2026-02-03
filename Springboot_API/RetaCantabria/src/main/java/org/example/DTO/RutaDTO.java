@@ -5,8 +5,8 @@ import org.example.Entidades.Ruta;
 import java.time.LocalTime;
 
 public record RutaDTO(
-        Integer idRuta,
-        Integer idUsuario,
+        Long idRuta,
+        Long idUsuario,
         String nombre,
         String nombreInicioruta,
         String nombreFinalruta,

@@ -34,7 +34,11 @@
             btnValorar = new Button();
             btnDescarga = new Button();
             btnCrear = new Button();
+            panelAdmin = new Panel();
+            btnUsuarios = new Button();
+            btnValidar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
+            panelAdmin.SuspendLayout();
             SuspendLayout();
             // 
             // dgvRutas
@@ -93,11 +97,41 @@
             btnCrear.UseVisualStyleBackColor = true;
             btnCrear.Click += btnCrear_Click;
             // 
+            // panelAdmin
+            // 
+            panelAdmin.Controls.Add(btnUsuarios);
+            panelAdmin.Location = new Point(34, 0);
+            panelAdmin.Name = "panelAdmin";
+            panelAdmin.Size = new Size(140, 34);
+            panelAdmin.TabIndex = 6;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.Location = new Point(3, 3);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(135, 28);
+            btnUsuarios.TabIndex = 0;
+            btnUsuarios.Text = "Gestionar Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
+            // 
+            // btnValidar
+            // 
+            btnValidar.Location = new Point(296, 401);
+            btnValidar.Name = "btnValidar";
+            btnValidar.Size = new Size(115, 23);
+            btnValidar.TabIndex = 7;
+            btnValidar.Text = "Validar Ruta";
+            btnValidar.UseVisualStyleBackColor = true;
+            btnValidar.Click += btnValidar_Click;
+            // 
             // CatalogoRutas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnValidar);
+            Controls.Add(panelAdmin);
             Controls.Add(btnCrear);
             Controls.Add(btnDescarga);
             Controls.Add(btnValorar);
@@ -107,6 +141,7 @@
             Name = "CatalogoRutas";
             Text = "Catálogo";
             ((System.ComponentModel.ISupportInitialize)dgvRutas).EndInit();
+            panelAdmin.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -119,5 +154,8 @@
         private Button btnValorar;
         private Button btnDescarga;
         private Button btnCrear;
+        private Panel panelAdmin;
+        private Button btnUsuarios;
+        private Button btnValidar;
     }
 }
