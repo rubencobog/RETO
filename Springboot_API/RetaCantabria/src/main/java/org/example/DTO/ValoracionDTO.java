@@ -5,8 +5,8 @@ import org.example.Entidades.Valoracion;
 import java.time.LocalDateTime;
 
 public record ValoracionDTO(
-        Integer idRuta,
-        Integer idUsuario,
+        Long idRuta,
+        Long idUsuario,
         Integer dificultad,
         Integer belleza,
         Integer interesCultural,

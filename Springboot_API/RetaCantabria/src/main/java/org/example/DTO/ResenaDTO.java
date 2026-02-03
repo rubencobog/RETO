@@ -5,8 +5,8 @@ import org.example.Entidades.Resena;
 import java.time.LocalDate;
 
 public record ResenaDTO(
-        Integer idRuta,
-        Integer idUsuario,
+        Long idRuta,
+        Long idUsuario,
         String resena,
         LocalDate fecha
 ) {

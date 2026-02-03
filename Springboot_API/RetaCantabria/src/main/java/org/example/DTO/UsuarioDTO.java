@@ -4,7 +4,7 @@ import org.example.Entidades.TIPOUSUARIO;
 import org.example.Entidades.Usuario;
 
 public record UsuarioDTO(
-        Integer idUsuario,
+        Long idUsuario,
         String nombre,
         String apellido,
         String email,

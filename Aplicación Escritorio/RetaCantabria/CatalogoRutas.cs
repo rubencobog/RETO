@@ -22,8 +22,8 @@ namespace RetaCantabria
         private Usuario usuario;
         public CatalogoRutas(Usuario usuario)
         {
-            this.usuario = usuario;
             InitializeComponent();
+            this.usuario = usuario;
             this.Load += CatalogoRutas_Load;
             gestorPermisos(usuario.rol);
         }
@@ -49,7 +49,7 @@ namespace RetaCantabria
             if (dgvRutas.SelectedRows.Count > 0)
             {
                 Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
-                FormResena formResena = new FormResena(usuario, ruta, ConexionAPI.CLIENTE);
+                FormResena formResena = new FormResena(this.usuario, ruta, ConexionAPI.CLIENTE);
                 formResena.ShowDialog();
             }
             else
