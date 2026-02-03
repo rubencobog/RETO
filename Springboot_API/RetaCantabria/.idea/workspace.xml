@@ -5,31 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc670dea-404c-47f2-ad2f-ac2adcc8a5ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/BottonNavItem.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/TipoConverter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/daos/RutaDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/database/AppDatabase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/CLASIFICACION.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/TIPOUSUARIO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Usuario.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/UsuarioValoracion.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Valoracion.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Waypoint.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/RutasList.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Ruta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Ruta.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/navigation/NavManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/navigation/NavManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/HomeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/HomeView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Conexion/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Conexion/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entidades/Ruta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entidades/Ruta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entidades/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Logica/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Logica/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servicio/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servicio/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -45,15 +40,30 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Develop-Fabian",
+    "Spring Boot.RetaCantabria.executor": "Run",
+    "git-widget-placeholder": "Develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Usuarios/DAM205/Documents/GitHub/RETO/Springboot_API/RetaCantabria",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="RetaCantabria" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="RetaCantabria" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.RetaCantabria" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
