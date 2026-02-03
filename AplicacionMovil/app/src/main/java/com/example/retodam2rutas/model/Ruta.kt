@@ -1,6 +1,5 @@
 package com.example.retodam2rutas.model
 
-import androidx.annotation.InspectableProperty
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
