@@ -23,7 +23,6 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
 
     @Override
     public Usuario crear(Usuario usuario) {
-        usuario.setPassword(encoder.encode(usuario.getPassword()));
         return repository.save(usuario);
     }
 
@@ -38,7 +37,7 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
             existente.setNombre(usuario.getNombre());
             existente.setApellido(usuario.getApellido());
             existente.setEmail(usuario.getEmail());
-            usuario.setPassword(encoder.encode(usuario.getPassword()));
+            usuario.setPassword(usuario.getPassword());
             existente.setRol(usuario.getRol());
             return repository.save(existente);
         }
@@ -83,7 +82,7 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
     }
     public Usuario buscarUsuario(String email , String password) {
         return repository.findAll().stream().
-                filter(u->u.getEmail().equalsIgnoreCase(email)&&encoder.matches(password,u.getPassword()))
+                filter(u->u.getEmail().equalsIgnoreCase(email)&&u.getPassword().equalsIgnoreCase(password))
                 .findFirst().orElse(null);
     }
     public Usuario buscarUsuario(long idUsuario) {
