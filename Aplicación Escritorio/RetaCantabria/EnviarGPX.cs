@@ -73,6 +73,10 @@ namespace RetaCantabria
                 archivoGPX = new MemoryStream(bytes);
                 MessageBox.Show($"Archivo cargado correctamente. Tamaño: {archivoGPX.Length} bytes");
             }
+            else
+            {
+                MessageBox.Show("No se seleccionó ningún archivo.");
+            }
         }
         private async void button2_Click(object sender, EventArgs e)
         {
@@ -180,22 +184,7 @@ namespace RetaCantabria
 
             nombreArchivo = Path.GetFileName(rutaArchivo);
             archivoGPX = new MemoryStream(File.ReadAllBytes(rutaArchivo));
-        }
-        public void guardarDatos()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos de texto y GPX|*.txt;*.gpx";
-            openFileDialog.Title = "Seleccionar archivo";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                rutaArchivo = openFileDialog.FileName;
-                nombreArchivo = Path.GetFileName(rutaArchivo);
-                contenido = System.IO.File.ReadAllText(rutaArchivo);
-                textBox1.Text = contenido;
-                byte[] bytes = File.ReadAllBytes(rutaArchivo);
-                archivoGPX = new MemoryStream(bytes);
-                MessageBox.Show($"Archivo cargado correctamente. Tamaño: {archivoGPX.Length} bytes");
-            }
+            MessageBox.Show($"Archivo creado correctamente en {rutaArchivo}, nombre: {nombreArchivo}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         async Task EnviarArchivo()
         {
