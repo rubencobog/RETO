@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -15,10 +16,12 @@ public class Resena {
     private LocalDate fecha;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idUsuario", nullable = false)
+    @JsonBackReference("resenas-usuario")
     private Usuario usuario;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idRuta", nullable = false)
+    @JsonBackReference("resenas-ruta")
     private Ruta ruta;
 
     public Resena() {

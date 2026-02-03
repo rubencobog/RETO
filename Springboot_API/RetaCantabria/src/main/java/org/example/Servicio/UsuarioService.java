@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -23,6 +24,10 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
     @Override
     public Usuario crear(Usuario usuario) {
         return repository.save(usuario);
+    }
+
+    public Optional<Usuario> buscarPorID(Long id){
+        return repository.findById(id);
     }
 
     @Override

@@ -9,7 +9,7 @@ namespace Modelo
 {
     public class Ruta
     {
-        public int idRuta { get; set; }
+        public long idRuta { get; set; }
         public String nombre { get; set; }
         public String nombreInicioruta { get; set; }
 

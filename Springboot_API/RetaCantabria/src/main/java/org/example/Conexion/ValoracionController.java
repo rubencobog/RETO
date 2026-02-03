@@ -1,10 +1,16 @@
 package org.example.Conexion;
 
 import org.example.DTO.ValoracionDTO;
+import org.example.Entidades.Ruta;
+import org.example.Entidades.Usuario;
 import org.example.Entidades.Valoracion;
+import org.example.Servicio.RutaService;
+import org.example.Servicio.UsuarioService;
 import org.example.Servicio.ValoracionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -13,10 +19,14 @@ import java.util.List;
 public class ValoracionController {
 
     private final ValoracionService valoracionService;
+    private final RutaService rutaService;
+    private final UsuarioService usuarioService;
 
     @Autowired
-    public ValoracionController(ValoracionService valoracionService) {
+    public ValoracionController(ValoracionService valoracionService,RutaService rutaService,UsuarioService usuarioService) {
         this.valoracionService = valoracionService;
+        this.rutaService=rutaService;
+        this.usuarioService=usuarioService;
     }
 
     @GetMapping("/test")
@@ -43,7 +53,21 @@ public class ValoracionController {
     }
 
     @PostMapping
-    public Valoracion create(@RequestBody Valoracion valoracion) {
+    public Valoracion create(@RequestBody ValoracionDTO valoracionDTO) {
+        Ruta ruta=rutaService.buscarPorId(valoracionDTO.idRuta()).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Ruta no encontrada"));
+
+        Usuario usuario=usuarioService.buscarPorID(valoracionDTO.idUsuario()).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Usuario no encontrado"));
+
+        Valoracion valoracion=new Valoracion();
+        valoracion.setRuta(ruta);
+        valoracion.setUsuario(usuario);
+        valoracion.setDificultad(valoracionDTO.dificultad());
+        valoracion.setBelleza(valoracionDTO.belleza());
+        valoracion.setInteresCultural(valoracionDTO.interesCultural());
+        valoracion.setFecha(valoracionDTO.fecha().toLocalDateTime());
+
         return valoracionService.crear(valoracion);
     }
 

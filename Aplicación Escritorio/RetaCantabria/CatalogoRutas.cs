@@ -22,8 +22,8 @@ namespace RetaCantabria
         private Usuario usuario;
         public CatalogoRutas(Usuario usuario)
         {
-            this.usuario = usuario;
             InitializeComponent();
+            this.usuario = usuario;
             this.Load += CatalogoRutas_Load;
             gestorPermisos(usuario.rol);
         }
@@ -37,8 +37,32 @@ namespace RetaCantabria
         {
 
             var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
+            List<Ruta> rutasValidadas = new List<Ruta>();
+            foreach (var ruta in rutas)
+            {
+                if (ruta.estadoRuta == true)
+                {
+                    rutasValidadas.Add(ruta);
+                }
+            }
+            if (this.usuario.rol == TIPOUSUARIO.administrador)
+            {
+                dgvRutas.DataSource = rutas;
+
+                foreach (DataGridViewRow row in dgvRutas.Rows)
+                {
+                    if ((bool)row.Cells["estadoRuta"].Value == false)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Coral;
+                    }
+                }
+            }
+            else
+            {
+                dgvRutas.DataSource = rutasValidadas;
+            }
+
             dgvRutas.AutoGenerateColumns = true;
-            dgvRutas.DataSource = rutas;
             dgvRutas.Columns.RemoveAt(0);
             dgvRutas.ReadOnly = true;
             dgvRutas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -49,7 +73,7 @@ namespace RetaCantabria
             if (dgvRutas.SelectedRows.Count > 0)
             {
                 Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
-                FormResena formResena = new FormResena(usuario, ruta, ConexionAPI.CLIENTE);
+                FormResena formResena = new FormResena(this.usuario, ruta, ConexionAPI.CLIENTE);
                 formResena.ShowDialog();
             }
             else
@@ -67,25 +91,24 @@ namespace RetaCantabria
                 {
                     if (formV.ShowDialog() == DialogResult.OK)
                     {
-                        Valoracion valoracion = new Valoracion
+                        valoracionDTO valoracion = new valoracionDTO
                         {
+                            idRuta = ruta.idRuta,
+                            idUsuario = usuario.idUsuario,
                             dificultad = formV.dificultad,
                             belleza = formV.belleza,
                             interesCultural = formV.interes,
-                            fecha = DateTime.Now,
-                            usuario = usuario,
-                            ruta = ruta
+                            fecha = DateTime.Now
+
                         };
-                        var json = JsonSerializer.Serialize(valoracion);
-                        var content = new StringContent(json, Encoding.UTF8, "application/json");
-                        var response = await ConexionAPI.CLIENTE.PostAsync(ConexionAPI.Conexion + "valoracion", content);
+                        var response = await ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "valoracion", valoracion);
                         if (response.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Valoración enviada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Error al enviar la valoración", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error al enviar la valoración" + response.ReasonPhrase, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 
@@ -109,23 +132,62 @@ namespace RetaCantabria
             switch (permiso)
             {
                 case TIPOUSUARIO.administrador:
-                                                    
+
                     break;
                 case TIPOUSUARIO.diseñador:
-
-
+                    btnValidar.Hide();
+                    panelAdmin.Hide();
                     break;
                 case TIPOUSUARIO.profesor:
-
+                    btnValidar.Hide();
+                    panelAdmin.Hide();
                     break;
                 case TIPOUSUARIO.alumno:
+                    btnValidar.Hide();
+                    panelAdmin.Hide();
                     btnDescarga.Hide();
                     btnCrear.Hide();
                     break;
                 default:
-                    //usuario normal
+                    btnValidar.Hide();
+                    panelAdmin.Hide();
+                    btnDescarga.Hide();
+                    btnCrear.Hide();
+                    btnValorar.Hide();
+                    btnResena.Hide();
                     break;
-                 
+            }
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            GestionUsuarios gestionUsuarios = new GestionUsuarios();
+            gestionUsuarios.ShowDialog();
+        }
+
+        private async void btnValidar_Click(object sender, EventArgs e)
+        {
+            if (dgvRutas.SelectedRows.Count > 0)
+            {
+                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                if (ruta.estadoRuta)
+                {
+                    MessageBox.Show("La ruta ya está validada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ruta.estadoRuta = true;
+                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.idRuta, ruta).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Ruta validada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await CargarGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al validar la ruta: " + response.ReasonPhrase, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

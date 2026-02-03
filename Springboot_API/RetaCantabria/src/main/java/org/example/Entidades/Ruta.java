@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -17,7 +18,7 @@ public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idRuta", nullable = false)
-    private Integer idRuta;
+    private Long idRuta;
 
     @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
@@ -112,19 +113,21 @@ public class Ruta {
     @JoinColumn(name = "usuario_idUsuario", nullable = false)
     private Usuario usuarioIdusuario;
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonManagedReference("ruta-puntos")
     private List<PuntoRuta> puntos = new ArrayList<>();
 
     @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
+    @JsonManagedReference("valoraciones-ruta")
     private List<Valoracion>valoraciones=new ArrayList<>();
 
     @OneToMany(mappedBy = "ruta",cascade = CascadeType.ALL,orphanRemoval = true)
+    @JsonManagedReference("resenas-ruta")
     private List<Resena>resenas=new ArrayList<>();
 
     public Ruta() {
     }
 
-    public Ruta(Integer idRuta, String nombre, String nombreInicioruta, String nombreFinalruta, Double latitudInicial, Double latitudFinal, Double longitudInicial, Double longitudFinal, Double distancia, LocalTime duracion, Integer desnivelPositivo, Integer desnivelNegativo, Integer desnivelAcumulado, Double altitudMax, Double altitudMin, CLASIFICACION clasificacion, Byte nivelEsfuerzo, Byte nivelRiesgo, boolean estadoRuta, Byte tipoTerreno, Byte indicaciones, String temporadas, boolean accesibilidad, boolean rutaFamiliar, String archivoGPX, String recomendacionesEquipo, String zonaGeografica, Double mediaEstrellas, Usuario usuarioIdusuario, List<PuntoRuta> puntos, List<Valoracion> valoraciones, List<Resena> resenas) {
+    public Ruta(Long idRuta, String nombre, String nombreInicioruta, String nombreFinalruta, Double latitudInicial, Double latitudFinal, Double longitudInicial, Double longitudFinal, Double distancia, LocalTime duracion, Integer desnivelPositivo, Integer desnivelNegativo, Integer desnivelAcumulado, Double altitudMax, Double altitudMin, CLASIFICACION clasificacion, Byte nivelEsfuerzo, Byte nivelRiesgo, boolean estadoRuta, Byte tipoTerreno, Byte indicaciones, String temporadas, boolean accesibilidad, boolean rutaFamiliar, String archivoGPX, String recomendacionesEquipo, String zonaGeografica, Double mediaEstrellas, Usuario usuarioIdusuario, List<PuntoRuta> puntos, List<Valoracion> valoraciones, List<Resena> resenas) {
         this.idRuta = idRuta;
         this.nombre = nombre;
         this.nombreInicioruta = nombreInicioruta;
@@ -159,11 +162,11 @@ public class Ruta {
         this.resenas = resenas;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return idRuta;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.idRuta = id;
     }
 
@@ -399,11 +402,11 @@ public class Ruta {
         this.puntos = puntos;
     }
 
-    public Integer getIdRuta() {
+    public Long getIdRuta() {
         return idRuta;
     }
 
-    public void setIdRuta(Integer idRuta) {
+    public void setIdRuta(Long idRuta) {
         this.idRuta = idRuta;
     }
 

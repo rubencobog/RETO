@@ -19,6 +19,9 @@ public class ResenaService implements IResenaService<Resena, Long> {
 
     @Override
     public Resena crear(Resena resena) {
+        if(resena==null){
+            System.out.println("fallo en la reseña");
+        }
         return repository.save(resena);
     }
 

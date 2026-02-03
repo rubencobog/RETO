@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -12,7 +13,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUsuario", nullable = false)
-    private Integer idUsuario;
+    private Long idUsuario;
 
     @Column(name = "nombre", nullable = false, length = 20)
     private String nombre;
@@ -32,15 +33,17 @@ public class Usuario {
     private TIPOUSUARIO rol;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("valoraciones-usuario")
     private List<Valoracion> valoraciones=new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("resenas-usuario")
     private List<Resena> resenas=new ArrayList<>();
 
     public Usuario() {
     }
 
-    public Usuario(Integer idUsuario, String nombre, String apellido, String email, String password, TIPOUSUARIO rol, List<Valoracion> valoraciones, List<Resena> resenas) {
+    public Usuario(Long idUsuario, String nombre, String apellido, String email, String password, TIPOUSUARIO rol, List<Valoracion> valoraciones, List<Resena> resenas) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -51,11 +54,11 @@ public class Usuario {
         this.resenas = resenas;
     }
 
-    public Integer getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

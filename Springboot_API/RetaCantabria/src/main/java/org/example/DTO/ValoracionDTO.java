@@ -3,14 +3,16 @@ package org.example.DTO;
 import org.example.Entidades.Valoracion;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 public record ValoracionDTO(
-        Integer idRuta,
-        Integer idUsuario,
+        Long idRuta,
+        Long idUsuario,
         Integer dificultad,
         Integer belleza,
         Integer interesCultural,
-        LocalDateTime fecha
+        OffsetDateTime fecha
 ) {
     public ValoracionDTO(Valoracion val) {
         this(
@@ -19,7 +21,7 @@ public record ValoracionDTO(
                 val.getDificultad(),
                 val.getBelleza(),
                 val.getInteresCultural(),
-                val.getFecha()
+                OffsetDateTime.of(val.getFecha(), ZoneOffset.of("-08:00"))
         );
     }
 }
