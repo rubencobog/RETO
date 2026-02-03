@@ -23,7 +23,7 @@ public class Usuario {
     @Column(name = "email", nullable = false, length = 30)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 32)
+    @Column(name = "password", nullable = false, columnDefinition = "TEXT")
     private String password;
 
     @ColumnDefault("'alumno'")

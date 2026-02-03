@@ -19,7 +19,7 @@ public class Ruta {
     @Column(name = "idRuta", nullable = false)
     private Integer idRuta;
 
-    @Column(name = "nombre", nullable = false, length = 20)
+    @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
 
     @Column(name = "nombre_inicioruta",columnDefinition = "VARCHAR(45) DEFAULT 'Inicio'",  length = 45)
