@@ -104,7 +104,10 @@ namespace RetaCantabria
                     {
                      crearArchivodesde0();
                     }
-                    return;
+                    else
+                    {
+                     return;
+                    }         
             }
             if(rutaArchivo!=null) {
                 await EnviarArchivo();

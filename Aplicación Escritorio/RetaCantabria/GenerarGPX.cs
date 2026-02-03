@@ -26,10 +26,10 @@ namespace RetaCantabria
         {
             HttpClient httpClient = new HttpClient();
             var nombreRuta = "";
-            var emailUsuario = "";
             DateTime time = DateTime.Now;
             long idRuta = 1;
-            List<Waypoint> wayPoints = await httpClient.GetFromJsonAsync<List<Waypoint>>($"http://192.168.6.1:5050/api/waypoint/buscarRuta?idRuta={idRuta}");
+            Usuario usuario = await httpClient.GetFromJsonAsync<Usuario>($"http://192.168.6.1:5050/api/usuario/buscaUsu?idUsuario={idRuta}");
+            List <Waypoint> wayPoints = await httpClient.GetFromJsonAsync<List<Waypoint>>($"http://192.168.6.1:5050/api/waypoint/buscarRuta?idRuta={idRuta}");
             List<TrackPoint> trackPoints = await httpClient.GetFromJsonAsync<List<TrackPoint>>($"http://192.168.6.1:5050/api/trackpoint/buscarRuta?idRuta={idRuta}");
             String gpx = $"""
                                 <?xml version="1.0" encoding="utf-8"?>
@@ -42,7 +42,7 @@ namespace RetaCantabria
                     <tipoRegistro>InfoGeneral</tipoRegistro>
                 		<nombreRuta>{nombreRuta}</nombreRuta>
                 		<enlaceWikiloc>www.rutas.es</enlaceWikiloc>
-                        <author>{emailUsuario}</author>
+                        <author>{usuario.email}</author>
                 		<fechaCreacionGPX>{time}</fechaCreacionGPX>
                 </metadata>
                 """;
@@ -64,6 +64,7 @@ namespace RetaCantabria
                     </trk>
                     """;
             }
+
             MessageBox.Show(gpx);
         }
 
