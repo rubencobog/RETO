@@ -35,7 +35,7 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
             existente.setNombre(usuario.getNombre());
             existente.setApellido(usuario.getApellido());
             existente.setEmail(usuario.getEmail());
-            usuario.setPassword(usuario.getPassword());
+            existente.setPassword(usuario.getPassword());
             existente.setRol(usuario.getRol());
             return repository.save(existente);
         }
