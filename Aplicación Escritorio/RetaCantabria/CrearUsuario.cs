@@ -105,6 +105,10 @@ namespace RetaCantabria
         {
             if (!esNuevo)
             {
+                txtNombre.Text = usuario.nombre;
+                txtApellido.Text = usuario.apellido;
+                txtEmail.Text = usuario.email;
+                txtPassword.Text = usuario.password;
                 btnRegistrar.Text = "Actualizar";
             }
             else
