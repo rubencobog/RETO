@@ -1,5 +1,6 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,27 +29,83 @@ namespace RetaCantabria
         {
             if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
             {
-                var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Valoracion>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.idRuta);
-                if(valoraciones != null)
-                {
-                    dgvValRes.DataSource = valoraciones;
-                    dgvValRes.Columns["id"].Visible = false;
-                    dgvValRes.AutoGenerateColumns = true;
-                }
+               await CargarValoracionesAsync();
 
             }
             else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
             {
-                var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Resena>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.idRuta);
-                if (resenas != null)
+               await CargarResenasAsync();
+            }
+        }
+        private async Task CargarValoracionesAsync()
+        {
+            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Valoracion>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.idRuta);
+            if (valoraciones != null)
+            {
+                dgvValRes.DataSource = valoraciones;
+                dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvValRes.MultiSelect = false;
+                dgvValRes.Columns["id"].Visible = false;
+                dgvValRes.AutoGenerateColumns = true;
+            }
+        }
+
+        private async Task CargarResenasAsync()
+        {
+            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.idRuta);
+            if (resenas != null)
+            {
+                dgvValRes.DataSource = resenas;
+                dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvValRes.MultiSelect = false;
+                dgvValRes.Columns["idResena"].Visible = false;
+                dgvValRes.AutoGenerateColumns = true;
+            }
+        }
+
+        private async void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (dgvValRes.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione una valoración o reseña para eliminar.");
+            }
+                try
                 {
-                    dgvValRes.DataSource = resenas;
-                    dgvValRes.Columns["idResena"].Visible = false;
-                    dgvValRes.AutoGenerateColumns = true;
+                    if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
+                    {
+                        Valoracion valoracion = dgvValRes.CurrentRow.DataBoundItem as Valoracion;
+                        HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "valoracion/" + valoracion.id);
+                        if (respuesta.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Valoración eliminada correctamente.");
+                            await CargarValoracionesAsync();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar la valoración. " + respuesta.ReasonPhrase);
+                        }
+
+                    }
+                    else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
+                    {
+                        ResenaDevueltaDTO resena = dgvValRes.CurrentRow.DataBoundItem as ResenaDevueltaDTO;
+                        HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "resena/" + resena.idResena);
+                        if (respuesta.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Reseña eliminada correctamente.");
+                            await CargarResenasAsync();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar la reseña. " + respuesta.ReasonPhrase);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
             }
-
         }
     }
-}
 
