@@ -47,4 +47,9 @@ public class PuntoPeligroController {
     public void delete(@PathVariable Long id) {
         puntoPeligroService.eliminar(id);
     }
+
+    @GetMapping("/buscaPP")
+    public List<PuntoPeligro> buscarppruta(@RequestParam Long id){
+        return puntoPeligroService.puntospeligroRuta(id);
+    }
 }
