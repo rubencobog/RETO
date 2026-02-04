@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http.Json;
@@ -27,16 +28,26 @@ namespace RetaCantabria
         {
             if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
             {
-                var valoraciones=await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Valoracion>>(ConexionAPI.Conexion + "buscar"+ruta.idRuta);
-
-
-            }
-            else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
+                var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Valoracion>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.idRuta);
+                if(valoraciones != null)
                 {
-
+                    dgvValRes.DataSource = valoraciones;
+                    dgvValRes.Columns["id"].Visible = false;
+                    dgvValRes.AutoGenerateColumns = true;
                 }
 
             }
+            else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
+            {
+                var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Resena>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.idRuta);
+                if (resenas != null)
+                {
+                    dgvValRes.DataSource = resenas;
+                    dgvValRes.Columns["idResena"].Visible = false;
+                    dgvValRes.AutoGenerateColumns = true;
+                }
+            }
+
         }
     }
 }

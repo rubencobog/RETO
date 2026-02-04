@@ -49,6 +49,12 @@ public class ResenaController {
                 .toList();
     }
 
+    @GetMapping("/buscar/{idRuta}")
+    public ResponseEntity<List<Resena>>buscarPorRuta(@PathVariable long idRuta){
+        List<Resena>resenas=resenaService.obtenerResenasPorRuta(idRuta);
+        return ResponseEntity.ok(resenas);
+    }
+
     @GetMapping("/buscar")
     public List<Resena> buscar(@RequestParam String campo, @RequestParam String valor) {
         return resenaService.buscar(campo, valor);

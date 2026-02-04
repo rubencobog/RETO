@@ -3,8 +3,6 @@ package org.example.Servicio;
 import jakarta.transaction.Transactional;
 import org.example.Entidades.Usuario;
 import org.example.Logica.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +13,6 @@ import java.util.Optional;
 public class UsuarioService implements IUsuarioService<Usuario, Long> {
 
     private final UsuarioRepository repository;
-    private  PasswordEncoder encoder;
 
     public UsuarioService(UsuarioRepository repository) {
         this.repository = repository;
@@ -82,7 +79,7 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
     }
     public Usuario buscarUsuario(String email , String password) {
         return repository.findAll().stream().
-                filter(u->u.getEmail().equalsIgnoreCase(email)&&u.getPassword().equalsIgnoreCase(password))
+                filter(u->u.getEmail().equalsIgnoreCase(email)&&u.getPassword().equals(password))
                 .findFirst().orElse(null);
     }
     public Usuario buscarUsuario(long idUsuario) {
