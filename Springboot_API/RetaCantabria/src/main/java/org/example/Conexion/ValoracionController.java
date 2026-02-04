@@ -54,7 +54,7 @@ public class ValoracionController {
         return valoracionService.buscar(campo, valor);
     }
     @GetMapping("/buscar/{idRuta}")
-    public ResponseEntity<List<Valoracion>> buscarPorRuta(@PathVariable long idRuta){
+    public ResponseEntity<List<Valoracion>> buscarPorRuta(@PathVariable("idRuta") Long idRuta){
         List<Valoracion>valoraciones=valoracionService.obtenerValoracionesPorRuta(idRuta);
         return ResponseEntity.ok(valoraciones);
     }

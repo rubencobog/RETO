@@ -1,6 +1,7 @@
 package org.example.Conexion;
 
 import org.example.DTO.ResenaDTO;
+import org.example.DTO.ResenaDevueltaDTO;
 import org.example.Entidades.Resena;
 import org.example.Entidades.Ruta;
 import org.example.Entidades.Usuario;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,9 +52,13 @@ public class ResenaController {
     }
 
     @GetMapping("/buscar/{idRuta}")
-    public ResponseEntity<List<Resena>>buscarPorRuta(@PathVariable long idRuta){
+    public ResponseEntity<List<ResenaDevueltaDTO>>buscarPorRuta(@PathVariable("idRuta") long idRuta){
         List<Resena>resenas=resenaService.obtenerResenasPorRuta(idRuta);
-        return ResponseEntity.ok(resenas);
+        List<ResenaDevueltaDTO>resenasDevueltas=new ArrayList<>();
+        for(Resena res:resenas){
+            resenasDevueltas.add(new ResenaDevueltaDTO(res));
+        }
+        return ResponseEntity.ok(resenasDevueltas);
     }
 
     @GetMapping("/buscar")
