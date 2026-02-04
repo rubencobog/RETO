@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -24,19 +25,25 @@ import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.example.retodam2rutas.data.daos.RutaDao
 import com.example.retodam2rutas.model.Ruta
+import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
 
 
 //================ Contenido de la ventana home =================
@@ -103,6 +110,82 @@ fun ContentDetailView(
             ) {
                 Text("Iniciar ruta")
             }
+        }
+    }
+}
+
+//================ Contenido de la ventana GPS =================
+@Composable
+fun ContentMapView(
+    innerPadding: PaddingValues,
+    navController: NavController,
+    id: Int,
+    rutaViewModel: RutaViewModel,
+    mapViewModel: MapViewModel
+) {
+
+    rutaViewModel.cargarRuta(id)
+    val ruta = rutaViewModel.rutaSeleccionada
+
+    val context = LocalContext.current
+    val geoPoint = mapViewModel.lastGeoPoint
+
+    val mapView = remember {
+        MapView(context).apply {
+            setMultiTouchControls(true)
+            controller.setZoom(18.0)
+        }
+    }
+
+    Column (
+        modifier = Modifier
+            .padding(innerPadding)
+            .fillMaxSize()
+            .background(Color(0x6F98CCEE)),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Ruta",
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth(),
+            color = Color.Black
+        )
+
+        DisposableEffect(Unit) {
+            mapView.onResume()
+            onDispose {
+                mapView.onPause()
+            }
+        }
+
+        AndroidView(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp),
+            factory = { mapView },
+            update = {
+                geoPoint?.let {
+                    val marker = Marker(mapView).apply {
+                        position = it
+                        setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                        title = "Mi ubicación"
+                    }
+                    mapView.overlays.clear()
+                    mapView.overlays.add(marker)
+                    mapView.controller.setCenter(it)
+                    mapView.invalidate()
+                }
+            }
+        )
+
+        Spacer(modifier = Modifier.padding(20.dp))
+
+        Button(
+            onClick = { navController.navigate("Mapa/${ruta?.id}") }
+        ) {
+            Text("Iniciar ruta")
         }
     }
 }

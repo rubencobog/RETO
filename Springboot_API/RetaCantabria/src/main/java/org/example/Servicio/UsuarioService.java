@@ -3,6 +3,8 @@ package org.example.Servicio;
 import jakarta.transaction.Transactional;
 import org.example.Entidades.Usuario;
 import org.example.Logica.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,13 +15,16 @@ import java.util.Optional;
 public class UsuarioService implements IUsuarioService<Usuario, Long> {
 
     private final UsuarioRepository repository;
-
-    public UsuarioService(UsuarioRepository repository) {
+    private final PasswordEncoder pass;
+    @Autowired
+    public UsuarioService(UsuarioRepository repository, PasswordEncoder pass) {
         this.repository = repository;
+        this.pass = pass;
     }
 
     @Override
     public Usuario crear(Usuario usuario) {
+        usuario.setPassword(pass.encode(usuario.getPassword()));
         return repository.save(usuario);
     }
 
@@ -34,7 +39,7 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
             existente.setNombre(usuario.getNombre());
             existente.setApellido(usuario.getApellido());
             existente.setEmail(usuario.getEmail());
-            usuario.setPassword(usuario.getPassword());
+            existente.setPassword(pass.encode(usuario.getPassword()));
             existente.setRol(usuario.getRol());
             return repository.save(existente);
         }
@@ -79,11 +84,10 @@ public class UsuarioService implements IUsuarioService<Usuario, Long> {
     }
     public Usuario buscarUsuario(String email , String password) {
         return repository.findAll().stream().
-                filter(u->u.getEmail().equalsIgnoreCase(email)&& u.getPassword().equalsIgnoreCase(password))
+                filter(u->u.getEmail().equalsIgnoreCase(email)&&pass.matches(password,u.getPassword()))
                 .findFirst().orElse(null);
     }
     public Usuario buscarUsuario(long idUsuario) {
         return repository.usuariocreaRuta(idUsuario);
     }
 }
-

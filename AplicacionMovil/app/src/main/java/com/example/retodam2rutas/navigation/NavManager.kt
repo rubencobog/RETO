@@ -8,10 +8,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.retodam2rutas.views.DetailView
 import com.example.retodam2rutas.views.HomeView
+import com.example.retodam2rutas.views.MapView
+import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
 
 @Composable
-fun NavManager(rutaViewModel: RutaViewModel){
+fun NavManager(rutaViewModel: RutaViewModel, mapViewModel: MapViewModel){
     val navController = rememberNavController()
     NavHost(navController = navController,
         startDestination = "Home"){
@@ -19,13 +21,19 @@ fun NavManager(rutaViewModel: RutaViewModel){
             HomeView(navController, rutaViewModel)
         }
         composable("Add"){
-            HomeView(navController, rutaViewModel)
+            MapView(navController, 1, rutaViewModel, mapViewModel)
         }
         composable ("Detail/{id}",
             arguments = listOf(navArgument("id"){type = NavType.IntType})){
                 backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id") ?:0
             DetailView(navController, id, rutaViewModel)
+        }
+        composable ("Map/{id}",
+            arguments = listOf(navArgument("id"){type = NavType.IntType})){
+                backStackEntry ->
+            val id = backStackEntry.arguments?.getInt("id") ?:0
+            MapView(navController, id, rutaViewModel, mapViewModel)
         }
     }
 }
