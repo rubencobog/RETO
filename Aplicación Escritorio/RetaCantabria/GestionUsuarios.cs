@@ -15,7 +15,7 @@ namespace RetaCantabria
 {
     public partial class GestionUsuarios : Form
     {
-        private readonly HttpClient cliente=ConexionAPI.CLIENTE;
+        private readonly HttpClient cliente = ConexionAPI.CLIENTE;
         public GestionUsuarios()
         {
             InitializeComponent();
@@ -91,7 +91,7 @@ namespace RetaCantabria
 
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvUsuarios.CurrentRow!=null && !dgvUsuarios.CurrentRow.IsNewRow)
+            if (dgvUsuarios.CurrentRow != null && !dgvUsuarios.CurrentRow.IsNewRow)
             {
                 comboPermisos.Enabled = true;
                 comboPermisos.SelectedItem = ((Usuario)dgvUsuarios.CurrentRow.DataBoundItem).rol;
@@ -99,6 +99,21 @@ namespace RetaCantabria
             else
             {
                 comboPermisos.Enabled = false;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if(dgvUsuarios.SelectedRows.Count > 0)
+            {
+                var usuarioSeleccionado = (Usuario)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                CrearUsuario crearUsuarioForm = new CrearUsuario(usuarioSeleccionado);
+                crearUsuarioForm.ShowDialog();
+                CargarUsuarios();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un usuario para editar.");
             }
         }
     }

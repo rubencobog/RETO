@@ -60,7 +60,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/login")
-    public Usuario login(@RequestParam String email, @RequestParam String password) {
+    public Usuario login(@RequestParam("email") String email, @RequestParam("password") String password) {
         return usuarioService.buscarUsuario(email, password);
     }
     @GetMapping("/buscaUsu")

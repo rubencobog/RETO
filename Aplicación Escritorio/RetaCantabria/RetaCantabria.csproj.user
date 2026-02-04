@@ -19,7 +19,13 @@
     <Compile Update="FormValoracion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GenerarGPX.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GestionValoraciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">
