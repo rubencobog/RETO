@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
         val rutaViewModel = RutaViewModel(database, prefs)
         Configuration.getInstance().userAgentValue = packageName
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        mapViewModel = MapViewModel(fusedLocationClient)
+        mapViewModel = MapViewModel(database, fusedLocationClient)
 
         requestLocationPermission()
 

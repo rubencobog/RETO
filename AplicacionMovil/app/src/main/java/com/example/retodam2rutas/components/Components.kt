@@ -21,8 +21,10 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DividerDefaults.color
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SnackbarDefaults.color
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -39,11 +41,17 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.example.retodam2rutas.R
 import com.example.retodam2rutas.model.Ruta
+import com.example.retodam2rutas.model.maptemp.RutaTemporal
+import com.example.retodam2rutas.model.maptemp.TrackPoint
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
+import org.osmdroid.views.overlay.Polyline
+import java.io.File
 
 
 //================ Contenido de la ventana home =================
@@ -56,7 +64,7 @@ fun ContentHomeView(
         modifier = Modifier
             .padding(innerPadding)
             .fillMaxSize()
-            .background(Color(0x6F98CCEE)),
+            .background(Color(0xFFD2E6F6)),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -91,7 +99,7 @@ fun ContentDetailView(
         modifier = Modifier
             .padding(innerPadding)
             .fillMaxSize()
-            .background(Color(0x6F98CCEE)),
+            .background(Color(0xFFD2E6F6)),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -114,7 +122,7 @@ fun ContentDetailView(
     }
 }
 
-//================ Contenido de la ventana GPS =================
+//================ Contenido de la ventana GPS existente =================
 @Composable
 fun ContentMapView(
     innerPadding: PaddingValues,
@@ -141,17 +149,10 @@ fun ContentMapView(
         modifier = Modifier
             .padding(innerPadding)
             .fillMaxSize()
-            .background(Color(0x6F98CCEE)),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+            .background(Color(0xFFD2E6F6)),
+        verticalArrangement = Arrangement.spacedBy(26.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "Ruta",
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth(),
-            color = Color.Black
-        )
 
         DisposableEffect(Unit) {
             mapView.onResume()
@@ -163,7 +164,7 @@ fun ContentMapView(
         AndroidView(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(250.dp),
+                .height(300.dp),
             factory = { mapView },
             update = {
                 geoPoint?.let {
@@ -180,14 +181,176 @@ fun ContentMapView(
             }
         )
 
-        Spacer(modifier = Modifier.padding(20.dp))
-
-        Button(
-            onClick = { navController.navigate("Mapa/${ruta?.id}") }
-        ) {
-            Text("Iniciar ruta")
+        Row (
+            modifier = Modifier
+                .background(Color(0xFFD2E6F6))
+                .fillMaxSize()
+                .padding(innerPadding),
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ){
+            ButtonRuta(
+                label = "Start",
+                icon = R.drawable.play_circle,
+                onClick = {
+                    if (geoPoint != null) {
+                        mapViewModel.iniciarRuta("Ruta1",geoPoint)
+                    }
+                }
+            )
+            ButtonRuta(
+                label = "Stop",
+                icon = R.drawable.stop_circle,
+                onClick = {navController.navigate("Mapa/${ruta?.id}")}
+            )
         }
     }
+}
+
+fun mostrarRuta(mapView: MapView, trackPoints: List<TrackPoint>) {
+    val polyline = Polyline().apply {
+        width = 5f
+        color = android.graphics.Color.BLUE
+        setPoints(trackPoints.map { GeoPoint(it.latitude, it.longitude) })
+    }
+
+    mapView.overlays.clear()
+    mapView.overlays.add(polyline)
+    if (trackPoints.isNotEmpty()) {
+        mapView.controller.setCenter(GeoPoint(trackPoints.first().latitude, trackPoints.first().longitude))
+    }
+    mapView.invalidate()
+}
+
+
+//================ Contenido de la ventana GPS añadir =================
+@Composable
+fun ContentAddView(
+    innerPadding: PaddingValues,
+    navController: NavController,
+    id: Int,
+    rutaViewModel: RutaViewModel,
+    mapViewModel: MapViewModel
+) {
+
+    val ruta = mapViewModel.rutaEnCreacion
+
+    val context = LocalContext.current
+    val geoPoint = mapViewModel.lastGeoPoint
+
+    val mapView = remember {
+        MapView(context).apply {
+            setMultiTouchControls(true)
+            controller.setZoom(18.0)
+        }
+    }
+
+    Column (
+        modifier = Modifier
+            .padding(innerPadding)
+            .fillMaxSize()
+            .background(Color(0xFFD2E6F6)),
+        verticalArrangement = Arrangement.spacedBy(26.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        DisposableEffect(Unit) {
+            mapView.onResume()
+            onDispose {
+                mapView.onPause()
+            }
+        }
+
+        AndroidView(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(300.dp),
+            factory = { mapView },
+            update = {
+                geoPoint?.let {
+                    val marker = Marker(mapView).apply {
+                        position = it
+                        setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                        title = "Mi ubicación"
+                    }
+                    mapView.overlays.clear()
+                    mapView.overlays.add(marker)
+                    mapView.controller.setCenter(it)
+                    mapView.invalidate()
+                }
+                ruta.let {
+                    if (it != null) {
+                        actualizarLineaMapa(mapView,it)
+                    }
+                }
+            }
+        )
+
+        Row (
+            modifier = Modifier
+                .background(Color(0xFFD2E6F6))
+                .fillMaxSize()
+                .padding(innerPadding),
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ){
+            ButtonRuta(
+                label = "Start",
+                icon = R.drawable.play_circle,
+                onClick = {
+                    if (geoPoint != null) {
+                        mapViewModel.iniciarRuta("Ruta1",geoPoint)
+                    }
+                }
+            )
+            ButtonRuta(
+                label = "Stop",
+                icon = R.drawable.stop_circle,
+                onClick = {
+                    if (geoPoint != null) {
+                        mapViewModel.terminarRuta(geoPoint)
+                    }
+                }
+            )
+        }
+        Row (
+            modifier = Modifier
+                .background(Color(0xFFD2E6F6))
+                .fillMaxSize()
+                .padding(innerPadding),
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ){
+            ButtonRuta(
+                label = "Gpx",
+                icon = R.drawable.outline_download,
+                onClick = {
+                    val gpxString = ruta?.let { mapViewModel.exportarGPX(it) }
+                    val file = File(context.filesDir, "${ruta?.nombre}.gpx")
+                    if (gpxString != null) {
+                        file.writeText(gpxString)
+                    }
+                }
+            )
+        }
+    }
+}
+
+fun dibujarRuta(track: Boolean, mapView: MapView, ruta: RutaTemporal){
+
+}
+
+fun actualizarLineaMapa(mapView: MapView, ruta: RutaTemporal) {
+    mapView.overlays.removeAll { it is Polyline }
+
+    val polyline = Polyline().apply {
+        width = 5f
+        color = android.graphics.Color.RED
+        setPoints(ruta.trackPoints.map { GeoPoint(it.latitude, it.longitude) })
+    }
+
+    mapView.overlays.add(polyline)
+    mapView.invalidate()
 }
 
 //================ Card de Rutas =================
