@@ -22,7 +22,7 @@ import androidx.room.RoomDatabase
         Valoracion::class,
         Resena::class],
     // Cambiar este número si se modifica la estructura de la DB
-    version = 1,
+    version = 2,
     // Cambiar a false si no se quiere exportar el esquema
     exportSchema = true
 )

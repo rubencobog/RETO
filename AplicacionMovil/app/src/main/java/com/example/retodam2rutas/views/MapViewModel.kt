@@ -35,10 +35,11 @@ class MapViewModel(
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(result: LocationResult) {
             val location = result.lastLocation ?: return
-            lastGeoPoint = GeoPoint(location.latitude, location.longitude)
+            lastGeoPoint = GeoPoint(location.latitude+iterador, location.longitude)
+            iterador++
         }
     }
-
+    private var iterador by mutableStateOf(0.000000005)
     @SuppressLint("MissingPermission")
     fun startLocationUpdates() {
         fusedLocationClient.requestLocationUpdates(

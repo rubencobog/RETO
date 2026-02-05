@@ -201,7 +201,11 @@ fun ContentMapView(
             ButtonRuta(
                 label = "Stop",
                 icon = R.drawable.stop_circle,
-                onClick = {navController.navigate("Mapa/${ruta?.id}")}
+                onClick = {
+                    if (geoPoint != null) {
+                        mapViewModel.terminarRuta(geoPoint)
+                    }
+                }
             )
         }
     }
@@ -273,6 +277,24 @@ fun ContentAddView(
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
                         title = "Mi ubicación"
                     }
+
+                    val tempTrackPoint = Marker(mapView).apply {
+                        position = it
+                        setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                        title = "Trackpoint"
+                    }
+
+                    val trackPoint: TrackPoint
+
+                    trackPoint = TrackPoint(
+                        tempTrackPoint.position.latitude,
+                        tempTrackPoint.position.longitude
+                    )
+
+                    if (ruta != null) {
+                        ruta.trackPoints.add(trackPoint)
+                    }
+
                     mapView.overlays.clear()
                     mapView.overlays.add(marker)
                     mapView.controller.setCenter(it)
