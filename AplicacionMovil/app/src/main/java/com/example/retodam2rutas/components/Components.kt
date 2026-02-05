@@ -18,12 +18,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -198,6 +200,7 @@ fun ContentMapView(
             ButtonRuta(
                 label = "Start",
                 icon = R.drawable.play_circle,
+                color = Color(0xCD4EC77D),
                 onClick = {
                     if (geoPoint != null) {
                         mapViewModel.iniciarRuta("Ruta1",geoPoint)
@@ -207,6 +210,7 @@ fun ContentMapView(
             ButtonRuta(
                 label = "Stop",
                 icon = R.drawable.stop_circle,
+                color = Color(0xCD4EC77D),
                 onClick = {
                     if (geoPoint != null) {
                         mapViewModel.terminarRuta(geoPoint)
@@ -254,6 +258,8 @@ fun ContentAddView(
             controller.setZoom(18.0)
         }
     }
+    var userMarker by remember { mutableStateOf<Marker?>(null) }
+    var grabar by remember { mutableStateOf(false) }
 
     Column (
         modifier = Modifier
@@ -278,36 +284,22 @@ fun ContentAddView(
             factory = { mapView },
             update = {
                 geoPoint?.let {
-                    val marker = Marker(mapView).apply {
-                        position = it
-                        setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-                        title = "Mi ubicación"
+                    if (userMarker == null) {
+                        userMarker = Marker(mapView).apply {
+                            setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                            title = "Mi ubicación"
+                        }
+                        mapView.overlays.add(userMarker)
                     }
 
-                    val tempTrackPoint = Marker(mapView).apply {
-                        position = it
-                        setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-                        title = "Trackpoint"
-                    }
-
-                    val trackPoint: TrackPoint
-
-                    trackPoint = TrackPoint(
-                        tempTrackPoint.position.latitude,
-                        tempTrackPoint.position.longitude
-                    )
-
-                    if (ruta != null) {
-                        ruta.trackPoints.add(trackPoint)
-                    }
-
-                    mapView.overlays.clear()
-                    mapView.overlays.add(marker)
+                    mapViewModel.actualizarRuta(geoPoint)
+                    userMarker!!.position = it
+                    //mapView.overlays.clear() // Esto limpia el mapa de marcadores
                     mapView.controller.setCenter(it)
                     mapView.invalidate()
                 }
                 ruta.let {
-                    if (it != null) {
+                    if (it != null && grabar) {
                         actualizarLineaMapa(mapView,it)
                     }
                 }
@@ -325,47 +317,42 @@ fun ContentAddView(
             ButtonRuta(
                 label = "Start",
                 icon = R.drawable.play_circle,
+                color = Color(0xCD4EC77D),
                 onClick = {
                     if (geoPoint != null) {
                         mapViewModel.iniciarRuta("Ruta1",geoPoint)
                     }
+                    grabar = true
                 }
             )
             ButtonRuta(
                 label = "Stop",
                 icon = R.drawable.stop_circle,
+                color = Color(0xCDC74E4E),
                 onClick = {
                     if (geoPoint != null) {
                         mapViewModel.terminarRuta(geoPoint)
                     }
+                    grabar = false
                 }
             )
-        }
-        Row (
-            modifier = Modifier
-                .background(Color(0xFFD2E6F6))
-                .fillMaxSize()
-                .padding(innerPadding),
-            verticalAlignment = Alignment.Bottom,
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ){
+            Spacer(modifier = Modifier.width(10.dp))
             ButtonRuta(
                 label = "Gpx",
                 icon = R.drawable.outline_download,
+                color = Color(0xCD4E6CC7),
                 onClick = {
-                    val gpxString = ruta?.let { mapViewModel.exportarGPX(it) }
-                    val file = File(context.filesDir, "${ruta?.nombre}.gpx")
-                    if (gpxString != null) {
-                        file.writeText(gpxString)
+                    if(!grabar){
+                        val gpxString = ruta?.let { mapViewModel.exportarGPX(it) }
+                        val file = File(context.filesDir, "${ruta?.nombre}.gpx")
+                        if (gpxString != null) {
+                            file.writeText(gpxString)
+                        }
                     }
                 }
             )
         }
     }
-}
-
-fun dibujarRuta(track: Boolean, mapView: MapView, ruta: RutaTemporal){
-
 }
 
 fun actualizarLineaMapa(mapView: MapView, ruta: RutaTemporal) {
@@ -448,28 +435,33 @@ fun ContentLoginView(
     innerPadding: PaddingValues,
     navController: NavController,
     loginViewModel: LoginViewModel
-){
+) {
     val usuario: UsuarioModel? by loginViewModel.usuario.observeAsState()
     var email by remember { mutableStateOf("") }
-    var password by remember {mutableStateOf("")}
+    var password by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier
-        .padding(innerPadding)
-        .fillMaxSize(),
+    Column(
+        modifier = Modifier
+            .padding(innerPadding)
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center){
+        verticalArrangement = Arrangement.Center
+    ) {
         Text("Iniciar sesión")
 
         Spacer(modifier = Modifier.padding(10.dp))
 
-        TextField(value = email,
+        TextField(
+            value = email,
             onValueChange = { email = it },
             label = { Text("Usuario") },
-            singleLine = true)
+            singleLine = true
+        )
 
         Spacer(modifier = Modifier.padding(10.dp))
 
-        TextField(value = password,
+        TextField(
+            value = password,
             onValueChange = { password = it },
             label = { Text("Contraseña") },
             singleLine = true,
@@ -478,11 +470,28 @@ fun ContentLoginView(
 
         Spacer(modifier = Modifier.padding(10.dp))
 
-        Button(onClick = {navController.navigate("Home")}){
+        Button(onClick = { navController.navigate("Home") }) {
             Text("Entrar")
         }
 
     }
+}
 
-
+//================ Dialog de informacion =================
+@Composable
+fun DialogoInformativo(
+    titulo: String,
+    mensaje: String,
+    onCerrar: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onCerrar,
+        title = { Text(titulo) },
+        text = { Text(mensaje) },
+        confirmButton = {
+            TextButton(onClick = onCerrar) {
+                Text("Aceptar")
+            }
+        }
+    )
 }

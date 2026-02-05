@@ -25,15 +25,18 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import com.example.retodam2rutas.components.BottomNavItem
 import com.example.retodam2rutas.components.ContentHomeView
+import com.example.retodam2rutas.components.DialogoInformativo
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
+    var mostrarDialogo by remember { mutableStateOf(false) }
     var selectedIndex by remember { mutableStateOf(0) }
     val items = listOf(
         BottomNavItem("Inicio", Icons.Default.Home),
@@ -85,11 +88,19 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
                         icon = { Icon(item.icon, contentDescription = item.label) },
                         label = { Text(item.label) },
                         selected = selectedIndex == index,
-                        onClick = { navController.navigate("Add") }
+                        onClick = { mostrarDialogo = true}
                     )
                 }
             }
         }
+        ) { innerPadding -> ContentHomeView(innerPadding, navController, rutaViewModel)
 
-        ) { innerPadding -> ContentHomeView(innerPadding, navController, rutaViewModel) }
+        if(mostrarDialogo == true){
+            DialogoInformativo(
+                titulo = "Advertencia",
+                mensaje = "Funcionalidad prevista en futuras versiones",
+                onCerrar = { mostrarDialogo = false }
+            )
+        }
+    }
 }
