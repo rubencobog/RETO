@@ -17,8 +17,8 @@ fun LoginView(navController: NavController, loginViewModel: LoginViewModel){
         topBar = {
             TopAppBar(
                 colors = topAppBarColors(
-                    containerColor = Color(0xFF041B57),
-                    titleContentColor = Color(0xFFC0D1F1),
+                    containerColor = Color(0xBA3AD271),
+                    titleContentColor = Color(0xFF150033),
                 ),
                 title = {
                     Text("Reta Cantabria")
