@@ -1,9 +1,12 @@
 package org.example.Servicio;
 
 import jakarta.transaction.Transactional;
+import org.example.Entidades.Ruta;
 import org.example.Entidades.Valoracion;
 import org.example.Logica.ValoracionRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -12,9 +15,11 @@ import java.util.List;
 public class ValoracionService implements IValoracionService<Valoracion, Long> {
 
     private final ValoracionRepository repository;
+    private final RutaService rutaservice;
 
-    public ValoracionService(ValoracionRepository repository) {
+    public ValoracionService(ValoracionRepository repository, RutaService rutaservice) {
         this.repository = repository;
+        this.rutaservice = rutaservice;
     }
 
     @Override
@@ -70,5 +75,14 @@ public class ValoracionService implements IValoracionService<Valoracion, Long> {
                     .toList();
             default -> List.of();
         };
+    }
+    public List<Valoracion>obtenerValoracionesPorRuta(Long idRuta) {
+        Ruta ruta = rutaservice.buscarPorId(idRuta).orElse(null);
+        if (ruta == null) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Ruta no encontrada"
+            );
+        }
+        return repository.findByRuta_idRuta(idRuta);
     }
 }

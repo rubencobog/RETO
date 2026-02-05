@@ -11,7 +11,7 @@ namespace Modelo
         public String password { get; set; }
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public TIPOUSUARIO rol { get; set; }
+        public TIPOUSUARIO? rol { get; set; }
         public List<Valoracion> valoraciones { get; set; }
         public List<Resena> resenas { get; set; }
     }

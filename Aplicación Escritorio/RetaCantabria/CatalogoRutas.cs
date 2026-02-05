@@ -127,7 +127,7 @@ namespace RetaCantabria
         }
 
         //TODO Acabar de modificar los permisos asi como se agregen funciones
-        private void gestorPermisos(TIPOUSUARIO permiso)
+        private void gestorPermisos(TIPOUSUARIO? permiso)
         {
             switch (permiso)
             {
@@ -188,6 +188,16 @@ namespace RetaCantabria
                         MessageBox.Show("Error al validar la ruta: " + response.ReasonPhrase, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void btnGestionValoraciones_Click(object sender, EventArgs e)
+        {
+            if (dgvRutas.SelectedRows.Count > 0)
+            {
+                Ruta ruta= (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                GestionValoraciones gestionValoraciones = new GestionValoraciones(ruta);
+                gestionValoraciones.ShowDialog();
             }
         }
     }

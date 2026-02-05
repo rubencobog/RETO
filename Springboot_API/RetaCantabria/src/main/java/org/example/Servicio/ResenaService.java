@@ -2,8 +2,11 @@ package org.example.Servicio;
 
 import jakarta.transaction.Transactional;
 import org.example.Entidades.Resena;
+import org.example.Entidades.Ruta;
 import org.example.Logica.ResenaRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -12,9 +15,11 @@ import java.util.List;
 public class ResenaService implements IResenaService<Resena, Long> {
 
     private final ResenaRepository repository;
+    private final RutaService rutaService;
 
-    public ResenaService(ResenaRepository repository) {
+    public ResenaService(ResenaRepository repository, RutaService rutaService) {
         this.repository = repository;
+        this.rutaService=rutaService;
     }
 
     @Override
@@ -63,5 +68,14 @@ public class ResenaService implements IResenaService<Resena, Long> {
                     .toList();
             default -> List.of();
         };
+    }
+    public List<Resena> obtenerResenasPorRuta(Long idRuta) {
+        Ruta ruta=rutaService.buscarPorId(idRuta).orElse(null);
+                if(ruta==null){
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Ruta no encontrada"
+            );
+        }
+        return repository.findByRuta_IdRuta(idRuta);
     }
 }

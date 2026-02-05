@@ -35,6 +35,7 @@
             btnDescarga = new Button();
             btnCrear = new Button();
             panelAdmin = new Panel();
+            btnGestionValoraciones = new Button();
             btnUsuarios = new Button();
             btnValidar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
@@ -99,17 +100,28 @@
             // 
             // panelAdmin
             // 
+            panelAdmin.Controls.Add(btnGestionValoraciones);
             panelAdmin.Controls.Add(btnUsuarios);
             panelAdmin.Location = new Point(34, 0);
             panelAdmin.Name = "panelAdmin";
-            panelAdmin.Size = new Size(140, 34);
+            panelAdmin.Size = new Size(331, 34);
             panelAdmin.TabIndex = 6;
+            // 
+            // btnGestionValoraciones
+            // 
+            btnGestionValoraciones.Location = new Point(126, 3);
+            btnGestionValoraciones.Name = "btnGestionValoraciones";
+            btnGestionValoraciones.Size = new Size(197, 28);
+            btnGestionValoraciones.TabIndex = 1;
+            btnGestionValoraciones.Text = "Gestionar valoraciones/reseñas";
+            btnGestionValoraciones.UseVisualStyleBackColor = true;
+            btnGestionValoraciones.Click += btnGestionValoraciones_Click;
             // 
             // btnUsuarios
             // 
             btnUsuarios.Location = new Point(3, 3);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(135, 28);
+            btnUsuarios.Size = new Size(117, 28);
             btnUsuarios.TabIndex = 0;
             btnUsuarios.Text = "Gestionar Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
@@ -157,5 +169,6 @@
         private Panel panelAdmin;
         private Button btnUsuarios;
         private Button btnValidar;
+        private Button btnGestionValoraciones;
     }
 }
