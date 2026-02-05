@@ -1,8 +1,11 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "calendario")
@@ -12,15 +15,16 @@ public class Calendario {
     @Column(name = "idCalendario", nullable = false)
     private Integer id;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha", nullable = false)
-    private Instant fecha;
+    private LocalDate fecha;
 
     @Lob
-    @Column(name = "detalles")
+    @Column(name = "detalles",columnDefinition = "TEXT")
     private String detalles;
 
     @Lob
-    @Column(name = "recomendaciones")
+    @Column(name = "recomendaciones",columnDefinition = "TEXT")
     private String recomendaciones;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -34,7 +38,7 @@ public class Calendario {
     public Calendario() {
     }
 
-    public Calendario(Integer id, Instant fecha, String detalles, String recomendaciones, Ruta rutasIdruta, Usuario usuarioIdusuario) {
+    public Calendario(Integer id, LocalDate fecha, String detalles, String recomendaciones, Ruta rutasIdruta, Usuario usuarioIdusuario) {
         this.id = id;
         this.fecha = fecha;
         this.detalles = detalles;
@@ -51,11 +55,11 @@ public class Calendario {
         this.id = id;
     }
 
-    public Instant getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Instant fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
@@ -89,5 +93,15 @@ public class Calendario {
 
     public void setUsuarioIdusuario(Usuario usuarioIdusuario) {
         this.usuarioIdusuario = usuarioIdusuario;
+    }
+    @Override
+    public String toString() {
+        return "Calendario{" +
+                "fecha=" + fecha +
+                ", detalles='" + detalles + '\'' +
+                ", recomendaciones='" + recomendaciones + '\'' +
+                ", idRuta=" + (rutasIdruta != null ? rutasIdruta.getId() : null) +
+                ", idUsuario=" + (usuarioIdusuario != null ? usuarioIdusuario.getIdUsuario() : null) +
+                '}';
     }
 }

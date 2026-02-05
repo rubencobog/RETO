@@ -2,9 +2,12 @@ package org.example.Conexion;
 
 import org.example.DTO.RutaDTO;
 import org.example.Entidades.Ruta;
+import org.example.Entidades.Usuario;
 import org.example.Servicio.RutaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -22,6 +25,13 @@ public class RutaController {
     @GetMapping("/test")
     public String test() {
         return "API Ruta funcionando";
+    }
+
+    @GetMapping("/{id}")
+    public Ruta buscarPorId(@PathVariable Long id){
+        Ruta ruta= rutaService.buscarPorId(id).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Ruta no encontrada"));
+        return ruta;
     }
 
     @GetMapping
