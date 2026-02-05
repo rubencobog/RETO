@@ -48,8 +48,8 @@ public class PuntoPeligroController {
         puntoPeligroService.eliminar(id);
     }
 
-    @GetMapping("/buscaPP")
-    public List<PuntoPeligro> buscarppruta(@RequestParam Long id){
-        return puntoPeligroService.puntospeligroRuta(id);
-    }
+//    @GetMapping("/buscaPP")
+//    public List<PuntoPeligro> buscarppruta(@RequestParam Long id){
+//        return puntoPeligroService.puntospeligroRuta(id);
+//    }
 }

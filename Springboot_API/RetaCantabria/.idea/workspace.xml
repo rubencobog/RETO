@@ -7,7 +7,6 @@
     <list default="true" id="dc670dea-404c-47f2-ad2f-ac2adcc8a5ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Conexion/PuntoPeligroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Conexion/PuntoPeligroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Logica/PuntoInteresRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Logica/PuntoInteresRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Logica/PuntoPeligroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Logica/PuntoPeligroRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servicio/PuntoPeligroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servicio/PuntoPeligroService.java" afterDir="false" />
     </list>

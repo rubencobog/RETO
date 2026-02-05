@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface PuntoPeligroRepository extends JpaRepository<PuntoPeligro, Long> {
-@Query("SELECT pp FROM PuntoPeligro pp  WHERE pp.puntoRuta.idPuntoRuta = :idPP")
- List<PuntoPeligro> getPuntoPeligro(@Param("idRuta") long  id);
+//@Query("SELECT pp FROM PuntoPeligro pp  WHERE pp.puntoRuta.idPuntoRuta = :idPP")
+// List<PuntoPeligro> getPuntoPeligro(@Param("idRuta") long  id);
 }
