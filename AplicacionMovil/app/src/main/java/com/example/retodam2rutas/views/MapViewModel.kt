@@ -39,7 +39,7 @@ class MapViewModel(
             iterador++
         }
     }
-    private var iterador by mutableStateOf(0.000000005)
+    private var iterador by mutableStateOf(0.000000000001)
     @SuppressLint("MissingPermission")
     fun startLocationUpdates() {
         fusedLocationClient.requestLocationUpdates(

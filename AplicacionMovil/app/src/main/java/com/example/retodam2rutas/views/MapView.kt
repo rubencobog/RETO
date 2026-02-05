@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavController
+import com.example.retodam2rutas.components.ContentAddView
 import com.example.retodam2rutas.components.ContentMapView
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,5 +48,5 @@ fun MapView(navController: NavController, id: Int, rutaViewModel: RutaViewModel,
             )
         },
 
-    ) { innerPadding -> ContentMapView(innerPadding, navController, id, rutaViewModel, mapViewModel) }
+    ) { innerPadding -> ContentAddView(innerPadding, navController, id, rutaViewModel, mapViewModel) }
 }
