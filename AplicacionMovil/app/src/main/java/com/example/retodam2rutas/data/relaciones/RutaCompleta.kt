@@ -2,9 +2,9 @@ package com.example.retodam2rutas.data.relaciones
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.example.retodam2rutas.model.Resena
-import com.example.retodam2rutas.model.Ruta
-import com.example.retodam2rutas.model.Valoracion
+import com.example.retodam2rutas.entities.Resena
+import com.example.retodam2rutas.entities.Ruta
+import com.example.retodam2rutas.entities.Valoracion
 
 data class RutaCompleta(
 

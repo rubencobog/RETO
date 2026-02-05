@@ -5,11 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.retodam2rutas.data.daos.RutaDao
 import com.example.retodam2rutas.data.database.AppDatabase
 import com.example.retodam2rutas.data.preferences.PreferencesManager
-import com.example.retodam2rutas.model.Ruta
-import kotlinx.coroutines.Dispatchers
+import com.example.retodam2rutas.entities.Ruta
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 

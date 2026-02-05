@@ -1,4 +1,4 @@
-package com.example.retodam2rutas.model
+package com.example.retodam2rutas.entities
 
 enum class TIPOUSUARIO {
     administrador,

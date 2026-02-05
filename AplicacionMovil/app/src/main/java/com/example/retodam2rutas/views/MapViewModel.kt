@@ -7,10 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.retodam2rutas.data.database.AppDatabase
-import com.example.retodam2rutas.model.PuntoRuta
-import com.example.retodam2rutas.model.Ruta
-import com.example.retodam2rutas.model.maptemp.RutaTemporal
-import com.example.retodam2rutas.model.maptemp.TrackPoint
+import com.example.retodam2rutas.entities.maptemp.RutaTemporal
+import com.example.retodam2rutas.entities.maptemp.TrackPoint
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest

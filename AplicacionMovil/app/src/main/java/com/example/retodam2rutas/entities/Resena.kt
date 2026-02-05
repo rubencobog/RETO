@@ -1,14 +1,14 @@
-package com.example.retodam2rutas.model
+package com.example.retodam2rutas.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 @Entity(
-    tableName = "valoracion",
+    tableName = "resenas",
     foreignKeys = [
         ForeignKey(
             entity = Usuario::class,
@@ -28,23 +28,17 @@ import java.time.LocalDateTime
         Index(value = ["rutaId"])
     ]
 )
-data class Valoracion(
+data class Resena(
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "idValora")
-    val id: Int = 0,
+    @ColumnInfo(name = "idResena")
+    val idResena: Int = 0,
 
-    @ColumnInfo(name = "dificultad")
-    val dificultad: Int,       // 1–5
-
-    @ColumnInfo(name = "belleza")
-    val belleza: Int,          // 1–5
-
-    @ColumnInfo(name = "interesCultural")
-    val interesCultural: Int,  // 1–5
+    @ColumnInfo(name = "resena")
+    val resena: String,
 
     @ColumnInfo(name = "fecha")
-    val fecha: LocalDateTime,
+    val fecha: LocalDate,
 
     @ColumnInfo(name = "usuarioId")
     val usuarioId: Int,

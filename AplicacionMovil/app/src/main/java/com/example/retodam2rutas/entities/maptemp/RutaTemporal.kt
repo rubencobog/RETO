@@ -1,4 +1,4 @@
-package com.example.retodam2rutas.model.maptemp
+package com.example.retodam2rutas.entities.maptemp
 
 data class RutaTemporal(
     val nombre: String,

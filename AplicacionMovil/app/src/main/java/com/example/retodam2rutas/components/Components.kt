@@ -21,20 +21,24 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DividerDefaults.color
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.SnackbarDefaults.color
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -42,9 +46,11 @@ import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.retodam2rutas.R
-import com.example.retodam2rutas.model.Ruta
-import com.example.retodam2rutas.model.maptemp.RutaTemporal
-import com.example.retodam2rutas.model.maptemp.TrackPoint
+import com.example.retodam2rutas.views.LoginViewModel
+import com.example.retodam2rutas.entities.Ruta
+import com.example.retodam2rutas.entities.maptemp.RutaTemporal
+import com.example.retodam2rutas.entities.maptemp.TrackPoint
+import com.example.retodam2rutas.model.UsuarioModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
 import org.osmdroid.util.GeoPoint
@@ -434,4 +440,49 @@ fun RutaCard(ruta: Ruta, navController: NavController) {
             }
         }
     }
+}
+
+//================ Contenido de la ventana Login =================
+@Composable
+fun ContentLoginView(
+    innerPadding: PaddingValues,
+    navController: NavController,
+    loginViewModel: LoginViewModel
+){
+    val usuario: UsuarioModel? by loginViewModel.usuario.observeAsState()
+    var email by remember { mutableStateOf("") }
+    var password by remember {mutableStateOf("")}
+
+    Column(modifier = Modifier
+        .padding(innerPadding)
+        .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center){
+        Text("Iniciar sesión")
+
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        TextField(value = email,
+            onValueChange = { email = it },
+            label = { Text("Usuario") },
+            singleLine = true)
+
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        TextField(value = password,
+            onValueChange = { password = it },
+            label = { Text("Contraseña") },
+            singleLine = true,
+            visualTransformation = PasswordVisualTransformation()
+        )
+
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        Button(onClick = {navController.navigate("Home")}){
+            Text("Entrar")
+        }
+
+    }
+
+
 }
