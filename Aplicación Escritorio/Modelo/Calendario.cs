@@ -15,7 +15,7 @@ namespace Modelo
     {
         public int id;
 
-        public DateTime fecha { get; set; }
+        public DateOnly fecha { get; set; }
         public String detalles { get; set; }
         public String recomendaciones { get; set; }
         public Ruta rutasIdruta { get; set; }
