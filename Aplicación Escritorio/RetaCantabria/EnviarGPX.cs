@@ -198,14 +198,15 @@ namespace RetaCantabria
                         var archivoContenido = new StreamContent(archivoGPX);
                         archivoContenido.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/gpx+xml");
                         contenido.Add(archivoContenido, "file", nombreArchivo);
-                        var respuesta = await cliente.PostAsync("http://192.168.6.1:5050/gpx/upload", contenido);
+                        var respuesta = await cliente.PostAsync("http://192.168.56.1:5050/gpx/upload", contenido);
+                        Console.WriteLine(respuesta.StatusCode);
                         if (respuesta.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Archivo GPX enviado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Error al enviar el archivo GPX", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No se envio el archivo gpx", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
