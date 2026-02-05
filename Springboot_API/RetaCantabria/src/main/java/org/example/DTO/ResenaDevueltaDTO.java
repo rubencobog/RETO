@@ -10,6 +10,7 @@ public record ResenaDevueltaDTO (
     LocalDate fecha,
     String nomUsuario,
     String nomRuta
+
     )
 {
     public ResenaDevueltaDTO(Resena resena){

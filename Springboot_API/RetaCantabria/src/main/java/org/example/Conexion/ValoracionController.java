@@ -1,6 +1,7 @@
 package org.example.Conexion;
 
 import org.example.DTO.ValoracionDTO;
+import org.example.DTO.ValoracionDevueltaDTO;
 import org.example.Entidades.Resena;
 import org.example.Entidades.Ruta;
 import org.example.Entidades.Usuario;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -54,9 +56,14 @@ public class ValoracionController {
         return valoracionService.buscar(campo, valor);
     }
     @GetMapping("/buscar/{idRuta}")
-    public ResponseEntity<List<Valoracion>> buscarPorRuta(@PathVariable("idRuta") Long idRuta){
+    public ResponseEntity<List<ValoracionDevueltaDTO>> buscarPorRuta(@PathVariable("idRuta") Long idRuta){
+
         List<Valoracion>valoraciones=valoracionService.obtenerValoracionesPorRuta(idRuta);
-        return ResponseEntity.ok(valoraciones);
+        List<ValoracionDevueltaDTO>valoracionesDTO=new ArrayList<>();
+        for(Valoracion val:valoraciones){
+            valoracionesDTO.add(new ValoracionDevueltaDTO(val));
+        }
+        return ResponseEntity.ok(valoracionesDTO);
     }
 
     @PostMapping
