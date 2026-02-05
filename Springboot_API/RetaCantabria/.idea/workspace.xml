@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc670dea-404c-47f2-ad2f-ac2adcc8a5ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/LoginView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/LoginViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/TipoConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/TipoConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/daos/RutaDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/daos/RutaDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/database/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/database/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/RutaCompleta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/RutaCompleta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/RutaPuntos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/RutaPuntos.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/UsuarioResena.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/UsuarioResena.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/UsuarioValoracion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/UsuarioValoracion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/ValoracionCompleta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/relaciones/ValoracionCompleta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/CLASIFICACION.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/CLASIFICACION.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/PuntoRuta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/PuntoRuta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Resena.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/Resena.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Ruta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/Ruta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/TIPOUSUARIO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/TIPOUSUARIO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/Usuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/Valoracion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/entities/Valoracion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/navigation/NavManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/navigation/NavManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/RutaViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/RutaViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Encoder/EncriptarPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Encoder/EncriptarPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Encoder/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servicio/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servicio/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Conexion/RutaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Conexion/RutaController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.RetaCantabria.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -54,6 +76,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -66,14 +89,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

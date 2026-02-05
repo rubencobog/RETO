@@ -17,6 +17,7 @@ import com.example.retodam2rutas.data.preferences.PreferencesManager
 import com.example.retodam2rutas.navigation.NavManager
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import com.example.retodam2rutas.views.LoginViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.flow.first
@@ -37,6 +38,7 @@ class MainActivity : ComponentActivity() {
         Configuration.getInstance().userAgentValue = packageName
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         mapViewModel = MapViewModel(fusedLocationClient)
+        val loginViewModel = LoginViewModel(database)
 
         requestLocationPermission()
 
@@ -61,7 +63,7 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            NavManager(rutaViewModel, mapViewModel)
+            NavManager(rutaViewModel, mapViewModel, loginViewModel)
         }
     }
 

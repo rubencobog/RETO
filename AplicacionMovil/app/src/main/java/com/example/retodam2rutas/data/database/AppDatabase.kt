@@ -1,16 +1,14 @@
 package com.example.retodam2rutas.data.database
 
-import android.content.Context
 import androidx.room.Database
 import androidx.room.TypeConverters
 import com.example.retodam2rutas.components.TipoConverter
 import com.example.retodam2rutas.data.daos.RutaDao
-import com.example.retodam2rutas.model.PuntoRuta
-import com.example.retodam2rutas.model.Resena
-import com.example.retodam2rutas.model.Ruta
-import com.example.retodam2rutas.model.Usuario
-import com.example.retodam2rutas.model.Valoracion
-import androidx.room.Room
+import com.example.retodam2rutas.data.entities.PuntoRuta
+import com.example.retodam2rutas.data.entities.Resena
+import com.example.retodam2rutas.data.entities.Ruta
+import com.example.retodam2rutas.data.entities.Usuario
+import com.example.retodam2rutas.data.entities.Valoracion
 import androidx.room.RoomDatabase
 
 @Database(

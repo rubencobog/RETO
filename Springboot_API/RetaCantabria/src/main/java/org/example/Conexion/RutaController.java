@@ -38,6 +38,7 @@ public class RutaController {
                 .toList();
     }
 */
+
     @GetMapping("/buscar")
     public List<Ruta> buscar(@RequestParam String campo, @RequestParam String valor) {
         return rutaService.buscar(campo, valor);

@@ -1,4 +1,4 @@
-package com.example.retodam2rutas.model
+package com.example.retodam2rutas.data.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
