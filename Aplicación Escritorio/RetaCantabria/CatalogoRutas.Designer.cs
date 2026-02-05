@@ -38,6 +38,7 @@
             btnGestionValoraciones = new Button();
             btnUsuarios = new Button();
             btnValidar = new Button();
+            btnCalendario = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
             panelAdmin.SuspendLayout();
             SuspendLayout();
@@ -129,7 +130,7 @@
             // 
             // btnValidar
             // 
-            btnValidar.Location = new Point(296, 401);
+            btnValidar.Location = new Point(148, 401);
             btnValidar.Name = "btnValidar";
             btnValidar.Size = new Size(115, 23);
             btnValidar.TabIndex = 7;
@@ -137,11 +138,22 @@
             btnValidar.UseVisualStyleBackColor = true;
             btnValidar.Click += btnValidar_Click;
             // 
+            // btnCalendario
+            // 
+            btnCalendario.Location = new Point(284, 401);
+            btnCalendario.Name = "btnCalendario";
+            btnCalendario.Size = new Size(130, 23);
+            btnCalendario.TabIndex = 8;
+            btnCalendario.Text = "Calendario de Rutas";
+            btnCalendario.UseVisualStyleBackColor = true;
+            btnCalendario.Click += btnCalendario_Click;
+            // 
             // CatalogoRutas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCalendario);
             Controls.Add(btnValidar);
             Controls.Add(panelAdmin);
             Controls.Add(btnCrear);
@@ -170,5 +182,6 @@
         private Button btnUsuarios;
         private Button btnValidar;
         private Button btnGestionValoraciones;
+        private Button btnCalendario;
     }
 }

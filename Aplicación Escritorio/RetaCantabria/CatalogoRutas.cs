@@ -125,8 +125,6 @@ namespace RetaCantabria
             CrearRuta crearRuta = new CrearRuta(usuario);
             crearRuta.Show();
         }
-
-        //TODO Acabar de modificar los permisos asi como se agregen funciones
         private void gestorPermisos(TIPOUSUARIO? permiso)
         {
             switch (permiso)
@@ -135,6 +133,7 @@ namespace RetaCantabria
 
                     break;
                 case TIPOUSUARIO.diseñador:
+                    btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     break;
@@ -143,12 +142,14 @@ namespace RetaCantabria
                     panelAdmin.Hide();
                     break;
                 case TIPOUSUARIO.alumno:
+                    btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     btnDescarga.Hide();
                     btnCrear.Hide();
                     break;
                 default:
+                    btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     btnDescarga.Hide();
@@ -195,10 +196,16 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta= (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
                 GestionValoraciones gestionValoraciones = new GestionValoraciones(ruta);
                 gestionValoraciones.ShowDialog();
             }
+        }
+
+        private void btnCalendario_Click(object sender, EventArgs e)
+        {
+            CalendarioRutas calendario= new CalendarioRutas(usuario);
+            calendario.ShowDialog();
         }
     }
 }
