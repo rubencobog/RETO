@@ -44,6 +44,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.ui.window.Dialog
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
@@ -55,8 +57,10 @@ import com.example.retodam2rutas.entities.maptemp.RutaTemporal
 import com.example.retodam2rutas.model.UsuarioModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import org.osmdroid.events.MapEventsReceiver
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.Polyline
 import java.io.File
@@ -258,6 +262,25 @@ fun ContentAddView(
     val context = LocalContext.current
     val geoPoint = mapViewModel.lastGeoPoint
 
+    var mostrarSelectorTipo by remember { mutableStateOf(false) }
+    var mostrarDialogPI by remember { mutableStateOf(false) }
+    var mostrarDialogPeligro by remember { mutableStateOf(false) }
+    var puntoSeleccionado by remember { mutableStateOf<GeoPoint?>(null) }
+
+    val mapEventsOverlay = remember {
+        MapEventsOverlay(object : MapEventsReceiver {
+            override fun singleTapConfirmedHelper(p: GeoPoint?): Boolean {
+                return false
+            }
+            override fun longPressHelper(p: GeoPoint?): Boolean {
+                p?.let {
+                    puntoSeleccionado = it
+                    mostrarSelectorTipo = true
+                }
+                return true
+            }
+        })
+    }
     val mapView = remember {
         MapView(context).apply {
             setMultiTouchControls(true)
@@ -266,6 +289,58 @@ fun ContentAddView(
     }
     var userMarker by remember { mutableStateOf<Marker?>(null) }
     var grabar by remember { mutableStateOf(false) }
+
+    //Cadena de if's para mostrar dialogos de puntos de interes y de peligro
+    if (mostrarSelectorTipo) {
+        AlertDialog(
+            onDismissRequest = { mostrarSelectorTipo = false },
+            title = { Text("¿Qué quieres marcar?") },
+            confirmButton = {
+                TextButton(onClick = {
+                    mostrarSelectorTipo = false
+                    mostrarDialogPI = true
+                }) {
+                    Text("Punto de interés")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = {
+                    mostrarSelectorTipo = false
+                    mostrarDialogPeligro = true
+                }) {
+                    Text("Punto de peligro")
+                }
+            }
+        )
+    }
+    if (mostrarDialogPI && puntoSeleccionado != null) {
+        var nombre by remember { mutableStateOf("") }
+        var descripcion by remember { mutableStateOf("") }
+
+        AlertDialog(
+            onDismissRequest = { mostrarDialogPI = false },
+            title = { Text("Nuevo punto de interés") },
+            text = {
+                Column {
+                    TextField(nombre, { nombre = it }, label = { Text("Nombre") })
+                    TextField(descripcion, { descripcion = it }, label = { Text("Descripción") })
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    mapViewModel.guardarPuntoInteres(
+                        geoPoint = puntoSeleccionado!!,
+                        nombre = nombre,
+                        descripcion = descripcion
+                    )
+                    mostrarDialogPI = false
+                }) {
+                    Text("Guardar")
+                }
+            }
+        )
+    }
+
 
     Column (
         modifier = Modifier
@@ -297,15 +372,17 @@ fun ContentAddView(
                         }
                         mapView.overlays.add(userMarker)
                     }
-
-                    mapViewModel.actualizarRuta(geoPoint)
+                    if (grabar) {
+                        mapViewModel.actualizarRuta(it)
+                    }
+                    mapView.overlays.add(mapEventsOverlay)
                     userMarker!!.position = it
                     //mapView.overlays.clear() // Esto limpia el mapa de marcadores
                     mapView.controller.setCenter(it)
                     mapView.invalidate()
                 }
                 ruta.let {
-                    if (it != null && grabar) {
+                    if (it != null) {
                         actualizarLineaMapa(mapView,it)
                     }
                 }
