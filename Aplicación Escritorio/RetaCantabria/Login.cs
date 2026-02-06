@@ -1,9 +1,6 @@
 using Conexion;
 using Modelo;
-using System;
-using System.Net.Http;
 using System.Net.Http.Json;
-using System.Security.Policy;
 
 namespace RetaCantabria
 {
@@ -17,41 +14,52 @@ namespace RetaCantabria
             InitializeComponent();
         }
 
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private async void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (!txtEmail.Text.Equals(String.Empty) || !txtPassword.Text.Equals(String.Empty))
+            if (!txtEmail.Text.Equals(String.Empty) && !txtPassword.Text.Equals(String.Empty))
             {
 
-                loginAsync(txtEmail.Text, txtPassword.Text);
+               await loginAsync(txtEmail.Text, txtPassword.Text);
 
+            }
+            else
+            {
+                MessageBox.Show("Debe rellenar ambos campos","ATENCION",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         private async Task loginAsync(string email, string password)
         {
-            HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "usuario/login?email=" + email + "&password=" + password);
+            try { 
+            HttpResponseMessage respuesta = await cliente.GetAsync(ConexionAPI.Conexion + $"usuario/login?email={email}&password={password}");
 
-            USUARIO = await respuesta.Content.ReadFromJsonAsync<Usuario>();
-
-            if (USUARIO == null)
+            if (!respuesta.IsSuccessStatusCode)
             {
-                MessageBox.Show("Usuario no valido");
-            }
-            else
-            {
-
-                this.Hide();
-                CatalogoRutas catalogo = new CatalogoRutas(USUARIO);
-                catalogo.ShowDialog();
-
-
-                this.Close();
-
-
+                MessageBox.Show("Usuario no válido o error en la conexión.");
+                return;
             }
 
+            Usuario usuario = await respuesta.Content.ReadFromJsonAsync<Usuario>();
 
+            if (usuario == null)
+            {
+                MessageBox.Show("Usuario no válido");
+                return;
+            }
+
+                USUARIO = usuario;
+            MessageBox.Show(usuario.nombre, usuario.idUsuario.ToString());
+
+            this.Hide();
+            CatalogoRutas catalogo = new CatalogoRutas(usuario);
+            catalogo.ShowDialog();
+            this.Close();
         }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Ocurrió un error: " + ex.Message);
+    }
 
+}
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {

@@ -1,14 +1,6 @@
-﻿using Modelo;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
+﻿using Conexion;
+using Modelo;
+using System.Net.Http.Json;
 
 namespace RetaCantabria
 {
@@ -71,10 +63,20 @@ namespace RetaCantabria
                     accesibilidad=accesibilidad,
                     rutaFamiliar=familiar,
                     recomendacionesEquipo=txtRecomendaciones.Text,
+                    usuarioIdusuario= usuario
                 };
 
-               // HttpResponseMessage
-
+                HttpResponseMessage respuesta= await ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "ruta", ruta);
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Ruta creada correctamente");
+                    DialogResult= DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al crear la ruta");
+                }
             }
             else
             {
@@ -153,18 +155,6 @@ namespace RetaCantabria
                 aceptado = true;
             }
             return aceptado;
-        }
-
-        private RadioButton ObtenerRadioButtonSeleccionado(GroupBox groupBox)
-        {
-            foreach (Control c in groupBox.Controls)
-            {
-                if (c is RadioButton rb && rb.Checked)
-                {
-                    return rb; // Este es el seleccionado
-                }
-            }
-            return null; // Ninguno seleccionado
         }
     }
 }

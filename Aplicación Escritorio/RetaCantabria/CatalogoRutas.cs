@@ -1,18 +1,7 @@
 ﻿using Conexion;
 using Modelo;
 using ModeloDTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace RetaCantabria
 {
@@ -120,10 +109,16 @@ namespace RetaCantabria
             }
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void btnCrear_Click(object sender, EventArgs e)
         {
-            CrearRuta crearRuta = new CrearRuta(usuario);
-            crearRuta.Show();
+            using (CrearRuta crearRuta = new CrearRuta(usuario))
+            {
+                if (crearRuta.ShowDialog() == DialogResult.OK)
+                {
+                   await CargarGrid();
+                }
+            }
+
         }
         private void gestorPermisos(TIPOUSUARIO? permiso)
         {

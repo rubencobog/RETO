@@ -1,16 +1,7 @@
 ﻿using Conexion;
 using Modelo;
 using ModeloDTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace RetaCantabria
 {
@@ -23,32 +14,50 @@ namespace RetaCantabria
             this.usuario = usuario;
         }
 
-        private async void calendar_DateChanged(object sender, DateRangeEventArgs e)
+        private async void calendar_DateSelected(object sender, DateRangeEventArgs e)
         {
-            DateTime fecha = calendar.SelectionStart.Date;
-            lblFecha.Text = "Rutas programadas para el " + fecha.ToString("dd/MM/yyyy") + ":";
-            CargarGrid(fecha);
+            DateTime fecha = e.Start.Date;
 
+            lblFecha.Text = $"Rutas programadas para el {fecha:dd/MM/yyyy}:";
+            await CargarGrid(fecha);
         }
 
-        private async void CargarGrid(DateTime fecha)
+        private async Task CargarGrid(DateTime fecha)
         {
-            HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "calendario/buscar?campo=fecha&valor=" + fecha.ToString());
+            dgvRutaCalendar.DataSource = null;
+
+            HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "calendario/buscar?campo=fecha&valor=" + fecha.ToString("yyyy-MM-dd"));
 
             if (respuesta.IsSuccessStatusCode)
             {
-                List<Calendario> calendarios = await respuesta.Content.ReadFromJsonAsync<List<Calendario>>();
+                List<CalendarioDTO> calendarios = await respuesta.Content.ReadFromJsonAsync<List<CalendarioDTO>>();
                 List<Ruta> rutas = new List<Ruta>();
-                foreach(var calendario in calendarios)
+                foreach (var calendario in calendarios)
                 {
-                                       HttpResponseMessage respuestaRuta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "rutas/" + calendario.rutasIdruta.idRuta);
+                    HttpResponseMessage respuestaRuta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "ruta/" + calendario.idRuta);
                     if (respuestaRuta.IsSuccessStatusCode)
                     {
                         Ruta ruta = await respuestaRuta.Content.ReadFromJsonAsync<Ruta>();
                         rutas.Add(ruta);
                     }
+                    else
+                    {
+                        MessageBox.Show("Error al cargar la ruta con ID " + calendario.idRuta + ": " + respuestaRuta.ReasonPhrase);
+                    }
                 }
+                dgvRutaCalendar.AutoGenerateColumns = true;
                 dgvRutaCalendar.DataSource = rutas;
+
+                foreach (DataGridViewColumn col in dgvRutaCalendar.Columns)
+                {
+                    col.Visible = false;
+                }
+
+                dgvRutaCalendar.Columns["nombre"].Visible = true;
+                dgvRutaCalendar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvRutaCalendar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvRutaCalendar.MultiSelect = false;
+                dgvRutaCalendar.ReadOnly = true;
             }
             else
             {
@@ -68,7 +77,7 @@ namespace RetaCantabria
                 {
                     if (AgregarRutaForm.ShowDialog() == DialogResult.OK)
                     {
-                        DateTime fechaEscogida=calendar.SelectionStart.Date;
+                        DateTime fechaEscogida = calendar.SelectionStart.Date;
                         CalendarioDTO calendario = new CalendarioDTO
                         {
                             fecha = DateOnly.FromDateTime(fechaEscogida).ToString("yyyy-MM-dd"),
@@ -90,6 +99,54 @@ namespace RetaCantabria
                             MessageBox.Show("Detalles: " + calendar.detalles + "\nRecomendaciones: " + calendar.recomendaciones);
                         }
                     }
+                }
+            }
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvRutaCalendar.SelectedRows.Count > 0)
+            {
+                Ruta rutaSeleccionada = (Ruta)dgvRutaCalendar.SelectedRows[0].DataBoundItem;
+                DateTime fechaSeleccionada = calendar.SelectionStart.Date;
+                String fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
+                var confirmResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar la ruta '{rutaSeleccionada.nombre}' programada para el {fechaSeleccionada:yyyy/MM/dd}?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    HttpResponseMessage respuesta = ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + $"calendario/eliminar?fecha={fecha}&idRuta={rutaSeleccionada.idRuta}").Result;
+                    if (respuesta.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Ruta eliminada exitosamente.");
+                        await CargarGrid(fechaSeleccionada);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar la ruta: " + respuesta.ReasonPhrase);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una ruta para eliminar.");
+            }
+        }
+
+        private async void dgvRutaCalendar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Ruta rutaSeleccionada = (Ruta)dgvRutaCalendar.Rows[e.RowIndex].DataBoundItem;
+                String fecha = calendar.SelectionStart.Date.ToString("yyyy-MM-dd");
+
+                HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"calendario/busca?fecha={fecha}&idRuta={rutaSeleccionada.idRuta}");
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    CalendarioDTO calendario = await respuesta.Content.ReadFromJsonAsync<CalendarioDTO>();
+                    MessageBox.Show($"Detalles de la ruta '{rutaSeleccionada.nombre}' programada para el {calendar.SelectionStart.Date:yyyy/MM/dd}:\n\nDetalles: {calendario.detalles}\nRecomendaciones: {calendario.recomendaciones}");
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar los detalles de la ruta: " + respuesta.ReasonPhrase);
                 }
             }
         }

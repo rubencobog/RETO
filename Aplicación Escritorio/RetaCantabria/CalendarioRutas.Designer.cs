@@ -38,31 +38,34 @@
             // 
             // calendar
             // 
-            calendar.Location = new Point(44, 27);
+            calendar.Location = new Point(125, 27);
             calendar.Name = "calendar";
             calendar.TabIndex = 0;
-            calendar.DateChanged += calendar_DateChanged;
+            calendar.TitleBackColor = SystemColors.ButtonShadow;
+            calendar.DateSelected += calendar_DateSelected;
             // 
             // dgvRutaCalendar
             // 
             dgvRutaCalendar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRutaCalendar.Location = new Point(283, 61);
+            dgvRutaCalendar.Location = new Point(458, 61);
             dgvRutaCalendar.Name = "dgvRutaCalendar";
-            dgvRutaCalendar.Size = new Size(457, 53);
+            dgvRutaCalendar.Size = new Size(289, 241);
             dgvRutaCalendar.TabIndex = 1;
+            dgvRutaCalendar.CellDoubleClick += dgvRutaCalendar_CellDoubleClick;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(614, 133);
+            btnEliminar.Location = new Point(621, 327);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(126, 23);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar ruta del día";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnInsertarNueva
             // 
-            btnInsertarNueva.Location = new Point(451, 133);
+            btnInsertarNueva.Location = new Point(458, 327);
             btnInsertarNueva.Name = "btnInsertarNueva";
             btnInsertarNueva.Size = new Size(132, 23);
             btnInsertarNueva.TabIndex = 3;
@@ -73,7 +76,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(283, 27);
+            lblFecha.Location = new Point(458, 27);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(0, 15);
             lblFecha.TabIndex = 4;
