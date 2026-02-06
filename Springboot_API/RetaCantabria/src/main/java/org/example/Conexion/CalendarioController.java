@@ -16,7 +16,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 @RestController
 @RequestMapping("/api/calendario")
@@ -44,8 +46,22 @@ public class CalendarioController {
     }
 
     @GetMapping("/buscar")
-    public List<Calendario> buscar(@RequestParam String campo, @RequestParam String valor) {
-        return calendarioService.buscar(campo, valor);
+    public List<CalendarioDTO> buscar(@RequestParam String campo, @RequestParam String valor) {
+        List<Calendario> calendarios = calendarioService.buscar(campo, valor);
+        List<CalendarioDTO> calendariosDTO = new ArrayList<>();
+        for (Calendario c : calendarios) {
+            calendariosDTO.add(new CalendarioDTO(c));
+        }
+        return calendariosDTO;
+    }
+
+    @GetMapping("/busca")
+    public CalendarioDTO buscar(@RequestParam("fecha") String fecha, @RequestParam("idRuta") Long idRuta) {
+        LocalDate fechaDia = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        Ruta ruta = rutaService.buscarPorId(idRuta).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Ruta no encontrada"));
+        Calendario calendario = calendarioService.buscarPorDiaYRuta(fechaDia, ruta);
+        return new CalendarioDTO(calendario);
     }
 
     @PostMapping
@@ -55,12 +71,12 @@ public class CalendarioController {
             System.err.println("ID Usuario: " + calendarioDTO.idUsuario());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta idRuta o idUsuario");
         }
-        Ruta ruta=rutaService.buscarPorId(calendarioDTO.idRuta()).orElseThrow(() -> new ResponseStatusException(
+        Ruta ruta = rutaService.buscarPorId(calendarioDTO.idRuta()).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "Ruta no encontrada"));
-        Usuario usuario=usuarioService.buscarPorID(calendarioDTO.idUsuario()).orElseThrow(() -> new ResponseStatusException(
+        Usuario usuario = usuarioService.buscarPorID(calendarioDTO.idUsuario()).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "Usuario no encontrado"));
         LocalDate fecha = LocalDate.parse(calendarioDTO.fecha(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        Calendario calendario=new Calendario();
+        Calendario calendario = new Calendario();
         calendario.setFecha(fecha);
         calendario.setDetalles(calendarioDTO.detalles());
         calendario.setRecomendaciones(calendarioDTO.recomendaciones());
@@ -78,5 +94,14 @@ public class CalendarioController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         calendarioService.eliminar(id);
+    }
+
+    @DeleteMapping("/eliminar")
+    public void delete(@RequestParam("fecha") String fecha, @RequestParam("idRuta") Long idRuta) {
+        LocalDate fechaRuta = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        Ruta ruta = rutaService.buscarPorId(idRuta).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Ruta no encontrada"
+        ));
+        calendarioService.borrarRutaDeDia(fechaRuta, ruta);
     }
 }
