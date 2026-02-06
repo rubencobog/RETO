@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
@@ -40,8 +41,8 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
     var selectedIndex by remember { mutableStateOf(0) }
     val items = listOf(
         BottomNavItem("Inicio", Icons.Default.Home),
-        BottomNavItem("Perfil", Icons.Default.Person),
-        BottomNavItem("Ajustes", Icons.Default.Settings)
+        BottomNavItem("Perfil", Icons.Default.DateRange),
+        BottomNavItem("Ajustes", Icons.Default.Person)
     )
     val coroutineScope = rememberCoroutineScope()
     Scaffold(

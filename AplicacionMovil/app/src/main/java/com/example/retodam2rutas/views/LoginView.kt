@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.Text
+import androidx.compose.ui.text.font.FontWeight
 import com.example.retodam2rutas.components.ContentLoginView
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -21,7 +22,10 @@ fun LoginView(navController: NavController, loginViewModel: LoginViewModel){
                     titleContentColor = Color(0xFF150033),
                 ),
                 title = {
-                    Text("Reta Cantabria")
+                    Text(
+                        text = "Reta Cantabria",
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             )
         },
