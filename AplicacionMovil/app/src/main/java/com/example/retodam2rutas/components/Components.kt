@@ -48,10 +48,10 @@ import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.retodam2rutas.R
+import com.example.retodam2rutas.entities.PuntoRuta
 import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.entities.Ruta
 import com.example.retodam2rutas.entities.maptemp.RutaTemporal
-import com.example.retodam2rutas.entities.maptemp.TrackPoint
 import com.example.retodam2rutas.model.UsuarioModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
@@ -132,7 +132,7 @@ fun ContentDetailView(
 
 //================ Contenido de la ventana GPS existente =================
 @Composable
-fun ContentMapView(
+fun ContentDoView(
     innerPadding: PaddingValues,
     navController: NavController,
     id: Int,
@@ -142,6 +142,7 @@ fun ContentMapView(
 
     rutaViewModel.cargarRuta(id)
     val ruta = rutaViewModel.rutaSeleccionada
+    val puntos = ruta?.let { mapViewModel.guardarPuntos(it) }
 
     val context = LocalContext.current
     val geoPoint = mapViewModel.lastGeoPoint
@@ -181,6 +182,7 @@ fun ContentMapView(
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
                         title = "Mi ubicación"
                     }
+                    mostrarRuta(mapView,puntos)
                     mapView.overlays.clear()
                     mapView.overlays.add(marker)
                     mapView.controller.setCenter(it)
@@ -221,17 +223,21 @@ fun ContentMapView(
     }
 }
 
-fun mostrarRuta(mapView: MapView, trackPoints: List<TrackPoint>) {
+fun mostrarRuta(mapView: MapView, trackPoints: List<PuntoRuta?>?) {
     val polyline = Polyline().apply {
         width = 5f
         color = android.graphics.Color.BLUE
-        setPoints(trackPoints.map { GeoPoint(it.latitude, it.longitude) })
+        if (trackPoints != null) {
+            setPoints(trackPoints.map { it?.let { it1 -> GeoPoint(it1.latitud, it.longitud) } })
+        }
     }
-
     mapView.overlays.clear()
     mapView.overlays.add(polyline)
-    if (trackPoints.isNotEmpty()) {
-        mapView.controller.setCenter(GeoPoint(trackPoints.first().latitude, trackPoints.first().longitude))
+    if (trackPoints != null) {
+        if (trackPoints.isNotEmpty()) {
+            mapView.controller.setCenter(trackPoints.first()
+                        ?.let { GeoPoint(trackPoints.first()!!.latitud, it.longitud) })
+        }
     }
     mapView.invalidate()
 }
@@ -321,6 +327,7 @@ fun ContentAddView(
                 onClick = {
                     if (geoPoint != null) {
                         mapViewModel.iniciarRuta("Ruta1",geoPoint)
+                        mapViewModel.guardarRuta(ruta, id, context)
                     }
                     grabar = true
                 }
@@ -332,7 +339,7 @@ fun ContentAddView(
                 onClick = {
                     if (geoPoint != null) {
                         mapViewModel.terminarRuta(geoPoint)
-                    }
+                        }
                     grabar = false
                 }
             )

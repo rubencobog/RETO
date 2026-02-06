@@ -13,16 +13,18 @@ import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavController
-import com.example.retodam2rutas.components.ContentAddView
-import com.example.retodam2rutas.components.ContentMapView
+import com.example.retodam2rutas.components.ContentDoView
 
+/**
+ * Esta funcion es la dedicada a mostrar la pestaña del mapa para
+ * hacer rutas del catalogo cuando seleccionas una de las cards
+ **/
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MapView(navController: NavController, id: Int, rutaViewModel: RutaViewModel, mapViewModel: MapViewModel){
+fun DoRutaView(navController: NavController, id: Int, rutaViewModel: RutaViewModel, mapViewModel: MapViewModel){
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
         topBar = {
@@ -48,5 +50,5 @@ fun MapView(navController: NavController, id: Int, rutaViewModel: RutaViewModel,
             )
         },
 
-    ) { innerPadding -> ContentAddView(innerPadding, navController, id, rutaViewModel, mapViewModel) }
+        ) { innerPadding -> ContentDoView(innerPadding, navController, id, rutaViewModel, mapViewModel) }
 }
