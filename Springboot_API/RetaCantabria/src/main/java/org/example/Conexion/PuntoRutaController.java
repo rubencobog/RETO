@@ -47,4 +47,9 @@ public class PuntoRutaController {
     public void delete(@PathVariable Long id) {
         puntoRutaService.eliminar(id);
     }
+
+    @GetMapping("/rutaPR")
+    public List<PuntoRuta> buscarPR(@RequestParam Long idRuta){
+        return puntoRutaService.puntosRuta(idRuta);
+    }
 }

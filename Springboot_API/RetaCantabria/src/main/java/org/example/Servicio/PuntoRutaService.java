@@ -71,4 +71,7 @@ public class PuntoRutaService implements IPuntoRutaService<PuntoRuta, Long> {
             default -> List.of();
         };
     }
+    public List<PuntoRuta> puntosRuta(long idRuta){
+        return repository.getpuntosRutas(idRuta);
+    }
 }
