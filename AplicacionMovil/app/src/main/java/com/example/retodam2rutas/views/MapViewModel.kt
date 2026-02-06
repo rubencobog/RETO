@@ -9,6 +9,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.retodam2rutas.data.database.AppDatabase
+import com.example.retodam2rutas.entities.PuntoInteres
 import com.example.retodam2rutas.entities.PuntoRuta
 import com.example.retodam2rutas.entities.Ruta
 import com.example.retodam2rutas.entities.maptemp.RutaTemporal
@@ -276,5 +277,32 @@ class MapViewModel(
 
         return puntosRuta
     }
+
+    //================ Puntos de interes y de peligro ================
+    fun guardarPuntoInteres(
+        geoPoint: GeoPoint,
+        nombre: String,
+        descripcion: String
+    ) {
+        viewModelScope.launch {
+            val puntoRutaId = appDatabase.puntoRutaDao().insert(
+                PuntoRuta(
+                    latitud = geoPoint.latitude,
+                    longitud = geoPoint.longitude,
+                    elevacion = 0,
+                    timeStamp = LocalDateTime.now()
+                )
+            )
+
+            appDatabase.puntoInteresDao().insert(
+                PuntoInteres(
+                    nombre = nombre,
+                    caracteristicasEspeciales = descripcion,
+                    puntoRutaId = puntoRutaId
+                )
+            )
+        }
+    }
+
 
 }

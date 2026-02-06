@@ -10,7 +10,7 @@ import com.example.retodam2rutas.entities.PuntoRuta
 interface PuntoRutaDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(puntoRuta: PuntoRuta)
+    suspend fun insert(puntoRuta: PuntoRuta): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(puntos: List<PuntoRuta>)
