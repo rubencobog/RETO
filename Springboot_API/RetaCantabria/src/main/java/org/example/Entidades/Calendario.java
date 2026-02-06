@@ -1,6 +1,8 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.Instant;
@@ -33,6 +35,8 @@ public class Calendario {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idUsuario", nullable = false)
+    @JsonBackReference("calendarios-usuario")
+    @JsonIgnoreProperties("calendarios")
     private Usuario usuarioIdusuario;
 
     public Calendario() {

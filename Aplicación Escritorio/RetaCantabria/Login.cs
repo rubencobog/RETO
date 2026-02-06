@@ -34,7 +34,7 @@ namespace RetaCantabria
 
             if (!respuesta.IsSuccessStatusCode)
             {
-                MessageBox.Show("Usuario no válido o error en la conexión.");
+                MessageBox.Show("Usuario no vï¿½lido o error en la conexiï¿½n.");
                 return;
             }
 
@@ -42,7 +42,7 @@ namespace RetaCantabria
 
             if (usuario == null)
             {
-                MessageBox.Show("Usuario no válido");
+                MessageBox.Show("Usuario no vï¿½lido");
                 return;
             }
 
@@ -56,7 +56,7 @@ namespace RetaCantabria
         }
     catch (Exception ex)
     {
-        MessageBox.Show("Ocurrió un error: " + ex.Message);
+        MessageBox.Show("Ocurriï¿½ un error: " + ex.Message);
     }
 
 }

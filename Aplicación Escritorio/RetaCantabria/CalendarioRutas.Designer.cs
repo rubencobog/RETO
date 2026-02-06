@@ -38,7 +38,8 @@
             // 
             // calendar
             // 
-            calendar.Location = new Point(125, 27);
+            calendar.Location = new Point(143, 36);
+            calendar.Margin = new Padding(10, 12, 10, 12);
             calendar.Name = "calendar";
             calendar.TabIndex = 0;
             calendar.TitleBackColor = SystemColors.ButtonShadow;
@@ -47,17 +48,20 @@
             // dgvRutaCalendar
             // 
             dgvRutaCalendar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRutaCalendar.Location = new Point(458, 61);
+            dgvRutaCalendar.Location = new Point(523, 81);
+            dgvRutaCalendar.Margin = new Padding(3, 4, 3, 4);
             dgvRutaCalendar.Name = "dgvRutaCalendar";
-            dgvRutaCalendar.Size = new Size(289, 241);
+            dgvRutaCalendar.RowHeadersWidth = 51;
+            dgvRutaCalendar.Size = new Size(330, 321);
             dgvRutaCalendar.TabIndex = 1;
             dgvRutaCalendar.CellDoubleClick += dgvRutaCalendar_CellDoubleClick;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(621, 327);
+            btnEliminar.Location = new Point(710, 436);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(126, 23);
+            btnEliminar.Size = new Size(144, 31);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar ruta del día";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -65,9 +69,10 @@
             // 
             // btnInsertarNueva
             // 
-            btnInsertarNueva.Location = new Point(458, 327);
+            btnInsertarNueva.Location = new Point(523, 436);
+            btnInsertarNueva.Margin = new Padding(3, 4, 3, 4);
             btnInsertarNueva.Name = "btnInsertarNueva";
-            btnInsertarNueva.Size = new Size(132, 23);
+            btnInsertarNueva.Size = new Size(151, 31);
             btnInsertarNueva.TabIndex = 3;
             btnInsertarNueva.Text = "Añadir nueva ruta";
             btnInsertarNueva.UseVisualStyleBackColor = true;
@@ -76,21 +81,23 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(458, 27);
+            lblFecha.Location = new Point(523, 36);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(0, 15);
+            lblFecha.Size = new Size(0, 20);
             lblFecha.TabIndex = 4;
             // 
             // CalendarioRutas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoSize = true;
+            ClientSize = new Size(914, 600);
             Controls.Add(lblFecha);
             Controls.Add(btnInsertarNueva);
             Controls.Add(btnEliminar);
             Controls.Add(dgvRutaCalendar);
             Controls.Add(calendar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CalendarioRutas";
             Text = "Calendario";
             ((System.ComponentModel.ISupportInitialize)dgvRutaCalendar).EndInit();

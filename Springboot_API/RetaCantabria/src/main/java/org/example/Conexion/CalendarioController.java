@@ -67,8 +67,6 @@ public class CalendarioController {
     @PostMapping
     public Calendario create(@RequestBody CalendarioDTO calendarioDTO) {
         if (calendarioDTO.idRuta() == null || calendarioDTO.idUsuario() == null) {
-            System.err.println("ID Ruta: " + calendarioDTO.idRuta());
-            System.err.println("ID Usuario: " + calendarioDTO.idUsuario());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta idRuta o idUsuario");
         }
         Ruta ruta = rutaService.buscarPorId(calendarioDTO.idRuta()).orElseThrow(() -> new ResponseStatusException(
