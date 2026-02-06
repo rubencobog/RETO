@@ -23,9 +23,9 @@ import com.example.retodam2rutas.data.daos.PuntoRutaDao
         Valoracion::class,
         Resena::class],
     // Cambiar este número si se modifica la estructura de la DB
-    version = 1,
+    version = 2,
     // Cambiar a false si no se quiere exportar el esquema
-    exportSchema = true
+    exportSchema = false
 )
 @TypeConverters(TipoConverter::class)
 abstract class AppDatabase(): RoomDatabase() {

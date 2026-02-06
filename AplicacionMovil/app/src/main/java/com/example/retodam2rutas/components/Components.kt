@@ -523,6 +523,7 @@ fun ContentLoginView(
     val usuario: UsuarioModel? by loginViewModel.usuario.observeAsState()
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var showDialog by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -554,11 +555,32 @@ fun ContentLoginView(
 
         Spacer(modifier = Modifier.padding(10.dp))
 
-        Button(onClick = { navController.navigate("Home") }) {
+        Button(onClick = {
+//            loginViewModel.getLoginUsuario(email, password)
+//            showDialog = true
+                navController.navigate("Home")
+
+        }) {
             Text("Entrar")
         }
 
     }
+//    if (showDialog) {
+//        AlertDialog(
+//            onDismissRequest = { showDialog = false },
+//            title = {
+//                Text("Iniciando sesión con " + usuario?.nombre)
+//            },
+//            text = {
+//                Text("Por favor espera...")
+//            },
+//            confirmButton = {
+//                TextButton(onClick = { showDialog = false }) {
+//                    Text("OK")
+//                }
+//            }
+//        )
+//    }
 }
 
 //================ Dialog de informacion =================
