@@ -17,12 +17,12 @@ namespace RetaCantabria
 {
     public partial class GestionValoraciones : Form
     {
-        private Ruta ruta;
-        public GestionValoraciones(Ruta ruta)
+        private RutaDTO ruta;
+        public GestionValoraciones(RutaDTO ruta)
         {
             InitializeComponent();
             this.ruta = ruta;
-            lblSelect.Text = "Seleccione valoraciones o reseñas de la ruta: " + ruta.nombre;
+            lblSelect.Text = "Seleccione valoraciones o reseñas de la ruta: " + ruta.Nombre;
         }
 
         private async void comboValoracion_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace RetaCantabria
         }
         private async Task CargarValoracionesAsync()
         {
-            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ValoracionDevueltaDTO>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.idRuta);
+            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ValoracionDevueltaDTO>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.IdRuta);
             if (valoraciones != null)
             {
                 dgvValRes.DataSource = valoraciones;
@@ -52,7 +52,7 @@ namespace RetaCantabria
 
         private async Task CargarResenasAsync()
         {
-            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.idRuta);
+            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.IdRuta);
             if (resenas != null)
             {
                 dgvValRes.DataSource = resenas;
@@ -69,41 +69,44 @@ namespace RetaCantabria
             {
                 MessageBox.Show("Seleccione una valoración o reseña para eliminar.");
             }
-            try
+            else
             {
-                if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
+                try
                 {
-                    ValoracionDevueltaDTO valoracion = dgvValRes.CurrentRow.DataBoundItem as ValoracionDevueltaDTO;
-                    HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "valoracion/" + valoracion.idValoracion);
-                    if (respuesta.IsSuccessStatusCode)
+                    if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
                     {
-                        MessageBox.Show("Valoración eliminada correctamente.");
-                        await CargarValoracionesAsync();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar la valoración. " + respuesta.ReasonPhrase);
-                    }
+                        ValoracionDevueltaDTO valoracion = dgvValRes.CurrentRow.DataBoundItem as ValoracionDevueltaDTO;
+                        HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "valoracion/" + valoracion.idValoracion);
+                        if (respuesta.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Valoración eliminada correctamente.");
+                            await CargarValoracionesAsync();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar la valoración. " + respuesta.ReasonPhrase);
+                        }
 
+                    }
+                    else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
+                    {
+                        ResenaDevueltaDTO resena = dgvValRes.CurrentRow.DataBoundItem as ResenaDevueltaDTO;
+                        HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "resena/" + resena.idResena);
+                        if (respuesta.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Reseña eliminada correctamente.");
+                            await CargarResenasAsync();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar la reseña. " + respuesta.ReasonPhrase);
+                        }
+                    }
                 }
-                else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
+                catch (Exception ex)
                 {
-                    ResenaDevueltaDTO resena = dgvValRes.CurrentRow.DataBoundItem as ResenaDevueltaDTO;
-                    HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "resena/" + resena.idResena);
-                    if (respuesta.IsSuccessStatusCode)
-                    {
-                        MessageBox.Show("Reseña eliminada correctamente.");
-                        await CargarResenasAsync();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar la reseña. " + respuesta.ReasonPhrase);
-                    }
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar: " + ex.Message);
             }
         }
 

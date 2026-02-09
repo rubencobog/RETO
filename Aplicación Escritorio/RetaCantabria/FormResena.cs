@@ -19,15 +19,15 @@ namespace RetaCantabria
     public partial class FormResena : Form
     {
         private HttpClient cliente;
-        private Usuario usuario;
-        private Ruta ruta;
-        public FormResena(Usuario usuario, Ruta ruta, HttpClient cliente)
+        private UsuarioDTO usuario;
+        private RutaDTO ruta;
+        public FormResena(UsuarioDTO usuario, RutaDTO ruta, HttpClient cliente)
         {
             InitializeComponent();
             this.cliente = cliente;
             this.usuario = usuario;
             this.ruta = ruta;
-            lblResena.Text = "Reseña de " + ruta.nombre;
+            lblResena.Text = "Reseña de " + ruta.Nombre;
         }
 
         private async void btnEnviar_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace RetaCantabria
             {
                 ResenaDTO resena = new ResenaDTO
             {
-                    idRuta = ruta.idRuta,
+                    idRuta = ruta.IdRuta,
                 idUsuario = usuario.idUsuario,
                 resena = resenatext,
                 fecha = DateOnly.FromDateTime(DateTime.Now)

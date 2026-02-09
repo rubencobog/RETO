@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "calendario")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Calendario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

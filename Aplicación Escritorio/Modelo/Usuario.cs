@@ -14,5 +14,6 @@ namespace Modelo
         public TIPOUSUARIO? rol { get; set; }
         public List<Valoracion> valoraciones { get; set; }
         public List<Resena> resenas { get; set; }
+        public List<Calendario>calendarios { get; set; }
     }
 }

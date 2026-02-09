@@ -7,8 +7,8 @@ namespace RetaCantabria
 {
     public partial class CalendarioRutas : Form
     {
-        private Usuario usuario;
-        public CalendarioRutas(Usuario usuario)
+        private UsuarioDTO usuario;
+        public CalendarioRutas(UsuarioDTO usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -31,13 +31,13 @@ namespace RetaCantabria
             if (respuesta.IsSuccessStatusCode)
             {
                 List<CalendarioDTO> calendarios = await respuesta.Content.ReadFromJsonAsync<List<CalendarioDTO>>();
-                List<Ruta> rutas = new List<Ruta>();
+                List<RutaDTO> rutas = new List<RutaDTO>();
                 foreach (var calendario in calendarios)
                 {
                     HttpResponseMessage respuestaRuta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "ruta/" + calendario.idRuta);
                     if (respuestaRuta.IsSuccessStatusCode)
                     {
-                        Ruta ruta = await respuestaRuta.Content.ReadFromJsonAsync<Ruta>();
+                        RutaDTO ruta = await respuestaRuta.Content.ReadFromJsonAsync<RutaDTO>();
                         rutas.Add(ruta);
                     }
                     else
@@ -83,7 +83,7 @@ namespace RetaCantabria
                             fecha = DateOnly.FromDateTime(fechaEscogida).ToString("yyyy-MM-dd"),
                             detalles = AgregarRutaForm.detalles,
                             recomendaciones = AgregarRutaForm.recomendaciones,
-                            idRuta = AgregarRutaForm.rutaSeleccionada.idRuta,
+                            idRuta = AgregarRutaForm.rutaSeleccionada.IdRuta,
                             idUsuario = this.usuario.idUsuario
                         };
                         HttpResponseMessage respuesta = ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "calendario", calendario).Result;
@@ -94,9 +94,8 @@ namespace RetaCantabria
                         }
                         else
                         {
-                            MessageBox.Show("Error al programar la ruta: " + respuesta.ReasonPhrase);
-                            Calendario calendar = await respuesta.Content.ReadFromJsonAsync<Calendario>();
-                            MessageBox.Show("Detalles: " + calendar.detalles + "\nRecomendaciones: " + calendar.recomendaciones);
+                            string error = await respuesta.Content.ReadAsStringAsync();
+                            MessageBox.Show("Error al programar la ruta.\n" + error);
                         }
                     }
                 }
@@ -107,13 +106,13 @@ namespace RetaCantabria
         {
             if (dgvRutaCalendar.SelectedRows.Count > 0)
             {
-                Ruta rutaSeleccionada = (Ruta)dgvRutaCalendar.SelectedRows[0].DataBoundItem;
+                RutaDTO rutaSeleccionada = (RutaDTO)dgvRutaCalendar.SelectedRows[0].DataBoundItem;
                 DateTime fechaSeleccionada = calendar.SelectionStart.Date;
                 String fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
-                var confirmResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar la ruta '{rutaSeleccionada.nombre}' programada para el {fechaSeleccionada:yyyy/MM/dd}?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                var confirmResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar la ruta '{rutaSeleccionada.Nombre}' programada para el {fechaSeleccionada:yyyy/MM/dd}?", "Confirmar eliminación", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    HttpResponseMessage respuesta = ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + $"calendario/eliminar?fecha={fecha}&idRuta={rutaSeleccionada.idRuta}").Result;
+                    HttpResponseMessage respuesta = ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + $"calendario/eliminar?fecha={fecha}&idRuta={rutaSeleccionada.IdRuta}").Result;
                     if (respuesta.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ruta eliminada exitosamente.");
@@ -135,14 +134,14 @@ namespace RetaCantabria
         {
             if (e.RowIndex >= 0)
             {
-                Ruta rutaSeleccionada = (Ruta)dgvRutaCalendar.Rows[e.RowIndex].DataBoundItem;
+                RutaDTO rutaSeleccionada = (RutaDTO)dgvRutaCalendar.Rows[e.RowIndex].DataBoundItem;
                 String fecha = calendar.SelectionStart.Date.ToString("yyyy-MM-dd");
 
-                HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"calendario/busca?fecha={fecha}&idRuta={rutaSeleccionada.idRuta}");
+                HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"calendario/busca?fecha={fecha}&idRuta={rutaSeleccionada.IdRuta}");
                 if (respuesta.IsSuccessStatusCode)
                 {
                     CalendarioDTO calendario = await respuesta.Content.ReadFromJsonAsync<CalendarioDTO>();
-                    MessageBox.Show($"Detalles de la ruta '{rutaSeleccionada.nombre}' programada para el {calendar.SelectionStart.Date:yyyy/MM/dd}:\n\nDetalles: {calendario.detalles}\nRecomendaciones: {calendario.recomendaciones}");
+                    MessageBox.Show($"Detalles de la ruta '{rutaSeleccionada.Nombre}' programada para el {calendar.SelectionStart.Date:yyyy/MM/dd}:\n\nDetalles: {calendario.detalles}\nRecomendaciones: {calendario.recomendaciones}");
                 }
                 else
                 {

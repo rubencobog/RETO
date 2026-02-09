@@ -14,6 +14,7 @@ namespace ModeloDTO
         public String nombre { get; set; }
         public String apellido { get; set; }
         public String email { get; set; }
+        public String password { get; set; }
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public TIPOUSUARIO? rol { get; set; }

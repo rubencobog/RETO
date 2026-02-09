@@ -1,5 +1,6 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace RetaCantabria
     {
         public String detalles { get; set; }
         public String recomendaciones { get; set; }
-        public Ruta rutaSeleccionada { get; set; }
+        public RutaDTO rutaSeleccionada { get; set; }
         public AgregarRutaCalendario()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace RetaCantabria
 
         private async Task CargarGrid()
         {
-            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
+            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<RutaDTO>>(ConexionAPI.Conexion + "ruta");
             dgvRutasDisponibles.DataSource = rutas;
             dgvRutasDisponibles.AutoGenerateColumns = true;
             dgvRutasDisponibles.Columns.RemoveAt(0);
@@ -46,7 +47,7 @@ namespace RetaCantabria
         {
             if (dgvRutasDisponibles.SelectedRows.Count > 0)
             {
-                rutaSeleccionada = (Ruta)dgvRutasDisponibles.SelectedRows[0].DataBoundItem;
+                rutaSeleccionada = (RutaDTO)dgvRutasDisponibles.SelectedRows[0].DataBoundItem;
                 detalles = txtDetalles.Text;
                 recomendaciones = txtRecomendaciones.Text;
                 this.DialogResult = DialogResult.OK;

@@ -1,5 +1,6 @@
 using Conexion;
 using Modelo;
+using ModeloDTO;
 using System.Net.Http.Json;
 
 namespace RetaCantabria
@@ -7,7 +8,7 @@ namespace RetaCantabria
     public partial class Login : Form
     {
         HttpClient cliente = ConexionAPI.CLIENTE;
-        private Usuario USUARIO;
+        private UsuarioDTO USUARIO;
         public Login()
         {
 
@@ -29,25 +30,25 @@ namespace RetaCantabria
         }
         private async Task loginAsync(string email, string password)
         {
-            try { 
-            HttpResponseMessage respuesta = await cliente.GetAsync(ConexionAPI.Conexion + $"usuario/login?email={email}&password={password}");
+            try {
+                HttpResponseMessage respuesta = await cliente.GetAsync(ConexionAPI.Conexion + $"usuario/login?email={email}&password={password}");
 
             if (!respuesta.IsSuccessStatusCode)
             {
-                MessageBox.Show("Usuario no v�lido o error en la conexi�n.");
+                MessageBox.Show("Usuario no valido o error en la conexion.");
                 return;
             }
 
-            Usuario usuario = await respuesta.Content.ReadFromJsonAsync<Usuario>();
+            UsuarioDTO usuario = await respuesta.Content.ReadFromJsonAsync<UsuarioDTO>();
 
             if (usuario == null)
             {
-                MessageBox.Show("Usuario no v�lido");
+                MessageBox.Show("Usuario no valido");
                 return;
             }
 
                 USUARIO = usuario;
-            MessageBox.Show(usuario.nombre, usuario.idUsuario.ToString());
+            MessageBox.Show($"{usuario.nombre} {usuario.apellido}","¡Bienvenido!");
 
             this.Hide();
             CatalogoRutas catalogo = new CatalogoRutas(usuario);
@@ -56,7 +57,7 @@ namespace RetaCantabria
         }
     catch (Exception ex)
     {
-        MessageBox.Show("Ocurri� un error: " + ex.Message);
+        MessageBox.Show("Ocurrio un error: " + ex.Message);
     }
 
 }
@@ -69,7 +70,7 @@ namespace RetaCantabria
 
         private void labelEntrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Usuario usuario = new Usuario();
+            UsuarioDTO usuario = new UsuarioDTO();
             CatalogoRutas catalogo = new CatalogoRutas(usuario);
             catalogo.ShowDialog();
         }

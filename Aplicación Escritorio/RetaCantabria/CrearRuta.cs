@@ -1,13 +1,14 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System.Net.Http.Json;
 
 namespace RetaCantabria
 {
     public partial class CrearRuta : Form
     {
-        private Usuario usuario;
-        public CrearRuta(Usuario usuario)
+        private UsuarioDTO usuario;
+        public CrearRuta(UsuarioDTO usuario)
         {
             this.usuario = usuario;
            
@@ -48,22 +49,28 @@ namespace RetaCantabria
                     familiar = true;
                 }
 
+
+
+                Usuario usu=new Usuario
+                {
+                    idUsuario = usuario.idUsuario
+                };
                 Ruta ruta = new Ruta
                 {
-                    nombre=txtNombre.Text,
-                    distancia=Convert.ToInt32(txtDistancia.Text),
-                    temporadas=comboTemporada.SelectedItem.ToString(),
-                    zonaGeografica=txtZona.Text,
-                    duracion=new TimeOnly(
+                    nombre = txtNombre.Text,
+                    distancia = Convert.ToInt32(txtDistancia.Text),
+                    temporadas = comboTemporada.SelectedItem.ToString(),
+                    zonaGeografica = txtZona.Text,
+                    duracion = new TimeOnly(
                         (int)numericHoras.Value,
                         (int)numericMinutos.Value,
                         (int)numericSegundos.Value
                         ),
-                    clasificacion=clasificacion,
-                    accesibilidad=accesibilidad,
-                    rutaFamiliar=familiar,
-                    recomendacionesEquipo=txtRecomendaciones.Text,
-                    usuarioIdusuario= usuario
+                    clasificacion = clasificacion,
+                    accesibilidad = accesibilidad,
+                    rutaFamiliar = familiar,
+                    recomendacionesEquipo = txtRecomendaciones.Text,
+                    usuarioIdusuario = usu
                 };
 
                 HttpResponseMessage respuesta= await ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "ruta", ruta);

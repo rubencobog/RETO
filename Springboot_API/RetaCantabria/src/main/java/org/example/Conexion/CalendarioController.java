@@ -11,6 +11,7 @@ import org.example.Servicio.RutaService;
 import org.example.Servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -65,7 +66,7 @@ public class CalendarioController {
     }
 
     @PostMapping
-    public Calendario create(@RequestBody CalendarioDTO calendarioDTO) {
+    public ResponseEntity<Void> create(@RequestBody CalendarioDTO calendarioDTO) {
         if (calendarioDTO.idRuta() == null || calendarioDTO.idUsuario() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta idRuta o idUsuario");
         }
@@ -81,7 +82,8 @@ public class CalendarioController {
         calendario.setRutasIdruta(ruta);
         calendario.setUsuarioIdusuario(usuario);
         System.out.println(calendario.toString());
-        return calendarioService.crear(calendario);
+        calendarioService.crear(calendario);
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}")

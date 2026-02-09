@@ -8,8 +8,8 @@ namespace RetaCantabria
     public partial class CatalogoRutas : Form
     {
 
-        private Usuario usuario;
-        public CatalogoRutas(Usuario usuario)
+        private UsuarioDTO usuario;
+        public CatalogoRutas(UsuarioDTO usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -25,8 +25,8 @@ namespace RetaCantabria
         public async Task CargarGrid()
         {
 
-            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
-            List<Ruta> rutasValidadas = new List<Ruta>();
+            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<RutaDTO>>(ConexionAPI.Conexion + "ruta");
+            List<RutaDTO> rutasValidadas = new List<RutaDTO>();
             foreach (var ruta in rutas)
             {
                 if (ruta.estadoRuta == true)
@@ -61,7 +61,7 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 FormResena formResena = new FormResena(this.usuario, ruta, ConexionAPI.CLIENTE);
                 formResena.ShowDialog();
             }
@@ -75,14 +75,14 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 using (FormValoracion formV = new FormValoracion())
                 {
                     if (formV.ShowDialog() == DialogResult.OK)
                     {
                         valoracionDTO valoracion = new valoracionDTO
                         {
-                            idRuta = ruta.idRuta,
+                            idRuta = ruta.IdRuta,
                             idUsuario = usuario.idUsuario,
                             dificultad = formV.dificultad,
                             belleza = formV.belleza,
@@ -165,7 +165,7 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 if (ruta.estadoRuta)
                 {
                     MessageBox.Show("La ruta ya está validada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,7 +173,7 @@ namespace RetaCantabria
                 else
                 {
                     ruta.estadoRuta = true;
-                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.idRuta, ruta).Result;
+                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.IdRuta, ruta).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ruta validada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -191,7 +191,7 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 GestionValoraciones gestionValoraciones = new GestionValoraciones(ruta);
                 gestionValoraciones.ShowDialog();
             }

@@ -1,5 +1,6 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System.Net.Http.Json;
 
 namespace RetaCantabria
@@ -7,14 +8,14 @@ namespace RetaCantabria
     public partial class CrearUsuario : Form
     {
         private readonly HttpClient cliente = ConexionAPI.CLIENTE;
-        private Usuario usuario;
+        private UsuarioDTO usuario;
         private readonly bool esNuevo;
         public CrearUsuario()
         {
             InitializeComponent();
             esNuevo = true;
         }
-        public CrearUsuario(Usuario usuario)
+        public CrearUsuario(UsuarioDTO usuario)
         {
             InitializeComponent();
             this.Load += CrearUsuario_Load;
@@ -33,7 +34,7 @@ namespace RetaCantabria
             {
                 if (esNuevo)
                 {
-                    usuario = new Usuario
+                    Usuario usuarioCrear = new Usuario
                     {
                         nombre = nombre,
                         apellido = apellido,
@@ -41,14 +42,18 @@ namespace RetaCantabria
                         password = password,
                         rol = TIPOUSUARIO.alumno,
                         valoraciones = new List<Valoracion>(),
-                        resenas = new List<Resena>()
+                        resenas = new List<Resena>(),
+                        calendarios=new List<Calendario>()
                     };
                     try
                     {
-                        HttpResponseMessage response = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "usuario", usuario);
+                        HttpResponseMessage response = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "usuario", usuarioCrear);
                         if (response.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Usuario creado con éxito.");
+                            usuario= await response.Content.ReadFromJsonAsync<UsuarioDTO>();
+                            CatalogoRutas catalog = new CatalogoRutas(usuario);
+                            catalog.ShowDialog();
                             this.Close();
                         }
                         else
@@ -99,7 +104,6 @@ namespace RetaCantabria
                 txtNombre.Text = usuario.nombre;
                 txtApellido.Text = usuario.apellido;
                 txtEmail.Text = usuario.email;
-                txtPassword.Text = usuario.password;
                 btnRegistrar.Text = "Actualizar";
             }
             else
