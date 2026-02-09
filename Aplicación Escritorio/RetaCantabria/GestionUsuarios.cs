@@ -1,5 +1,6 @@
 ﻿using Conexion;
 using Modelo;
+using ModeloDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace RetaCantabria
 
         public async Task CargarUsuarios()
         {
-            var usuarios = await cliente.GetFromJsonAsync<List<Usuario>>(ConexionAPI.Conexion + "usuario");
+            var usuarios = await cliente.GetFromJsonAsync<List<UsuarioDTO>>(ConexionAPI.Conexion + "usuario");
             dgvUsuarios.AutoGenerateColumns = true;
             dgvUsuarios.DataSource = usuarios;
             dgvUsuarios.Columns["idUsuario"].Visible = false;
@@ -47,7 +48,7 @@ namespace RetaCantabria
         {
             if (dgvUsuarios.SelectedRows.Count > 0)
             {
-                var usuarioSeleccionado = (Usuario)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                var usuarioSeleccionado = (UsuarioDTO)dgvUsuarios.SelectedRows[0].DataBoundItem;
                 String url = ConexionAPI.Conexion + "usuario/" + usuarioSeleccionado.idUsuario;
                 var resultado = await cliente.DeleteAsync(url);
                 if (resultado.IsSuccessStatusCode)
@@ -70,7 +71,7 @@ namespace RetaCantabria
         {
             if (dgvUsuarios.SelectedRows.Count > 0)
             {
-                var usuarioSeleccionado = (Usuario)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                var usuarioSeleccionado = (UsuarioDTO)dgvUsuarios.SelectedRows[0].DataBoundItem;
                 usuarioSeleccionado.rol = (TIPOUSUARIO)comboPermisos.SelectedItem;
                 HttpResponseMessage resultado = await cliente.PutAsJsonAsync(ConexionAPI.Conexion + "usuario/" + usuarioSeleccionado.idUsuario, usuarioSeleccionado);
                 if (resultado.IsSuccessStatusCode)
@@ -94,7 +95,7 @@ namespace RetaCantabria
             if (dgvUsuarios.CurrentRow != null && !dgvUsuarios.CurrentRow.IsNewRow)
             {
                 comboPermisos.Enabled = true;
-                comboPermisos.SelectedItem = ((Usuario)dgvUsuarios.CurrentRow.DataBoundItem).rol;
+                comboPermisos.SelectedItem = ((UsuarioDTO)dgvUsuarios.CurrentRow.DataBoundItem).rol;
             }
             else
             {
@@ -106,7 +107,7 @@ namespace RetaCantabria
         {
             if(dgvUsuarios.SelectedRows.Count > 0)
             {
-                var usuarioSeleccionado = (Usuario)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                var usuarioSeleccionado = (UsuarioDTO)dgvUsuarios.SelectedRows[0].DataBoundItem;
                 CrearUsuario crearUsuarioForm = new CrearUsuario(usuarioSeleccionado);
                 crearUsuarioForm.ShowDialog();
                 CargarUsuarios();

@@ -1,57 +1,66 @@
 using Conexion;
 using Modelo;
-using System;
-using System.Net.Http;
+using ModeloDTO;
 using System.Net.Http.Json;
-using System.Security.Policy;
 
 namespace RetaCantabria
 {
     public partial class Login : Form
     {
         HttpClient cliente = ConexionAPI.CLIENTE;
-        private Usuario USUARIO;
+        private UsuarioDTO USUARIO;
         public Login()
         {
 
             InitializeComponent();
         }
 
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private async void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (!txtEmail.Text.Equals(String.Empty) || !txtPassword.Text.Equals(String.Empty))
+            if (!txtEmail.Text.Equals(String.Empty) && !txtPassword.Text.Equals(String.Empty))
             {
 
-                loginAsync(txtEmail.Text, txtPassword.Text);
+               await loginAsync(txtEmail.Text, txtPassword.Text);
 
+            }
+            else
+            {
+                MessageBox.Show("Debe rellenar ambos campos","ATENCION",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         private async Task loginAsync(string email, string password)
         {
-            HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + "usuario/login?email=" + email + "&password=" + password);
+            try {
+                HttpResponseMessage respuesta = await cliente.GetAsync(ConexionAPI.Conexion + $"usuario/login?email={email}&password={password}");
 
-            USUARIO = await respuesta.Content.ReadFromJsonAsync<Usuario>();
+            if (!respuesta.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Usuario no valido o error en la conexion.");
+                return;
+            }
 
-            if (USUARIO == null)
+            UsuarioDTO usuario = await respuesta.Content.ReadFromJsonAsync<UsuarioDTO>();
+
+            if (usuario == null)
             {
                 MessageBox.Show("Usuario no valido");
-            }
-            else
-            {
-
-                this.Hide();
-                CatalogoRutas catalogo = new CatalogoRutas(USUARIO);
-                catalogo.ShowDialog();
-
-
-                this.Close();
-
-
+                return;
             }
 
+                USUARIO = usuario;
+            MessageBox.Show($"{usuario.nombre} {usuario.apellido}","¡Bienvenido!");
 
+            this.Hide();
+            CatalogoRutas catalogo = new CatalogoRutas(usuario);
+            catalogo.ShowDialog();
+            this.Close();
         }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Ocurrio un error: " + ex.Message);
+    }
 
+}
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
@@ -61,7 +70,7 @@ namespace RetaCantabria
 
         private void labelEntrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Usuario usuario = new Usuario();
+            UsuarioDTO usuario = new UsuarioDTO();
             CatalogoRutas catalogo = new CatalogoRutas(usuario);
             catalogo.ShowDialog();
         }

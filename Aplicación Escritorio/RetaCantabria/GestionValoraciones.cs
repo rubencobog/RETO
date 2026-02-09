@@ -17,42 +17,42 @@ namespace RetaCantabria
 {
     public partial class GestionValoraciones : Form
     {
-        private Ruta ruta;
-        public GestionValoraciones(Ruta ruta)
+        private RutaDTO ruta;
+        public GestionValoraciones(RutaDTO ruta)
         {
             InitializeComponent();
             this.ruta = ruta;
-            lblSelect.Text = "Seleccione valoraciones o reseñas de la ruta: " + ruta.nombre;
+            lblSelect.Text = "Seleccione valoraciones o reseñas de la ruta: " + ruta.Nombre;
         }
 
         private async void comboValoracion_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
             {
-               await CargarValoracionesAsync();
+                await CargarValoracionesAsync();
 
             }
             else if (comboValoracion.SelectedItem.ToString() == "Reseñas")
             {
-               await CargarResenasAsync();
+                await CargarResenasAsync();
             }
         }
         private async Task CargarValoracionesAsync()
         {
-            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Valoracion>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.idRuta);
+            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ValoracionDevueltaDTO>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.IdRuta);
             if (valoraciones != null)
             {
                 dgvValRes.DataSource = valoraciones;
                 dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvValRes.MultiSelect = false;
-                dgvValRes.Columns["id"].Visible = false;
+                dgvValRes.Columns["idValoracion"].Visible = false;
                 dgvValRes.AutoGenerateColumns = true;
             }
         }
 
         private async Task CargarResenasAsync()
         {
-            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.idRuta);
+            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.IdRuta);
             if (resenas != null)
             {
                 dgvValRes.DataSource = resenas;
@@ -69,12 +69,14 @@ namespace RetaCantabria
             {
                 MessageBox.Show("Seleccione una valoración o reseña para eliminar.");
             }
+            else
+            {
                 try
                 {
                     if (comboValoracion.SelectedItem.ToString() == "Valoraciones")
                     {
-                        Valoracion valoracion = dgvValRes.CurrentRow.DataBoundItem as Valoracion;
-                        HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "valoracion/" + valoracion.id);
+                        ValoracionDevueltaDTO valoracion = dgvValRes.CurrentRow.DataBoundItem as ValoracionDevueltaDTO;
+                        HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + "valoracion/" + valoracion.idValoracion);
                         if (respuesta.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Valoración eliminada correctamente.");
@@ -107,5 +109,22 @@ namespace RetaCantabria
                 }
             }
         }
+
+        private void dgvValRes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var item= dgvValRes.Rows[e.RowIndex].DataBoundItem;
+
+                if(item is ResenaDevueltaDTO resena) { 
+                    MessageBox.Show($"Reseña de {resena.nomUsuario} sobre la ruta {resena.nomRuta}:\n\n{resena.resena}", "Detalle de Reseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                                MessageBox.Show("Seleccione una fila con una reseña");
+            }
+        }
     }
+}
 

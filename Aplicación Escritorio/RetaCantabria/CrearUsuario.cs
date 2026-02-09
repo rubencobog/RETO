@@ -1,29 +1,21 @@
 ﻿using Conexion;
 using Modelo;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using ModeloDTO;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace RetaCantabria
 {
     public partial class CrearUsuario : Form
     {
         private readonly HttpClient cliente = ConexionAPI.CLIENTE;
-        private Usuario usuario;
+        private UsuarioDTO usuario;
         private readonly bool esNuevo;
         public CrearUsuario()
         {
             InitializeComponent();
             esNuevo = true;
         }
-        public CrearUsuario(Usuario usuario)
+        public CrearUsuario(UsuarioDTO usuario)
         {
             InitializeComponent();
             this.Load += CrearUsuario_Load;
@@ -42,7 +34,7 @@ namespace RetaCantabria
             {
                 if (esNuevo)
                 {
-                    usuario = new Usuario
+                    Usuario usuarioCrear = new Usuario
                     {
                         nombre = nombre,
                         apellido = apellido,
@@ -50,14 +42,18 @@ namespace RetaCantabria
                         password = password,
                         rol = TIPOUSUARIO.alumno,
                         valoraciones = new List<Valoracion>(),
-                        resenas = new List<Resena>()
+                        resenas = new List<Resena>(),
+                        calendarios=new List<Calendario>()
                     };
                     try
                     {
-                        HttpResponseMessage response = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "usuario", usuario);
+                        HttpResponseMessage response = await cliente.PostAsJsonAsync(ConexionAPI.Conexion + "usuario", usuarioCrear);
                         if (response.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Usuario creado con éxito.");
+                            usuario= await response.Content.ReadFromJsonAsync<UsuarioDTO>();
+                            CatalogoRutas catalog = new CatalogoRutas(usuario);
+                            catalog.ShowDialog();
                             this.Close();
                         }
                         else
@@ -105,6 +101,9 @@ namespace RetaCantabria
         {
             if (!esNuevo)
             {
+                txtNombre.Text = usuario.nombre;
+                txtApellido.Text = usuario.apellido;
+                txtEmail.Text = usuario.email;
                 btnRegistrar.Text = "Actualizar";
             }
             else

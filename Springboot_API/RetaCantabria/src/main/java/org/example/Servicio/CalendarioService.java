@@ -2,8 +2,12 @@ package org.example.Servicio;
 
 import jakarta.transaction.Transactional;
 import org.example.Entidades.Calendario;
+import org.example.Entidades.Ruta;
 import org.example.Logica.CalendarioRepository;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -11,9 +15,11 @@ import java.util.List;
 public class CalendarioService implements ICalendarioService<Calendario, Long> {
 
     private final CalendarioRepository repository;
+    private final RutaService rutaSrv;
 
-    public CalendarioService(CalendarioRepository repository) {
+    public CalendarioService(CalendarioRepository repository, RutaService rutaSrv) {
         this.repository = repository;
+        this.rutaSrv = rutaSrv;
     }
 
     @Override
@@ -64,5 +70,18 @@ public class CalendarioService implements ICalendarioService<Calendario, Long> {
                     .toList();
             default -> List.of();
         };
+    }
+
+    public void borrarRutaDeDia(LocalDate fecha,Ruta ruta){
+        Calendario calendario=repository.findByFechaAndRutasIdruta(fecha,ruta).orElseThrow(()->
+        new RuntimeException("No hay ruta asignada ese día")
+            );
+        repository.delete(calendario);
+    }
+
+    public Calendario buscarPorDiaYRuta(LocalDate fecha, Ruta ruta){
+        return repository.findByFechaAndRutasIdruta(fecha,ruta).orElseThrow(()->
+                new RuntimeException("No hay ruta asignada ese día")
+        );
     }
 }

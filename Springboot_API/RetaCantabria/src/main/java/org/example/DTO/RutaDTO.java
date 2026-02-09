@@ -13,7 +13,8 @@ public record RutaDTO(
         Double distancia,
         LocalTime duracion,
         Double mediaEstrellas,
-        String zonaGeografica
+        String zonaGeografica,
+        Boolean estadoRuta
 ) {
     public RutaDTO(Ruta r) {
         this(
@@ -25,7 +26,8 @@ public record RutaDTO(
                 r.getDistancia(),
                 r.getDuracion(),
                 r.getMediaEstrellas(),
-                r.getZonaGeografica()
+                r.getZonaGeografica(),
+                r.isEstadoRuta()
         );
     }
 }
