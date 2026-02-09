@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.compose.runtime.livedata)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -59,6 +60,7 @@ dependencies {
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.ui.text)
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.androidx.runtime.livedata)
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     implementation(libs.play.services.location)
