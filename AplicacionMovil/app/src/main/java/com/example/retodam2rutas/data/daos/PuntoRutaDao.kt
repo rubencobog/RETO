@@ -26,4 +26,5 @@ interface PuntoRutaDao {
 
     @Query("DELETE FROM puntosRuta WHERE id = :rutaId")
     suspend fun deleteByRuta(rutaId: Int)
+
 }

@@ -34,4 +34,5 @@ interface PuntoInteresDao {
 
     @Query("DELETE FROM puntosInteres WHERE puntoRutaId = :puntoRutaId")
     suspend fun deleteByPuntoRuta(puntoRutaId: Long)
+    
 }
