@@ -4,15 +4,23 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Looper
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshots.toInt
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.retodam2rutas.R
 import com.example.retodam2rutas.data.database.AppDatabase
+import com.example.retodam2rutas.entities.CLASIFICACION
 import com.example.retodam2rutas.entities.PuntoInteres
+import com.example.retodam2rutas.entities.PuntoPeligro
 import com.example.retodam2rutas.entities.PuntoRuta
 import com.example.retodam2rutas.entities.Ruta
+import com.example.retodam2rutas.entities.maptemp.PuntoMapa
 import com.example.retodam2rutas.entities.maptemp.RutaTemporal
+import com.example.retodam2rutas.entities.maptemp.TipoPuntoMapa
 import com.example.retodam2rutas.entities.maptemp.TrackPoint
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -22,6 +30,8 @@ import com.google.android.gms.location.Priority
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
 import java.io.File
 import java.time.Duration
 import java.time.LocalDateTime
@@ -52,11 +62,11 @@ class MapViewModel(
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(result: LocationResult) {
             val location = result.lastLocation ?: return
-            lastGeoPoint = GeoPoint(location.latitude+iterador, location.longitude)
-            iterador++
+            lastGeoPoint = GeoPoint(location.latitude, location.longitude)
+            iterador+=0.001//sumar iterador a latitud o longitud para moverse en el emulador
         }
     }
-    private var iterador by mutableStateOf(0.000000000001)
+    private var iterador by mutableStateOf(0.001)
     @SuppressLint("MissingPermission")
     fun startLocationUpdates() {
         fusedLocationClient.requestLocationUpdates(
@@ -93,7 +103,7 @@ class MapViewModel(
     }
 
     fun exportarGPX(ruta: RutaTemporal): String {
-        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")
 
         val inicio = ruta.trackPoints.first()
         val fin = ruta.trackPoints.last()
@@ -103,65 +113,74 @@ class MapViewModel(
         sb.append("""<?xml version="1.0" encoding="utf-8"?>""")
         sb.append(
             """
-            <gpx version="1.1" creator="ProyectoSpringBoot"
-                 xmlns="http://www.topografix.com/GPX/1/1"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
-                                     http://www.topografix.com/GPX/1/1/gpx.xsd">
-            """
+        <gpx version="1.1" creator="RetoDAM2Rutas"
+             xmlns="http://www.topografix.com/GPX/1/1"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+        """
         )
 
         // ---------- METADATA ----------
         sb.append(
             """
-                <metadata>
-                    <tipoRegistro>InfoGeneral</tipoRegistro>
-                    <nombreRuta>${ruta.nombre}</nombreRuta>
-                    <enlaceWikiloc>www.rutas.es</enlaceWikiloc>
-                    <author>saul@gmail.com</author>
-                    <fechaCreacionGPX>${LocalDateTime.now().format(formatter)}</fechaCreacionGPX>
-                </metadata>
-            """
+            <metadata>
+                <name>${ruta.nombre}</name>
+                <author>
+                    <name>Saul</name>
+                </author>
+                <link href="http://www.rutas.es">
+                    <text>Mi Web de Rutas</text>
+                </link>
+                <time>${LocalDateTime.now().format(formatter)}</time>
+            </metadata>
+        """
         )
 
-        // ---------- WAYPOINT INICIO ----------
+        // ---------- WAYPOINT INICIO (WPT) ----------
         sb.append(
             """
-                <wpt latitud="${inicio.latitude}" longitud="${inicio.longitude}" elevacion="0">
-                    <timeestamp>${inicio.timestamp.format(formatter)}</timeestamp>
-                    <nombre>Inicio</nombre>
-                    <descripcion>Punto de inicio</descripcion>
-                </wpt>
-            """
+            <wpt lat="${inicio.latitude}" lon="${inicio.longitude}">
+                <ele>0</ele>
+                <time>${inicio.timestamp.format(formatter)}</time>
+                <name>Inicio</name>
+                <desc>Punto de inicio</desc>
+            </wpt>
+        """
         )
 
-        // ---------- WAYPOINT FIN ----------
+        // ---------- WAYPOINT FIN (WPT) ----------
         sb.append(
             """
-                <wpt latitud="${fin.latitude}" longitud="${fin.longitude}" elevacion="0">
-                    <timeestamp>${fin.timestamp.format(formatter)}</timeestamp>
-                    <nombre>Fin</nombre>
-                    <descripcion>Punto final</descripcion>
-                </wpt>
-            """
+            <wpt lat="${fin.latitude}" lon="${fin.longitude}">
+                <ele>0</ele>
+                <time>${fin.timestamp.format(formatter)}</time>
+                <name>Fin</name>
+                <desc>Punto final</desc>
+            </wpt>
+        """
         )
 
-        // ---------- TRACK ----------
+        // ---------- TRACK (TRK) ----------
         sb.append("    <trk>\n")
+        sb.append("        <name>${ruta.nombre}</name>\n")
+        sb.append("        <trkseg>\n") // Inicia el segmento de track
         ruta.trackPoints.forEach { tp ->
             sb.append(
                 """
-                    <trk latitud="${tp.latitude}" longitud="${tp.longitude}" elevacion="0">
-                        <timeestamp>${tp.timestamp.format(formatter)}</timeestamp>
-                    </trk>
-                """
+                    <trkpt lat="${tp.latitude}" lon="${tp.longitude}">
+                        <ele>0</ele> 
+                        <time>${tp.timestamp.format(formatter)}</time>
+                    </trkpt>
+            """
             )
         }
+        sb.append("        </trkseg>\n") // Cierra el segmento de track
         sb.append("    </trk>\n")
         sb.append("</gpx>")
 
         return sb.toString()
     }
+
 
 
     /**
@@ -170,7 +189,22 @@ class MapViewModel(
      * De esta manera puedo hacer que un objeto Ruta ruta y otro RutaTemporal temp hagan
      * ruta = temp.toRuta(1,"path")
      **/
-    fun RutaTemporal.toRuta(usuarioId: Int, gpxPath: String): Ruta {
+    fun RutaTemporal.toRuta(
+        usuarioId: Int,
+        gpxPath: String,
+        nombre: String,
+        clasificacion: CLASIFICACION,
+        nivelEsfuerzo: Byte?,
+        nivelRiesgo: Byte?,
+        tipoTerreno: Byte?,
+        indicaciones: Byte?,
+        temporadas: String?,
+        accesibilidad: Boolean,
+        rutaFamiliar: Boolean,
+        recomendaciones: String?,
+        zonaGeografica: String?
+    ): Ruta {
+
         val inicio = trackPoints.first()
         val fin = trackPoints.last()
 
@@ -188,10 +222,21 @@ class MapViewModel(
             desnivelAcumulado = 0,
             altitudMax = 0.0,
             altitudMin = 0.0,
+            clasificacion = clasificacion,
+            nivelEsfuerzo = nivelEsfuerzo,
+            nivelRiesgo = nivelRiesgo,
+            tipoTerreno = tipoTerreno,
+            indicaciones = indicaciones,
+            temporadas = temporadas,
+            accesibilidad = accesibilidad,
+            rutaFamiliar = rutaFamiliar,
             archivoGPX = gpxPath,
+            recomendacionesEquipo = recomendaciones,
+            zonaGeografica = zonaGeografica,
             usuarioId = usuarioId
         )
     }
+
 
     fun calcularDistancia(trackpoints: List<TrackPoint>): Double{
         var distanciaTotal = 0.0
@@ -249,25 +294,6 @@ class MapViewModel(
         }
     }
 
-    fun guardarRuta(rutaTemporal: RutaTemporal?, usuarioId: Int, context: Context) {
-        viewModelScope.launch(Dispatchers.IO) {
-
-            val gpx = rutaTemporal?.let { exportarGPX(it) }
-            val file = File(context.filesDir, "${rutaTemporal?.nombre}.gpx")
-            if (gpx != null) {
-                file.writeText(gpx)
-            }
-
-            val ruta = rutaTemporal?.toRuta(usuarioId, file.absolutePath)
-            val rutaId = ruta?.let { appDatabase.rutaDao().insertRuta(it) }
-
-            val puntos = rutaId?.let { rutaTemporal.toPuntosRuta(it.toInt()) }
-            if (puntos != null) {
-                appDatabase.puntoRutaDao().insertAll(puntos)
-            }
-        }
-    }
-
     fun guardarPuntos(ruta: Ruta): List<PuntoRuta?>{
         var puntosRuta by mutableStateOf<List<PuntoRuta?>>(emptyList())
 
@@ -277,6 +303,53 @@ class MapViewModel(
 
         return puntosRuta
     }
+
+    fun guardarRuta(
+        rutaTemporal: RutaTemporal,
+        usuarioId: Int,
+        context: Context,
+        nombre: String,
+        clasificacion: CLASIFICACION,
+        nivelEsfuerzo: Byte,
+        nivelRiesgo: Byte,
+        tipoTerreno: Byte?,
+        indicaciones: Byte?,
+        temporadas: String?,
+        accesibilidad: Boolean,
+        rutaFamiliar: Boolean,
+        recomendaciones: String?,
+        zonaGeografica: String?
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            val gpx = exportarGPX(rutaTemporal)
+            val file = File(context.filesDir, "$nombre.gpx")
+            file.writeText(gpx)
+
+            val ruta = rutaTemporal.toRuta(
+                usuarioId = usuarioId,
+                gpxPath = file.absolutePath,
+                nombre = nombre,
+                clasificacion = clasificacion,
+                nivelEsfuerzo = nivelEsfuerzo,
+                nivelRiesgo = nivelRiesgo,
+                tipoTerreno = tipoTerreno,
+                indicaciones = indicaciones,
+                temporadas = temporadas,
+                accesibilidad = accesibilidad,
+                rutaFamiliar = rutaFamiliar,
+                recomendaciones = recomendaciones,
+                zonaGeografica = zonaGeografica
+            )
+/*
+            val rutaId = appDatabase.rutaDao().insertRuta(ruta)
+
+            val puntos = rutaTemporal.toPuntosRuta(rutaId.toInt())
+            appDatabase.puntoRutaDao().insertAll(puntos)
+ */
+        }
+    }
+
 
     //================ Puntos de interes y de peligro ================
     fun guardarPuntoInteres(
@@ -301,8 +374,107 @@ class MapViewModel(
                     puntoRutaId = puntoRutaId
                 )
             )
+
+            añadirPuntoMapa(
+                geoPoint = geoPoint,
+                tipo = TipoPuntoMapa.INTERES
+            )
         }
     }
 
+    fun guardarPuntoPeligro(
+        geoPoint: GeoPoint,
+        kilometro: Double,
+        gravedad: Byte,
+        justificacion: String
+    ) {
+        viewModelScope.launch {
+            val puntoRutaId = appDatabase.puntoRutaDao().insert(
+                PuntoRuta(
+                    latitud = geoPoint.latitude,
+                    longitud = geoPoint.longitude,
+                    elevacion = 0,
+                    timeStamp = LocalDateTime.now()
+                )
+            )
+
+            appDatabase.puntoPeligroDao().insert(
+                PuntoPeligro(
+                    kilometro = kilometro,
+                    gravedad = gravedad,
+                    justificacion = justificacion,
+                    puntoRutaId = puntoRutaId
+                )
+            )
+
+            // 🔥 IMPORTANTE: reflejarlo en el mapa
+            añadirPuntoMapa(
+                geoPoint = geoPoint,
+                tipo = TipoPuntoMapa.PELIGRO
+            )
+        }
+    }
+
+
+    private val _puntosMapa = mutableStateListOf<PuntoMapa>()
+    val puntosMapa: List<PuntoMapa> = _puntosMapa
+    val markersMapa = mutableMapOf<Long, Marker>()
+
+    fun añadirPuntoMapa(
+        geoPoint: GeoPoint,
+        tipo: TipoPuntoMapa
+    ) {
+        _puntosMapa.add(
+            PuntoMapa(
+                id = System.currentTimeMillis(),
+                geoPoint = geoPoint,
+                tipo = tipo
+            )
+        )
+    }
+    fun crearMarker(
+        mapView: MapView,
+        punto: PuntoMapa,
+        context: Context
+    ): Marker {
+        return Marker(mapView).apply {
+            position = punto.geoPoint
+            setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+            title = when (punto.tipo) {
+                TipoPuntoMapa.INTERES -> "Punto de interés"
+                TipoPuntoMapa.PELIGRO -> "Punto de peligro"
+            }
+            icon = ContextCompat.getDrawable(
+                context,
+                when (punto.tipo) {
+                    TipoPuntoMapa.INTERES -> R.drawable.punto_interes
+                    TipoPuntoMapa.PELIGRO -> R.drawable.punto_peligro
+                }
+            )
+        }
+    }
+
+
+    //================ Dialog guardar Ruta ================
+    var showSaveDialog by mutableStateOf(false)
+        private set
+
+    fun onShowSaveDialog() {
+        showSaveDialog = true
+    }
+
+    fun onDismissSaveDialog() {
+        showSaveDialog = false
+    }
+
+    fun guardarRuta(
+        rutaTemporal: RutaTemporal,
+        nombreRuta: String,
+        descripcionRuta: String,
+        usuarioId: Int,
+        context: Context
+    ) {
+
+    }
 
 }
