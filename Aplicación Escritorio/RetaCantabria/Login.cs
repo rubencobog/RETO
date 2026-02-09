@@ -9,7 +9,7 @@ namespace RetaCantabria
 {
     public partial class Login : Form
     {
-        HttpClient cliente= ConexionAPI.CLIENTE;
+        HttpClient cliente = ConexionAPI.CLIENTE;
         private Usuario USUARIO;
         public Login()
         {
@@ -23,7 +23,7 @@ namespace RetaCantabria
             {
 
                 loginAsync(txtEmail.Text, txtPassword.Text);
-               
+
             }
         }
         private async Task loginAsync(string email, string password)
@@ -45,7 +45,7 @@ namespace RetaCantabria
 
 
                 this.Close();
-                
+
 
             }
 
@@ -55,8 +55,15 @@ namespace RetaCantabria
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            CrearUsuario crearUsuario = new CrearUsuario(cliente);
+            CrearUsuario crearUsuario = new CrearUsuario();
             crearUsuario.Show();
+        }
+
+        private void labelEntrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            CatalogoRutas catalogo = new CatalogoRutas(usuario);
+            catalogo.ShowDialog();
         }
     }
 }

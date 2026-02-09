@@ -129,6 +129,7 @@
             Controls.Add(lblNombre);
             Name = "CrearUsuario";
             Text = "Registro";
+            Load += CrearUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }

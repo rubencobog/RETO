@@ -15,6 +15,7 @@ import androidx.room.Room
 import com.example.retodam2rutas.data.database.AppDatabase
 import com.example.retodam2rutas.data.preferences.PreferencesManager
 import com.example.retodam2rutas.navigation.NavManager
+import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
 import com.example.retodam2rutas.views.LoginViewModel
@@ -37,8 +38,9 @@ class MainActivity : ComponentActivity() {
         val rutaViewModel = RutaViewModel(database, prefs)
         Configuration.getInstance().userAgentValue = packageName
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        mapViewModel = MapViewModel(fusedLocationClient)
+        mapViewModel = MapViewModel(database, fusedLocationClient)
         val loginViewModel = LoginViewModel(database)
+
 
         requestLocationPermission()
 

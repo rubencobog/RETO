@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.retodam2rutas.data.database.AppDatabase
 import com.example.retodam2rutas.data.preferences.PreferencesManager
-import com.example.retodam2rutas.data.entities.Ruta
+import com.example.retodam2rutas.entities.Ruta
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 

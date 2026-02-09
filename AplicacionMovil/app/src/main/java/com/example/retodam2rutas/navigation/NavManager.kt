@@ -6,10 +6,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.views.DetailView
 import com.example.retodam2rutas.views.HomeView
 import com.example.retodam2rutas.views.LoginView
-import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.views.MapView
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel

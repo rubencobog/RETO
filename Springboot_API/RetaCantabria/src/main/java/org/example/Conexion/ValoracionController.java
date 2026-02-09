@@ -1,6 +1,7 @@
 package org.example.Conexion;
 
 import org.example.DTO.ValoracionDTO;
+import org.example.Entidades.Resena;
 import org.example.Entidades.Ruta;
 import org.example.Entidades.Usuario;
 import org.example.Entidades.Valoracion;
@@ -9,6 +10,7 @@ import org.example.Servicio.UsuarioService;
 import org.example.Servicio.ValoracionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -50,6 +52,11 @@ public class ValoracionController {
     @GetMapping("/buscar")
     public List<Valoracion> buscar(@RequestParam String campo, @RequestParam String valor) {
         return valoracionService.buscar(campo, valor);
+    }
+    @GetMapping("/buscar/{idRuta}")
+    public ResponseEntity<List<Valoracion>> buscarPorRuta(@PathVariable("idRuta") Long idRuta){
+        List<Valoracion>valoraciones=valoracionService.obtenerValoracionesPorRuta(idRuta);
+        return ResponseEntity.ok(valoraciones);
     }
 
     @PostMapping

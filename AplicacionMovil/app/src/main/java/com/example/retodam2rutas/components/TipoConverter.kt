@@ -1,8 +1,8 @@
 package com.example.retodam2rutas.components
 
 import androidx.room.TypeConverter
-import com.example.retodam2rutas.data.entities.CLASIFICACION
-import com.example.retodam2rutas.data.entities.TIPOUSUARIO
+import com.example.retodam2rutas.entities.CLASIFICACION
+import com.example.retodam2rutas.entities.TIPOUSUARIO
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime

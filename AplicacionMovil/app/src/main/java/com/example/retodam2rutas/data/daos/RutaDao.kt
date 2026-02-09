@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.retodam2rutas.data.entities.Ruta
+import com.example.retodam2rutas.entities.Ruta
 
 @Dao
 interface RutaDao {
