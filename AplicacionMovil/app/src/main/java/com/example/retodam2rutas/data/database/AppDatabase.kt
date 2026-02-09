@@ -10,6 +10,9 @@ import com.example.retodam2rutas.entities.Ruta
 import com.example.retodam2rutas.entities.Usuario
 import com.example.retodam2rutas.entities.Valoracion
 import androidx.room.RoomDatabase
+import com.example.retodam2rutas.data.daos.PuntoInteresDao
+import com.example.retodam2rutas.data.daos.PuntoPeligroDao
+import com.example.retodam2rutas.data.daos.PuntoRutaDao
 
 @Database(
     // Se agregan la entidades
@@ -28,4 +31,7 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase(): RoomDatabase() {
     //DAOs
     abstract fun rutaDao(): RutaDao
+    abstract fun puntoRutaDao(): PuntoRutaDao
+    abstract fun puntoInteresDao(): PuntoInteresDao
+    abstract fun puntoPeligroDao(): PuntoPeligroDao
 }

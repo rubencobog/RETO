@@ -10,7 +10,7 @@ import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.views.DetailView
 import com.example.retodam2rutas.views.HomeView
 import com.example.retodam2rutas.views.LoginView
-import com.example.retodam2rutas.views.MapView
+import com.example.retodam2rutas.views.AddRutaView
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
 
@@ -23,7 +23,7 @@ fun NavManager(rutaViewModel: RutaViewModel, mapViewModel: MapViewModel, loginVi
             HomeView(navController, rutaViewModel)
         }
         composable("Add"){
-            MapView(navController, 1, rutaViewModel, mapViewModel)
+            AddRutaView(navController, 1, rutaViewModel, mapViewModel)
         }
         composable ("Detail/{id}",
             arguments = listOf(navArgument("id"){type = NavType.IntType})){
@@ -35,7 +35,7 @@ fun NavManager(rutaViewModel: RutaViewModel, mapViewModel: MapViewModel, loginVi
             arguments = listOf(navArgument("id"){type = NavType.IntType})){
                 backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id") ?:0
-            MapView(navController, id, rutaViewModel, mapViewModel)
+            AddRutaView(navController, id, rutaViewModel, mapViewModel)
         }
         composable("Login"){
             LoginView(navController, loginViewModel)

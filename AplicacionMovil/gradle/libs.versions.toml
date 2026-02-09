@@ -16,6 +16,7 @@ roomRuntimeAndroid = "2.8.4"
 playServicesLocation = "21.3.0"
 composeRuntimeLivedata = "1.6.7"
 runtimeLivedata = "1.10.2"
+roomCommonJvm = "2.8.4"
 
 [libraries]
 androidx-compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
@@ -38,6 +39,7 @@ androidx-room-runtime-android = { group = "androidx.room", name = "room-runtime-
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "composeRuntimeLivedata" }
 androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+androidx-room-common-jvm = { group = "androidx.room", name = "room-common-jvm", version.ref = "roomCommonJvm" }
 
 
 [plugins]
