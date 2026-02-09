@@ -34,6 +34,15 @@ public class RutaController {
         return new RutaDTO(ruta);
     }
 
+/*
+    //ENTIDAD PARA NO MOSTRAR TODOS LOS DATOS
+    public List<RutaDTO> findAll() {
+        return rutaService.listar()
+                .stream()
+                .map(RutaDTO::new)
+                .toList();
+    }
+*/
     @GetMapping
     public List<RutaDTO> listar() {
             return rutaService.listar()

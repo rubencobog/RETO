@@ -18,6 +18,7 @@ import com.example.retodam2rutas.navigation.NavManager
 import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import com.example.retodam2rutas.views.LoginViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.flow.first
