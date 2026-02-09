@@ -1,8 +1,14 @@
-﻿using System.Text.Json.Serialization;
+﻿using Modelo;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
-namespace Modelo
+namespace ModeloDTO
 {
-    public class Usuario
+    public class UsuarioDTO
     {
         public long idUsuario { get; set; }
         public String nombre { get; set; }
@@ -12,8 +18,5 @@ namespace Modelo
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public TIPOUSUARIO? rol { get; set; }
-        public List<Valoracion> valoraciones { get; set; }
-        public List<Resena> resenas { get; set; }
-        public List<Calendario>calendarios { get; set; }
     }
 }

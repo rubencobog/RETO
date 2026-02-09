@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -36,6 +37,11 @@ public class Usuario {
     @JsonManagedReference("valoraciones-usuario")
     private List<Valoracion> valoraciones=new ArrayList<>();
 
+    @OneToMany(mappedBy = "usuarioIdusuario", cascade = CascadeType.ALL,orphanRemoval = true)
+    @JsonManagedReference("calendarios-usuario")
+    @JsonIgnoreProperties("usuarioIdusuario")
+    private List<Calendario>calendarios=new ArrayList<>();
+
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("resenas-usuario")
     private List<Resena> resenas=new ArrayList<>();
@@ -43,7 +49,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long idUsuario, String nombre, String apellido, String email, String password, TIPOUSUARIO rol, List<Valoracion> valoraciones, List<Resena> resenas) {
+    public Usuario(Long idUsuario, String nombre, String apellido, String email, String password, TIPOUSUARIO rol, List<Valoracion> valoraciones, List<Resena> resenas,List<Calendario>calendarios) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -52,6 +58,7 @@ public class Usuario {
         this.rol = rol;
         this.valoraciones = valoraciones;
         this.resenas = resenas;
+        this.calendarios=calendarios;
     }
 
     public Long getIdUsuario() {
@@ -116,5 +123,13 @@ public class Usuario {
 
     public void setResenas(List<Resena> resenas) {
         this.resenas = resenas;
+    }
+
+    public List<Calendario> getCalendarios() {
+        return calendarios;
+    }
+
+    public void setCalendarios(List<Calendario> calendarios) {
+        this.calendarios = calendarios;
     }
 }

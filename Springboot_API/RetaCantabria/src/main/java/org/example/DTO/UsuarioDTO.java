@@ -8,6 +8,7 @@ public record UsuarioDTO(
         String nombre,
         String apellido,
         String email,
+        String password,
         TIPOUSUARIO rol
 ) {
     public UsuarioDTO(Usuario usu){
@@ -16,6 +17,7 @@ public record UsuarioDTO(
                 usu.getNombre(),
                 usu.getApellido(),
                 usu.getEmail(),
+                usu.getPassword(),
                 usu.getRol()
         );
     }

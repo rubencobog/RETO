@@ -10,5 +10,6 @@
             public TimeSpan Duracion { get; set; }
             public double? MediaEstrellas { get; set; }
             public string ZonaGeografica { get; set; }
+        public bool estadoRuta { get; set; }
         }
     }
