@@ -16,7 +16,7 @@ class LoginViewModel(
     val usuarioService = UsuarioServiceFactory.makeUsuarioService()
 
     fun getLoginUsuario(email: String, password: String){
-        val usuario = usuarioService.getLogin(email, password)
+        //val usuario = usuarioService.getLogin(email, password)
 
     }
 

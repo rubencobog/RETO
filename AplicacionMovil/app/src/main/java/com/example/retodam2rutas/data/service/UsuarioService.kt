@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface UsuarioService {
 
     @GET("usuario/login")
-    suspend fun getLogin(@Query("email") email: String, @Query("password") password: String): Call<UsuarioModel>
+    suspend fun getLogin(@Query("email") email: String, @Query("password") password: String): UsuarioModel
 }
 
 object UsuarioServiceFactory{
