@@ -1,4 +1,5 @@
-﻿using iText.Barcodes;
+﻿using Conexion;
+using iText.Barcodes;
 using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Layout;
@@ -61,7 +62,7 @@ namespace RetaCantabria
         public async Task FichaSeguridad(HttpClient httpClient,string rutaCarpeta)
         {
             long idRuta = ruta.idRuta;
-            List<PuntoPeligro> puntosPeligro=await httpClient.GetFromJsonAsync<List<PuntoPeligro>>($"http://192.168.6.1:5050/api/puntopeligro/buscaPP?idRuta={idRuta}");
+            List<PuntoPeligro> puntosPeligro=await httpClient.GetFromJsonAsync<List<PuntoPeligro>>($"{ConexionAPI.Conexion}puntopeligro/buscaPP?idRuta={idRuta}");
             if (puntosPeligro.Count!=0)
             {
               MessageBox.Show("Puntos de peligro encontrados: " + puntosPeligro.Count);
@@ -177,7 +178,7 @@ namespace RetaCantabria
             var fileContent = new ByteArrayContent(fileBytes);
             fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/pdf");
             content.Add(fileContent, "file", Path.GetFileName(rutaPdf));
-            var response = await cliente.PostAsync("http://192.168.6.1:5050/api/pdf",content);
+            var response = await cliente.PostAsync($"{ConexionAPI.ConexionAlternativa}api/pdf",content);
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Error subiendo PDF: " + response.StatusCode);
 
@@ -193,7 +194,7 @@ namespace RetaCantabria
         public async Task FichaUsuario(HttpClient httpClient, string rutaCarpeta)
         {
             long idRuta = ruta.idRuta;
-            List<PuntoRutaDTO> puntos = await new HttpClient().GetFromJsonAsync<List<PuntoRutaDTO>>($"http://192.168.6.1:5050/api/puntoruta/rutaPR?idRuta={idRuta}");
+            List<PuntoRutaDTO> puntos = await new HttpClient().GetFromJsonAsync<List<PuntoRutaDTO>>($"{ConexionAPI.Conexion}puntoruta/rutaPR?idRuta={idRuta}");
             if (puntos.Count != 0)
             {
                 MessageBox.Show("Puntos de peligro encontrados: " + puntos.Count);

@@ -1,7 +1,10 @@
 ﻿using Conexion;
 using Modelo;
 using ModeloDTO;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Json;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace RetaCantabria
 {
@@ -115,7 +118,7 @@ namespace RetaCantabria
             {
                 if (crearRuta.ShowDialog() == DialogResult.OK)
                 {
-                   await CargarGrid();
+                    await CargarGrid();
                 }
             }
 
@@ -199,8 +202,109 @@ namespace RetaCantabria
 
         private void btnCalendario_Click(object sender, EventArgs e)
         {
-            CalendarioRutas calendario= new CalendarioRutas(usuario);
+            CalendarioRutas calendario = new CalendarioRutas(usuario);
             calendario.ShowDialog();
+        }
+
+        private async void btnDescarga_Click(object sender, EventArgs e)
+        {
+            HttpClient httpClient = new HttpClient();
+            RutaDTO rutaDTO = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+            string valor = "id";
+            Ruta ruta = await httpClient.GetFromJsonAsync<Ruta>($"{ConexionAPI.Conexion}ruta/buscar?campo={valor}&valor={rutaDTO.IdRuta}");
+            Fichas fichas = new Fichas(ruta);
+            fichas.ShowDialog();
+        }
+
+        private void btnEnviarGPX_Click(object sender, EventArgs e)
+        {
+            EnviarGPX enviarGPX = new EnviarGPX();
+            enviarGPX.ShowDialog();
+        }
+
+        private async void btnGenerarGPX_Click(object sender, EventArgs e)
+        {
+            await CrearGPX();
+        }
+        public async Task CrearGPX()
+        {
+            RutaDTO ruta =(RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+            HttpClient httpClient = new HttpClient();
+            var nombreRuta = ruta.Nombre;
+            DateTime time = DateTime.Now;
+            long idRuta = ruta.IdRuta;
+            Usuario usuario = await httpClient.GetFromJsonAsync<Usuario>($"{ConexionAPI.Conexion}usuario/buscaUsu?idUsuario={idRuta}");
+            List<Waypoint> wayPoints = await httpClient.GetFromJsonAsync<List<Waypoint>>($"{ConexionAPI.Conexion}waypoint/buscarRuta?idRuta={idRuta}");
+            List<TrackPoint> trackPoints = await httpClient.GetFromJsonAsync<List<TrackPoint>>($"{ConexionAPI.Conexion}trackpoint/buscarRuta?idRuta={idRuta}");
+            String gpx = $"""
+                                <?xml version="1.0" encoding="utf-8"?>
+                <gpx version="1.1" creator="ProyectoSpringBoot"
+                     xmlns="http://www.topografix.com/GPX/1/1"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
+                                         http://www.topografix.com/GPX/1/1/gpx.xsd">
+                <metadata>
+                    <tipoRegistro>InfoGeneral</tipoRegistro>
+                		<nombreRuta>{nombreRuta}</nombreRuta>
+                		<enlaceWikiloc>www.rutas.es</enlaceWikiloc>
+                        <author>{usuario.email}</author>
+                		<fechaCreacionGPX>{time}</fechaCreacionGPX>
+                </metadata>
+                """;
+            if (wayPoints.Count == 0)
+            {
+
+            }
+            else
+            {
+                foreach (Waypoint way in wayPoints)
+                {
+                    gpx += $"""
+                    <wpt latitud="{way.latitud}" longitud="{way.longitud} elevacion="{way.elevacion}"">
+                        <timeestamp>{way.timestamp}</timestamp>
+                        <nombre>{way.nombre}</nombre>
+                        <descripcion>{way.descripcion}</descripcion>
+                    </wpt>
+                    """;
+                }
+            }
+            if (trackPoints.Count == 0)
+            {
+
+            }
+            else
+            {
+                foreach (TrackPoint track in trackPoints)
+                {
+                    gpx += $"""
+                    <trk latitud="{track.latitud}" longitud="{track.longitud}" elevacion="{track.elevacion}">
+                         <timeestamp>{track.timestamp}</timestamp>
+                    </trk>
+                    """;
+                }
+            }
+
+            string rutaProyecto = Directory.GetCurrentDirectory();
+            string rutaCarpeta = Path.Combine(rutaProyecto, "GPXFiles");
+
+            if (!Directory.Exists(rutaCarpeta))
+                Directory.CreateDirectory(rutaCarpeta);
+
+            int cont = 0;
+            string nombre = "generico.gpx";
+            string rutaArchivo = Path.Combine(rutaCarpeta, nombre);
+
+            while (File.Exists(rutaArchivo))
+            {
+                cont++;
+                nombre = $"generico{cont}.gpx";
+                rutaArchivo = Path.Combine(rutaCarpeta, nombre);
+            }
+            File.WriteAllText(rutaArchivo, gpx);
+
+            string nombreArchivo = Path.GetFileName(rutaArchivo);
+            MemoryStream archivoGPX = new MemoryStream(File.ReadAllBytes(rutaArchivo));
+            MessageBox.Show($"Archivo creado correctamente en {rutaArchivo}, nombre: {nombreArchivo}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
