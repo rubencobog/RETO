@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using Conexion;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,7 +87,7 @@ namespace RetaCantabria
               try
                 {
                     using var cliente = new HttpClient();
-                    var respuesta = await cliente.GetAsync("http://192.168.6.1:5050/actuator/health");
+                    var respuesta = await cliente.GetAsync($"{ConexionAPI.ConexionAlternativa}actuator/health");
                     var texto = await respuesta.Content.ReadAsStringAsync();
                     MessageBox.Show("Conectado correctamente al servidor: " + texto, "Conexión OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -203,7 +204,7 @@ namespace RetaCantabria
                         var archivoContenido = new StreamContent(archivoGPX);
                         archivoContenido.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/gpx+xml");
                         contenido.Add(archivoContenido, "file", nombreArchivo);
-                        var respuesta = await cliente.PostAsync("http://192.168.56.1:5050/gpx/upload", contenido);
+                        var respuesta = await cliente.PostAsync($"{ConexionAPI.ConexionAlternativa}/gpx/upload", contenido);
                         Console.WriteLine(respuesta.StatusCode);
                         if (respuesta.IsSuccessStatusCode)
                         {

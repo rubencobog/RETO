@@ -42,8 +42,12 @@
             comboFiltro = new ComboBox();
             lblRutas = new Label();
             btnMenuAdmin = new Button();
+            btnEnviarGPX = new Button();
+            btnGenerarGPX = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
             panelAdmin.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvRutas
@@ -97,6 +101,7 @@
             btnDescarga.TabIndex = 4;
             btnDescarga.Text = "Descargar Ficha";
             btnDescarga.UseVisualStyleBackColor = true;
+            btnDescarga.Click += btnDescarga_Click;
             // 
             // btnCrear
             // 
@@ -164,7 +169,7 @@
             btnCalendario.Text = "Calendario de Rutas";
             btnCalendario.UseVisualStyleBackColor = true;
             btnCalendario.Click += btnCalendario_Click;
-            // 
+            //
             // comboFiltro
             // 
             comboFiltro.FormattingEnabled = true;
@@ -195,6 +200,34 @@
             btnMenuAdmin.Text = ". . .";
             btnMenuAdmin.UseVisualStyleBackColor = true;
             btnMenuAdmin.Click += btnMenuAdmin_Click;
+            // btnEnviarGPX
+            // 
+            btnEnviarGPX.Location = new Point(3, 4);
+            btnEnviarGPX.Name = "btnEnviarGPX";
+            btnEnviarGPX.Size = new Size(87, 27);
+            btnEnviarGPX.TabIndex = 9;
+            btnEnviarGPX.Text = "Enviar GPX";
+            btnEnviarGPX.UseVisualStyleBackColor = true;
+            btnEnviarGPX.Click += btnEnviarGPX_Click;
+            // 
+            // btnGenerarGPX
+            // 
+            btnGenerarGPX.Location = new Point(105, 3);
+            btnGenerarGPX.Name = "btnGenerarGPX";
+            btnGenerarGPX.Size = new Size(114, 28);
+            btnGenerarGPX.TabIndex = 10;
+            btnGenerarGPX.Text = "Generar GPX";
+            btnGenerarGPX.UseVisualStyleBackColor = true;
+            btnGenerarGPX.Click += btnGenerarGPX_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnEnviarGPX);
+            panel1.Controls.Add(btnGenerarGPX);
+            panel1.Location = new Point(417, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(234, 34);
+            panel1.TabIndex = 11;
             // 
             // CatalogoRutas
             // 
@@ -204,6 +237,8 @@
             Controls.Add(btnMenuAdmin);
             Controls.Add(lblRutas);
             Controls.Add(comboFiltro);
+            ClientSize = new Size(800, 450);
+            Controls.Add(panel1);
             Controls.Add(btnCalendario);
             Controls.Add(btnValidar);
             Controls.Add(panelAdmin);
@@ -218,6 +253,7 @@
             Text = "Catálogo";
             ((System.ComponentModel.ISupportInitialize)dgvRutas).EndInit();
             panelAdmin.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -238,5 +274,8 @@
         private ComboBox comboFiltro;
         private Label lblRutas;
         private Button btnMenuAdmin;
+        private Button btnEnviarGPX;
+        private Button btnGenerarGPX;
+        private Panel panel1;
     }
 }

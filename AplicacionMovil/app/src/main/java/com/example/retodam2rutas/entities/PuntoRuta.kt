@@ -10,7 +10,7 @@ data class PuntoRuta(
 
     @PrimaryKey
     @ColumnInfo(name = "id")
-    val id: Long,
+    val id: Long = 0L,
 
     @ColumnInfo(name = "latitud")
     val latitud: Double,

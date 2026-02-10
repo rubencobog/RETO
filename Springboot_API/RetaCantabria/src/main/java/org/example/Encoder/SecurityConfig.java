@@ -19,7 +19,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/**",
-                                "/gpx/**"
+                                "/gpx/**",
+                                "/pdf/**",
+                                "/pdfs/**"
                         ).permitAll()
                         .anyRequest().permitAll()
                 );
