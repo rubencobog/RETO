@@ -32,3 +32,40 @@ C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación E
 C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.pdb
 C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.genruntimeconfig.cache
 C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\ref\RetaCantabria.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.csproj.AssemblyReference.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.AgregarRutaCalendario.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.CalendarioRutas.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.CatalogoRutas.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.CrearRuta.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.CrearUsuario.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.EnviarGPX.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.Fichas.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.FormResena.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.FormValoracion.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.GenerarGPX.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.GestionUsuarios.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.GestionValoraciones.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.Login.resources
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.csproj.GenerateResource.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.AssemblyInfoInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.AssemblyInfo.cs
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.csproj.CoreCompileInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.sourcelink.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\refint\RetaCantabria.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\RetaCantabria.exe
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\RetaCantabria.deps.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\RetaCantabria.runtimeconfig.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\RetaCantabria.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\RetaCantabria.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\Conexion.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\Modelo.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\ModeloDTO.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\Conexion.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\ModeloDTO.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\bin\Debug\net8.0-windows\Modelo.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCant.5C38A891.Up2Date
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\RetaCantabria.genruntimeconfig.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\RetaCantabria\obj\Debug\net8.0-windows\ref\RetaCantabria.dll

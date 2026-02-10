@@ -33,6 +33,9 @@
         }
       },
       "ModeloDTO/1.0.0": {
+        "dependencies": {
+          "Modelo": "1.0.0"
+        },
         "runtime": {
           "ModeloDTO.dll": {
             "assemblyVersion": "1.0.0.0",

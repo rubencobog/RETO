@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "..\Modelo\Modelo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDTO", "..\ModeloTDO\ModeloDTO.csproj", "{EE2D940A-A4F7-4914-B747-7998064561C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetaCantabria.Tests", "..\RetaCantabria.Tests\RetaCantabria.Tests.csproj", "{D1291F1B-21C7-4734-883C-FBF7E93DE4F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EE2D940A-A4F7-4914-B747-7998064561C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2D940A-A4F7-4914-B747-7998064561C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2D940A-A4F7-4914-B747-7998064561C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1291F1B-21C7-4734-883C-FBF7E93DE4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1291F1B-21C7-4734-883C-FBF7E93DE4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1291F1B-21C7-4734-883C-FBF7E93DE4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1291F1B-21C7-4734-883C-FBF7E93DE4F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

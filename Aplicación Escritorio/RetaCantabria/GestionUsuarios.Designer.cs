@@ -102,7 +102,7 @@
 
         #endregion
 
-        private DataGridView dgvUsuarios;
+        public DataGridView dgvUsuarios;
         private Button Eliminar;
         private Button btnEditar;
         private Button btnPermisos;

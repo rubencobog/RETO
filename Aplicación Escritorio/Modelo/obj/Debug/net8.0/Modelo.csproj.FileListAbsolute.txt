@@ -34,3 +34,15 @@ C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Mo
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\refint\Modelo.dll
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.pdb
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\ref\Modelo.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.deps.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\bin\Debug\net8.0\Modelo.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfoInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfo.cs
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.csproj.CoreCompileInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.sourcelink.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\refint\Modelo.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\Modelo.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Modelo\obj\Debug\net8.0\ref\Modelo.dll
