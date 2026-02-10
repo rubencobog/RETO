@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc670dea-404c-47f2-ad2f-ac2adcc8a5ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/.kotlin/errors/errors-1770664299753.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/daos/UsuarioDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/database/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/database/AppDatabase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/service/UsuarioService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/service/UsuarioService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/UsuarioModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/model/UsuarioModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/LoginViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

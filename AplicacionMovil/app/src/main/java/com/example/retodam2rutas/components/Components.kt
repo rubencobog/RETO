@@ -356,8 +356,7 @@ fun ContentAddView(
                     mapViewModel.guardarPuntoInteres(
                         geoPoint = puntoSeleccionado!!,
                         nombre = nombre,
-                        descripcion = descripcion,
-                        rutaid = 0
+                        descripcion = descripcion
                     )
                     mostrarDialogPI = false
                 }) {
@@ -402,8 +401,7 @@ fun ContentAddView(
                         geoPoint = puntoSeleccionado!!,
                         kilometro = kilometro,
                         gravedad = gravedad,
-                        justificacion = justificacion,
-                        rutaid = 0
+                        justificacion = justificacion
                     )
                     mostrarDialogPeligro = false
                 }) {

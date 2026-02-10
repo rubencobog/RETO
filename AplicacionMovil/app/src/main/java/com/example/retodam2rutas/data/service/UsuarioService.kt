@@ -19,6 +19,7 @@ interface UsuarioService {
 
     @GET("usuario")
     suspend fun getAllUsuarios(): List<UsuarioModel>
+
 }
 
 class UsuarioServiceImpl(
@@ -37,13 +38,10 @@ class UsuarioServiceImpl(
 
 }
 
-
-
-
 object UsuarioServiceFactory{
     fun makeUsuarioService(): UsuarioService{
         return Retrofit.Builder()
-            .baseUrl("http://10.0.22.10:5050/api/")
+            .baseUrl("http://10.0.2.2:5050/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(UsuarioService::class.java)
     }

@@ -361,8 +361,7 @@ class MapViewModel(
     fun guardarPuntoInteres(
         geoPoint: GeoPoint,
         nombre: String,
-        descripcion: String,
-        rutaid: Long
+        descripcion: String
     ) {
         viewModelScope.launch {
             val puntoRutaId = appDatabase.puntoRutaDao().insert(
@@ -370,8 +369,7 @@ class MapViewModel(
                     latitud = geoPoint.latitude,
                     longitud = geoPoint.longitude,
                     elevacion = 0,
-                    timeStamp = LocalDateTime.now(),
-                    rutaId = rutaid
+                    timeStamp = LocalDateTime.now()
                 )
             )
 
@@ -394,8 +392,7 @@ class MapViewModel(
         geoPoint: GeoPoint,
         kilometro: Double,
         gravedad: Byte,
-        justificacion: String,
-        rutaid: Long
+        justificacion: String
     ) {
         viewModelScope.launch {
             val puntoRutaId = appDatabase.puntoRutaDao().insert(
@@ -403,8 +400,7 @@ class MapViewModel(
                     latitud = geoPoint.latitude,
                     longitud = geoPoint.longitude,
                     elevacion = 0,
-                    timeStamp = LocalDateTime.now(),
-                    rutaId = rutaid
+                    timeStamp = LocalDateTime.now()
                 )
             )
 

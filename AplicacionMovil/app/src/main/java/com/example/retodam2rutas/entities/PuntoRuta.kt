@@ -38,6 +38,6 @@ data class PuntoRuta(
     val timeStamp: LocalDateTime,
 
     @ColumnInfo(name = "rutaId")
-    val rutaId: Long
+    val rutaId: Long? = null
 )
 
