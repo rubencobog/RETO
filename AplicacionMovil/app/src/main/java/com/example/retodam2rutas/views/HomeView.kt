@@ -41,8 +41,8 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
     var selectedIndex by remember { mutableStateOf(0) }
     val items = listOf(
         BottomNavItem("Inicio", Icons.Default.Home),
-        BottomNavItem("Perfil", Icons.Default.DateRange),
-        BottomNavItem("Ajustes", Icons.Default.Person)
+        BottomNavItem("Calendario", Icons.Default.DateRange),
+        BottomNavItem("Comunidad", Icons.Default.Person)
     )
     val coroutineScope = rememberCoroutineScope()
     Scaffold(

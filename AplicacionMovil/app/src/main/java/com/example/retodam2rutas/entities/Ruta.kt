@@ -22,7 +22,7 @@ data class Ruta(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idRuta")
-    val id: Int,
+    val id: Long = 0,
 
     @ColumnInfo(name = "nombre")
     val nombre: String,
