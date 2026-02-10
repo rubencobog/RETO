@@ -2,6 +2,9 @@
 using Modelo;
 using ModeloDTO;
 using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace RetaCantabria
 {
@@ -20,12 +23,13 @@ namespace RetaCantabria
         private async void CatalogoRutas_Load(object sender, EventArgs e)
         {
             await CargarGrid();
+            panelAdmin.Visible = false;
         }
 
         public async Task CargarGrid()
         {
-
             var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<RutaDTO>>(ConexionAPI.Conexion + "ruta");
+
             List<RutaDTO> rutasValidadas = new List<RutaDTO>();
             foreach (var ruta in rutas)
             {
@@ -115,7 +119,7 @@ namespace RetaCantabria
             {
                 if (crearRuta.ShowDialog() == DialogResult.OK)
                 {
-                   await CargarGrid();
+                    await CargarGrid();
                 }
             }
 
@@ -128,15 +132,18 @@ namespace RetaCantabria
 
                     break;
                 case TIPOUSUARIO.diseñador:
+                    btnMenuAdmin.Hide();
                     btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     break;
                 case TIPOUSUARIO.profesor:
+                    btnMenuAdmin.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     break;
                 case TIPOUSUARIO.alumno:
+                    btnMenuAdmin.Hide();
                     btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
@@ -144,6 +151,7 @@ namespace RetaCantabria
                     btnCrear.Hide();
                     break;
                 default:
+                    btnMenuAdmin.Hide();
                     btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
@@ -195,12 +203,77 @@ namespace RetaCantabria
                 GestionValoraciones gestionValoraciones = new GestionValoraciones(ruta);
                 gestionValoraciones.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnCalendario_Click(object sender, EventArgs e)
         {
-            CalendarioRutas calendario= new CalendarioRutas(usuario);
+            CalendarioRutas calendario = new CalendarioRutas(usuario);
             calendario.ShowDialog();
+        }
+
+        private void btnMenuAdmin_Click(object sender, EventArgs e)
+        {
+            if (panelAdmin.Visible)
+            {
+                panelAdmin.Visible = false;
+            }
+            else
+            {
+                panelAdmin.Visible = true;
+            }
+        }
+
+        private async void comboFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String filtro = comboFiltro.SelectedItem.ToString();
+            var Rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<RutaDTO>>(ConexionAPI.Conexion + "ruta");
+            switch (filtro)
+            {
+                case "Circular":
+                    List<RutaDTO> rutasCirculares = Rutas.Where(r => r.clasificacion == CLASIFICACION.CIRCULAR).ToList();
+                    dgvRutas.DataSource = rutasCirculares;
+                    break;
+
+                case "Lineal":
+                    List<RutaDTO> rutasLineales = Rutas.Where(r => r.clasificacion == CLASIFICACION.LINEAL).ToList();
+                    dgvRutas.DataSource = rutasLineales;
+                    break;
+
+                case "Accesible":
+                    List<RutaDTO> rutasAccesibles = Rutas.Where(r => r.accesible == true).ToList();
+                    dgvRutas.DataSource = rutasAccesibles;
+                    break;
+
+                case "Familiar":
+                    List<RutaDTO> rutasFamiliares = Rutas.Where(r => r.familiar == true).ToList();
+                    dgvRutas.DataSource = rutasFamiliares;
+                    break;
+
+                case "Media de 4 estrellas o mas":
+                    List<RutaDTO> rutasValoradas = Rutas.Where(r => r.MediaEstrellas >= 4).ToList();
+                    dgvRutas.DataSource = rutasValoradas;
+                    break;
+
+            }
+        }
+
+        private void dgvRutas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // Ignora cabecera
+            var ruta = dgvRutas.Rows[e.RowIndex].DataBoundItem as RutaDTO;
+            if (ruta != null)
+            {
+                DetallesRuta detallesRuta = new DetallesRuta(ruta);
+                detallesRuta.ShowDialog();
+            }
+             else
+            {
+                MessageBox.Show("Debe seleccionar una ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
