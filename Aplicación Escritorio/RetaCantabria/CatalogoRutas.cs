@@ -274,10 +274,11 @@ namespace RetaCantabria
                 DetallesRuta detallesRuta = new DetallesRuta(ruta);
                 detallesRuta.ShowDialog();
             }
-             else
+            else
             {
                 MessageBox.Show("Debe seleccionar una ruta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
 
         private async void btnDescarga_Click(object sender, EventArgs e)
         {

@@ -169,7 +169,7 @@
             btnCalendario.Text = "Calendario de Rutas";
             btnCalendario.UseVisualStyleBackColor = true;
             btnCalendario.Click += btnCalendario_Click;
-            //
+            // 
             // comboFiltro
             // 
             comboFiltro.FormattingEnabled = true;
@@ -200,6 +200,7 @@
             btnMenuAdmin.Text = ". . .";
             btnMenuAdmin.UseVisualStyleBackColor = true;
             btnMenuAdmin.Click += btnMenuAdmin_Click;
+            // 
             // btnEnviarGPX
             // 
             btnEnviarGPX.Location = new Point(3, 4);
@@ -224,7 +225,7 @@
             // 
             panel1.Controls.Add(btnEnviarGPX);
             panel1.Controls.Add(btnGenerarGPX);
-            panel1.Location = new Point(417, 0);
+            panel1.Location = new Point(143, 17);
             panel1.Name = "panel1";
             panel1.Size = new Size(234, 34);
             panel1.TabIndex = 11;
@@ -233,11 +234,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(888, 608);
             Controls.Add(btnMenuAdmin);
             Controls.Add(lblRutas);
             Controls.Add(comboFiltro);
-            ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(btnCalendario);
             Controls.Add(btnValidar);
