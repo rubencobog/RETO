@@ -637,7 +637,7 @@ fun ContentLoginView(
     val usuario: UsuarioModel? by loginViewModel.usuario.observeAsState()
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-
+    var showDialog by remember { mutableStateOf(false) }
     Column(
         modifier = Modifier
             .padding(innerPadding)
@@ -645,32 +645,68 @@ fun ContentLoginView(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Iniciar sesión")
+        Row(modifier = Modifier.padding(innerPadding)) {
+          Column() {
+              Text("Iniciar sesión")
 
-        Spacer(modifier = Modifier.padding(10.dp))
+              Spacer(modifier = Modifier.padding(10.dp))
 
-        TextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text("Usuario") },
-            singleLine = true
-        )
+              TextField(
+                  value = email,
+                  onValueChange = { email = it },
+                  label = { Text("Usuario") },
+                  singleLine = true
+              )
 
-        Spacer(modifier = Modifier.padding(10.dp))
+              Spacer(modifier = Modifier.padding(10.dp))
 
-        TextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Contraseña") },
-            singleLine = true,
-            visualTransformation = PasswordVisualTransformation()
-        )
+              TextField(
+                  value = password,
+                  onValueChange = { password = it },
+                  label = { Text("Contraseña") },
+                  singleLine = true,
+                  visualTransformation = PasswordVisualTransformation()
+              )
 
-        Spacer(modifier = Modifier.padding(10.dp))
+              Spacer(modifier = Modifier.padding(4.dp))
 
-        Button(onClick = { navController.navigate("Home") }) {
-            Text("Entrar")
+              Button(onClick = {
+                  loginViewModel.getLoginUsuario(email, password)
+
+                  if(usuario != null){
+                      navController.navigate("Home")
+                  }else{
+                      showDialog = true
+                  }
+
+              }) {
+                  Text("Entrar")
+              }
+          }
         }
+
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = { Text("Error al Iniciar sesión") },
+                text = { Text("No se ha encontrado al usuario. Inténtalo otra vez") },
+                confirmButton = {
+                    TextButton(onClick = { showDialog = false }) {
+                        Text("OK")
+                    }
+                }
+            )
+        }
+
+        Row(verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.End){
+            Button(onClick = {
+                loginViewModel.setUsuarioInvitado()
+                navController.navigate("Home")
+            }) {
+                Text("Entrar como usuario invitado") }
+        }
+
+
 
     }
 }

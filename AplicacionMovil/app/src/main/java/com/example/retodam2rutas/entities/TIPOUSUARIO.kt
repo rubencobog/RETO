@@ -4,5 +4,6 @@ enum class TIPOUSUARIO {
     administrador,
     diseñador,
     profesor,
-    alumno
+    alumno,
+    usuario
 }
