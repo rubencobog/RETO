@@ -1,6 +1,7 @@
 using Conexion;
 using Modelo;
 using ModeloDTO;
+using RetaCantabria.Properties;
 using System.Net.Http.Json;
 
 namespace RetaCantabria
@@ -13,6 +14,8 @@ namespace RetaCantabria
         {
 
             InitializeComponent();
+            pictureLogo.Image=Properties.Resources.itinere_logo;
+            btnIniciar.BackColor = Color.FromArgb(74, 82, 90);
         }
 
         private async void btnIniciar_Click(object sender, EventArgs e)

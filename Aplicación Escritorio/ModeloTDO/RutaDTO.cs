@@ -1,4 +1,7 @@
-﻿namespace ModeloDTO
+﻿using Modelo;
+using System.Text.Json.Serialization;
+
+namespace ModeloDTO
 {
     public class RutaDTO
     {
@@ -11,5 +14,10 @@
             public double? MediaEstrellas { get; set; }
             public string ZonaGeografica { get; set; }
         public bool estadoRuta { get; set; }
-        }
+        public bool accesible { get; set; }
+        public bool familiar { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public CLASIFICACION clasificacion { get; set; }
+    }
     }
