@@ -12,6 +12,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.retodam2rutas.data.database.AppDatabase
 import com.example.retodam2rutas.data.preferences.PreferencesManager
 import com.example.retodam2rutas.navigation.NavManager
@@ -97,14 +99,25 @@ class MainActivity : ComponentActivity() {
 }
 
 object DatabaseProvider {
+    @Volatile
     private var INSTANCE: AppDatabase? = null
+
     fun getDatabase(context: Context): AppDatabase {
         return INSTANCE ?: synchronized(this) {
             val instance = Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
-                "my_database.db" // Nombre a elegir
-            ).build()
+                "my_database.db"
+            )
+                .addCallback(object : RoomDatabase.Callback() {
+                    override fun onOpen(db: SupportSQLiteDatabase) {
+                        super.onOpen(db)
+                        db.execSQL("PRAGMA foreign_keys=ON")
+                    }
+                })
+                .fallbackToDestructiveMigration()
+                .build()
+
             INSTANCE = instance
             instance
         }

@@ -3,6 +3,7 @@ package com.example.retodam2rutas.views
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Looper
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -29,6 +30,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.Priority
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
@@ -62,7 +64,7 @@ class MapViewModel(
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(result: LocationResult) {
             val location = result.lastLocation ?: return
-            lastGeoPoint = GeoPoint(location.latitude, location.longitude)
+            lastGeoPoint = GeoPoint(location.latitude+iterador, location.longitude)
             iterador+=0.001//sumar iterador a latitud o longitud para moverse en el emulador
         }
     }
@@ -282,14 +284,15 @@ class MapViewModel(
         return RADIO_TIERRA_KM * c
     }
 
-    fun RutaTemporal.toPuntosRuta(rutaId: Int): List<PuntoRuta> {
+    fun RutaTemporal.toPuntosRuta(rutaId: Long): List<PuntoRuta> {
         return trackPoints.mapIndexed { index, tp ->
             PuntoRuta(
                 id = index.toLong(),
                 latitud = tp.latitude,
                 longitud = tp.longitude,
                 elevacion = tp.elevacion ?: 0,
-                timeStamp = tp.timestamp
+                timeStamp = tp.timestamp,
+                rutaId = rutaId
             )
         }
     }
@@ -321,41 +324,45 @@ class MapViewModel(
         zonaGeografica: String?
     ) {
         viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val gpx = exportarGPX(rutaTemporal)
+                val file = File(context.filesDir, "$nombre.gpx")
+                file.writeText(gpx)
 
-            val gpx = exportarGPX(rutaTemporal)
-            val file = File(context.filesDir, "$nombre.gpx")
-            file.writeText(gpx)
+                val ruta = rutaTemporal.toRuta(
+                    usuarioId = usuarioId,
+                    gpxPath = file.absolutePath,
+                    nombre = nombre,
+                    clasificacion = clasificacion,
+                    nivelEsfuerzo = nivelEsfuerzo,
+                    nivelRiesgo = nivelRiesgo,
+                    tipoTerreno = tipoTerreno,
+                    indicaciones = indicaciones,
+                    temporadas = temporadas,
+                    accesibilidad = accesibilidad,
+                    rutaFamiliar = rutaFamiliar,
+                    recomendaciones = recomendaciones,
+                    zonaGeografica = zonaGeografica
+                )
 
-            val ruta = rutaTemporal.toRuta(
-                usuarioId = usuarioId,
-                gpxPath = file.absolutePath,
-                nombre = nombre,
-                clasificacion = clasificacion,
-                nivelEsfuerzo = nivelEsfuerzo,
-                nivelRiesgo = nivelRiesgo,
-                tipoTerreno = tipoTerreno,
-                indicaciones = indicaciones,
-                temporadas = temporadas,
-                accesibilidad = accesibilidad,
-                rutaFamiliar = rutaFamiliar,
-                recomendaciones = recomendaciones,
-                zonaGeografica = zonaGeografica
-            )
-/*
-            val rutaId = appDatabase.rutaDao().insertRuta(ruta)
+                val rutaId = appDatabase.rutaDao().insertRuta(ruta)
+                val puntos = rutaTemporal.toPuntosRuta(rutaId)
+                appDatabase.puntoRutaDao().insertAll(puntos)
 
-            val puntos = rutaTemporal.toPuntosRuta(rutaId.toInt())
-            appDatabase.puntoRutaDao().insertAll(puntos)
- */
+            } catch (e: Exception) {
+                Log.e("GUARDAR_RUTA", "Error guardando la ruta", e)
+            }
         }
     }
+
 
 
     //================ Puntos de interes y de peligro ================
     fun guardarPuntoInteres(
         geoPoint: GeoPoint,
         nombre: String,
-        descripcion: String
+        descripcion: String,
+        rutaid: Long
     ) {
         viewModelScope.launch {
             val puntoRutaId = appDatabase.puntoRutaDao().insert(
@@ -363,7 +370,8 @@ class MapViewModel(
                     latitud = geoPoint.latitude,
                     longitud = geoPoint.longitude,
                     elevacion = 0,
-                    timeStamp = LocalDateTime.now()
+                    timeStamp = LocalDateTime.now(),
+                    rutaId = rutaid
                 )
             )
 
@@ -386,7 +394,8 @@ class MapViewModel(
         geoPoint: GeoPoint,
         kilometro: Double,
         gravedad: Byte,
-        justificacion: String
+        justificacion: String,
+        rutaid: Long
     ) {
         viewModelScope.launch {
             val puntoRutaId = appDatabase.puntoRutaDao().insert(
@@ -394,7 +403,8 @@ class MapViewModel(
                     latitud = geoPoint.latitude,
                     longitud = geoPoint.longitude,
                     elevacion = 0,
-                    timeStamp = LocalDateTime.now()
+                    timeStamp = LocalDateTime.now(),
+                    rutaId = rutaid
                 )
             )
 
@@ -407,7 +417,6 @@ class MapViewModel(
                 )
             )
 
-            // 🔥 IMPORTANTE: reflejarlo en el mapa
             añadirPuntoMapa(
                 geoPoint = geoPoint,
                 tipo = TipoPuntoMapa.PELIGRO

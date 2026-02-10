@@ -19,11 +19,11 @@ interface PuntoRutaDao {
     suspend fun getAll(): List<PuntoRuta>
 
     @Query("SELECT * FROM puntosRuta WHERE id = :rutaId ORDER BY timestamp ASC")
-    suspend fun getByRuta(rutaId: Int): List<PuntoRuta>
+    suspend fun getByRuta(rutaId: Long): List<PuntoRuta>
 
     @Query("DELETE FROM puntosRuta")
     suspend fun deleteAll()
 
     @Query("DELETE FROM puntosRuta WHERE id = :rutaId")
-    suspend fun deleteByRuta(rutaId: Int)
+    suspend fun deleteByRuta(rutaId: Long)
 }

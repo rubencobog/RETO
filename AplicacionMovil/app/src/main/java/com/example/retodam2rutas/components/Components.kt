@@ -71,6 +71,7 @@ import com.example.retodam2rutas.entities.PuntoRuta
 import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.entities.Ruta
 import com.example.retodam2rutas.entities.maptemp.RutaTemporal
+import com.example.retodam2rutas.entities.maptemp.TrackPoint
 import com.example.retodam2rutas.model.UsuarioModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
@@ -355,7 +356,8 @@ fun ContentAddView(
                     mapViewModel.guardarPuntoInteres(
                         geoPoint = puntoSeleccionado!!,
                         nombre = nombre,
-                        descripcion = descripcion
+                        descripcion = descripcion,
+                        rutaid = 0
                     )
                     mostrarDialogPI = false
                 }) {
@@ -400,7 +402,8 @@ fun ContentAddView(
                         geoPoint = puntoSeleccionado!!,
                         kilometro = kilometro,
                         gravedad = gravedad,
-                        justificacion = justificacion
+                        justificacion = justificacion,
+                        rutaid = 0
                     )
                     mostrarDialogPeligro = false
                 }) {
@@ -416,7 +419,6 @@ fun ContentAddView(
             .padding(innerPadding)
             .fillMaxSize()
             .background(Color(0xFFD2E6F6)),
-        verticalArrangement = Arrangement.spacedBy(26.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -430,7 +432,7 @@ fun ContentAddView(
         AndroidView(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp),
+                .weight(2f),
             factory = { mapView },
             update = {
                 geoPoint?.let {
@@ -457,7 +459,6 @@ fun ContentAddView(
                         }
                     }
 
-
                     mapView.invalidate()
                 }
                 ruta.let {
@@ -467,11 +468,11 @@ fun ContentAddView(
                 }
             }
         )
-
         Row (
             modifier = Modifier
                 .background(Color(0xFFD2E6F6))
-                .fillMaxSize()
+                .fillMaxWidth()
+                .weight(1f)
                 .padding(innerPadding),
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceEvenly
