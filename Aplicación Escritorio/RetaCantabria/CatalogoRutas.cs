@@ -1,26 +1,15 @@
 ﻿using Conexion;
 using Modelo;
 using ModeloDTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace RetaCantabria
 {
     public partial class CatalogoRutas : Form
     {
 
-        private Usuario usuario;
-        public CatalogoRutas(Usuario usuario)
+        private UsuarioDTO usuario;
+        public CatalogoRutas(UsuarioDTO usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -36,8 +25,8 @@ namespace RetaCantabria
         public async Task CargarGrid()
         {
 
-            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Ruta>>(ConexionAPI.Conexion + "ruta");
-            List<Ruta> rutasValidadas = new List<Ruta>();
+            var rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<RutaDTO>>(ConexionAPI.Conexion + "ruta");
+            List<RutaDTO> rutasValidadas = new List<RutaDTO>();
             foreach (var ruta in rutas)
             {
                 if (ruta.estadoRuta == true)
@@ -72,7 +61,7 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 FormResena formResena = new FormResena(this.usuario, ruta, ConexionAPI.CLIENTE);
                 formResena.ShowDialog();
             }
@@ -86,14 +75,14 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 using (FormValoracion formV = new FormValoracion())
                 {
                     if (formV.ShowDialog() == DialogResult.OK)
                     {
                         valoracionDTO valoracion = new valoracionDTO
                         {
-                            idRuta = ruta.idRuta,
+                            idRuta = ruta.IdRuta,
                             idUsuario = usuario.idUsuario,
                             dificultad = formV.dificultad,
                             belleza = formV.belleza,
@@ -120,13 +109,17 @@ namespace RetaCantabria
             }
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void btnCrear_Click(object sender, EventArgs e)
         {
-            CrearRuta crearRuta = new CrearRuta(usuario);
-            crearRuta.Show();
-        }
+            using (CrearRuta crearRuta = new CrearRuta(usuario))
+            {
+                if (crearRuta.ShowDialog() == DialogResult.OK)
+                {
+                   await CargarGrid();
+                }
+            }
 
-        //TODO Acabar de modificar los permisos asi como se agregen funciones
+        }
         private void gestorPermisos(TIPOUSUARIO? permiso)
         {
             switch (permiso)
@@ -135,6 +128,7 @@ namespace RetaCantabria
 
                     break;
                 case TIPOUSUARIO.diseñador:
+                    btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     break;
@@ -143,12 +137,14 @@ namespace RetaCantabria
                     panelAdmin.Hide();
                     break;
                 case TIPOUSUARIO.alumno:
+                    btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     btnDescarga.Hide();
                     btnCrear.Hide();
                     break;
                 default:
+                    btnCalendario.Hide();
                     btnValidar.Hide();
                     panelAdmin.Hide();
                     btnDescarga.Hide();
@@ -169,7 +165,7 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta = (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 if (ruta.estadoRuta)
                 {
                     MessageBox.Show("La ruta ya está validada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -177,7 +173,7 @@ namespace RetaCantabria
                 else
                 {
                     ruta.estadoRuta = true;
-                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.idRuta, ruta).Result;
+                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.IdRuta, ruta).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ruta validada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -195,10 +191,16 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                Ruta ruta= (Ruta)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 GestionValoraciones gestionValoraciones = new GestionValoraciones(ruta);
                 gestionValoraciones.ShowDialog();
             }
+        }
+
+        private void btnCalendario_Click(object sender, EventArgs e)
+        {
+            CalendarioRutas calendario= new CalendarioRutas(usuario);
+            calendario.ShowDialog();
         }
     }
 }

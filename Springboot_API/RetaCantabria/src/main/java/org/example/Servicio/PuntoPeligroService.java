@@ -66,7 +66,7 @@ public class PuntoPeligroService implements IPuntoPeligroService<PuntoPeligro, L
             default -> List.of();
         };
     }
-//    public List<PuntoPeligro> puntospeligroRuta(long id) {
-//        return repository.getPuntoPeligro(id);
-//    }
+    public List<PuntoPeligro> puntospeligroRuta(long idRuta) {
+        return repository.getPuntoPeligro(idRuta);
+    }
 }

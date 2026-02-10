@@ -43,6 +43,7 @@
             dgvValRes.RowHeadersWidth = 51;
             dgvValRes.Size = new Size(739, 300);
             dgvValRes.TabIndex = 0;
+            dgvValRes.CellDoubleClick += dgvValRes_CellDoubleClick;
             // 
             // lblSelect
             // 
