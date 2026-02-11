@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import at.favre.lib.crypto.bcrypt.BCrypt
 import com.example.retodam2rutas.data.database.AppDatabase
 import com.example.retodam2rutas.data.service.BaseServiceFactory
 import com.example.retodam2rutas.data.service.UsuarioServiceImpl

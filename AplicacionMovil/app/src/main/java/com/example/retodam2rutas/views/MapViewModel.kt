@@ -14,6 +14,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.retodam2rutas.R
 import com.example.retodam2rutas.data.database.AppDatabase
+import com.example.retodam2rutas.data.service.BaseServiceFactory
+import com.example.retodam2rutas.data.service.RutaServiceImpl
 import com.example.retodam2rutas.entities.CLASIFICACION
 import com.example.retodam2rutas.entities.PuntoInteres
 import com.example.retodam2rutas.entities.PuntoPeligro
@@ -51,6 +53,7 @@ class MapViewModel(
     private val appDatabase: AppDatabase,
     private val fusedLocationClient: FusedLocationProviderClient
 ) : ViewModel() {
+    val rutaServiceImpl = RutaServiceImpl(BaseServiceFactory.createService(), appDatabase.rutaDao())
 
     var lastGeoPoint by mutableStateOf<GeoPoint?>(null)
         private set
@@ -460,26 +463,10 @@ class MapViewModel(
     }
 
 
-    //================ Dialog guardar Ruta ================
-    var showSaveDialog by mutableStateOf(false)
-        private set
-
-    fun onShowSaveDialog() {
-        showSaveDialog = true
+    //================ Conexion api ================
+    init{
+        viewModelScope.launch {
+            rutaServiceImpl.refreshRutas()
+        }
     }
-
-    fun onDismissSaveDialog() {
-        showSaveDialog = false
-    }
-
-    fun guardarRuta(
-        rutaTemporal: RutaTemporal,
-        nombreRuta: String,
-        descripcionRuta: String,
-        usuarioId: Int,
-        context: Context
-    ) {
-
-    }
-
 }
