@@ -100,6 +100,12 @@
             // 
             // btnEnviar
             // 
+            btnEnviar.BackColor = Color.FromArgb(74, 82, 90);
+            btnEnviar.FlatAppearance.BorderColor = Color.Crimson;
+            btnEnviar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnEnviar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnEnviar.FlatStyle = FlatStyle.Flat;
+            btnEnviar.ForeColor = SystemColors.ButtonHighlight;
             btnEnviar.Location = new Point(276, 342);
             btnEnviar.Name = "btnEnviar";
             btnEnviar.Size = new Size(75, 23);
@@ -110,6 +116,12 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(74, 82, 90);
+            btnCancelar.FlatAppearance.BorderColor = Color.Crimson;
+            btnCancelar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.ForeColor = SystemColors.ButtonHighlight;
             btnCancelar.Location = new Point(181, 342);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);

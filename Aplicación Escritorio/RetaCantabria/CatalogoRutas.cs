@@ -285,8 +285,9 @@ namespace RetaCantabria
             HttpClient httpClient = new HttpClient();
             RutaDTO rutaDTO = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
             string valor = "id";
-            Ruta ruta = await httpClient.GetFromJsonAsync<Ruta>($"{ConexionAPI.Conexion}ruta/buscar?campo={valor}&valor={rutaDTO.IdRuta}");
-            Fichas fichas = new Fichas(ruta);
+            List<Ruta> ruta = await httpClient.GetFromJsonAsync<List<Ruta>>($"{ConexionAPI.Conexion}ruta/buscar?campo={valor}&valor={rutaDTO.IdRuta}");
+            var rutaFirst = ruta.FirstOrDefault();
+            Fichas fichas = new Fichas(rutaFirst);
             fichas.ShowDialog();
         }
 

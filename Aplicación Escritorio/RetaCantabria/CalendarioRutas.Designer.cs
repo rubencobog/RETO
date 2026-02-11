@@ -58,6 +58,12 @@
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = Color.FromArgb(74, 82, 90);
+            btnEliminar.FlatAppearance.BorderColor = Color.Crimson;
+            btnEliminar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = SystemColors.ButtonHighlight;
             btnEliminar.Location = new Point(710, 436);
             btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
@@ -69,6 +75,12 @@
             // 
             // btnInsertarNueva
             // 
+            btnInsertarNueva.BackColor = Color.FromArgb(74, 82, 90);
+            btnInsertarNueva.FlatAppearance.BorderColor = Color.Crimson;
+            btnInsertarNueva.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnInsertarNueva.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnInsertarNueva.FlatStyle = FlatStyle.Flat;
+            btnInsertarNueva.ForeColor = SystemColors.ButtonHighlight;
             btnInsertarNueva.Location = new Point(523, 436);
             btnInsertarNueva.Margin = new Padding(3, 4, 3, 4);
             btnInsertarNueva.Name = "btnInsertarNueva";
