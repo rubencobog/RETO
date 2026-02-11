@@ -204,7 +204,7 @@ namespace RetaCantabria
                         var archivoContenido = new StreamContent(archivoGPX);
                         archivoContenido.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/gpx+xml");
                         contenido.Add(archivoContenido, "file", nombreArchivo);
-                        var respuesta = await cliente.PostAsync($"{ConexionAPI.ConexionAlternativa}/gpx/upload", contenido);
+                        var respuesta = await cliente.PostAsync($"{ConexionAPI.ConexionAlternativa}gpx/upload", contenido);
                         Console.WriteLine(respuesta.StatusCode);
                         if (respuesta.IsSuccessStatusCode)
                         {
