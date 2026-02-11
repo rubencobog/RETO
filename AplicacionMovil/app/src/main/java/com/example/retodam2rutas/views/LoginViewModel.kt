@@ -1,26 +1,28 @@
 package com.example.retodam2rutas.views
 
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import at.favre.lib.crypto.bcrypt.BCrypt
 import com.example.retodam2rutas.data.database.AppDatabase
-import com.example.retodam2rutas.entities.TIPOUSUARIO
-import com.example.retodam2rutas.data.service.UsuarioServiceFactory
+import com.example.retodam2rutas.data.service.BaseServiceFactory
 import com.example.retodam2rutas.data.service.UsuarioServiceImpl
+import com.example.retodam2rutas.entities.TIPOUSUARIO
 import com.example.retodam2rutas.model.UsuarioModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlin.math.log
 
 class LoginViewModel(
     private val appDatabase: AppDatabase
 ) : ViewModel() {
     private val _usuario = MutableLiveData<UsuarioModel>()
     val usuario: LiveData<UsuarioModel> = _usuario
-    val usuarioService = UsuarioServiceFactory.makeUsuarioService()
-    val usuarioServiceImpl = UsuarioServiceImpl(usuarioService, appDatabase.usuarioDao())
+    val usuarioServiceImpl = UsuarioServiceImpl(BaseServiceFactory.createService(), appDatabase.usuarioDao())
 
     val usuarios = usuarioServiceImpl.usuarios
         .stateIn(
@@ -40,7 +42,9 @@ class LoginViewModel(
         viewModelScope.launch {
             try {
                 //Llamada al servicio para obtener el usuario
-                val getUser = usuarioService.getLogin(email, password)
+
+                val getUser = usuarioServiceImpl.login(email, password)
+
                 _usuario.value = getUser
 
             } catch (e: Exception) {
@@ -49,6 +53,21 @@ class LoginViewModel(
 
         }
 
+    }
+
+    fun getAllUsers(){
+        viewModelScope.launch {
+            try {
+                //Llamada al servicio para obtener el usuario
+
+                val users = usuarioServiceImpl.getAll()
+
+
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     fun setUsuarioInvitado(){

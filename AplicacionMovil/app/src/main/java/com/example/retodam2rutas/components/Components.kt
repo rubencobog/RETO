@@ -1,5 +1,6 @@
 package com.example.retodam2rutas.components
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -45,6 +46,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -636,6 +638,9 @@ fun ContentLoginView(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var showDialog by remember { mutableStateOf(false) }
+    var loginAttempted by remember { mutableStateOf(false) }
+
+
     Column(
         modifier = Modifier
             .padding(innerPadding)
@@ -670,17 +675,26 @@ fun ContentLoginView(
 
               Button(onClick = {
                   loginViewModel.getLoginUsuario(email, password)
+                  loginAttempted = true
 
-                  if(usuario != null){
-                      navController.navigate("Home")
-                  }else{
-                      showDialog = true
-                  }
+                //LaunchedEffect
 
-              }) {
+
+
+                  }) {
                   Text("Entrar")
               }
           }
+        }
+
+        LaunchedEffect(usuario) {
+            if (loginAttempted) {
+                if (usuario != null) {
+                    navController.navigate("Home")
+                } else {
+                    showDialog = true
+                }
+            }
         }
 
         if (showDialog) {
