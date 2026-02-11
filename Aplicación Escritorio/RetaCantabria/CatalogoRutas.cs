@@ -89,7 +89,7 @@ namespace RetaCantabria
                     {
                         valoracionDTO valoracion = new valoracionDTO
                         {
-                            idRuta = ruta.IdRuta,
+                            idRuta = ruta.idRuta,
                             idUsuario = usuario.idUsuario,
                             dificultad = formV.dificultad,
                             belleza = formV.belleza,
@@ -184,7 +184,7 @@ namespace RetaCantabria
                 else
                 {
                     ruta.estadoRuta = true;
-                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.IdRuta, ruta).Result;
+                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.idRuta, ruta).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ruta validada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,7 +258,7 @@ namespace RetaCantabria
                     break;
 
                 case "Media de 4 estrellas o mas":
-                    List<RutaDTO> rutasValoradas = Rutas.Where(r => r.MediaEstrellas >= 4).ToList();
+                    List<RutaDTO> rutasValoradas = Rutas.Where(r => r.mediaEstrellas >= 4).ToList();
                     dgvRutas.DataSource = rutasValoradas;
                     break;
 
@@ -285,7 +285,7 @@ namespace RetaCantabria
             HttpClient httpClient = new HttpClient();
             RutaDTO rutaDTO = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
             string valor = "id";
-            List<Ruta> ruta = await httpClient.GetFromJsonAsync<List<Ruta>>($"{ConexionAPI.Conexion}ruta/buscar?campo={valor}&valor={rutaDTO.IdRuta}");
+            List<Ruta> ruta = await httpClient.GetFromJsonAsync<List<Ruta>>($"{ConexionAPI.Conexion}ruta/buscar?campo={valor}&valor={rutaDTO.idRuta}");
             var rutaFirst = ruta.FirstOrDefault();
             Fichas fichas = new Fichas(rutaFirst);
             fichas.ShowDialog();
@@ -305,9 +305,9 @@ namespace RetaCantabria
         {
             RutaDTO ruta =(RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
             HttpClient httpClient = new HttpClient();
-            var nombreRuta = ruta.Nombre;
+            var nombreRuta = ruta.nombre;
             DateTime time = DateTime.Now;
-            long idRuta = ruta.IdRuta;
+            long idRuta = ruta.idRuta;
             Usuario usuario = await httpClient.GetFromJsonAsync<Usuario>($"{ConexionAPI.Conexion}usuario/buscaUsu?idUsuario={idRuta}");
             List<Waypoint> wayPoints = await httpClient.GetFromJsonAsync<List<Waypoint>>($"{ConexionAPI.Conexion}waypoint/buscarRuta?idRuta={idRuta}");
             List<TrackPoint> trackPoints = await httpClient.GetFromJsonAsync<List<TrackPoint>>($"{ConexionAPI.Conexion}trackpoint/buscarRuta?idRuta={idRuta}");
