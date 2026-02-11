@@ -25,19 +25,19 @@ namespace RetaCantabria
 
         private void DetallesRuta_Load(object sender, EventArgs e)
         {
-            lblNombre.Text = ruta.Nombre;
-            lblDuracion.Text = ruta.Duracion.ToString(@"hh\:mm\:ss");
-            lblZona.Text = ruta.ZonaGeografica;
-            lblMedia.Text = ruta.MediaEstrellas.HasValue ? ruta.MediaEstrellas.Value.ToString("0.0") : "Sin valoraciones";
+            lblNombre.Text = ruta.nombre;
+            lblDuracion.Text = ruta.duracion.ToString(@"hh\:mm\:ss");
+            lblZona.Text = ruta.zonaGeografica;
+            lblMedia.Text = ruta.mediaEstrellas.HasValue ? ruta.mediaEstrellas.Value.ToString("0.0") : "Sin valoraciones";
             lblClasificacion.Text = ruta.clasificacion.ToString();
-            lblDistancia.Text = ruta.Distancia.ToString() + " km";
+            lblDistancia.Text = ruta.distancia.ToString() + " km";
             checkAccesible.Checked = ruta.accesible;
             checkFamiliar.Checked = ruta.familiar;
         }
 
         private async void btnMapa_Click(object sender, EventArgs e)
         {
-            var respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"trackpoint/buscarRuta?idRuta={ruta.IdRuta}");
+            var respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"trackpoint/buscarRuta?idRuta={ruta.idRuta}");
 
             if (!respuesta.IsSuccessStatusCode)
             {

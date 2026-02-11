@@ -25,7 +25,7 @@ namespace RetaCantabria
 
         private async Task CargarGrid()
         {
-            String uri = ConexionAPI.Conexion + $"waypoint/buscarRuta?idRuta={ruta.IdRuta}";
+            String uri = ConexionAPI.Conexion + $"waypoint/buscarRuta?idRuta={ruta.idRuta}";
             var respuesta = await ConexionAPI.CLIENTE.GetAsync(uri);
             if (respuesta.IsSuccessStatusCode)
             {
