@@ -66,6 +66,12 @@
             // 
             // btnBorrar
             // 
+            btnBorrar.BackColor = Color.FromArgb(74, 82, 90);
+            btnBorrar.FlatAppearance.BorderColor = Color.Crimson;
+            btnBorrar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnBorrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnBorrar.FlatStyle = FlatStyle.Flat;
+            btnBorrar.ForeColor = SystemColors.ButtonHighlight;
             btnBorrar.Location = new Point(694, 394);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(75, 23);

@@ -39,17 +39,26 @@
             // dgvUsuarios
             // 
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Location = new Point(58, 51);
+            dgvUsuarios.Location = new Point(66, 68);
+            dgvUsuarios.Margin = new Padding(3, 4, 3, 4);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(681, 319);
+            dgvUsuarios.RowHeadersWidth = 51;
+            dgvUsuarios.Size = new Size(778, 425);
             dgvUsuarios.TabIndex = 0;
             dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;
             // 
             // Eliminar
             // 
-            Eliminar.Location = new Point(664, 386);
+            Eliminar.BackColor = Color.FromArgb(74, 82, 90);
+            Eliminar.FlatAppearance.BorderColor = Color.Crimson;
+            Eliminar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            Eliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            Eliminar.FlatStyle = FlatStyle.Flat;
+            Eliminar.ForeColor = SystemColors.ButtonHighlight;
+            Eliminar.Location = new Point(759, 515);
+            Eliminar.Margin = new Padding(3, 4, 3, 4);
             Eliminar.Name = "Eliminar";
-            Eliminar.Size = new Size(75, 23);
+            Eliminar.Size = new Size(86, 31);
             Eliminar.TabIndex = 1;
             Eliminar.Text = "Eliminar";
             Eliminar.UseVisualStyleBackColor = true;
@@ -57,9 +66,16 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(565, 386);
+            btnEditar.BackColor = Color.FromArgb(74, 82, 90);
+            btnEditar.FlatAppearance.BorderColor = Color.Crimson;
+            btnEditar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.ForeColor = SystemColors.ButtonHighlight;
+            btnEditar.Location = new Point(646, 515);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
+            btnEditar.Size = new Size(86, 31);
             btnEditar.TabIndex = 2;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -67,9 +83,16 @@
             // 
             // btnPermisos
             // 
-            btnPermisos.Location = new Point(412, 386);
+            btnPermisos.BackColor = Color.FromArgb(74, 82, 90);
+            btnPermisos.FlatAppearance.BorderColor = Color.Crimson;
+            btnPermisos.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnPermisos.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnPermisos.FlatStyle = FlatStyle.Flat;
+            btnPermisos.ForeColor = SystemColors.ButtonHighlight;
+            btnPermisos.Location = new Point(472, 515);
+            btnPermisos.Margin = new Padding(3, 4, 3, 4);
             btnPermisos.Name = "btnPermisos";
-            btnPermisos.Size = new Size(125, 23);
+            btnPermisos.Size = new Size(143, 31);
             btnPermisos.TabIndex = 3;
             btnPermisos.Text = "Cambiar Permisos";
             btnPermisos.UseVisualStyleBackColor = true;
@@ -77,22 +100,25 @@
             // 
             // comboPermisos
             // 
+
             comboPermisos.FormattingEnabled = true;
-            comboPermisos.Location = new Point(412, 405);
+            comboPermisos.Location = new Point(472, 548);
+            comboPermisos.Margin = new Padding(3, 4, 3, 4);
             comboPermisos.Name = "comboPermisos";
-            comboPermisos.Size = new Size(125, 23);
+            comboPermisos.Size = new Size(142, 28);
             comboPermisos.TabIndex = 4;
             // 
             // GestionUsuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(comboPermisos);
             Controls.Add(btnPermisos);
             Controls.Add(btnEditar);
             Controls.Add(Eliminar);
             Controls.Add(dgvUsuarios);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "GestionUsuarios";
             Text = "Usuarios";
             Load += GestionUsuarios_Load;

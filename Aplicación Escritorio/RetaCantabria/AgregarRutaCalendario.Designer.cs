@@ -41,26 +41,42 @@
             // dgvRutasDisponibles
             // 
             dgvRutasDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRutasDisponibles.Location = new Point(443, 22);
+            dgvRutasDisponibles.Location = new Point(569, 33);
+            dgvRutasDisponibles.Margin = new Padding(4, 5, 4, 5);
             dgvRutasDisponibles.Name = "dgvRutasDisponibles";
-            dgvRutasDisponibles.Size = new Size(309, 316);
+            dgvRutasDisponibles.RowHeadersWidth = 51;
+            dgvRutasDisponibles.Size = new Size(397, 484);
             dgvRutasDisponibles.TabIndex = 0;
             // 
             // btnInsertarRuta
             // 
-            btnInsertarRuta.Location = new Point(536, 385);
+            btnInsertarRuta.BackColor = Color.FromArgb(74, 82, 90);
+            btnInsertarRuta.FlatAppearance.BorderColor = Color.Crimson;
+            btnInsertarRuta.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnInsertarRuta.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnInsertarRuta.FlatStyle = FlatStyle.Flat;
+            btnInsertarRuta.ForeColor = SystemColors.ButtonHighlight;
+            btnInsertarRuta.Location = new Point(689, 590);
+            btnInsertarRuta.Margin = new Padding(4, 5, 4, 5);
             btnInsertarRuta.Name = "btnInsertarRuta";
-            btnInsertarRuta.Size = new Size(81, 23);
+            btnInsertarRuta.Size = new Size(104, 36);
             btnInsertarRuta.TabIndex = 1;
             btnInsertarRuta.Text = "Añadir";
-            btnInsertarRuta.UseVisualStyleBackColor = true;
+            btnInsertarRuta.UseVisualStyleBackColor = false;
             btnInsertarRuta.Click += btnInsertarRuta_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(643, 385);
+            btnCancelar.BackColor = Color.FromArgb(74, 82, 90);
+            btnCancelar.FlatAppearance.BorderColor = Color.Crimson;
+            btnCancelar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.ForeColor = SystemColors.ButtonHighlight;
+            btnCancelar.Location = new Point(827, 590);
+            btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(97, 36);
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -69,42 +85,46 @@
             // lblDetalles
             // 
             lblDetalles.AutoSize = true;
-            lblDetalles.Location = new Point(44, 22);
+            lblDetalles.Location = new Point(56, 33);
+            lblDetalles.Margin = new Padding(4, 0, 4, 0);
             lblDetalles.Name = "lblDetalles";
-            lblDetalles.Size = new Size(51, 15);
+            lblDetalles.Size = new Size(74, 23);
             lblDetalles.TabIndex = 3;
             lblDetalles.Text = "Detalles:";
             // 
             // lblRecomendaciones
             // 
             lblRecomendaciones.AutoSize = true;
-            lblRecomendaciones.Location = new Point(44, 200);
+            lblRecomendaciones.Location = new Point(56, 307);
+            lblRecomendaciones.Margin = new Padding(4, 0, 4, 0);
             lblRecomendaciones.Name = "lblRecomendaciones";
-            lblRecomendaciones.Size = new Size(107, 15);
+            lblRecomendaciones.Size = new Size(152, 23);
             lblRecomendaciones.TabIndex = 4;
             lblRecomendaciones.Text = "Recomendaciones:";
             // 
             // txtDetalles
             // 
-            txtDetalles.Location = new Point(44, 45);
+            txtDetalles.Location = new Point(56, 69);
+            txtDetalles.Margin = new Padding(4, 5, 4, 5);
             txtDetalles.Multiline = true;
             txtDetalles.Name = "txtDetalles";
-            txtDetalles.Size = new Size(292, 118);
+            txtDetalles.Size = new Size(374, 179);
             txtDetalles.TabIndex = 5;
             // 
             // txtRecomendaciones
             // 
-            txtRecomendaciones.Location = new Point(44, 227);
+            txtRecomendaciones.Location = new Point(56, 349);
+            txtRecomendaciones.Margin = new Padding(4, 5, 4, 5);
             txtRecomendaciones.Multiline = true;
             txtRecomendaciones.Name = "txtRecomendaciones";
-            txtRecomendaciones.Size = new Size(292, 111);
+            txtRecomendaciones.Size = new Size(374, 169);
             txtRecomendaciones.TabIndex = 6;
             // 
             // AgregarRutaCalendario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1028, 690);
             Controls.Add(txtRecomendaciones);
             Controls.Add(txtDetalles);
             Controls.Add(lblRecomendaciones);
@@ -112,6 +132,8 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnInsertarRuta);
             Controls.Add(dgvRutasDisponibles);
+            Font = new Font("Segoe UI", 10F);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "AgregarRutaCalendario";
             Text = "Rutas Disponibles";
             Load += AgregarRutaCalendario_Load;

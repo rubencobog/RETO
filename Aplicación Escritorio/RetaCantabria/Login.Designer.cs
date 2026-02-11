@@ -43,7 +43,7 @@
             // btnIniciar
             // 
             btnIniciar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnIniciar.BackColor = Color.LightSteelBlue;
+            btnIniciar.BackColor = Color.FromArgb(74, 82, 90);
             btnIniciar.FlatAppearance.BorderColor = Color.Crimson;
             btnIniciar.FlatAppearance.BorderSize = 2;
             btnIniciar.FlatAppearance.MouseDownBackColor = Color.DimGray;
@@ -89,6 +89,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(310, 28);
             txtEmail.TabIndex = 3;
+            txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // txtPassword
             // 
@@ -100,6 +101,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(310, 32);
             txtPassword.TabIndex = 4;
+            txtPassword.TextAlign = HorizontalAlignment.Center;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // btnRegistrarse

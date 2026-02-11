@@ -72,6 +72,12 @@
             // 
             // btnResena
             // 
+            btnResena.BackColor = Color.FromArgb(74, 82, 90);
+            btnResena.FlatAppearance.BorderColor = Color.Crimson;
+            btnResena.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnResena.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnResena.FlatStyle = FlatStyle.Flat;
+            btnResena.ForeColor = SystemColors.ButtonHighlight;
             btnResena.Location = new Point(775, 535);
             btnResena.Margin = new Padding(3, 4, 3, 4);
             btnResena.Name = "btnResena";
@@ -83,6 +89,12 @@
             // 
             // btnValorar
             // 
+            btnValorar.BackColor = Color.FromArgb(74, 82, 90);
+            btnValorar.FlatAppearance.BorderColor = Color.Crimson;
+            btnValorar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnValorar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnValorar.FlatStyle = FlatStyle.Flat;
+            btnValorar.ForeColor = SystemColors.ButtonHighlight;
             btnValorar.Location = new Point(658, 535);
             btnValorar.Margin = new Padding(3, 4, 3, 4);
             btnValorar.Name = "btnValorar";
@@ -94,6 +106,12 @@
             // 
             // btnDescarga
             // 
+            btnDescarga.BackColor = Color.FromArgb(74, 82, 90);
+            btnDescarga.FlatAppearance.BorderColor = Color.Crimson;
+            btnDescarga.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnDescarga.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnDescarga.FlatStyle = FlatStyle.Flat;
+            btnDescarga.ForeColor = SystemColors.ButtonHighlight;
             btnDescarga.Location = new Point(501, 535);
             btnDescarga.Margin = new Padding(3, 4, 3, 4);
             btnDescarga.Name = "btnDescarga";
@@ -105,6 +123,12 @@
             // 
             // btnCrear
             // 
+            btnCrear.BackColor = Color.FromArgb(74, 82, 90);
+            btnCrear.FlatAppearance.BorderColor = Color.Crimson;
+            btnCrear.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnCrear.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnCrear.FlatStyle = FlatStyle.Flat;
+            btnCrear.ForeColor = SystemColors.ButtonHighlight;
             btnCrear.Location = new Point(39, 535);
             btnCrear.Margin = new Padding(3, 4, 3, 4);
             btnCrear.Name = "btnCrear";
@@ -120,15 +144,15 @@
             panelAdmin.BorderStyle = BorderStyle.Fixed3D;
             panelAdmin.Controls.Add(btnGestionValoraciones);
             panelAdmin.Controls.Add(btnUsuarios);
-            panelAdmin.Location = new Point(39, 65);
+            panelAdmin.Location = new Point(39, 55);
             panelAdmin.Margin = new Padding(3, 4, 3, 4);
             panelAdmin.Name = "panelAdmin";
-            panelAdmin.Size = new Size(235, 101);
+            panelAdmin.Size = new Size(239, 105);
             panelAdmin.TabIndex = 6;
             // 
             // btnGestionValoraciones
             // 
-            btnGestionValoraciones.Location = new Point(8, 56);
+            btnGestionValoraciones.Location = new Point(3, 56);
             btnGestionValoraciones.Margin = new Padding(3, 4, 3, 4);
             btnGestionValoraciones.Name = "btnGestionValoraciones";
             btnGestionValoraciones.Size = new Size(225, 37);
@@ -150,6 +174,12 @@
             // 
             // btnValidar
             // 
+            btnValidar.BackColor = Color.FromArgb(74, 82, 90);
+            btnValidar.FlatAppearance.BorderColor = Color.Crimson;
+            btnValidar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnValidar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnValidar.FlatStyle = FlatStyle.Flat;
+            btnValidar.ForeColor = SystemColors.ButtonHighlight;
             btnValidar.Location = new Point(169, 535);
             btnValidar.Margin = new Padding(3, 4, 3, 4);
             btnValidar.Name = "btnValidar";
@@ -161,6 +191,12 @@
             // 
             // btnCalendario
             // 
+            btnCalendario.BackColor = Color.FromArgb(74, 82, 90);
+            btnCalendario.FlatAppearance.BorderColor = Color.Crimson;
+            btnCalendario.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnCalendario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnCalendario.FlatStyle = FlatStyle.Flat;
+            btnCalendario.ForeColor = SystemColors.ButtonHighlight;
             btnCalendario.Location = new Point(325, 535);
             btnCalendario.Margin = new Padding(3, 4, 3, 4);
             btnCalendario.Name = "btnCalendario";
@@ -183,7 +219,8 @@
             // lblRutas
             // 
             lblRutas.AutoSize = true;
-            lblRutas.BorderStyle = BorderStyle.Fixed3D;
+            lblRutas.BackColor = SystemColors.Control;
+            lblRutas.BorderStyle = BorderStyle.FixedSingle;
             lblRutas.Location = new Point(429, 23);
             lblRutas.Name = "lblRutas";
             lblRutas.Size = new Size(55, 22);
@@ -192,17 +229,24 @@
             // 
             // btnMenuAdmin
             // 
-            btnMenuAdmin.FlatStyle = FlatStyle.System;
+            btnMenuAdmin.BackColor = SystemColors.Window;
+            btnMenuAdmin.FlatStyle = FlatStyle.Flat;
             btnMenuAdmin.Location = new Point(39, 23);
             btnMenuAdmin.Name = "btnMenuAdmin";
             btnMenuAdmin.Size = new Size(58, 29);
             btnMenuAdmin.TabIndex = 11;
             btnMenuAdmin.Text = ". . .";
-            btnMenuAdmin.UseVisualStyleBackColor = true;
+            btnMenuAdmin.UseVisualStyleBackColor = false;
             btnMenuAdmin.Click += btnMenuAdmin_Click;
             // 
             // btnEnviarGPX
             // 
+            btnEnviarGPX.BackColor = Color.FromArgb(74, 82, 90);
+            btnEnviarGPX.FlatAppearance.BorderColor = Color.Crimson;
+            btnEnviarGPX.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnEnviarGPX.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnEnviarGPX.FlatStyle = FlatStyle.Flat;
+            btnEnviarGPX.ForeColor = SystemColors.ButtonHighlight;
             btnEnviarGPX.Location = new Point(3, 4);
             btnEnviarGPX.Name = "btnEnviarGPX";
             btnEnviarGPX.Size = new Size(87, 27);
@@ -213,6 +257,12 @@
             // 
             // btnGenerarGPX
             // 
+            btnGenerarGPX.BackColor = Color.FromArgb(74, 82, 90);
+            btnGenerarGPX.FlatAppearance.BorderColor = Color.Crimson;
+            btnGenerarGPX.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnGenerarGPX.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnGenerarGPX.FlatStyle = FlatStyle.Flat;
+            btnGenerarGPX.ForeColor = SystemColors.ButtonHighlight;
             btnGenerarGPX.Location = new Point(105, 3);
             btnGenerarGPX.Name = "btnGenerarGPX";
             btnGenerarGPX.Size = new Size(114, 28);

@@ -48,7 +48,13 @@
             // 
             // btnMapa
             // 
-            btnMapa.Location = new Point(206, 394);
+            btnMapa.BackColor = Color.FromArgb(74, 82, 90);
+            btnMapa.FlatAppearance.BorderColor = Color.Crimson;
+            btnMapa.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnMapa.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnMapa.FlatStyle = FlatStyle.Flat;
+            btnMapa.ForeColor = SystemColors.ButtonHighlight;
+            btnMapa.Location = new Point(237, 394);
             btnMapa.Name = "btnMapa";
             btnMapa.Size = new Size(173, 29);
             btnMapa.TabIndex = 0;
@@ -58,17 +64,24 @@
             // 
             // btnWaypoints
             // 
-            btnWaypoints.Location = new Point(412, 394);
+            btnWaypoints.BackColor = Color.FromArgb(74, 82, 90);
+            btnWaypoints.FlatAppearance.BorderColor = Color.Crimson;
+            btnWaypoints.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnWaypoints.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnWaypoints.FlatStyle = FlatStyle.Flat;
+            btnWaypoints.ForeColor = SystemColors.ButtonHighlight;
+            btnWaypoints.Location = new Point(443, 394);
             btnWaypoints.Name = "btnWaypoints";
             btnWaypoints.Size = new Size(120, 29);
             btnWaypoints.TabIndex = 1;
             btnWaypoints.Text = "Ver WayPoints";
             btnWaypoints.UseVisualStyleBackColor = true;
+            btnWaypoints.Click += btnWaypoints_Click;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(108, 86);
+            lblNombre.Location = new Point(124, 86);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(50, 20);
             lblNombre.TabIndex = 2;
@@ -77,7 +90,7 @@
             // lblDistancia
             // 
             lblDistancia.AutoSize = true;
-            lblDistancia.Location = new Point(108, 197);
+            lblDistancia.Location = new Point(124, 197);
             lblDistancia.Name = "lblDistancia";
             lblDistancia.Size = new Size(50, 20);
             lblDistancia.TabIndex = 3;
@@ -86,7 +99,7 @@
             // lblDuracion
             // 
             lblDuracion.AutoSize = true;
-            lblDuracion.Location = new Point(108, 303);
+            lblDuracion.Location = new Point(124, 303);
             lblDuracion.Name = "lblDuracion";
             lblDuracion.Size = new Size(50, 20);
             lblDuracion.TabIndex = 4;
@@ -95,7 +108,7 @@
             // lblMedia
             // 
             lblMedia.AutoSize = true;
-            lblMedia.Location = new Point(341, 86);
+            lblMedia.Location = new Point(357, 86);
             lblMedia.Name = "lblMedia";
             lblMedia.Size = new Size(50, 20);
             lblMedia.TabIndex = 5;
@@ -104,7 +117,7 @@
             // lblZona
             // 
             lblZona.AutoSize = true;
-            lblZona.Location = new Point(341, 197);
+            lblZona.Location = new Point(357, 197);
             lblZona.Name = "lblZona";
             lblZona.Size = new Size(50, 20);
             lblZona.TabIndex = 6;
@@ -113,7 +126,7 @@
             // lblClasificacion
             // 
             lblClasificacion.AutoSize = true;
-            lblClasificacion.Location = new Point(341, 303);
+            lblClasificacion.Location = new Point(357, 303);
             lblClasificacion.Name = "lblClasificacion";
             lblClasificacion.Size = new Size(50, 20);
             lblClasificacion.TabIndex = 7;
@@ -123,7 +136,7 @@
             // 
             checkFamiliar.AutoSize = true;
             checkFamiliar.Enabled = false;
-            checkFamiliar.Location = new Point(566, 43);
+            checkFamiliar.Location = new Point(582, 43);
             checkFamiliar.Name = "checkFamiliar";
             checkFamiliar.Size = new Size(83, 24);
             checkFamiliar.TabIndex = 8;
@@ -134,7 +147,7 @@
             // 
             checkAccesible.AutoSize = true;
             checkAccesible.Enabled = false;
-            checkAccesible.Location = new Point(566, 161);
+            checkAccesible.Location = new Point(582, 161);
             checkAccesible.Name = "checkAccesible";
             checkAccesible.Size = new Size(94, 24);
             checkAccesible.TabIndex = 9;
@@ -144,7 +157,7 @@
             // lblNom
             // 
             lblNom.AutoSize = true;
-            lblNom.Location = new Point(108, 43);
+            lblNom.Location = new Point(124, 43);
             lblNom.Name = "lblNom";
             lblNom.Size = new Size(67, 20);
             lblNom.TabIndex = 10;
@@ -153,7 +166,7 @@
             // lblMed
             // 
             lblMed.AutoSize = true;
-            lblMed.Location = new Point(341, 47);
+            lblMed.Location = new Point(357, 47);
             lblMed.Name = "lblMed";
             lblMed.Size = new Size(128, 20);
             lblMed.TabIndex = 11;
@@ -162,7 +175,7 @@
             // lblDist
             // 
             lblDist.AutoSize = true;
-            lblDist.Location = new Point(108, 162);
+            lblDist.Location = new Point(124, 162);
             lblDist.Name = "lblDist";
             lblDist.Size = new Size(73, 20);
             lblDist.TabIndex = 12;
@@ -171,7 +184,7 @@
             // lblZone
             // 
             lblZone.AutoSize = true;
-            lblZone.Location = new Point(341, 161);
+            lblZone.Location = new Point(357, 161);
             lblZone.Name = "lblZone";
             lblZone.Size = new Size(123, 20);
             lblZone.TabIndex = 13;
@@ -180,7 +193,7 @@
             // lblDur
             // 
             lblDur.AutoSize = true;
-            lblDur.Location = new Point(108, 260);
+            lblDur.Location = new Point(124, 260);
             lblDur.Name = "lblDur";
             lblDur.Size = new Size(72, 20);
             lblDur.TabIndex = 14;
@@ -189,7 +202,7 @@
             // lblClasi
             // 
             lblClasi.AutoSize = true;
-            lblClasi.Location = new Point(341, 260);
+            lblClasi.Location = new Point(357, 260);
             lblClasi.Name = "lblClasi";
             lblClasi.Size = new Size(95, 20);
             lblClasi.TabIndex = 15;

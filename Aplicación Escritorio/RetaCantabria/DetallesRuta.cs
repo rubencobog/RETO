@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using Conexion;
+using Modelo;
 using ModeloDTO;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,9 +35,25 @@ namespace RetaCantabria
             checkFamiliar.Checked = ruta.familiar;
         }
 
-        private void btnMapa_Click(object sender, EventArgs e)
+        private async void btnMapa_Click(object sender, EventArgs e)
         {
-     var trackPoints = new List<TrackPoint>
+            var respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"trackpoint/buscarRuta?idRuta={ruta.IdRuta}");
+
+            if (!respuesta.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Error al cargar la ruta. " + respuesta.ReasonPhrase);
+                return;
+            }
+
+            var tPoints = await respuesta.Content.ReadFromJsonAsync<List<TrackPoint>>();
+
+            if (tPoints == null)
+            {
+                MessageBox.Show("La ruta no contiene puntos.");
+                return;
+            }
+
+            var trackPoints = new List<TrackPoint>
 {
     new TrackPoint
     {
@@ -102,8 +120,14 @@ namespace RetaCantabria
     }
 };
 
-            MapaRuta mapaRuta = new MapaRuta(trackPoints);
+            MapaRuta mapaRuta = new MapaRuta(tPoints);
             mapaRuta.ShowDialog();
+        }
+
+        private void btnWaypoints_Click(object sender, EventArgs e)
+        {
+            DetallesWaypoints detalles = new DetallesWaypoints(ruta);
+            detalles.ShowDialog();
         }
     }
 }

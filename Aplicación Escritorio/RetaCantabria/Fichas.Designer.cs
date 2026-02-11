@@ -75,6 +75,12 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(74, 82, 90);
+            button1.FlatAppearance.BorderColor = Color.Crimson;
+            button1.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(348, 404);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
