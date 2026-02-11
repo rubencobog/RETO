@@ -577,7 +577,7 @@ fun RutaCard(ruta: Ruta, navController: NavController) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .clickable { navController.navigate("Detail/${ruta.id}") },
+            .clickable { navController.navigate("Map/${ruta.id}") },
         colors = CardColors(
             containerColor = Color.Black,
             contentColor = Color.White,

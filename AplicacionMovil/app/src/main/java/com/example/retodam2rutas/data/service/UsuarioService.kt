@@ -55,7 +55,7 @@ class UsuarioServiceImpl(
 object BaseServiceFactory {
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("http://10.0.22.10:5050/api/")
+            .baseUrl("http://10.0.22.18:5050/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

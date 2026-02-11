@@ -7,12 +7,20 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.retodam2rutas.entities.Ruta
+import com.example.retodam2rutas.entities.Usuario
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RutaDao {
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertRuta(ruta: Ruta): Long
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(ruta: List<Ruta>)
+
+    @Query("SELECT * FROM rutas ORDER BY nombre ASC")
+    fun getAll(): Flow<List<Ruta>>
 
     @Query("SELECT * FROM rutas")
     suspend fun getAllRutas(): List<Ruta>
