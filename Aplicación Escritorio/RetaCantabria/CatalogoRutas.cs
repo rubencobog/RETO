@@ -308,7 +308,7 @@ namespace RetaCantabria
             var nombreRuta = ruta.nombre;
             DateTime time = DateTime.Now;
             long idRuta = ruta.idRuta;
-            Usuario usuario = await httpClient.GetFromJsonAsync<Usuario>($"{ConexionAPI.Conexion}usuario/buscaUsu?idUsuario={idRuta}");
+            Usuario usuario = await httpClient.GetFromJsonAsync<Usuario>($"{ConexionAPI.Conexion}usuario/buscaUsu/{idRuta}");
             List<Waypoint> wayPoints = await httpClient.GetFromJsonAsync<List<Waypoint>>($"{ConexionAPI.Conexion}waypoint/buscarRuta?idRuta={idRuta}");
             List<TrackPoint> trackPoints = await httpClient.GetFromJsonAsync<List<TrackPoint>>($"{ConexionAPI.Conexion}trackpoint/buscarRuta?idRuta={idRuta}");
             String gpx = $"""
