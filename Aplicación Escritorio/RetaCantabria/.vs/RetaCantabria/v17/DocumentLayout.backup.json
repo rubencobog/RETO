@@ -6,24 +6,14 @@
       "AbsoluteMoniker": "D:0:0:{D1291F1B-21C7-4734-883C-FBF7E93DE4F3}|..\\RetaCantabria.Tests\\RetaCantabria.Tests.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria.tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionvaloraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionvaloraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\valoracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\waypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\puntopeligro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -32,18 +22,75 @@
       "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\puntoruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\calendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\crearruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:crearruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\calendariorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:calendariorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\enviargpx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:enviargpx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\fichas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:fichas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionvaloraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionvaloraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2D940A-A4F7-4914-B747-7998064561C7}|..\\ModeloTDO\\ModeloDTO.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelotdo\\rutadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:formresena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:catalogorutas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADAB84DC-7D31-4C47-884B-2348A3D831FE}|..\\Conexion\\Conexion.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\conexion\\conexionapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\fichas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:fichas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\gestionusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:gestionusuarios.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\retacantabria\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AE68D2-BFF3-4C2B-A5CE-F459D213AB66}|RetaCantabria.csproj|solutionrelative:crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F2B2EBB-AB2F-4265-8099-3B66038BE5FC}|..\\Modelo\\Modelo.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelo\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE2D940A-A4F7-4914-B747-7998064561C7}|..\\ModeloTDO\\ModeloDTO.csproj|e:\\github repositories\\reto\\aplicaci\u00F3n escritorio\\modelotdo\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -56,59 +103,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GestionUsuarios.Designer.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.Designer.cs",
-              "RelativeDocumentMoniker": "GestionUsuarios.Designer.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.Designer.cs",
-              "RelativeToolTip": "GestionUsuarios.Designer.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIA+wGYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T15:32:41.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GestionUsuarios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
-              "RelativeDocumentMoniker": "GestionUsuarios.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GestionUsuarios.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T15:30:29.972Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GestionValoraciones.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionValoraciones.cs",
-              "RelativeDocumentMoniker": "GestionValoraciones.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionValoraciones.cs",
-              "RelativeToolTip": "GestionValoraciones.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T15:17:37.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CrearUsuario.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearUsuario.cs",
-              "RelativeDocumentMoniker": "CrearUsuario.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearUsuario.cs",
-              "RelativeToolTip": "CrearUsuario.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwDEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T14:24:46.898Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -117,22 +113,74 @@
               "RelativeDocumentMoniker": "..\\RetaCantabria.Tests\\Test1.cs",
               "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria.Tests\\Test1.cs*",
               "RelativeToolTip": "..\\RetaCantabria.Tests\\Test1.cs*",
-              "ViewState": "AgIAANgAAAAAAAAAAAAvwOcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0CAAAAAAAAAAAAADUCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T13:52:18.193Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PuntoRuta.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoRuta.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\PuntoRuta.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoRuta.cs",
-              "RelativeToolTip": "..\\Modelo\\PuntoRuta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Valoracion.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Valoracion.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\Valoracion.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Valoracion.cs",
+              "RelativeToolTip": "..\\Modelo\\Valoracion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T14:12:55.093Z",
+              "WhenOpened": "2026-02-11T13:59:07.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Waypoint.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Waypoint.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\Waypoint.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Waypoint.cs",
+              "RelativeToolTip": "..\\Modelo\\Waypoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:59:04.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Calendario.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Calendario.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\Calendario.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Calendario.cs",
+              "RelativeToolTip": "..\\Modelo\\Calendario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:56:51.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EnviarGPX.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\EnviarGPX.cs",
+              "RelativeDocumentMoniker": "EnviarGPX.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\EnviarGPX.cs [Dise\u00F1o]",
+              "RelativeToolTip": "EnviarGPX.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:51:33.626Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CrearRuta.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.cs",
+              "RelativeDocumentMoniker": "CrearRuta.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearRuta.cs",
+              "RelativeToolTip": "CrearRuta.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAASwDkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:31:37.631Z",
               "EditorCaption": ""
             },
             {
@@ -149,33 +197,236 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PuntoPeligro.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\PuntoPeligro.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
-              "RelativeToolTip": "..\\Modelo\\PuntoPeligro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "CalendarioRutas.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CalendarioRutas.cs",
+              "RelativeDocumentMoniker": "CalendarioRutas.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CalendarioRutas.cs",
+              "RelativeToolTip": "CalendarioRutas.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwD8AAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T14:12:51.239Z",
+              "WhenOpened": "2026-02-10T13:23:50.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "CatalogoRutas.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
+              "RelativeDocumentMoniker": "CatalogoRutas.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
+              "RelativeToolTip": "CatalogoRutas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:04:24.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GestionUsuarios.cs",
               "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
               "RelativeDocumentMoniker": "GestionUsuarios.cs",
               "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
               "RelativeToolTip": "GestionUsuarios.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAnwBwAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAcwBMAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T13:24:45.993Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
+              "Title": "Fichas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Fichas.cs",
+              "RelativeDocumentMoniker": "Fichas.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Fichas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Fichas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:06:05.163Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PuntoRuta.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoRuta.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\PuntoRuta.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoRuta.cs",
+              "RelativeToolTip": "..\\Modelo\\PuntoRuta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T14:12:55.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PuntoPeligro.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\PuntoPeligro.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\PuntoPeligro.cs",
+              "RelativeToolTip": "..\\Modelo\\PuntoPeligro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T14:12:51.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FormResena.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs",
+              "RelativeDocumentMoniker": "FormResena.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormResena.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:43:40.407Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Actividad.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Actividad.cs",
+              "RelativeDocumentMoniker": "..\\Modelo\\Actividad.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Actividad.cs",
+              "RelativeToolTip": "..\\Modelo\\Actividad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T13:50:29.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RutaDTO.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\ModeloTDO\\RutaDTO.cs",
+              "RelativeDocumentMoniker": "..\\ModeloTDO\\RutaDTO.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\ModeloTDO\\RutaDTO.cs",
+              "RelativeToolTip": "..\\ModeloTDO\\RutaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:45:57.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CatalogoRutas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs",
+              "RelativeDocumentMoniker": "CatalogoRutas.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CatalogoRutas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CatalogoRutas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:08:02.73Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GestionValoraciones.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionValoraciones.cs",
+              "RelativeDocumentMoniker": "GestionValoraciones.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionValoraciones.cs",
+              "RelativeToolTip": "GestionValoraciones.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwBEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T15:17:37.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ConexionAPI.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
+              "RelativeDocumentMoniker": "..\\Conexion\\ConexionAPI.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Conexion\\ConexionAPI.cs",
+              "RelativeToolTip": "..\\Conexion\\ConexionAPI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:14:47.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormResena.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs",
+              "RelativeDocumentMoniker": "FormResena.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\FormResena.cs",
+              "RelativeToolTip": "FormResena.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAADgvyUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:02:48.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GestionUsuarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs",
+              "RelativeDocumentMoniker": "GestionUsuarios.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionUsuarios.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T15:30:29.972Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CrearUsuario.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearUsuario.cs",
+              "RelativeDocumentMoniker": "CrearUsuario.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CrearUsuario.cs",
+              "RelativeToolTip": "CrearUsuario.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwDEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T14:24:46.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Login.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T13:50:42.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Fichas.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Fichas.cs",
+              "RelativeDocumentMoniker": "Fichas.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Fichas.cs",
+              "RelativeToolTip": "Fichas.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T13:05:55.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GestionUsuarios.Designer.cs",
+              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.Designer.cs",
+              "RelativeDocumentMoniker": "GestionUsuarios.Designer.cs",
+              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\GestionUsuarios.Designer.cs",
+              "RelativeToolTip": "GestionUsuarios.Designer.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAIA+wGYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T15:32:41.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Usuario.cs",
               "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Usuario.cs",
               "RelativeDocumentMoniker": "..\\Modelo\\Usuario.cs",
@@ -183,38 +434,11 @@
               "RelativeToolTip": "..\\Modelo\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T14:12:42.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T14:12:42.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Login.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Login.cs",
-              "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\Login.cs",
-              "RelativeToolTip": "Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T13:50:42.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Actividad.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Actividad.cs",
-              "RelativeDocumentMoniker": "..\\Modelo\\Actividad.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\Modelo\\Actividad.cs",
-              "RelativeToolTip": "..\\Modelo\\Actividad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T13:50:29.037Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "UsuarioDTO.cs",
               "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\ModeloTDO\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "..\\ModeloTDO\\UsuarioDTO.cs",
@@ -222,21 +446,7 @@
               "RelativeToolTip": "..\\ModeloTDO\\UsuarioDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T13:46:20.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CalendarioRutas.cs",
-              "DocumentMoniker": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CalendarioRutas.cs",
-              "RelativeDocumentMoniker": "CalendarioRutas.cs",
-              "ToolTip": "E:\\GitHub Repositories\\RETO\\Aplicaci\u00F3n Escritorio\\RetaCantabria\\CalendarioRutas.cs",
-              "RelativeToolTip": "CalendarioRutas.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAkwD8AAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T13:23:50.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T13:46:20.401Z"
             }
           ]
         }
