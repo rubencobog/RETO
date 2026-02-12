@@ -50,10 +50,7 @@ namespace RetaCantabria
                 return;
             }
 
-                USUARIO = usuario;
-            MessageBox.Show($"{usuario.nombre} {usuario.apellido}","¡Bienvenido!");
-
-            this.Hide();
+            USUARIO = usuario;
             CatalogoRutas catalogo = new CatalogoRutas(usuario);
             catalogo.ShowDialog();
             this.Close();

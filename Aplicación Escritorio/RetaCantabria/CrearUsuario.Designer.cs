@@ -175,11 +175,11 @@ namespace RetaCantabria
         private Label lblApellido;
         private Label lblEmail;
         private Label lblContrasena;
-        private TextBox txtNombre;
-        private TextBox txtApellido;
-        private TextBox txtEmail;
-        private TextBox txtPassword;
-        private Button btnRegistrar;
         private PictureBox pictureUsuario;
+        internal TextBox txtNombre;
+        internal TextBox txtApellido;
+        internal TextBox txtEmail;
+        internal TextBox txtPassword;
+        internal Button btnRegistrar;
     }
 }

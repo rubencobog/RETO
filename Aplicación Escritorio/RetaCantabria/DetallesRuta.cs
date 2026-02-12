@@ -17,10 +17,12 @@ namespace RetaCantabria
     public partial class DetallesRuta : Form
     {
         private RutaDTO ruta;
-        public DetallesRuta(RutaDTO ruta)
+        private UsuarioDTO usuario;
+        public DetallesRuta(RutaDTO ruta, UsuarioDTO usuario)
         {
             InitializeComponent();
             this.ruta = ruta;
+            this.usuario = usuario;
         }
 
         private void DetallesRuta_Load(object sender, EventArgs e)
@@ -33,6 +35,7 @@ namespace RetaCantabria
             lblDistancia.Text = ruta.distancia.ToString() + " km";
             checkAccesible.Checked = ruta.accesible;
             checkFamiliar.Checked = ruta.familiar;
+            PermisoResenarValidar();
         }
 
         private async void btnMapa_Click(object sender, EventArgs e)
@@ -128,6 +131,49 @@ namespace RetaCantabria
         {
             DetallesWaypoints detalles = new DetallesWaypoints(ruta);
             detalles.ShowDialog();
+        }
+
+        private async void btnValidar_Click(object sender, EventArgs e)
+        {
+            using (FormValoracion formV = new FormValoracion())
+            {
+                if (formV.ShowDialog() == DialogResult.OK)
+                {
+                    valoracionDTO valoracion = new valoracionDTO
+                    {
+                        idRuta = ruta.idRuta,
+                        idUsuario = usuario.idUsuario,
+                        dificultad = formV.dificultad,
+                        belleza = formV.belleza,
+                        interesCultural = formV.interes,
+                        fecha = DateTime.Now
+
+                    };
+                    var response = await ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "valoracion", valoracion);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Valoración enviada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al enviar la valoración" + response.ReasonPhrase, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnResena_Click(object sender, EventArgs e)
+        {
+            FormResena formResena = new FormResena(this.usuario, ruta, ConexionAPI.CLIENTE);
+            formResena.ShowDialog();
+        }
+
+        private void PermisoResenarValidar()
+        {
+            if (usuario.idUsuario==0) { 
+                btnResena.Visible = false;
+                btnValidar.Visible = false;
+            }
         }
     }
 }

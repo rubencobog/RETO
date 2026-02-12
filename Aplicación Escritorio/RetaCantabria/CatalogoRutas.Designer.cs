@@ -30,8 +30,6 @@
         {
             dgvRutas = new DataGridView();
             lblFiltro = new Label();
-            btnResena = new Button();
-            btnValorar = new Button();
             btnDescarga = new Button();
             btnCrear = new Button();
             panelAdmin = new Panel();
@@ -42,12 +40,9 @@
             comboFiltro = new ComboBox();
             lblRutas = new Label();
             btnMenuAdmin = new Button();
-            btnEnviarGPX = new Button();
             btnGenerarGPX = new Button();
-            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvRutas).BeginInit();
             panelAdmin.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvRutas
@@ -70,40 +65,6 @@
             lblFiltro.TabIndex = 1;
             lblFiltro.Text = "Filtro de rutas:";
             // 
-            // btnResena
-            // 
-            btnResena.BackColor = Color.FromArgb(74, 82, 90);
-            btnResena.FlatAppearance.BorderColor = Color.Crimson;
-            btnResena.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            btnResena.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnResena.FlatStyle = FlatStyle.Flat;
-            btnResena.ForeColor = SystemColors.ButtonHighlight;
-            btnResena.Location = new Point(775, 535);
-            btnResena.Margin = new Padding(3, 4, 3, 4);
-            btnResena.Name = "btnResena";
-            btnResena.Size = new Size(86, 31);
-            btnResena.TabIndex = 2;
-            btnResena.Text = "Reseñar";
-            btnResena.UseVisualStyleBackColor = true;
-            btnResena.Click += btnResena_Click;
-            // 
-            // btnValorar
-            // 
-            btnValorar.BackColor = Color.FromArgb(74, 82, 90);
-            btnValorar.FlatAppearance.BorderColor = Color.Crimson;
-            btnValorar.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            btnValorar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnValorar.FlatStyle = FlatStyle.Flat;
-            btnValorar.ForeColor = SystemColors.ButtonHighlight;
-            btnValorar.Location = new Point(658, 535);
-            btnValorar.Margin = new Padding(3, 4, 3, 4);
-            btnValorar.Name = "btnValorar";
-            btnValorar.Size = new Size(86, 31);
-            btnValorar.TabIndex = 3;
-            btnValorar.Text = "Valorar";
-            btnValorar.UseVisualStyleBackColor = true;
-            btnValorar.Click += btnValorar_Click;
-            // 
             // btnDescarga
             // 
             btnDescarga.BackColor = Color.FromArgb(74, 82, 90);
@@ -112,7 +73,7 @@
             btnDescarga.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnDescarga.FlatStyle = FlatStyle.Flat;
             btnDescarga.ForeColor = SystemColors.ButtonHighlight;
-            btnDescarga.Location = new Point(501, 535);
+            btnDescarga.Location = new Point(586, 535);
             btnDescarga.Margin = new Padding(3, 4, 3, 4);
             btnDescarga.Name = "btnDescarga";
             btnDescarga.Size = new Size(125, 31);
@@ -129,7 +90,7 @@
             btnCrear.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.ForeColor = SystemColors.ButtonHighlight;
-            btnCrear.Location = new Point(39, 535);
+            btnCrear.Location = new Point(253, 535);
             btnCrear.Margin = new Padding(3, 4, 3, 4);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(102, 31);
@@ -180,7 +141,7 @@
             btnValidar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnValidar.FlatStyle = FlatStyle.Flat;
             btnValidar.ForeColor = SystemColors.ButtonHighlight;
-            btnValidar.Location = new Point(169, 535);
+            btnValidar.Location = new Point(39, 535);
             btnValidar.Margin = new Padding(3, 4, 3, 4);
             btnValidar.Name = "btnValidar";
             btnValidar.Size = new Size(131, 31);
@@ -197,10 +158,10 @@
             btnCalendario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnCalendario.FlatStyle = FlatStyle.Flat;
             btnCalendario.ForeColor = SystemColors.ButtonHighlight;
-            btnCalendario.Location = new Point(325, 535);
+            btnCalendario.Location = new Point(391, 535);
             btnCalendario.Margin = new Padding(3, 4, 3, 4);
             btnCalendario.Name = "btnCalendario";
-            btnCalendario.Size = new Size(149, 31);
+            btnCalendario.Size = new Size(168, 31);
             btnCalendario.TabIndex = 8;
             btnCalendario.Text = "Calendario de Rutas";
             btnCalendario.UseVisualStyleBackColor = true;
@@ -209,7 +170,7 @@
             // comboFiltro
             // 
             comboFiltro.FormattingEnabled = true;
-            comboFiltro.Items.AddRange(new object[] { "Circular", "Lineal", "Accesible", "Familiar", "Media de 4 estrellas o mas" });
+            comboFiltro.Items.AddRange(new object[] { "Todas", "Circular", "Lineal", "Accesible", "Familiar", "Media de 4 estrellas o mas" });
             comboFiltro.Location = new Point(710, 23);
             comboFiltro.Name = "comboFiltro";
             comboFiltro.Size = new Size(151, 28);
@@ -239,22 +200,6 @@
             btnMenuAdmin.UseVisualStyleBackColor = false;
             btnMenuAdmin.Click += btnMenuAdmin_Click;
             // 
-            // btnEnviarGPX
-            // 
-            btnEnviarGPX.BackColor = Color.FromArgb(74, 82, 90);
-            btnEnviarGPX.FlatAppearance.BorderColor = Color.Crimson;
-            btnEnviarGPX.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            btnEnviarGPX.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnEnviarGPX.FlatStyle = FlatStyle.Flat;
-            btnEnviarGPX.ForeColor = SystemColors.ButtonHighlight;
-            btnEnviarGPX.Location = new Point(3, 4);
-            btnEnviarGPX.Name = "btnEnviarGPX";
-            btnEnviarGPX.Size = new Size(87, 27);
-            btnEnviarGPX.TabIndex = 9;
-            btnEnviarGPX.Text = "Enviar GPX";
-            btnEnviarGPX.UseVisualStyleBackColor = true;
-            btnEnviarGPX.Click += btnEnviarGPX_Click;
-            // 
             // btnGenerarGPX
             // 
             btnGenerarGPX.BackColor = Color.FromArgb(74, 82, 90);
@@ -263,39 +208,28 @@
             btnGenerarGPX.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnGenerarGPX.FlatStyle = FlatStyle.Flat;
             btnGenerarGPX.ForeColor = SystemColors.ButtonHighlight;
-            btnGenerarGPX.Location = new Point(105, 3);
+            btnGenerarGPX.Location = new Point(747, 535);
             btnGenerarGPX.Name = "btnGenerarGPX";
-            btnGenerarGPX.Size = new Size(114, 28);
+            btnGenerarGPX.Size = new Size(114, 31);
             btnGenerarGPX.TabIndex = 10;
             btnGenerarGPX.Text = "Generar GPX";
             btnGenerarGPX.UseVisualStyleBackColor = true;
             btnGenerarGPX.Click += btnGenerarGPX_Click;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnEnviarGPX);
-            panel1.Controls.Add(btnGenerarGPX);
-            panel1.Location = new Point(143, 17);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(234, 34);
-            panel1.TabIndex = 11;
             // 
             // CatalogoRutas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(888, 608);
+            Controls.Add(btnGenerarGPX);
             Controls.Add(btnMenuAdmin);
             Controls.Add(lblRutas);
             Controls.Add(comboFiltro);
-            Controls.Add(panel1);
             Controls.Add(btnCalendario);
             Controls.Add(btnValidar);
             Controls.Add(panelAdmin);
             Controls.Add(btnCrear);
             Controls.Add(btnDescarga);
-            Controls.Add(btnValorar);
-            Controls.Add(btnResena);
             Controls.Add(lblFiltro);
             Controls.Add(dgvRutas);
             Margin = new Padding(3, 4, 3, 4);
@@ -303,29 +237,23 @@
             Text = "Catálogo";
             ((System.ComponentModel.ISupportInitialize)dgvRutas).EndInit();
             panelAdmin.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dgvRutas;
         private Label lblFiltro;
-        private Button btnResena;
-        private Button btnValorar;
-        private Button btnDescarga;
-        private Button btnCrear;
-        private Panel panelAdmin;
         private Button btnUsuarios;
-        private Button btnValidar;
         private Button btnGestionValoraciones;
-        private Button btnCalendario;
         private ComboBox comboFiltro;
         private Label lblRutas;
-        private Button btnMenuAdmin;
-        private Button btnEnviarGPX;
-        private Button btnGenerarGPX;
-        private Panel panel1;
+        internal DataGridView dgvRutas;
+        internal Button btnDescarga;
+        internal Button btnCrear;
+        internal Button btnValidar;
+        internal Button btnCalendario;
+        internal Button btnMenuAdmin;
+        internal Button btnGenerarGPX;
+        internal Panel panelAdmin;
     }
 }

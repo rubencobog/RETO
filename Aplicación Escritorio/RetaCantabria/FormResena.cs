@@ -47,7 +47,7 @@ namespace RetaCantabria
 
                 if (respuesta.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Reseña enviada correctamente 👍");
+                    MessageBox.Show("Reseña enviada correctamente");
                     Close();
                 }
                 else

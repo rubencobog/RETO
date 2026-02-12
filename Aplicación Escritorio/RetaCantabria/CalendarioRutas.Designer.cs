@@ -118,11 +118,10 @@
         }
 
         #endregion
-
-        private MonthCalendar calendar;
-        private DataGridView dgvRutaCalendar;
-        private Button btnEliminar;
         private Button btnInsertarNueva;
-        private Label lblFecha;
+        internal MonthCalendar calendar;
+        internal DataGridView dgvRutaCalendar;
+        internal Button btnEliminar;
+        internal Label lblFecha;
     }
 }

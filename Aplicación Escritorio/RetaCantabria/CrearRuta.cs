@@ -11,7 +11,7 @@ namespace RetaCantabria
         public CrearRuta(UsuarioDTO usuario)
         {
             this.usuario = usuario;
-           
+
             InitializeComponent();
             comboTemporada.Items.AddRange(new String[] { "Primavera", "Verano", "Otoño", "Invierno" });
         }
@@ -35,7 +35,8 @@ namespace RetaCantabria
                 {
                     accesibilidad = false;
                 }
-                else                 {
+                else
+                {
                     accesibilidad = true;
                 }
 
@@ -51,7 +52,7 @@ namespace RetaCantabria
 
 
 
-                Usuario usu=new Usuario
+                Usuario usu = new Usuario
                 {
                     idUsuario = usuario.idUsuario
                 };
@@ -73,11 +74,11 @@ namespace RetaCantabria
                     usuarioIdusuario = usu
                 };
 
-                HttpResponseMessage respuesta= await ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "ruta", ruta);
+                HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "ruta", ruta);
                 if (respuesta.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Ruta creada correctamente");
-                    DialogResult= DialogResult.OK;
+                    DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
@@ -92,7 +93,7 @@ namespace RetaCantabria
 
         }
 
-        private Boolean comprobarCampos()
+        internal Boolean comprobarCampos()
         {
             Boolean aceptado = false;
 
@@ -114,14 +115,15 @@ namespace RetaCantabria
                 (int)numericMinutos.Value,
                 (int)numericSegundos.Value
                 );
-            
+
             CLASIFICACION clasificacion;
             if (rbCircular.Checked)
             {
-                clasificacion=CLASIFICACION.CIRCULAR;
-            }else if(rbLineal.Checked)
+                clasificacion = CLASIFICACION.CIRCULAR;
+            }
+            else if (rbLineal.Checked)
             {
-                clasificacion=CLASIFICACION.LINEAL;
+                clasificacion = CLASIFICACION.LINEAL;
             }
             else
             {
@@ -157,11 +159,17 @@ namespace RetaCantabria
                 return false;
             }
 
-                if (!String.IsNullOrEmpty(nombre) && !String.IsNullOrEmpty(temporada) && !String.IsNullOrEmpty(zonaGeografica) && distancia!=null && duracion!=TimeSpan.Zero && distancia!=0)
+            if (!String.IsNullOrEmpty(nombre) && !String.IsNullOrEmpty(temporada) && !String.IsNullOrEmpty(zonaGeografica) && distancia != null && duracion != TimeSpan.Zero && distancia != 0)
             {
                 aceptado = true;
             }
             return aceptado;
+        }
+
+        private void btnGPX_Click(object sender, EventArgs e)
+        {
+            EnviarGPX enviarGPX = new EnviarGPX();
+            enviarGPX.ShowDialog();
         }
     }
 }

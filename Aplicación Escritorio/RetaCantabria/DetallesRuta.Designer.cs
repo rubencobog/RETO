@@ -44,6 +44,8 @@
             lblZone = new Label();
             lblDur = new Label();
             lblClasi = new Label();
+            btnValidar = new Button();
+            btnResena = new Button();
             SuspendLayout();
             // 
             // btnMapa
@@ -54,7 +56,7 @@
             btnMapa.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnMapa.FlatStyle = FlatStyle.Flat;
             btnMapa.ForeColor = SystemColors.ButtonHighlight;
-            btnMapa.Location = new Point(237, 394);
+            btnMapa.Location = new Point(74, 393);
             btnMapa.Name = "btnMapa";
             btnMapa.Size = new Size(173, 29);
             btnMapa.TabIndex = 0;
@@ -70,7 +72,7 @@
             btnWaypoints.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnWaypoints.FlatStyle = FlatStyle.Flat;
             btnWaypoints.ForeColor = SystemColors.ButtonHighlight;
-            btnWaypoints.Location = new Point(443, 394);
+            btnWaypoints.Location = new Point(263, 393);
             btnWaypoints.Name = "btnWaypoints";
             btnWaypoints.Size = new Size(120, 29);
             btnWaypoints.TabIndex = 1;
@@ -208,11 +210,45 @@
             lblClasi.TabIndex = 15;
             lblClasi.Text = "Clasificación:";
             // 
+            // btnValidar
+            // 
+            btnValidar.BackColor = Color.FromArgb(74, 82, 90);
+            btnValidar.FlatAppearance.BorderColor = Color.Crimson;
+            btnValidar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnValidar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnValidar.FlatStyle = FlatStyle.Flat;
+            btnValidar.ForeColor = SystemColors.ButtonHighlight;
+            btnValidar.Location = new Point(497, 393);
+            btnValidar.Name = "btnValidar";
+            btnValidar.Size = new Size(94, 29);
+            btnValidar.TabIndex = 16;
+            btnValidar.Text = "Valorar";
+            btnValidar.UseVisualStyleBackColor = true;
+            btnValidar.Click += btnValidar_Click;
+            // 
+            // btnResena
+            // 
+            btnResena.BackColor = Color.FromArgb(74, 82, 90);
+            btnResena.FlatAppearance.BorderColor = Color.Crimson;
+            btnResena.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnResena.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnResena.FlatStyle = FlatStyle.Flat;
+            btnResena.ForeColor = SystemColors.ButtonHighlight;
+            btnResena.Location = new Point(610, 393);
+            btnResena.Name = "btnResena";
+            btnResena.Size = new Size(94, 29);
+            btnResena.TabIndex = 17;
+            btnResena.Text = "Reseñar";
+            btnResena.UseVisualStyleBackColor = true;
+            btnResena.Click += btnResena_Click;
+            // 
             // DetallesRuta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnResena);
+            Controls.Add(btnValidar);
             Controls.Add(lblClasi);
             Controls.Add(lblDur);
             Controls.Add(lblZone);
@@ -254,5 +290,7 @@
         private Label lblZone;
         private Label lblDur;
         private Label lblClasi;
+        private Button btnValidar;
+        private Button btnResena;
     }
 }

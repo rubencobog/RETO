@@ -97,7 +97,7 @@ namespace RetaCantabria
             }
         }
 
-        private void CrearUsuario_Load(object sender, EventArgs e)
+        internal void CrearUsuario_Load(object sender, EventArgs e)
         {
             if (!esNuevo)
             {
