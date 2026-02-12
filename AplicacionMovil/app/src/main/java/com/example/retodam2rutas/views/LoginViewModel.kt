@@ -6,12 +6,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import at.favre.lib.crypto.bcrypt.BCrypt
 import com.example.retodam2rutas.data.database.AppDatabase
 import com.example.retodam2rutas.data.service.BaseServiceFactory
 import com.example.retodam2rutas.data.service.UsuarioServiceImpl
 import com.example.retodam2rutas.entities.TIPOUSUARIO
+import com.example.retodam2rutas.entities.Usuario
 import com.example.retodam2rutas.model.UsuarioModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlin.math.log
@@ -19,16 +23,12 @@ import kotlin.math.log
 class LoginViewModel(
     private val appDatabase: AppDatabase
 ) : ViewModel() {
-    private val _usuario = MutableLiveData<UsuarioModel>()
-    val usuario: LiveData<UsuarioModel> = _usuario
+    private val _usuario = MutableStateFlow<Usuario>(Usuario(1, "", "", "", "", TIPOUSUARIO.usuario))
+    val usuario: StateFlow<Usuario> = _usuario
     val usuarioServiceImpl = UsuarioServiceImpl(BaseServiceFactory.createService(), appDatabase.usuarioDao())
 
-    val usuarios = usuarioServiceImpl.usuarios
-        .stateIn(
-            viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000),
-            initialValue = emptyList()
-        )
+    private val _loginSuccess = MutableStateFlow<Int>(0)
+    val loginSuccess: StateFlow<Int> = _loginSuccess
 
     init {
         // Refresh from network
@@ -40,43 +40,44 @@ class LoginViewModel(
     fun getLoginUsuario(email: String, password: String){
         viewModelScope.launch {
             try {
-                //Llamada al servicio para obtener el usuario
+                val getUser = appDatabase.usuarioDao().getLogin(email)
 
-                val getUser = usuarioServiceImpl.login(email, password)
+                val resultado = BCrypt.verifyer().verify(password.toCharArray(), getUser.password).verified
 
-                _usuario.value = getUser
+
+                if(resultado){
+
+                    _usuario.value = getUser
+                    _loginSuccess.value = 1
+
+                }else{
+                    _loginSuccess.value = 2
+                }
+
+
 
             } catch (e: Exception) {
                 e.printStackTrace()
+                _loginSuccess.value = 2
             }
-
         }
 
     }
 
-    fun getAllUsers(){
-        viewModelScope.launch {
-            try {
-                //Llamada al servicio para obtener el usuario
+    fun resetLogin(){
 
-                val users = usuarioServiceImpl.getAll()
+            _loginSuccess.value = 0
 
-
-
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
     }
 
     fun setUsuarioInvitado(){
-        _usuario.value = UsuarioModel(
-            "invitado",
-            "invitado",
+        _usuario.value = Usuario(
             -1,
             "invitado",
             "invitado",
-            TIPOUSUARIO.usuario.toString(),
+            "invitado",
+            "invitado",
+            TIPOUSUARIO.usuario,
 
         )
     }

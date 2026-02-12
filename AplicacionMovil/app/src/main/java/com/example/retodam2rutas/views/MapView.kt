@@ -22,7 +22,7 @@ import com.example.retodam2rutas.components.ContentAddView
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MapView(navController: NavController, id: Int, rutaViewModel: RutaViewModel, mapViewModel: MapViewModel){
+fun MapView(navController: NavController, id: Int, rutaViewModel: RutaViewModel, mapViewModel: MapViewModel, loginViewModel: LoginViewModel){
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
         topBar = {
@@ -48,5 +48,5 @@ fun MapView(navController: NavController, id: Int, rutaViewModel: RutaViewModel,
             )
         },
 
-    ) { innerPadding -> ContentAddView(innerPadding, navController, id, rutaViewModel, mapViewModel) }
+    ) { innerPadding -> ContentAddView(innerPadding, navController, id, rutaViewModel, mapViewModel, loginViewModel) }
 }

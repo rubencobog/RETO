@@ -23,7 +23,7 @@ fun NavManager(rutaViewModel: RutaViewModel, mapViewModel: MapViewModel, loginVi
             HomeView(navController, rutaViewModel)
         }
         composable("Add"){
-            AddRutaView(navController, 1, rutaViewModel, mapViewModel)
+            AddRutaView(navController, 1, rutaViewModel, mapViewModel, loginViewModel)
         }
         composable ("Detail/{id}",
             arguments = listOf(navArgument("id"){type = NavType.IntType})){
@@ -35,7 +35,7 @@ fun NavManager(rutaViewModel: RutaViewModel, mapViewModel: MapViewModel, loginVi
             arguments = listOf(navArgument("id"){type = NavType.IntType})){
                 backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id") ?:0
-            AddRutaView(navController, id, rutaViewModel, mapViewModel)
+            AddRutaView(navController, id, rutaViewModel, mapViewModel, loginViewModel)
         }
         composable("Login"){
             LoginView(navController, loginViewModel)

@@ -1,10 +1,7 @@
 package org.example.GPX;
 
 import jakarta.transaction.Transactional;
-import org.example.Entidades.Ruta;
-import org.example.Entidades.TrackPoint;
-import org.example.Entidades.Usuario;
-import org.example.Entidades.Waypoint;
+import org.example.Entidades.*;
 import org.example.Servicio.RutaService;
 import org.example.Servicio.TrackPointService;
 import org.example.Servicio.UsuarioService;
@@ -20,6 +17,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -65,7 +63,33 @@ public class GPXService {
             // ===== RUTA =====
             Ruta ruta = new Ruta();
             ruta.setNombre(nombreRuta);
+            ruta.setAccesibilidad(false);
+            ruta.setAltitudMax(0.0);
+            ruta.setAltitudMin(0.0);
+            ruta.setDesnivelAcumulado(0);
+            ruta.setDesnivelNegativo(0);
+            ruta.setDesnivelPositivo(0);
+            ruta.setDistancia(0.0);
+            ruta.setDuracion(LocalTime.of(0,0,0));
             ruta.setUsuarioIdusuario(usuario);
+            ruta.setEstadoRuta(false);
+            ruta.setIndicaciones((byte) 1);
+            ruta.setLatitudInicial(0.0);
+            ruta.setLongitudInicial(0.0);
+            ruta.setLatitudFinal(0.0);
+            ruta.setLongitudFinal(0.0);
+            ruta.setMediaEstrellas(0.0);
+            ruta.setNivelEsfuerzo((byte) 1);
+            ruta.setNivelRiesgo((byte) 1);
+            ruta.setRutaFamiliar(false);
+            ruta.setTipoTerreno((byte) 1);
+            ruta.setNombreFinalruta("");
+            ruta.setNombreInicioruta("");
+            ruta.setZonaGeografica("");
+            ruta.setArchivoGPX("");
+            ruta.setClasificacion(CLASIFICACION.LINEAL);
+            ruta.setRecomendacionesEquipo("");
+            ruta.setTemporadas("");
             opruta.crear(ruta);
             // ===== WAYPOINTS =====
             NodeList wptList = document.getElementsByTagNameNS("*", "wpt");
