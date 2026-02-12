@@ -263,7 +263,7 @@ Configurar URL del backend.
 - 🧑‍💻 [Fabian](https://github.com/Napster002)  
 - 👩‍💻 [Ruben](https://github.com/rubencobog)   
 - 👩‍🔬 [Francisco](https://github.com/Fran898)  
-- 🧑‍🚀 [Sauñ](https://github.com/SaulGarciaaaa)
+- 🧑‍🚀 [Saul](https://github.com/SaulGarciaaaa)
 
 
 
