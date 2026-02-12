@@ -64,10 +64,10 @@
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.ForeColor = SystemColors.ButtonHighlight;
-            btnEliminar.Location = new Point(710, 436);
+            btnEliminar.Location = new Point(696, 436);
             btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(144, 31);
+            btnEliminar.Size = new Size(158, 31);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar ruta del día";
             btnEliminar.UseVisualStyleBackColor = true;
