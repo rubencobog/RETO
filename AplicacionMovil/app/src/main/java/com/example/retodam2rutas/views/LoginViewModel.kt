@@ -23,8 +23,8 @@ import kotlin.math.log
 class LoginViewModel(
     private val appDatabase: AppDatabase
 ) : ViewModel() {
-    private val _usuario = MutableLiveData<Usuario>()
-    val usuario: LiveData<Usuario> = _usuario
+    private val _usuario = MutableStateFlow<Usuario>(Usuario(1, "", "", "", "", TIPOUSUARIO.usuario))
+    val usuario: StateFlow<Usuario> = _usuario
     val usuarioServiceImpl = UsuarioServiceImpl(BaseServiceFactory.createService(), appDatabase.usuarioDao())
 
     private val _loginSuccess = MutableStateFlow<Int>(0)
@@ -49,9 +49,12 @@ class LoginViewModel(
 
                     _usuario.value = getUser
                     _loginSuccess.value = 1
+
                 }else{
                     _loginSuccess.value = 2
                 }
+
+
 
             } catch (e: Exception) {
                 e.printStackTrace()
