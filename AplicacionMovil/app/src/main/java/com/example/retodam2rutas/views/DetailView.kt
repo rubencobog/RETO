@@ -34,12 +34,6 @@ import kotlinx.coroutines.launch
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun DetailView(navController: NavController, id: Int, rutaViewModel: RutaViewModel){
-    var selectedIndex by remember { mutableStateOf(0) }
-    val items = listOf(
-        BottomNavItem("Inicio", Icons.Default.Home),
-        BottomNavItem("Perfil", Icons.Default.Person),
-        BottomNavItem("Ajustes", Icons.Default.Settings)
-    )
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
         topBar = {
@@ -64,18 +58,6 @@ fun DetailView(navController: NavController, id: Int, rutaViewModel: RutaViewMod
                 }
             )
         },
-        bottomBar = {
-            NavigationBar {
-                items.forEachIndexed { index, item ->
-                    NavigationBarItem(
-                        icon = { Icon(item.icon, contentDescription = item.label) },
-                        label = { Text(item.label) },
-                        selected = selectedIndex == index,
-                        onClick = { selectedIndex = index }
-                    )
-                }
-            }
-        }
 
     ) { innerPadding -> ContentDetailView(innerPadding, navController, id, rutaViewModel) }
 }

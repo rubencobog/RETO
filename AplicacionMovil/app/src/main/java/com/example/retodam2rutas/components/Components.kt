@@ -52,6 +52,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,6 +66,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Dialog
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
@@ -73,11 +75,13 @@ import com.example.retodam2rutas.entities.CLASIFICACION
 import com.example.retodam2rutas.entities.PuntoRuta
 import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.entities.Ruta
+import com.example.retodam2rutas.entities.Usuario
 import com.example.retodam2rutas.entities.maptemp.RutaTemporal
 import com.example.retodam2rutas.entities.maptemp.TrackPoint
 import com.example.retodam2rutas.model.UsuarioModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import kotlinx.coroutines.launch
 import org.osmdroid.events.MapEventsReceiver
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
@@ -85,6 +89,7 @@ import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.Polyline
 import java.io.File
+import kotlin.math.log
 
 
 //================ Contenido de la ventana home =================
@@ -636,11 +641,11 @@ fun ContentLoginView(
     navController: NavController,
     loginViewModel: LoginViewModel
 ) {
-    val usuario: UsuarioModel? by loginViewModel.usuario.observeAsState()
+    val usuario: Usuario? by loginViewModel.usuario.observeAsState()
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var showDialog by remember { mutableStateOf(false) }
-    var loginAttempted by remember { mutableStateOf(false) }
+    val loginSuccess by loginViewModel.loginSuccess.collectAsState()
 
 
     Column(
@@ -676,12 +681,7 @@ fun ContentLoginView(
               Spacer(modifier = Modifier.padding(4.dp))
 
               Button(onClick = {
-                  loginViewModel.getLoginUsuario(email, password)
-                  loginAttempted = true
-
-                //LaunchedEffect
-
-
+                    loginViewModel.getLoginUsuario(email, password)
 
                   }) {
                   Text("Entrar")
@@ -689,15 +689,18 @@ fun ContentLoginView(
           }
         }
 
-        LaunchedEffect(usuario) {
-            if (loginAttempted) {
-                if (usuario != null) {
-                    navController.navigate("Home")
-                } else {
-                    showDialog = true
-                }
+        LaunchedEffect(loginSuccess) {
+            if (loginSuccess == 1) {
+                navController.navigate("Home")
+                loginViewModel.resetLogin()
+            } else if(loginSuccess == 2){
+                showDialog = true
+                loginViewModel.resetLogin()
+
             }
         }
+
+
 
         if (showDialog) {
             AlertDialog(

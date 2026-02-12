@@ -37,13 +37,6 @@ import kotlinx.coroutines.launch
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
-    var mostrarDialogo by remember { mutableStateOf(false) }
-    var selectedIndex by remember { mutableStateOf(0) }
-    val items = listOf(
-        BottomNavItem("Inicio", Icons.Default.Home),
-        BottomNavItem("Calendario", Icons.Default.DateRange),
-        BottomNavItem("Comunidad", Icons.Default.Person)
-    )
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
         topBar = {
@@ -82,26 +75,7 @@ fun HomeView(navController: NavController, rutaViewModel: RutaViewModel){
                 )
             }
         },
-        bottomBar = {
-            NavigationBar{
-                items.forEachIndexed { index, item ->
-                    NavigationBarItem(
-                        icon = { Icon(item.icon, contentDescription = item.label) },
-                        label = { Text(item.label) },
-                        selected = selectedIndex == index,
-                        onClick = { mostrarDialogo = true}
-                    )
-                }
-            }
-        }
         ) { innerPadding -> ContentHomeView(innerPadding, navController, rutaViewModel)
 
-        if(mostrarDialogo == true){
-            DialogoInformativo(
-                titulo = "Advertencia",
-                mensaje = "Funcionalidad prevista en futuras versiones",
-                onCerrar = { mostrarDialogo = false }
-            )
-        }
     }
 }
