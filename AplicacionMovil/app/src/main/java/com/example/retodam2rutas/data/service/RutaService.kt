@@ -1,5 +1,6 @@
 package com.example.retodam2rutas.data.service
 
+import android.util.Log
 import com.example.retodam2rutas.data.daos.RutaDao
 import com.example.retodam2rutas.entities.Ruta
 import com.example.retodam2rutas.model.RutaModel
@@ -53,8 +54,8 @@ class RutaServiceImpl(
     }
 
     suspend fun insertarRuta(ruta: Ruta) {
-        val rutaCreada = api.insertar(ruta.toModel())
-        dao.insertRuta(rutaCreada.toEntity())
+        Log.d("USER", "Ruta: " + ruta.usuarioId)
+        api.insertar(ruta.toModel())
     }
 
 }

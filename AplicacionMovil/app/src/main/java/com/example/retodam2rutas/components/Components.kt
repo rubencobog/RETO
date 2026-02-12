@@ -287,9 +287,10 @@ fun ContentAddView(
     navController: NavController,
     id: Int,
     rutaViewModel: RutaViewModel,
-    mapViewModel: MapViewModel
+    mapViewModel: MapViewModel,
+    loginViewModel: LoginViewModel
 ) {
-
+    val usuario: Usuario? by loginViewModel.usuario.collectAsState()
     val ruta = mapViewModel.rutaEnCreacion
 
     val context = LocalContext.current
@@ -533,22 +534,24 @@ fun ContentAddView(
                             recomendaciones,
                             zona ->
 
-                        mapViewModel.guardarRuta(
-                            rutaTemporal = ruta,
-                            usuarioId = id,
-                            context = context,
-                            nombre = nombre,
-                            clasificacion = clasificacion,
-                            nivelEsfuerzo = esfuerzo,
-                            nivelRiesgo = riesgo,
-                            tipoTerreno = tipoTerreno,
-                            indicaciones = indicaciones,
-                            temporadas = temporadas,
-                            accesibilidad = accesible,
-                            rutaFamiliar = familiar,
-                            recomendaciones = recomendaciones,
-                            zonaGeografica = zona
-                        )
+                        usuario?.let {
+                            mapViewModel.guardarRuta(
+                                rutaTemporal = ruta,
+                                usuarioId = it.idUsuario,
+                                context = context,
+                                nombre = nombre,
+                                clasificacion = clasificacion,
+                                nivelEsfuerzo = esfuerzo,
+                                nivelRiesgo = riesgo,
+                                tipoTerreno = tipoTerreno,
+                                indicaciones = indicaciones,
+                                temporadas = temporadas,
+                                accesibilidad = accesible,
+                                rutaFamiliar = familiar,
+                                recomendaciones = recomendaciones,
+                                zonaGeografica = zona
+                            )
+                        }
 
                         mostrarDialogGuardar = false
                     },
@@ -618,15 +621,15 @@ fun RutaCard(ruta: Ruta, navController: NavController) {
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = "Distancia: ${ruta.distancia}m",
+                    text = "Distancia: %.2f Km".format(ruta.distancia),
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
-                    text = "Dificultad: ${ruta.nivelEsfuerzo}m",
+                    text = "Dificultad: ${ruta.nivelEsfuerzo}",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
-                    text = "Valoracion: ${ruta.mediaEstrellas}m",
+                    text = "Valoracion: ${ruta.mediaEstrellas}",
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
@@ -641,7 +644,7 @@ fun ContentLoginView(
     navController: NavController,
     loginViewModel: LoginViewModel
 ) {
-    val usuario: Usuario? by loginViewModel.usuario.observeAsState()
+    val usuario: Usuario? by loginViewModel.usuario.collectAsState()
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var showDialog by remember { mutableStateOf(false) }
@@ -682,6 +685,7 @@ fun ContentLoginView(
 
               Button(onClick = {
                     loginViewModel.getLoginUsuario(email, password)
+                  Log.d("USER", "USER " + usuario?.idUsuario)
 
                   }) {
                   Text("Entrar")
