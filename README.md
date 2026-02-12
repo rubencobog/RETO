@@ -3,6 +3,10 @@
 <p align="center">
   Plataforma para creación , planificación de actividades  y recorrido de rutas seguras , estupendas y relajantes
 </p>
+
+<p align="center">
+  <img src="https://github.com/rubencobog/RETO/blob/a07b755a3df5fc2fedb25fb56cddfa9e596b4343/LOGO_app/itinere_logo.png" alt="Logo de Itinere" width="20%">
+</p>
 <h6 align="center">
   <em>Vendí mi Kia, me hice una ruta al día y ahora me siguen todas las tías</em>
 </h6>
