@@ -47,6 +47,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -92,6 +93,7 @@ fun ContentHomeView(
     innerPadding: PaddingValues,
     navController: NavController,
     rutaViewModel: RutaViewModel) {
+    val rutas by rutaViewModel.rutasFlow.collectAsState()
     LazyColumn (
         modifier = Modifier
             .padding(innerPadding)
@@ -109,7 +111,7 @@ fun ContentHomeView(
                 color = Color.Black
             )
         }
-        items(rutaViewModel.rutas){
+        items(rutas){
             ruta ->
             RutaCard(ruta, navController)
         }

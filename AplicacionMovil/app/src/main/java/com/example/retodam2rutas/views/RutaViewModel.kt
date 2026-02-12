@@ -11,7 +11,10 @@ import com.example.retodam2rutas.data.service.BaseServiceFactory
 import com.example.retodam2rutas.data.service.RutaServiceImpl
 import com.example.retodam2rutas.data.service.UsuarioServiceImpl
 import com.example.retodam2rutas.entities.Ruta
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class RutaViewModel(
@@ -30,6 +33,14 @@ class RutaViewModel(
             rutas = appDatabase.rutaDao().getAllRutas()
         }
     }
+
+    val rutasFlow: StateFlow<List<Ruta>> =
+        appDatabase.rutaDao().getAll()
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5000),
+                initialValue = emptyList()
+            )
 
     //================ Pedir una Ruta por id =================
     var rutaSeleccionada by mutableStateOf<Ruta?>(null)

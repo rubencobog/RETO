@@ -19,7 +19,7 @@ interface RutaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(ruta: List<Ruta>)
 
-    @Query("SELECT * FROM rutas ORDER BY nombre ASC")
+    @Query("SELECT * FROM rutas")
     fun getAll(): Flow<List<Ruta>>
 
     @Query("SELECT * FROM rutas")
