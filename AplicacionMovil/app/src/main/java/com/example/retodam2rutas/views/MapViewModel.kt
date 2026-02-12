@@ -352,6 +352,8 @@ class MapViewModel(
                 val puntos = rutaTemporal.toPuntosRuta(rutaId)
                 appDatabase.puntoRutaDao().insertAll(puntos)
 
+                rutaServiceImpl.insertarRuta(ruta)
+
             } catch (e: Exception) {
                 Log.e("GUARDAR_RUTA", "Error guardando la ruta", e)
             }
