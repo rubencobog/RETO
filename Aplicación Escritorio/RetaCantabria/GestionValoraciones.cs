@@ -45,6 +45,7 @@ namespace RetaCantabria
                 dgvValRes.DataSource = valoraciones;
                 dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvValRes.MultiSelect = false;
+                dgvValRes.ReadOnly = true;
                 dgvValRes.Columns["idValoracion"].Visible = false;
                 dgvValRes.AutoGenerateColumns = true;
             }
@@ -58,6 +59,7 @@ namespace RetaCantabria
                 dgvValRes.DataSource = resenas;
                 dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvValRes.MultiSelect = false;
+                dgvValRes.ReadOnly = true;
                 dgvValRes.Columns["idResena"].Visible = false;
                 dgvValRes.AutoGenerateColumns = true;
             }
