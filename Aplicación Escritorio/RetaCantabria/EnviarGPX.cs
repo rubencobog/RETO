@@ -21,6 +21,7 @@ namespace RetaCantabria
         private string textoporDefecto;
         private string rutaArchivo;
         private string contenido;
+        public string _contenido;
         public EnviarGPX()
         {
             InitializeComponent();
@@ -57,6 +58,7 @@ namespace RetaCantabria
                 </gpx>
                 """;
             contenido = textoporDefecto;
+            _contenido = contenido;
         }
 
         private void button1_Click(object sender, EventArgs e)

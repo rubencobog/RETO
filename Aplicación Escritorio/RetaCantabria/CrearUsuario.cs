@@ -111,5 +111,17 @@ namespace RetaCantabria
                 btnRegistrar.Text = "Registrar";
             }
         }
+
+        public bool ValidarNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre))
+                return false;
+
+            if (nombre.Length < 3)
+                return false;
+
+            return true;
+        }
+
     }
 }

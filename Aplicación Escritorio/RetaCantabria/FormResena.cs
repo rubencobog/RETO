@@ -63,5 +63,20 @@ namespace RetaCantabria
         {
             Close();
         }
+
+        public ResenaDTO CrearResena(string texto)
+        {
+            if (String.IsNullOrWhiteSpace(texto))
+                return null;
+
+            return new ResenaDTO
+            {
+                idRuta = ruta.idRuta,
+                idUsuario = usuario.idUsuario,
+                resena = texto,
+                fecha = DateOnly.FromDateTime(DateTime.Now)
+            };
+        }
+
     }
 }

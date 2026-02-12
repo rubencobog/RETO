@@ -64,6 +64,12 @@ namespace RetaCantabria
             dgvRutas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+        public void CargarGridConLista(List<RutaDTO> rutas)
+        {
+            dgvRutas.DataSource = rutas;
+        }
+        public DataGridView GetDataGridView() { return dgvRutas; }
+
         private void btnResena_Click(object sender, EventArgs e)
         {
             if (dgvRutas.SelectedRows.Count > 0)

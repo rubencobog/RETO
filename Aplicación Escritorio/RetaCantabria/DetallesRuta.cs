@@ -34,6 +34,32 @@ namespace RetaCantabria
             checkAccesible.Checked = ruta.accesible;
             checkFamiliar.Checked = ruta.familiar;
         }
+        public void DetallesRuta_Cargar(object sender, EventArgs e)
+        {
+            lblNombre.Text = ruta.nombre;
+            lblDuracion.Text = ruta.duracion.ToString(@"hh\:mm\:ss");
+            lblZona.Text = ruta.zonaGeografica;
+            lblMedia.Text = ruta.mediaEstrellas.HasValue ? ruta.mediaEstrellas.Value.ToString("0.0") : "Sin valoraciones";
+            lblClasificacion.Text = ruta.clasificacion.ToString();
+            lblDistancia.Text = ruta.distancia.ToString() + " km";
+            checkAccesible.Checked = ruta.accesible;
+            checkFamiliar.Checked = ruta.familiar;
+        }
+        public (string nombre, string duracion, string zona, string media, string clasificacion, string distancia, bool accesible, bool familiar)
+    DatosLbl()
+        {
+            return (
+                ruta.nombre,
+                ruta.duracion.ToString(@"hh\:mm\:ss"),
+                ruta.zonaGeografica,
+                ruta.mediaEstrellas.HasValue ? ruta.mediaEstrellas.Value.ToString("0.0") : "Sin valoraciones",
+                ruta.clasificacion.ToString(),
+                ruta.distancia.ToString() + " km",
+                ruta.accesible,
+                ruta.familiar
+            );
+        }
+
 
         private async void btnMapa_Click(object sender, EventArgs e)
         {

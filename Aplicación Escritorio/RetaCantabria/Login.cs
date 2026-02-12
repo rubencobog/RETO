@@ -77,5 +77,10 @@ namespace RetaCantabria
             CatalogoRutas catalogo = new CatalogoRutas(usuario);
             catalogo.ShowDialog();
         }
+
+        public bool ValidarLogin(string usuario, string contraseña)
+        {
+            return usuario == "admin" && contraseña == "1234";
+        }
     }
 }
