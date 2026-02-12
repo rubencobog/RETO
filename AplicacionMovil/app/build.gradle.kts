@@ -87,6 +87,9 @@ dependencies {
     // Glide Compose
     implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
 
+    //BCrypt
+    implementation ("at.favre.lib:bcrypt:0.9.0")
+
     // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

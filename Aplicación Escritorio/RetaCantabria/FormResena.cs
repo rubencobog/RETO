@@ -27,7 +27,7 @@ namespace RetaCantabria
             this.cliente = cliente;
             this.usuario = usuario;
             this.ruta = ruta;
-            lblResena.Text = "Reseña de " + ruta.Nombre;
+            lblResena.Text = "Reseña de " + ruta.nombre;
         }
 
         private async void btnEnviar_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace RetaCantabria
             {
                 ResenaDTO resena = new ResenaDTO
             {
-                    idRuta = ruta.IdRuta,
+                    idRuta = ruta.idRuta,
                 idUsuario = usuario.idUsuario,
                 resena = resenatext,
                 fecha = DateOnly.FromDateTime(DateTime.Now)
@@ -47,7 +47,7 @@ namespace RetaCantabria
 
                 if (respuesta.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Reseña enviada correctamente 👍");
+                    MessageBox.Show("Reseña enviada correctamente");
                     Close();
                 }
                 else

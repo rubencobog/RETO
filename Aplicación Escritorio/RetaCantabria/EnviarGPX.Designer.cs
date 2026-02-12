@@ -47,6 +47,12 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(74, 82, 90);
+            button1.FlatAppearance.BorderColor = Color.Crimson;
+            button1.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(35, 52);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
@@ -57,6 +63,12 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(74, 82, 90);
+            button2.FlatAppearance.BorderColor = Color.Crimson;
+            button2.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.ButtonHighlight;
             button2.Location = new Point(35, 81);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
@@ -85,6 +97,12 @@
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(74, 82, 90);
+            button3.FlatAppearance.BorderColor = Color.Crimson;
+            button3.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = SystemColors.ButtonHighlight;
             button3.Location = new Point(507, 399);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);

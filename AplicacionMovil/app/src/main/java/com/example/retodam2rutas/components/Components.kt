@@ -1,5 +1,6 @@
 package com.example.retodam2rutas.components
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -45,10 +46,13 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -62,6 +66,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Dialog
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
@@ -70,10 +75,13 @@ import com.example.retodam2rutas.entities.CLASIFICACION
 import com.example.retodam2rutas.entities.PuntoRuta
 import com.example.retodam2rutas.views.LoginViewModel
 import com.example.retodam2rutas.entities.Ruta
+import com.example.retodam2rutas.entities.Usuario
 import com.example.retodam2rutas.entities.maptemp.RutaTemporal
+import com.example.retodam2rutas.entities.maptemp.TrackPoint
 import com.example.retodam2rutas.model.UsuarioModel
 import com.example.retodam2rutas.views.MapViewModel
 import com.example.retodam2rutas.views.RutaViewModel
+import kotlinx.coroutines.launch
 import org.osmdroid.events.MapEventsReceiver
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
@@ -81,6 +89,7 @@ import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.Polyline
 import java.io.File
+import kotlin.math.log
 
 
 //================ Contenido de la ventana home =================
@@ -89,6 +98,7 @@ fun ContentHomeView(
     innerPadding: PaddingValues,
     navController: NavController,
     rutaViewModel: RutaViewModel) {
+    val rutas by rutaViewModel.rutasFlow.collectAsState()
     LazyColumn (
         modifier = Modifier
             .padding(innerPadding)
@@ -106,7 +116,7 @@ fun ContentHomeView(
                 color = Color.Black
             )
         }
-        items(rutaViewModel.rutas){
+        items(rutas){
             ruta ->
             RutaCard(ruta, navController)
         }
@@ -416,7 +426,6 @@ fun ContentAddView(
             .padding(innerPadding)
             .fillMaxSize()
             .background(Color(0xFFD2E6F6)),
-        verticalArrangement = Arrangement.spacedBy(26.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -430,7 +439,7 @@ fun ContentAddView(
         AndroidView(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp),
+                .weight(2f),
             factory = { mapView },
             update = {
                 geoPoint?.let {
@@ -457,7 +466,6 @@ fun ContentAddView(
                         }
                     }
 
-
                     mapView.invalidate()
                 }
                 ruta.let {
@@ -467,11 +475,11 @@ fun ContentAddView(
                 }
             }
         )
-
         Row (
             modifier = Modifier
                 .background(Color(0xFFD2E6F6))
-                .fillMaxSize()
+                .fillMaxWidth()
+                .weight(1f)
                 .padding(innerPadding),
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceEvenly
@@ -576,7 +584,7 @@ fun RutaCard(ruta: Ruta, navController: NavController) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .clickable { navController.navigate("Detail/${ruta.id}") },
+            .clickable { navController.navigate("Map/${ruta.id}") },
         colors = CardColors(
             containerColor = Color.Black,
             contentColor = Color.White,
@@ -633,9 +641,12 @@ fun ContentLoginView(
     navController: NavController,
     loginViewModel: LoginViewModel
 ) {
-    val usuario: UsuarioModel? by loginViewModel.usuario.observeAsState()
+    val usuario: Usuario? by loginViewModel.usuario.observeAsState()
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var showDialog by remember { mutableStateOf(false) }
+    val loginSuccess by loginViewModel.loginSuccess.collectAsState()
+
 
     Column(
         modifier = Modifier
@@ -644,32 +655,75 @@ fun ContentLoginView(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Iniciar sesión")
+        Row(modifier = Modifier.padding(innerPadding)) {
+          Column() {
+              Text("Iniciar sesión")
 
-        Spacer(modifier = Modifier.padding(10.dp))
+              Spacer(modifier = Modifier.padding(10.dp))
 
-        TextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text("Usuario") },
-            singleLine = true
-        )
+              TextField(
+                  value = email,
+                  onValueChange = { email = it },
+                  label = { Text("Usuario") },
+                  singleLine = true
+              )
 
-        Spacer(modifier = Modifier.padding(10.dp))
+              Spacer(modifier = Modifier.padding(10.dp))
 
-        TextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Contraseña") },
-            singleLine = true,
-            visualTransformation = PasswordVisualTransformation()
-        )
+              TextField(
+                  value = password,
+                  onValueChange = { password = it },
+                  label = { Text("Contraseña") },
+                  singleLine = true,
+                  visualTransformation = PasswordVisualTransformation()
+              )
 
-        Spacer(modifier = Modifier.padding(10.dp))
+              Spacer(modifier = Modifier.padding(4.dp))
 
-        Button(onClick = { navController.navigate("Home") }) {
-            Text("Entrar")
+              Button(onClick = {
+                    loginViewModel.getLoginUsuario(email, password)
+
+                  }) {
+                  Text("Entrar")
+              }
+          }
         }
+
+        LaunchedEffect(loginSuccess) {
+            if (loginSuccess == 1) {
+                navController.navigate("Home")
+                loginViewModel.resetLogin()
+            } else if(loginSuccess == 2){
+                showDialog = true
+                loginViewModel.resetLogin()
+
+            }
+        }
+
+
+
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = { Text("Error al Iniciar sesión") },
+                text = { Text("No se ha encontrado al usuario. Inténtalo otra vez") },
+                confirmButton = {
+                    TextButton(onClick = { showDialog = false }) {
+                        Text("OK")
+                    }
+                }
+            )
+        }
+
+        Row(verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.End){
+            Button(onClick = {
+                loginViewModel.setUsuarioInvitado()
+                navController.navigate("Home")
+            }) {
+                Text("Entrar como usuario invitado") }
+        }
+
+
 
     }
 }

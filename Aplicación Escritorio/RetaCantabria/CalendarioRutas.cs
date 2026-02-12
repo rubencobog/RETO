@@ -14,7 +14,7 @@ namespace RetaCantabria
             this.usuario = usuario;
         }
 
-        private async void calendar_DateSelected(object sender, DateRangeEventArgs e)
+        internal async void calendar_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime fecha = e.Start.Date;
 
@@ -22,7 +22,7 @@ namespace RetaCantabria
             await CargarGrid(fecha);
         }
 
-        private async Task CargarGrid(DateTime fecha)
+        internal async Task CargarGrid(DateTime fecha)
         {
             dgvRutaCalendar.DataSource = null;
 
@@ -83,7 +83,7 @@ namespace RetaCantabria
                             fecha = DateOnly.FromDateTime(fechaEscogida).ToString("yyyy-MM-dd"),
                             detalles = AgregarRutaForm.detalles,
                             recomendaciones = AgregarRutaForm.recomendaciones,
-                            idRuta = AgregarRutaForm.rutaSeleccionada.IdRuta,
+                            idRuta = AgregarRutaForm.rutaSeleccionada.idRuta,
                             idUsuario = this.usuario.idUsuario
                         };
                         HttpResponseMessage respuesta = ConexionAPI.CLIENTE.PostAsJsonAsync(ConexionAPI.Conexion + "calendario", calendario).Result;
@@ -109,10 +109,10 @@ namespace RetaCantabria
                 RutaDTO rutaSeleccionada = (RutaDTO)dgvRutaCalendar.SelectedRows[0].DataBoundItem;
                 DateTime fechaSeleccionada = calendar.SelectionStart.Date;
                 String fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
-                var confirmResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar la ruta '{rutaSeleccionada.Nombre}' programada para el {fechaSeleccionada:yyyy/MM/dd}?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                var confirmResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar la ruta '{rutaSeleccionada.nombre}' programada para el {fechaSeleccionada:yyyy/MM/dd}?", "Confirmar eliminación", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    HttpResponseMessage respuesta = ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + $"calendario/eliminar?fecha={fecha}&idRuta={rutaSeleccionada.IdRuta}").Result;
+                    HttpResponseMessage respuesta = ConexionAPI.CLIENTE.DeleteAsync(ConexionAPI.Conexion + $"calendario/eliminar?fecha={fecha}&idRuta={rutaSeleccionada.idRuta}").Result;
                     if (respuesta.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ruta eliminada exitosamente.");
@@ -130,18 +130,18 @@ namespace RetaCantabria
             }
         }
 
-        private async void dgvRutaCalendar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        internal async void dgvRutaCalendar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 RutaDTO rutaSeleccionada = (RutaDTO)dgvRutaCalendar.Rows[e.RowIndex].DataBoundItem;
                 String fecha = calendar.SelectionStart.Date.ToString("yyyy-MM-dd");
 
-                HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"calendario/busca?fecha={fecha}&idRuta={rutaSeleccionada.IdRuta}");
+                HttpResponseMessage respuesta = await ConexionAPI.CLIENTE.GetAsync(ConexionAPI.Conexion + $"calendario/busca?fecha={fecha}&idRuta={rutaSeleccionada.idRuta}");
                 if (respuesta.IsSuccessStatusCode)
                 {
                     CalendarioDTO calendario = await respuesta.Content.ReadFromJsonAsync<CalendarioDTO>();
-                    MessageBox.Show($"Detalles de la ruta '{rutaSeleccionada.Nombre}' programada para el {calendar.SelectionStart.Date:yyyy/MM/dd}:\n\nDetalles: {calendario.detalles}\nRecomendaciones: {calendario.recomendaciones}");
+                    MessageBox.Show($"Detalles de la ruta '{rutaSeleccionada.nombre}' programada para el {calendar.SelectionStart.Date:yyyy/MM/dd}:\n\nDetalles: {calendario.detalles}\nRecomendaciones: {calendario.recomendaciones}");
                 }
                 else
                 {

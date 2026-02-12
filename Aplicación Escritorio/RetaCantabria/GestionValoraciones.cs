@@ -22,7 +22,7 @@ namespace RetaCantabria
         {
             InitializeComponent();
             this.ruta = ruta;
-            lblSelect.Text = "Seleccione valoraciones o reseñas de la ruta: " + ruta.Nombre;
+            lblSelect.Text = "Seleccione valoraciones o reseñas de la ruta: " + ruta.nombre;
         }
 
         private async void comboValoracion_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,12 +39,13 @@ namespace RetaCantabria
         }
         private async Task CargarValoracionesAsync()
         {
-            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ValoracionDevueltaDTO>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.IdRuta);
+            var valoraciones = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ValoracionDevueltaDTO>>(ConexionAPI.Conexion + "valoracion/buscar/" + ruta.idRuta);
             if (valoraciones != null)
             {
                 dgvValRes.DataSource = valoraciones;
                 dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvValRes.MultiSelect = false;
+                dgvValRes.ReadOnly = true;
                 dgvValRes.Columns["idValoracion"].Visible = false;
                 dgvValRes.AutoGenerateColumns = true;
             }
@@ -52,12 +53,13 @@ namespace RetaCantabria
 
         private async Task CargarResenasAsync()
         {
-            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.IdRuta);
+            var resenas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<ResenaDevueltaDTO>>(ConexionAPI.Conexion + "resena/buscar/" + ruta.idRuta);
             if (resenas != null)
             {
                 dgvValRes.DataSource = resenas;
                 dgvValRes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvValRes.MultiSelect = false;
+                dgvValRes.ReadOnly = true;
                 dgvValRes.Columns["idResena"].Visible = false;
                 dgvValRes.AutoGenerateColumns = true;
             }

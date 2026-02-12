@@ -121,6 +121,7 @@ public class Ruta {
     private Usuario usuarioIdusuario;
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("ruta-puntos")
+    @Transient
     private List<PuntoRuta> puntos = new ArrayList<>();
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("valoraciones-ruta")

@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AgregarRutaCalendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CalendarioRutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CatalogoRutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -10,7 +16,16 @@
     <Compile Update="CrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DetallesRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetallesWaypoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EnviarGPX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Fichas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormResena.cs">
@@ -29,6 +44,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MapaRuta.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

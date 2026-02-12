@@ -13,6 +13,7 @@ import androidx.room.RoomDatabase
 import com.example.retodam2rutas.data.daos.PuntoInteresDao
 import com.example.retodam2rutas.data.daos.PuntoPeligroDao
 import com.example.retodam2rutas.data.daos.PuntoRutaDao
+import com.example.retodam2rutas.data.daos.UsuarioDao
 import com.example.retodam2rutas.entities.PuntoInteres
 import com.example.retodam2rutas.entities.PuntoPeligro
 
@@ -38,4 +39,5 @@ abstract class AppDatabase(): RoomDatabase() {
     abstract fun puntoRutaDao(): PuntoRutaDao
     abstract fun puntoInteresDao(): PuntoInteresDao
     abstract fun puntoPeligroDao(): PuntoPeligroDao
+    abstract fun usuarioDao(): UsuarioDao
 }
