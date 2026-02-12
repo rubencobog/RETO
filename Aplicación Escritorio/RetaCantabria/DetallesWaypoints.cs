@@ -32,6 +32,7 @@ namespace RetaCantabria
                 List<Waypoint> waypoints = await respuesta.Content.ReadFromJsonAsync<List<Waypoint>>();
                 dgvWayPoint.DataSource = waypoints;
                 dgvWayPoint.AutoGenerateColumns = true;
+                dgvWayPoint.ReadOnly = true;
             }
         }
 

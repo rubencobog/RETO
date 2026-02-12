@@ -73,12 +73,13 @@ namespace RetaCantabria
             dgvRutas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        private void btnResena_Click(object sender, EventArgs e)
+        private async void btnResena_Click(object sender, EventArgs e)
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
-                FormResena formResena = new FormResena(this.usuario, ruta, ConexionAPI.CLIENTE);
+                RutaSimplificadaDTO ruta = (RutaSimplificadaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO rutaSeleccionada = await ConexionAPI.CLIENTE.GetFromJsonAsync<RutaDTO>($"{ConexionAPI.Conexion}ruta/{ruta.idRuta}");
+                FormResena formResena = new FormResena(this.usuario, rutaSeleccionada, ConexionAPI.CLIENTE);
                 formResena.ShowDialog();
             }
             else
@@ -146,15 +147,17 @@ namespace RetaCantabria
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaSimplificadaDTO ruta = (RutaSimplificadaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
                 if (ruta.estadoRuta)
                 {
+
                     MessageBox.Show("La ruta ya está validada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    ruta.estadoRuta = true;
-                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + ruta.idRuta, ruta).Result;
+                    RutaDTO rutaSeleccionada = await ConexionAPI.CLIENTE.GetFromJsonAsync<RutaDTO>($"{ConexionAPI.Conexion}ruta/{ruta.idRuta}");
+                    rutaSeleccionada.estadoRuta = true;
+                    var response = ConexionAPI.CLIENTE.PutAsJsonAsync(ConexionAPI.Conexion + "ruta/" + rutaSeleccionada.idRuta, rutaSeleccionada).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ruta validada con éxito", "ÉXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -168,12 +171,13 @@ namespace RetaCantabria
             }
         }
 
-        private void btnGestionValoraciones_Click(object sender, EventArgs e)
+        private async void btnGestionValoraciones_Click(object sender, EventArgs e)
         {
             if (dgvRutas.SelectedRows.Count > 0)
             {
-                RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
-                GestionValoraciones gestionValoraciones = new GestionValoraciones(ruta);
+                RutaSimplificadaDTO ruta = (RutaSimplificadaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+                RutaDTO rutaSeleccionada = await ConexionAPI.CLIENTE.GetFromJsonAsync<RutaDTO>($"{ConexionAPI.Conexion}ruta/{ruta.idRuta}");
+                GestionValoraciones gestionValoraciones = new GestionValoraciones(rutaSeleccionada);
                 gestionValoraciones.ShowDialog();
             }
             else
@@ -198,33 +202,37 @@ namespace RetaCantabria
         {
             String filtro = comboFiltro.SelectedItem.ToString();
             var Rutas = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<RutaDTO>>(ConexionAPI.Conexion + "ruta");
+            List<RutaSimplificadaDTO> rutasSimplificadas = new List<RutaSimplificadaDTO>();
+            foreach (var ruta in Rutas) { 
+                rutasSimplificadas.Add(new RutaSimplificadaDTO(ruta)); 
+            }
             switch (filtro)
             {
                 case "Todas": 
                     await CargarGrid();
                     break;
                 case "Circular":
-                    List<RutaDTO> rutasCirculares = Rutas.Where(r => r.clasificacion == CLASIFICACION.CIRCULAR).ToList();
+                    List<RutaSimplificadaDTO> rutasCirculares = rutasSimplificadas.Where(r => r.clasificacion == CLASIFICACION.CIRCULAR).ToList();
                     dgvRutas.DataSource = rutasCirculares;
                     break;
 
                 case "Lineal":
-                    List<RutaDTO> rutasLineales = Rutas.Where(r => r.clasificacion == CLASIFICACION.LINEAL).ToList();
+                    List<RutaSimplificadaDTO> rutasLineales = rutasSimplificadas.Where(r => r.clasificacion == CLASIFICACION.LINEAL).ToList();
                     dgvRutas.DataSource = rutasLineales;
                     break;
 
                 case "Accesible":
-                    List<RutaDTO> rutasAccesibles = Rutas.Where(r => r.accesible == true).ToList();
+                    List<RutaSimplificadaDTO> rutasAccesibles = rutasSimplificadas.Where(r => r.accesible == true).ToList();
                     dgvRutas.DataSource = rutasAccesibles;
                     break;
 
                 case "Familiar":
-                    List<RutaDTO> rutasFamiliares = Rutas.Where(r => r.familiar == true).ToList();
+                    List<RutaSimplificadaDTO> rutasFamiliares = rutasSimplificadas.Where(r => r.familiar == true).ToList();
                     dgvRutas.DataSource = rutasFamiliares;
                     break;
 
                 case "Media de 4 estrellas o mas":
-                    List<RutaDTO> rutasValoradas = Rutas.Where(r => r.mediaEstrellas >= 4).ToList();
+                    List<RutaSimplificadaDTO> rutasValoradas = rutasSimplificadas.Where(r => r.mediaEstrellas >= 4).ToList();
                     dgvRutas.DataSource = rutasValoradas;
                     break;
 
@@ -250,7 +258,7 @@ namespace RetaCantabria
 
         private async void btnDescarga_Click(object sender, EventArgs e)
         {
-            RutaDTO rutaDTO = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+            RutaSimplificadaDTO rutaDTO = (RutaSimplificadaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
             string valor = "id";
             List<Ruta> ruta = await ConexionAPI.CLIENTE.GetFromJsonAsync<List<Ruta>>($"{ConexionAPI.Conexion}ruta/buscar?campo={valor}&valor={rutaDTO.idRuta}");
             var rutaFirst = ruta.FirstOrDefault();
@@ -264,7 +272,7 @@ namespace RetaCantabria
         }
         public async Task CrearGPX()
         {
-            RutaDTO ruta = (RutaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
+            RutaSimplificadaDTO ruta = (RutaSimplificadaDTO)dgvRutas.SelectedRows[0].DataBoundItem;
             var nombreRuta = ruta.nombre;
             DateTime time = DateTime.Now;
             long idRuta = ruta.idRuta;

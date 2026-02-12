@@ -46,9 +46,10 @@
             // cbSeguridad
             // 
             cbSeguridad.AutoSize = true;
-            cbSeguridad.Location = new Point(41, 43);
+            cbSeguridad.Location = new Point(47, 57);
+            cbSeguridad.Margin = new Padding(3, 4, 3, 4);
             cbSeguridad.Name = "cbSeguridad";
-            cbSeguridad.Size = new Size(126, 19);
+            cbSeguridad.Size = new Size(158, 24);
             cbSeguridad.TabIndex = 0;
             cbSeguridad.Text = "Ficha de Seguridad";
             cbSeguridad.UseVisualStyleBackColor = true;
@@ -56,9 +57,10 @@
             // cbUsuario
             // 
             cbUsuario.AutoSize = true;
-            cbUsuario.Location = new Point(41, 169);
+            cbUsuario.Location = new Point(47, 225);
+            cbUsuario.Margin = new Padding(3, 4, 3, 4);
             cbUsuario.Name = "cbUsuario";
-            cbUsuario.Size = new Size(113, 19);
+            cbUsuario.Size = new Size(140, 24);
             cbUsuario.TabIndex = 1;
             cbUsuario.Text = "Ficha de Usuario";
             cbUsuario.UseVisualStyleBackColor = true;
@@ -66,9 +68,10 @@
             // cbOrganizacion
             // 
             cbOrganizacion.AutoSize = true;
-            cbOrganizacion.Location = new Point(41, 301);
+            cbOrganizacion.Location = new Point(47, 401);
+            cbOrganizacion.Margin = new Padding(3, 4, 3, 4);
             cbOrganizacion.Name = "cbOrganizacion";
-            cbOrganizacion.Size = new Size(143, 19);
+            cbOrganizacion.Size = new Size(178, 24);
             cbOrganizacion.TabIndex = 2;
             cbOrganizacion.Text = "Ficha de Organización";
             cbOrganizacion.UseVisualStyleBackColor = true;
@@ -81,20 +84,21 @@
             button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(348, 404);
+            button1.Location = new Point(398, 539);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(86, 31);
             button1.TabIndex = 3;
-            button1.Text = "button1";
+            button1.Text = "Generar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 9);
+            label1.Location = new Point(47, 12);
             label1.Name = "label1";
-            label1.Size = new Size(109, 15);
+            label1.Size = new Size(135, 20);
             label1.TabIndex = 4;
             label1.Text = "Fichas Informativas";
             // 
@@ -106,33 +110,36 @@
             // 
             // pb_Seguridad
             // 
-            pb_Seguridad.Location = new Point(559, 43);
+            pb_Seguridad.Location = new Point(639, 57);
+            pb_Seguridad.Margin = new Padding(3, 4, 3, 4);
             pb_Seguridad.Name = "pb_Seguridad";
-            pb_Seguridad.Size = new Size(184, 115);
+            pb_Seguridad.Size = new Size(210, 153);
             pb_Seguridad.TabIndex = 5;
             pb_Seguridad.TabStop = false;
             // 
             // pb_Usuario
             // 
-            pb_Usuario.Location = new Point(559, 169);
+            pb_Usuario.Location = new Point(639, 225);
+            pb_Usuario.Margin = new Padding(3, 4, 3, 4);
             pb_Usuario.Name = "pb_Usuario";
-            pb_Usuario.Size = new Size(184, 115);
+            pb_Usuario.Size = new Size(210, 153);
             pb_Usuario.TabIndex = 6;
             pb_Usuario.TabStop = false;
             // 
             // pb_Organizacion
             // 
-            pb_Organizacion.Location = new Point(559, 301);
+            pb_Organizacion.Location = new Point(639, 401);
+            pb_Organizacion.Margin = new Padding(3, 4, 3, 4);
             pb_Organizacion.Name = "pb_Organizacion";
-            pb_Organizacion.Size = new Size(184, 115);
+            pb_Organizacion.Size = new Size(210, 153);
             pb_Organizacion.TabIndex = 7;
             pb_Organizacion.TabStop = false;
             // 
             // Fichas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(pb_Organizacion);
             Controls.Add(pb_Usuario);
             Controls.Add(pb_Seguridad);
@@ -141,6 +148,7 @@
             Controls.Add(cbOrganizacion);
             Controls.Add(cbUsuario);
             Controls.Add(cbSeguridad);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Fichas";
             Text = "Fichas";
             ((System.ComponentModel.ISupportInitialize)pb_Seguridad).EndInit();
