@@ -325,10 +325,11 @@
             btnGPX.Location = new Point(489, 548);
             btnGPX.Margin = new Padding(3, 4, 3, 4);
             btnGPX.Name = "btnGPX";
-            btnGPX.Size = new Size(130, 31);
+            btnGPX.Size = new Size(147, 31);
             btnGPX.TabIndex = 22;
             btnGPX.Text = "Cargar desde GPX";
             btnGPX.UseVisualStyleBackColor = false;
+            btnGPX.Click += btnGPX_Click;
             // 
             // lblDuracionHoras
             // 
@@ -401,26 +402,26 @@
         private Label lblFamiliar;
         private Label lblZona;
         private Label lblRecomendaciones;
-        private ComboBox comboTemporada;
-        private TextBox txtNombre;
-        private TextBox txtDistancia;
-        private TextBox txtZona;
-        private TextBox txtRecomendaciones;
-        private GroupBox gbAccesibilidad;
-        private GroupBox gbFamiliar;
-        private RadioButton rbNoAccesibilidad;
-        private RadioButton rbSiAccesibilidad;
-        private RadioButton rbNoFamiliar;
-        private RadioButton rbSiFamiliar;
-        private GroupBox gbClasificacion;
-        private RadioButton rbLineal;
-        private RadioButton rbCircular;
-        private Button btnCrear;
-        private NumericUpDown numericHoras;
-        private NumericUpDown numericMinutos;
-        private NumericUpDown numericSegundos;
         private Button btnGPX;
         private Label lblDuracionHoras;
         private Label lblDuracionMins;
+        internal TextBox txtNombre;
+        internal TextBox txtDistancia;
+        internal NumericUpDown numericHoras;
+        internal NumericUpDown numericMinutos;
+        internal NumericUpDown numericSegundos;
+        internal ComboBox comboTemporada;
+        internal TextBox txtZona;
+        internal TextBox txtRecomendaciones;
+        internal GroupBox gbAccesibilidad;
+        internal GroupBox gbFamiliar;
+        internal GroupBox gbClasificacion;
+        internal RadioButton rbNoAccesibilidad;
+        internal RadioButton rbSiAccesibilidad;
+        internal RadioButton rbNoFamiliar;
+        internal RadioButton rbSiFamiliar;
+        internal RadioButton rbLineal;
+        internal RadioButton rbCircular;
+        internal Button btnCrear;
     }
 }

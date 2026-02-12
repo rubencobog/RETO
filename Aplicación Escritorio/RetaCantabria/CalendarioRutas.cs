@@ -14,7 +14,7 @@ namespace RetaCantabria
             this.usuario = usuario;
         }
 
-        private async void calendar_DateSelected(object sender, DateRangeEventArgs e)
+        internal async void calendar_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime fecha = e.Start.Date;
 
@@ -22,7 +22,7 @@ namespace RetaCantabria
             await CargarGrid(fecha);
         }
 
-        private async Task CargarGrid(DateTime fecha)
+        internal async Task CargarGrid(DateTime fecha)
         {
             dgvRutaCalendar.DataSource = null;
 
@@ -130,7 +130,7 @@ namespace RetaCantabria
             }
         }
 
-        private async void dgvRutaCalendar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        internal async void dgvRutaCalendar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {

@@ -100,7 +100,6 @@
             // 
             // comboPermisos
             // 
-
             comboPermisos.FormattingEnabled = true;
             comboPermisos.Location = new Point(472, 548);
             comboPermisos.Margin = new Padding(3, 4, 3, 4);
@@ -127,11 +126,10 @@
         }
 
         #endregion
-
-        private DataGridView dgvUsuarios;
-        private Button Eliminar;
-        private Button btnEditar;
-        private Button btnPermisos;
-        private ComboBox comboPermisos;
+        internal DataGridView dgvUsuarios;
+        internal Button Eliminar;
+        internal Button btnEditar;
+        internal Button btnPermisos;
+        internal ComboBox comboPermisos;
     }
 }

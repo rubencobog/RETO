@@ -37,14 +37,14 @@ namespace RetaCantabria
             dgvUsuarios.ClearSelection();
         }
 
-        private async void GestionUsuarios_Load(object sender, EventArgs e)
+        internal async void GestionUsuarios_Load(object sender, EventArgs e)
         {
             CargarUsuarios();
             comboPermisos.DataSource = Enum.GetValues(typeof(TIPOUSUARIO));
             comboPermisos.Enabled = false;
         }
 
-        private async void Eliminar_Click(object sender, EventArgs e)
+        internal async void Eliminar_Click(object sender, EventArgs e)
         {
             if (dgvUsuarios.SelectedRows.Count > 0)
             {
@@ -67,7 +67,7 @@ namespace RetaCantabria
             }
         }
 
-        private async void btnPermisos_Click(object sender, EventArgs e)
+        internal async void btnPermisos_Click(object sender, EventArgs e)
         {
             if (dgvUsuarios.SelectedRows.Count > 0)
             {
@@ -90,7 +90,7 @@ namespace RetaCantabria
             }
         }
 
-        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        internal void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvUsuarios.CurrentRow != null && !dgvUsuarios.CurrentRow.IsNewRow)
             {
@@ -103,7 +103,7 @@ namespace RetaCantabria
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        internal void btnEditar_Click(object sender, EventArgs e)
         {
             if(dgvUsuarios.SelectedRows.Count > 0)
             {
