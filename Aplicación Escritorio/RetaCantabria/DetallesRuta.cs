@@ -33,6 +33,9 @@ namespace RetaCantabria
             lblMedia.Text = ruta.mediaEstrellas.HasValue ? ruta.mediaEstrellas.Value.ToString("0.0") : "Sin valoraciones";
             lblClasificacion.Text = ruta.clasificacion.ToString();
             lblDistancia.Text = ruta.distancia.ToString() + " km";
+            lblAltitudMax.Text = ruta.altitudMax.ToString() + " m";
+            lblTemporadaRec.Text = ruta.temporadas;
+            lblDesnivelAc.Text = ruta.desnivelAcumulado.ToString() + " m";
             checkAccesible.Checked = ruta.accesible;
             checkFamiliar.Checked = ruta.familiar;
             PermisoResenarValidar();

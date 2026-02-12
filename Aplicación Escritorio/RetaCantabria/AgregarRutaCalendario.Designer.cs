@@ -56,10 +56,10 @@
             btnInsertarRuta.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnInsertarRuta.FlatStyle = FlatStyle.Flat;
             btnInsertarRuta.ForeColor = SystemColors.ButtonHighlight;
-            btnInsertarRuta.Location = new Point(689, 590);
+            btnInsertarRuta.Location = new Point(569, 543);
             btnInsertarRuta.Margin = new Padding(4, 5, 4, 5);
             btnInsertarRuta.Name = "btnInsertarRuta";
-            btnInsertarRuta.Size = new Size(104, 36);
+            btnInsertarRuta.Size = new Size(112, 36);
             btnInsertarRuta.TabIndex = 1;
             btnInsertarRuta.Text = "Añadir";
             btnInsertarRuta.UseVisualStyleBackColor = false;
@@ -73,10 +73,10 @@
             btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.ForeColor = SystemColors.ButtonHighlight;
-            btnCancelar.Location = new Point(827, 590);
+            btnCancelar.Location = new Point(853, 543);
             btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(97, 36);
+            btnCancelar.Size = new Size(113, 36);
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;

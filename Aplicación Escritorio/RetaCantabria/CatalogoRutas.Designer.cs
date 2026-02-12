@@ -73,10 +73,10 @@
             btnDescarga.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnDescarga.FlatStyle = FlatStyle.Flat;
             btnDescarga.ForeColor = SystemColors.ButtonHighlight;
-            btnDescarga.Location = new Point(586, 535);
+            btnDescarga.Location = new Point(569, 535);
             btnDescarga.Margin = new Padding(3, 4, 3, 4);
             btnDescarga.Name = "btnDescarga";
-            btnDescarga.Size = new Size(125, 31);
+            btnDescarga.Size = new Size(141, 31);
             btnDescarga.TabIndex = 4;
             btnDescarga.Text = "Descargar Ficha";
             btnDescarga.UseVisualStyleBackColor = true;
@@ -90,10 +90,10 @@
             btnCrear.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.ForeColor = SystemColors.ButtonHighlight;
-            btnCrear.Location = new Point(253, 535);
+            btnCrear.Location = new Point(388, 535);
             btnCrear.Margin = new Padding(3, 4, 3, 4);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(102, 31);
+            btnCrear.Size = new Size(156, 31);
             btnCrear.TabIndex = 5;
             btnCrear.Text = "Crear Ruta";
             btnCrear.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             btnCalendario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnCalendario.FlatStyle = FlatStyle.Flat;
             btnCalendario.ForeColor = SystemColors.ButtonHighlight;
-            btnCalendario.Location = new Point(391, 535);
+            btnCalendario.Location = new Point(195, 535);
             btnCalendario.Margin = new Padding(3, 4, 3, 4);
             btnCalendario.Name = "btnCalendario";
             btnCalendario.Size = new Size(168, 31);
@@ -208,9 +208,9 @@
             btnGenerarGPX.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnGenerarGPX.FlatStyle = FlatStyle.Flat;
             btnGenerarGPX.ForeColor = SystemColors.ButtonHighlight;
-            btnGenerarGPX.Location = new Point(747, 535);
+            btnGenerarGPX.Location = new Point(735, 535);
             btnGenerarGPX.Name = "btnGenerarGPX";
-            btnGenerarGPX.Size = new Size(114, 31);
+            btnGenerarGPX.Size = new Size(126, 31);
             btnGenerarGPX.TabIndex = 10;
             btnGenerarGPX.Text = "Generar GPX";
             btnGenerarGPX.UseVisualStyleBackColor = true;

@@ -46,6 +46,12 @@
             lblClasi = new Label();
             btnValidar = new Button();
             btnResena = new Button();
+            label1 = new Label();
+            lblTemporada = new Label();
+            lblAltitud = new Label();
+            lblDesnivelAc = new Label();
+            lblTemporadaRec = new Label();
+            lblAltitudMax = new Label();
             SuspendLayout();
             // 
             // btnMapa
@@ -56,7 +62,7 @@
             btnMapa.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnMapa.FlatStyle = FlatStyle.Flat;
             btnMapa.ForeColor = SystemColors.ButtonHighlight;
-            btnMapa.Location = new Point(74, 393);
+            btnMapa.Location = new Point(271, 393);
             btnMapa.Name = "btnMapa";
             btnMapa.Size = new Size(173, 29);
             btnMapa.TabIndex = 0;
@@ -72,9 +78,9 @@
             btnWaypoints.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnWaypoints.FlatStyle = FlatStyle.Flat;
             btnWaypoints.ForeColor = SystemColors.ButtonHighlight;
-            btnWaypoints.Location = new Point(263, 393);
+            btnWaypoints.Location = new Point(97, 393);
             btnWaypoints.Name = "btnWaypoints";
-            btnWaypoints.Size = new Size(120, 29);
+            btnWaypoints.Size = new Size(138, 29);
             btnWaypoints.TabIndex = 1;
             btnWaypoints.Text = "Ver WayPoints";
             btnWaypoints.UseVisualStyleBackColor = true;
@@ -83,7 +89,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(124, 86);
+            lblNombre.Location = new Point(51, 86);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(50, 20);
             lblNombre.TabIndex = 2;
@@ -92,7 +98,7 @@
             // lblDistancia
             // 
             lblDistancia.AutoSize = true;
-            lblDistancia.Location = new Point(124, 197);
+            lblDistancia.Location = new Point(51, 197);
             lblDistancia.Name = "lblDistancia";
             lblDistancia.Size = new Size(50, 20);
             lblDistancia.TabIndex = 3;
@@ -101,7 +107,7 @@
             // lblDuracion
             // 
             lblDuracion.AutoSize = true;
-            lblDuracion.Location = new Point(124, 303);
+            lblDuracion.Location = new Point(51, 303);
             lblDuracion.Name = "lblDuracion";
             lblDuracion.Size = new Size(50, 20);
             lblDuracion.TabIndex = 4;
@@ -110,7 +116,7 @@
             // lblMedia
             // 
             lblMedia.AutoSize = true;
-            lblMedia.Location = new Point(357, 86);
+            lblMedia.Location = new Point(196, 86);
             lblMedia.Name = "lblMedia";
             lblMedia.Size = new Size(50, 20);
             lblMedia.TabIndex = 5;
@@ -119,7 +125,7 @@
             // lblZona
             // 
             lblZona.AutoSize = true;
-            lblZona.Location = new Point(357, 197);
+            lblZona.Location = new Point(196, 197);
             lblZona.Name = "lblZona";
             lblZona.Size = new Size(50, 20);
             lblZona.TabIndex = 6;
@@ -128,7 +134,7 @@
             // lblClasificacion
             // 
             lblClasificacion.AutoSize = true;
-            lblClasificacion.Location = new Point(357, 303);
+            lblClasificacion.Location = new Point(196, 303);
             lblClasificacion.Name = "lblClasificacion";
             lblClasificacion.Size = new Size(50, 20);
             lblClasificacion.TabIndex = 7;
@@ -138,7 +144,7 @@
             // 
             checkFamiliar.AutoSize = true;
             checkFamiliar.Enabled = false;
-            checkFamiliar.Location = new Point(582, 43);
+            checkFamiliar.Location = new Point(610, 43);
             checkFamiliar.Name = "checkFamiliar";
             checkFamiliar.Size = new Size(83, 24);
             checkFamiliar.TabIndex = 8;
@@ -149,7 +155,7 @@
             // 
             checkAccesible.AutoSize = true;
             checkAccesible.Enabled = false;
-            checkAccesible.Location = new Point(582, 161);
+            checkAccesible.Location = new Point(610, 161);
             checkAccesible.Name = "checkAccesible";
             checkAccesible.Size = new Size(94, 24);
             checkAccesible.TabIndex = 9;
@@ -159,7 +165,7 @@
             // lblNom
             // 
             lblNom.AutoSize = true;
-            lblNom.Location = new Point(124, 43);
+            lblNom.Location = new Point(51, 43);
             lblNom.Name = "lblNom";
             lblNom.Size = new Size(67, 20);
             lblNom.TabIndex = 10;
@@ -168,7 +174,7 @@
             // lblMed
             // 
             lblMed.AutoSize = true;
-            lblMed.Location = new Point(357, 47);
+            lblMed.Location = new Point(196, 47);
             lblMed.Name = "lblMed";
             lblMed.Size = new Size(128, 20);
             lblMed.TabIndex = 11;
@@ -177,7 +183,7 @@
             // lblDist
             // 
             lblDist.AutoSize = true;
-            lblDist.Location = new Point(124, 162);
+            lblDist.Location = new Point(51, 162);
             lblDist.Name = "lblDist";
             lblDist.Size = new Size(73, 20);
             lblDist.TabIndex = 12;
@@ -186,7 +192,7 @@
             // lblZone
             // 
             lblZone.AutoSize = true;
-            lblZone.Location = new Point(357, 161);
+            lblZone.Location = new Point(196, 161);
             lblZone.Name = "lblZone";
             lblZone.Size = new Size(123, 20);
             lblZone.TabIndex = 13;
@@ -195,7 +201,7 @@
             // lblDur
             // 
             lblDur.AutoSize = true;
-            lblDur.Location = new Point(124, 260);
+            lblDur.Location = new Point(51, 260);
             lblDur.Name = "lblDur";
             lblDur.Size = new Size(72, 20);
             lblDur.TabIndex = 14;
@@ -204,7 +210,7 @@
             // lblClasi
             // 
             lblClasi.AutoSize = true;
-            lblClasi.Location = new Point(357, 260);
+            lblClasi.Location = new Point(196, 260);
             lblClasi.Name = "lblClasi";
             lblClasi.Size = new Size(95, 20);
             lblClasi.TabIndex = 15;
@@ -218,7 +224,7 @@
             btnValidar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnValidar.FlatStyle = FlatStyle.Flat;
             btnValidar.ForeColor = SystemColors.ButtonHighlight;
-            btnValidar.Location = new Point(497, 393);
+            btnValidar.Location = new Point(480, 393);
             btnValidar.Name = "btnValidar";
             btnValidar.Size = new Size(94, 29);
             btnValidar.TabIndex = 16;
@@ -242,11 +248,71 @@
             btnResena.UseVisualStyleBackColor = true;
             btnResena.Click += btnResena_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(370, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 20);
+            label1.TabIndex = 18;
+            label1.Text = "Desnivel acumulado:";
+            // 
+            // lblTemporada
+            // 
+            lblTemporada.AutoSize = true;
+            lblTemporada.Location = new Point(370, 161);
+            lblTemporada.Name = "lblTemporada";
+            lblTemporada.Size = new Size(184, 20);
+            lblTemporada.TabIndex = 19;
+            lblTemporada.Text = "Temporada recomendada:";
+            // 
+            // lblAltitud
+            // 
+            lblAltitud.AutoSize = true;
+            lblAltitud.Location = new Point(370, 260);
+            lblAltitud.Name = "lblAltitud";
+            lblAltitud.Size = new Size(114, 20);
+            lblAltitud.TabIndex = 20;
+            lblAltitud.Text = "Altitud máxima:";
+            // 
+            // lblDesnivelAc
+            // 
+            lblDesnivelAc.AutoSize = true;
+            lblDesnivelAc.Location = new Point(370, 86);
+            lblDesnivelAc.Name = "lblDesnivelAc";
+            lblDesnivelAc.Size = new Size(50, 20);
+            lblDesnivelAc.TabIndex = 21;
+            lblDesnivelAc.Text = "label2";
+            // 
+            // lblTemporadaRec
+            // 
+            lblTemporadaRec.AutoSize = true;
+            lblTemporadaRec.Location = new Point(370, 197);
+            lblTemporadaRec.Name = "lblTemporadaRec";
+            lblTemporadaRec.Size = new Size(50, 20);
+            lblTemporadaRec.TabIndex = 22;
+            lblTemporadaRec.Text = "label3";
+            // 
+            // lblAltitudMax
+            // 
+            lblAltitudMax.AutoSize = true;
+            lblAltitudMax.Location = new Point(370, 303);
+            lblAltitudMax.Name = "lblAltitudMax";
+            lblAltitudMax.Size = new Size(50, 20);
+            lblAltitudMax.TabIndex = 23;
+            lblAltitudMax.Text = "label4";
+            // 
             // DetallesRuta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblAltitudMax);
+            Controls.Add(lblTemporadaRec);
+            Controls.Add(lblDesnivelAc);
+            Controls.Add(lblAltitud);
+            Controls.Add(lblTemporada);
+            Controls.Add(label1);
             Controls.Add(btnResena);
             Controls.Add(btnValidar);
             Controls.Add(lblClasi);
@@ -292,5 +358,11 @@
         private Label lblClasi;
         private Button btnValidar;
         private Button btnResena;
+        private Label label1;
+        private Label lblTemporada;
+        private Label lblAltitud;
+        private Label lblDesnivelAc;
+        private Label lblTemporadaRec;
+        private Label lblAltitudMax;
     }
 }
