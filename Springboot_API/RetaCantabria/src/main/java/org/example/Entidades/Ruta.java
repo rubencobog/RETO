@@ -464,6 +464,9 @@ public class Ruta {
             this.altitudMin = altitudMinima(puntos);
             this.clasificacion = clasificacionRuta(primero, ultimo);
             this.nivelRiesgo = calcularNivelRiesgo();
+            if(duracion==null||distancia==null||desnivelAcumulado==null){
+                return;
+            }
             this.nivelEsfuerzo = calcularNivelEsfuerzo();
         }catch(Exception e){
             System.out.println("Ruta cargada mal debido a puntos creados de manera incorrecta(no hay puntos) o punto de peligro al final de la ruta");
