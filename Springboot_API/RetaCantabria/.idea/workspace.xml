@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc670dea-404c-47f2-ad2f-ac2adcc8a5ca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/components/Components.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/service/RutaService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/service/RutaService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/service/UsuarioService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/data/service/UsuarioService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AplicacionMovil/app/src/main/java/com/example/retodam2rutas/views/LoginViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rubencobog&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rubencobog/RETO.git&quot;,
+    &quot;accountId&quot;: &quot;0b002923-7695-4d3f-be76-6e917acdb89a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="397MooIp7OspRZv4fZ6UHpr9WsP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.RetaCantabria.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.RetaCantabria.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "Develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Usuarios/DAM205/Documents/GitHub/RETO/Springboot_API/RetaCantabria",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="RetaCantabria" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="RetaCantabria" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.RetaCantabria" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc670dea-404c-47f2-ad2f-ac2adcc8a5ca" name="Changes" comment="" />
+      <created>1770042832546</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770042832546</updated>
+      <workItem from="1770042833860" duration="190000" />
+      <workItem from="1770047723807" duration="12000" />
+      <workItem from="1770217985617" duration="6812000" />
+      <workItem from="1770310824504" duration="3000" />
+      <workItem from="1770385941893" duration="7795000" />
+      <workItem from="1770826792395" duration="3299000" />
+      <workItem from="1770906799408" duration="3784000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

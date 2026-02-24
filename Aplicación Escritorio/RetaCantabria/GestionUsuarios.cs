@@ -1,0 +1,121 @@
+﻿using Conexion;
+using Modelo;
+using ModeloDTO;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net.Http.Json;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace RetaCantabria
+{
+    public partial class GestionUsuarios : Form
+    {
+        private readonly HttpClient cliente = ConexionAPI.CLIENTE;
+        public GestionUsuarios()
+        {
+            InitializeComponent();
+            this.Load += GestionUsuarios_Load;
+        }
+
+        public async Task CargarUsuarios()
+        {
+            var usuarios = await cliente.GetFromJsonAsync<List<UsuarioDTO>>(ConexionAPI.Conexion + "usuario");
+            dgvUsuarios.AutoGenerateColumns = true;
+            dgvUsuarios.DataSource = usuarios;
+            dgvUsuarios.Columns["idUsuario"].Visible = false;
+            dgvUsuarios.Columns["password"].Visible = false;
+            dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsuarios.MultiSelect = false;
+            dgvUsuarios.ReadOnly = true;
+            dgvUsuarios.ClearSelection();
+        }
+
+        internal async void GestionUsuarios_Load(object sender, EventArgs e)
+        {
+            CargarUsuarios();
+            comboPermisos.DataSource = Enum.GetValues(typeof(TIPOUSUARIO));
+            comboPermisos.Enabled = false;
+        }
+
+        internal async void Eliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedRows.Count > 0)
+            {
+                var usuarioSeleccionado = (UsuarioDTO)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                String url = ConexionAPI.Conexion + "usuario/" + usuarioSeleccionado.idUsuario;
+                var resultado = await cliente.DeleteAsync(url);
+                if (resultado.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Usuario eliminado correctamente.");
+                    CargarUsuarios();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el usuario.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un usuario para eliminar.");
+            }
+        }
+
+        internal async void btnPermisos_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedRows.Count > 0)
+            {
+                var usuarioSeleccionado = (UsuarioDTO)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                usuarioSeleccionado.rol = (TIPOUSUARIO)comboPermisos.SelectedItem;
+                HttpResponseMessage resultado = await cliente.PutAsJsonAsync(ConexionAPI.Conexion + "usuario/" + usuarioSeleccionado.idUsuario, usuarioSeleccionado);
+                if (resultado.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Permisos actualizados correctamente.");
+                    CargarUsuarios();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar los permisos.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un usuario para cambiar los permisos.");
+            }
+        }
+
+        internal void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.CurrentRow != null && !dgvUsuarios.CurrentRow.IsNewRow)
+            {
+                comboPermisos.Enabled = true;
+                comboPermisos.SelectedItem = ((UsuarioDTO)dgvUsuarios.CurrentRow.DataBoundItem).rol;
+            }
+            else
+            {
+                comboPermisos.Enabled = false;
+            }
+        }
+
+        internal void btnEditar_Click(object sender, EventArgs e)
+        {
+            if(dgvUsuarios.SelectedRows.Count > 0)
+            {
+                var usuarioSeleccionado = (UsuarioDTO)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                CrearUsuario crearUsuarioForm = new CrearUsuario(usuarioSeleccionado);
+                crearUsuarioForm.ShowDialog();
+                CargarUsuarios();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un usuario para editar.");
+            }
+        }
+    }
+}

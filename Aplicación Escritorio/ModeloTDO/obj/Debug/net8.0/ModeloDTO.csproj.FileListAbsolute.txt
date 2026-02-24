@@ -1,0 +1,36 @@
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.deps.json
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.dll
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.pdb
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfoInputs.cache
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfo.cs
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.csproj.CoreCompileInputs.cache
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.sourcelink.json
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.dll
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\refint\ModeloDTO.dll
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.pdb
+C:\Users\Rubéns\OneDrive - Educantabria\Escritorio\RETO_DAM2\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ref\ModeloDTO.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.deps.json
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.pdb
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfoInputs.cache
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfo.cs
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.csproj.CoreCompileInputs.cache
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.sourcelink.json
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\refint\ModeloDTO.dll
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.pdb
+C:\Users\ruben\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ref\ModeloDTO.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.deps.json
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.pdb
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfoInputs.cache
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfo.cs
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.csproj.CoreCompileInputs.cache
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.sourcelink.json
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\refint\ModeloDTO.dll
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.pdb
+C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ref\ModeloDTO.dll
