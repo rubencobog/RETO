@@ -33,12 +33,14 @@
             btnEliminar = new Button();
             btnInsertarNueva = new Button();
             lblFecha = new Label();
+            pictureLogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRutaCalendar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             SuspendLayout();
             // 
             // calendar
             // 
-            calendar.Location = new Point(143, 36);
+            calendar.Location = new Point(135, 195);
             calendar.Margin = new Padding(10, 12, 10, 12);
             calendar.Name = "calendar";
             calendar.TabIndex = 0;
@@ -47,6 +49,7 @@
             // 
             // dgvRutaCalendar
             // 
+            dgvRutaCalendar.BackgroundColor = SystemColors.Window;
             dgvRutaCalendar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRutaCalendar.Location = new Point(523, 81);
             dgvRutaCalendar.Margin = new Padding(3, 4, 3, 4);
@@ -98,12 +101,23 @@
             lblFecha.Size = new Size(0, 20);
             lblFecha.TabIndex = 4;
             // 
+            // pictureLogo
+            // 
+            pictureLogo.Image = Properties.Resources.itinere_logo;
+            pictureLogo.Location = new Point(182, 81);
+            pictureLogo.Name = "pictureLogo";
+            pictureLogo.Size = new Size(125, 99);
+            pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureLogo.TabIndex = 5;
+            pictureLogo.TabStop = false;
+            // 
             // CalendarioRutas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(914, 600);
+            Controls.Add(pictureLogo);
             Controls.Add(lblFecha);
             Controls.Add(btnInsertarNueva);
             Controls.Add(btnEliminar);
@@ -113,6 +127,7 @@
             Name = "CalendarioRutas";
             Text = "Calendario";
             ((System.ComponentModel.ISupportInitialize)dgvRutaCalendar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,5 +138,6 @@
         internal DataGridView dgvRutaCalendar;
         internal Button btnEliminar;
         internal Label lblFecha;
+        private PictureBox pictureLogo;
     }
 }

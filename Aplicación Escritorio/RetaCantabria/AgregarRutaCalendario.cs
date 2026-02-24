@@ -34,6 +34,7 @@ namespace RetaCantabria
             dgvRutasDisponibles.DataSource = rutas;
             dgvRutasDisponibles.AutoGenerateColumns = true;
             dgvRutasDisponibles.Columns.RemoveAt(0);
+            dgvRutasDisponibles.Columns["idUsuario"].Visible = false;
             dgvRutasDisponibles.ReadOnly = true;
             dgvRutasDisponibles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }

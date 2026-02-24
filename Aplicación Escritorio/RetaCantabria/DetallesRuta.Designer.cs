@@ -52,6 +52,8 @@
             lblDesnivelAc = new Label();
             lblTemporadaRec = new Label();
             lblAltitudMax = new Label();
+            pictureLogo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             SuspendLayout();
             // 
             // btnMapa
@@ -165,54 +167,60 @@
             // lblNom
             // 
             lblNom.AutoSize = true;
+            lblNom.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblNom.Location = new Point(51, 43);
             lblNom.Name = "lblNom";
-            lblNom.Size = new Size(67, 20);
+            lblNom.Size = new Size(71, 20);
             lblNom.TabIndex = 10;
             lblNom.Text = "Nombre:";
             // 
             // lblMed
             // 
             lblMed.AutoSize = true;
+            lblMed.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMed.Location = new Point(196, 47);
             lblMed.Name = "lblMed";
-            lblMed.Size = new Size(128, 20);
+            lblMed.Size = new Size(133, 20);
             lblMed.TabIndex = 11;
             lblMed.Text = "Media Valoracion:";
             // 
             // lblDist
             // 
             lblDist.AutoSize = true;
+            lblDist.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblDist.Location = new Point(51, 162);
             lblDist.Name = "lblDist";
-            lblDist.Size = new Size(73, 20);
+            lblDist.Size = new Size(77, 20);
             lblDist.TabIndex = 12;
             lblDist.Text = "Distancia:";
             // 
             // lblZone
             // 
             lblZone.AutoSize = true;
+            lblZone.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblZone.Location = new Point(196, 161);
             lblZone.Name = "lblZone";
-            lblZone.Size = new Size(123, 20);
+            lblZone.Size = new Size(128, 20);
             lblZone.TabIndex = 13;
             lblZone.Text = "Zona Geográfica:";
             // 
             // lblDur
             // 
             lblDur.AutoSize = true;
+            lblDur.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblDur.Location = new Point(51, 260);
             lblDur.Name = "lblDur";
-            lblDur.Size = new Size(72, 20);
+            lblDur.Size = new Size(76, 20);
             lblDur.TabIndex = 14;
             lblDur.Text = "Duración:";
             // 
             // lblClasi
             // 
             lblClasi.AutoSize = true;
+            lblClasi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblClasi.Location = new Point(196, 260);
             lblClasi.Name = "lblClasi";
-            lblClasi.Size = new Size(95, 20);
+            lblClasi.Size = new Size(99, 20);
             lblClasi.TabIndex = 15;
             lblClasi.Text = "Clasificación:";
             // 
@@ -251,27 +259,30 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label1.Location = new Point(370, 44);
             label1.Name = "label1";
-            label1.Size = new Size(146, 20);
+            label1.Size = new Size(153, 20);
             label1.TabIndex = 18;
             label1.Text = "Desnivel acumulado:";
             // 
             // lblTemporada
             // 
             lblTemporada.AutoSize = true;
+            lblTemporada.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblTemporada.Location = new Point(370, 161);
             lblTemporada.Name = "lblTemporada";
-            lblTemporada.Size = new Size(184, 20);
+            lblTemporada.Size = new Size(191, 20);
             lblTemporada.TabIndex = 19;
             lblTemporada.Text = "Temporada recomendada:";
             // 
             // lblAltitud
             // 
             lblAltitud.AutoSize = true;
+            lblAltitud.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblAltitud.Location = new Point(370, 260);
             lblAltitud.Name = "lblAltitud";
-            lblAltitud.Size = new Size(114, 20);
+            lblAltitud.Size = new Size(122, 20);
             lblAltitud.TabIndex = 20;
             lblAltitud.Text = "Altitud máxima:";
             // 
@@ -302,11 +313,22 @@
             lblAltitudMax.TabIndex = 23;
             lblAltitudMax.Text = "label4";
             // 
+            // pictureLogo
+            // 
+            pictureLogo.Image = Properties.Resources.itinere_logo;
+            pictureLogo.Location = new Point(579, 231);
+            pictureLogo.Name = "pictureLogo";
+            pictureLogo.Size = new Size(125, 92);
+            pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureLogo.TabIndex = 24;
+            pictureLogo.TabStop = false;
+            // 
             // DetallesRuta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureLogo);
             Controls.Add(lblAltitudMax);
             Controls.Add(lblTemporadaRec);
             Controls.Add(lblDesnivelAc);
@@ -334,6 +356,7 @@
             Name = "DetallesRuta";
             Text = "DetallesRuta";
             Load += DetallesRuta_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -364,5 +387,6 @@
         private Label lblDesnivelAc;
         private Label lblTemporadaRec;
         private Label lblAltitudMax;
+        private PictureBox pictureLogo;
     }
 }

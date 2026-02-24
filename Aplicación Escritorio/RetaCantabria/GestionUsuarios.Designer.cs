@@ -38,6 +38,20 @@
             // 
             // dgvUsuarios
             // 
+            dgvUsuarios.BackgroundColor = Color.White;
+            dgvUsuarios.DefaultCellStyle.BackColor = Color.White;
+            dgvUsuarios.DefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
+            dgvUsuarios.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 20, 60);
+            dgvUsuarios.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240); // Gris claro
+            dgvUsuarios.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
+            dgvUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 250, 250);
+            dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dgvUsuarios.BorderStyle = BorderStyle.None;
+            dgvUsuarios.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvUsuarios.EnableHeadersVisualStyles = false;
+            dgvUsuarios.AllowUserToResizeColumns = false;
+            dgvUsuarios.AllowUserToResizeRows = false;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Location = new Point(66, 68);
             dgvUsuarios.Margin = new Padding(3, 4, 3, 4);

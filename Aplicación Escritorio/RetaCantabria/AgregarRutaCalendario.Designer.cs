@@ -40,12 +40,13 @@
             // 
             // dgvRutasDisponibles
             // 
+            dgvRutasDisponibles.BackgroundColor = SystemColors.Window;
             dgvRutasDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRutasDisponibles.Location = new Point(569, 33);
+            dgvRutasDisponibles.Location = new Point(29, 46);
             dgvRutasDisponibles.Margin = new Padding(4, 5, 4, 5);
             dgvRutasDisponibles.Name = "dgvRutasDisponibles";
             dgvRutasDisponibles.RowHeadersWidth = 51;
-            dgvRutasDisponibles.Size = new Size(397, 484);
+            dgvRutasDisponibles.Size = new Size(460, 448);
             dgvRutasDisponibles.TabIndex = 0;
             // 
             // btnInsertarRuta
@@ -56,7 +57,7 @@
             btnInsertarRuta.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnInsertarRuta.FlatStyle = FlatStyle.Flat;
             btnInsertarRuta.ForeColor = SystemColors.ButtonHighlight;
-            btnInsertarRuta.Location = new Point(569, 543);
+            btnInsertarRuta.Location = new Point(853, 543);
             btnInsertarRuta.Margin = new Padding(4, 5, 4, 5);
             btnInsertarRuta.Name = "btnInsertarRuta";
             btnInsertarRuta.Size = new Size(112, 36);
@@ -73,7 +74,7 @@
             btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.ForeColor = SystemColors.ButtonHighlight;
-            btnCancelar.Location = new Point(853, 543);
+            btnCancelar.Location = new Point(691, 543);
             btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(113, 36);
@@ -85,7 +86,7 @@
             // lblDetalles
             // 
             lblDetalles.AutoSize = true;
-            lblDetalles.Location = new Point(56, 33);
+            lblDetalles.Location = new Point(591, 47);
             lblDetalles.Margin = new Padding(4, 0, 4, 0);
             lblDetalles.Name = "lblDetalles";
             lblDetalles.Size = new Size(74, 23);
@@ -95,7 +96,7 @@
             // lblRecomendaciones
             // 
             lblRecomendaciones.AutoSize = true;
-            lblRecomendaciones.Location = new Point(56, 307);
+            lblRecomendaciones.Location = new Point(591, 297);
             lblRecomendaciones.Margin = new Padding(4, 0, 4, 0);
             lblRecomendaciones.Name = "lblRecomendaciones";
             lblRecomendaciones.Size = new Size(152, 23);
@@ -104,7 +105,7 @@
             // 
             // txtDetalles
             // 
-            txtDetalles.Location = new Point(56, 69);
+            txtDetalles.Location = new Point(591, 75);
             txtDetalles.Margin = new Padding(4, 5, 4, 5);
             txtDetalles.Multiline = true;
             txtDetalles.Name = "txtDetalles";
@@ -113,7 +114,7 @@
             // 
             // txtRecomendaciones
             // 
-            txtRecomendaciones.Location = new Point(56, 349);
+            txtRecomendaciones.Location = new Point(591, 325);
             txtRecomendaciones.Margin = new Padding(4, 5, 4, 5);
             txtRecomendaciones.Multiline = true;
             txtRecomendaciones.Name = "txtRecomendaciones";

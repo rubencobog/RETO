@@ -1,5 +1,6 @@
 package org.example.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -40,6 +41,7 @@ public class Usuario {
     @OneToMany(mappedBy = "usuarioIdusuario", cascade = CascadeType.ALL,orphanRemoval = true)
     @JsonManagedReference("calendarios-usuario")
     @JsonIgnoreProperties("usuarioIdusuario")
+    @JsonIgnore
     private List<Calendario>calendarios=new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
