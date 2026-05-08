@@ -34,3 +34,19 @@ C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\refint\ModeloDTO.dll
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.pdb
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ref\ModeloDTO.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.deps.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\ModeloDTO.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\Modelo.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\bin\Debug\net8.0\Modelo.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.csproj.AssemblyReference.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfoInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.AssemblyInfo.cs
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.csproj.CoreCompileInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.sourcelink.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.csproj.Up2Date
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\refint\ModeloDTO.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ModeloDTO.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\ModeloTDO\obj\Debug\net8.0\ref\ModeloDTO.dll

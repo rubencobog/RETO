@@ -34,3 +34,15 @@ C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\refint\Conexion.dll
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.pdb
 C:\Users\vboxuser\Desktop\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\ref\Conexion.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\bin\Debug\net8.0\Conexion.deps.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\bin\Debug\net8.0\Conexion.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\bin\Debug\net8.0\Conexion.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.AssemblyInfoInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.AssemblyInfo.cs
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.csproj.CoreCompileInputs.cache
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.sourcelink.json
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\refint\Conexion.dll
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\Conexion.pdb
+E:\GitHub Repositories\RETO\Aplicación Escritorio\Conexion\obj\Debug\net8.0\ref\Conexion.dll
